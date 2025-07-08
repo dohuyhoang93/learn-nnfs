@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://dohuyhoang.github.io/learn-nnfs/</loc>
+         <lastmod>2025-07-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dohuyhoang.github.io/learn-nnfs/Explain%20Documents/01-first%20layer_explain/</loc>
+         <lastmod>2025-07-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dohuyhoang.github.io/learn-nnfs/Explain%20Documents/02-transformation_relu_math_explain/</loc>
+         <lastmod>2025-07-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dohuyhoang.github.io/learn-nnfs/Explain%20Documents/03-softmax_explain/</loc>
+         <lastmod>2025-07-08</lastmod>
+    </url>
+    <url>
+         <loc>https://dohuyhoang.github.io/learn-nnfs/Explain%20Documents/04-schema_math/</loc>
+         <lastmod>2025-07-08</lastmod>
+    </url>
+</urlset>
