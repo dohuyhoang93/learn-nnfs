@@ -10,16 +10,16 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation_relu_math_explain/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu/">
       
       
-        <link rel="prev" href="../../Ch4pt3r.01_First_Layer/01-first%20layer_explain/">
+        <link rel="prev" href="../02-transformation-relu-diagram/">
       
       
-        <link rel="next" href="../../Ch4pt3r.03_Softmax/03-schema_math/">
+        <link rel="next" href="../../Ch4pt3r.03_Softmax/03-softmax-diagram/">
       
       
-      <link rel="icon" href="../../../../assets/logo.svg">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -91,7 +91,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#phan-1-ham-kich-hoat-relu" class="md-skip">
+        <a href="#part-1-the-relu-activation-function" class="md-skip">
           Skip to content
         </a>
       
@@ -131,9 +131,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Neural Network From Scratch Documentation" class="md-header__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
+    <a href="../../.." title="Neural Network From Scratch Documentation" class="md-header__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
       
-  <img src="../../../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -203,7 +203,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../../../" hreflang="vi" class="md-select__link">
+            <a href="../../../vi/" hreflang="vi" class="md-select__link">
               Vietnamese
             </a>
           </li>
@@ -287,7 +287,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -304,6 +304,8 @@
   
   
   
+    
+  
   
     
     
@@ -311,11 +313,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Ch4pt3r.01_First_Layer/01-first-foward-diagram/" class="md-tabs__link">
           
   
   
@@ -334,13 +338,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../vi/" class="md-tabs__link">
           
   
   
@@ -376,9 +378,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Neural Network From Scratch Documentation" class="md-nav__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
+    <a href="../../.." title="Neural Network From Scratch Documentation" class="md-nav__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
       
-  <img src="../../../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     Neural Network From Scratch Documentation
@@ -405,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -424,24 +426,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -454,7 +461,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Explain Documents
@@ -487,7 +494,7 @@
   
   
   <span class="md-ellipsis">
-    Ch4pt3r.04 L0SS
+    Ch4pt3r.01 First Layer
     
   </span>
   
@@ -497,220 +504,6 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
-            <span class="md-nav__icon md-icon"></span>
-            Ch4pt3r.04 L0SS
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    LOSS MATH SCHEMA
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    LOSS & ACCURACY
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Vi
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Vi
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Chào Mừng
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Explain Documents
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            Explain Documents
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Ch4pt3r.01 First Layer
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2_1">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.01 First Layer
           </label>
@@ -723,12 +516,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.01_First_Layer/01-first%20layer_explain/" class="md-nav__link">
+      <a href="../../Ch4pt3r.01_First_Layer/01-first-foward-diagram/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    First Layer
+    └─> First Forward Diagram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.01_First_Layer/01-first-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    └───> First Layer
     
   </span>
   
@@ -767,10 +583,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
             
   
   
@@ -783,12 +599,35 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.02 Transformation&ReLU
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-transformation-relu-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ReLU Diagram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -843,38 +682,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#phan-1-ham-kich-hoat-relu" class="md-nav__link">
+  <a href="#part-1-the-relu-activation-function" class="md-nav__link">
     <span class="md-ellipsis">
-      Phần 1: Hàm kích hoạt ReLU
+      Part 1: The ReLU Activation Function
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Phần 1: Hàm kích hoạt ReLU">
+    <nav class="md-nav" aria-label="Part 1: The ReLU Activation Function">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tom-tat-y-tuong-lon-the-big-idea" class="md-nav__link">
+  <a href="#the-big-idea" class="md-nav__link">
     <span class="md-ellipsis">
-      Tóm Tắt Ý Tưởng Lớn (The Big Idea)
+      The Big Idea
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#khoi-xay-dung-co-ban-mot-neuron-relu" class="md-nav__link">
+  <a href="#the-basic-building-block-a-single-relu-neuron" class="md-nav__link">
     <span class="md-ellipsis">
-      Khối Xây Dựng Cơ Bản - Một Neuron ReLU
+      The Basic Building Block - A Single ReLU Neuron
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Khối Xây Dựng Cơ Bản - Một Neuron ReLU">
+    <nav class="md-nav" aria-label="The Basic Building Block - A Single ReLU Neuron">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vai-tro-cua-trong-so-weight-va-thien-vi-bias" class="md-nav__link">
+  <a href="#the-role-of-weight-and-bias" class="md-nav__link">
     <span class="md-ellipsis">
-      Vai trò của Trọng số (Weight) và Thiên vị (Bias):
+      The Role of Weight and Bias:
     </span>
   </a>
   
@@ -886,117 +725,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phep-mau-bat-au-ket-hop-hai-neuron" class="md-nav__link">
+  <a href="#the-magic-begins-combining-two-neurons" class="md-nav__link">
     <span class="md-ellipsis">
-      Phép Màu Bắt Đầu - Kết Hợp Hai Neuron
+      The Magic Begins - Combining Two Neurons
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#xay-dung-song-sin-ghep-nhieu-vien-gach" class="md-nav__link">
+  <a href="#building-a-sine-wave-assembling-many-bricks" class="md-nav__link">
     <span class="md-ellipsis">
-      Xây Dựng Sóng Sin - Ghép Nhiều "Viên Gạch"
+      Building a Sine Wave - Assembling Many "Bricks"
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#tong-ket" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      Tổng Kết
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phan-2-i-sau-vao-qua-trinh-bien-oi-mot-iem-du-lieu-duy-nhat" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phần 2: Đi sâu vào quá trình biến đổi một điểm dữ liệu duy nhất.
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Phần 2: Đi sâu vào quá trình biến đổi một điểm dữ liệu duy nhất.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-khoi-tao-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Khởi Tạo (Initialization)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Khởi Tạo (Initialization)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ma-tran-trong-so-w-selfweights-kich-thuoc-2-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ma trận Trọng số W (self.weights) - Kích thước (2, 3)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vector-bias-b-selfbiases-kich-thuoc-1-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vector Bias b (self.biases) - Kích thước (1, 3)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-qua-trinh-bien-oi-transformation-dense1forwardo" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Quá trình Biến đổi (Transformation) - dense1.forward(O)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Quá trình Biến đổi (Transformation) - dense1.forward(O)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#buoc-21-phep-nhan-ma-tran-dot-product-v-w" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bước 2.1: Phép nhân ma trận (Dot Product) v · W
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buoc-22-cong-vector-bias-b" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bước 2.2: Cộng Vector Bias + b
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-kich-hoat-relu-activation1forwardv" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Kích Hoạt ReLU - activation1.forward(v')
+      Summary
     </span>
   </a>
   
@@ -1008,28 +757,118 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#truu-tuong-hoa" class="md-nav__link">
+  <a href="#part-2-a-deep-dive-into-the-transformation-of-a-single-data-point" class="md-nav__link">
     <span class="md-ellipsis">
-      Trừu tượng hóa
+      Part 2: A Deep Dive into the Transformation of a Single Data Point.
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Trừu tượng hóa">
+    <nav class="md-nav" aria-label="Part 2: A Deep Dive into the Transformation of a Single Data Point.">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#phan-tich" class="md-nav__link">
+  <a href="#1-initialization" class="md-nav__link">
     <span class="md-ellipsis">
-      Phân Tích
+      1. Initialization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Initialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#weight-matrix-w-selfweights-size-2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weight Matrix W (self.weights) - Size (2, 3)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dien-giai" class="md-nav__link">
+  <a href="#bias-vector-b-selfbiases-size-1-3" class="md-nav__link">
     <span class="md-ellipsis">
-      Diễn Giải
+      Bias Vector b (self.biases) - Size (1, 3)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-transformation-process-dense1forwardo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Transformation Process - dense1.forward(O)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Transformation Process - dense1.forward(O)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-21-dot-product-v-w" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2.1: Dot Product v · W
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-22-add-bias-vector-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2.2: Add Bias Vector + b
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-relu-activation-activation1forwardv" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. ReLU Activation - activation1.forward(v')
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstraction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Abstraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpretation
     </span>
   </a>
   
@@ -1044,6 +883,498 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ch4pt3r.03 Softmax
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ch4pt3r.03 Softmax
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.03_Softmax/03-softmax-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Softmax Diagram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.03_Softmax/03-softmax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Softmax
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ch4pt3r.04 L0SS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ch4pt3r.04 L0SS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.04_L0SS/04-loss-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LOSS Diagram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LOSS & ACCURACY
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Vi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chào Mừng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Explain Documents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Explain Documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ch4pt3r.01 First Layer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ch4pt3r.01 First Layer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-forward-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    First Forward Diagram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    First Layer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ch4pt3r.02 Transformation&ReLU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Ch4pt3r.02 Transformation&ReLU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ReLU Diagram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transformation & ReLU activation function
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1105,12 +1436,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.03_Softmax/03-schema_math/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax-diagram/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Math Schema
+    Softmax Diagram
     
   </span>
   
@@ -1128,7 +1459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.03_Softmax/03-softmax_explain/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax/" class="md-nav__link">
         
   
   
@@ -1200,12 +1531,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-diagram/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    LOSS MATH SCHEMA
+    LOSS Diagram
     
   </span>
   
@@ -1223,7 +1554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
         
   
   
@@ -1283,88 +1614,88 @@
 
   <h1>Transformation & ReLU activation function</h1>
 
-<h2 id="phan-1-ham-kich-hoat-relu">Phần 1: Hàm kích hoạt ReLU<a class="headerlink" href="#phan-1-ham-kich-hoat-relu" title="Permanent link">&para;</a></h2>
-<p>Đây là một trong những phần minh họa hay nhất về sức mạnh của hàm kích hoạt ReLU, một khái niệm nền tảng của mạng neural hiện đại.</p>
-<p>Mục tiêu chính của chương này là trả lời câu hỏi: <strong>"Làm thế nào một hàm đơn giản như ReLU, vốn chỉ là một đường thẳng bị 'bẻ gãy' tại điểm 0, lại có thể giúp mạng neural học được các mối quan hệ phi tuyến vô cùng phức tạp (như hình sin)?"</strong></p>
-<p>Hãy cùng mổ xẻ nó từng bước một.</p>
-<h3 id="tom-tat-y-tuong-lon-the-big-idea">Tóm Tắt Ý Tưởng Lớn (The Big Idea)<a class="headerlink" href="#tom-tat-y-tuong-lon-the-big-idea" title="Permanent link">&para;</a></h3>
-<p>Hãy tưởng tượng bạn chỉ có các viên gạch LEGO thẳng. Làm thế nào để dùng chúng xây một bức tường cong?</p>
-<p>Câu trả lời là: Bạn không thể tạo ra một đường cong mượt mà, nhưng bạn có thể <strong>xấp xỉ (approximate)</strong> nó bằng cách ghép rất nhiều viên gạch thẳng ngắn lại với nhau. Càng nhiều viên gạch ngắn, bức tường của bạn trông sẽ càng cong và mượt.</p>
-<p>Trong mạng neural:</p>
+<h2 id="part-1-the-relu-activation-function">Part 1: The ReLU Activation Function<a class="headerlink" href="#part-1-the-relu-activation-function" title="Permanent link">&para;</a></h2>
+<p>This is one of the best illustrations of the power of the ReLU activation function, a fundamental concept in modern neural networks.</p>
+<p>The main goal of this chapter is to answer the question: <strong>"How can a simple function like ReLU, which is just a straight line 'broken' at point 0, help a neural network learn incredibly complex non-linear relationships (like a sine wave)?"</strong></p>
+<p>Let's dissect it step by step.</p>
+<h3 id="the-big-idea">The Big Idea<a class="headerlink" href="#the-big-idea" title="Permanent link">&para;</a></h3>
+<p>Imagine you only have straight LEGO bricks. How would you use them to build a curved wall?</p>
+<p>The answer is: You can't create a smooth curve, but you can <strong>approximate</strong> it by piecing together many short, straight bricks. The more short bricks you use, the more curved and smooth your wall will look.</p>
+<p>In a neural network:</p>
 <ul>
-<li><strong>Hàm ReLU</strong> chính là <strong>viên gạch thẳng</strong> của chúng ta.</li>
-<li><strong>Mỗi neuron (hoặc cặp neuron)</strong> là một người thợ xây, có nhiệm vụ đặt một viên gạch.</li>
-<li><strong>Mạng neural</strong> là cả công trình, ghép các viên gạch này lại để tạo ra hình dạng phức tạp cuối cùng (như đường cong hình sin).</li>
+<li>The <strong>ReLU function</strong> is our <strong>straight brick</strong>.</li>
+<li><strong>Each neuron (or pair of neurons)</strong> is a builder, tasked with placing one brick.</li>
+<li>The <strong>neural network</strong> is the entire construction, assembling these bricks to create the final complex shape (like a sine curve).</li>
 </ul>
-<p>Giờ hãy đi vào chi tiết cách "người thợ" neuron làm việc.</p>
+<p>Now let's dive into the details of how the neuron "builder" works.</p>
 <hr />
-<h3 id="khoi-xay-dung-co-ban-mot-neuron-relu">Khối Xây Dựng Cơ Bản - Một Neuron ReLU<a class="headerlink" href="#khoi-xay-dung-co-ban-mot-neuron-relu" title="Permanent link">&para;</a></h3>
-<p>Một neuron nhận đầu vào (input), nhân với trọng số (weight), cộng với thiên vị (bias), rồi cho qua hàm kích hoạt ReLU.</p>
-<p><strong>Công thức:</strong> <code>output = ReLU(weight * input + bias)</code>
-<strong>Hàm ReLU:</strong> <code>ReLU(x) = max(0, x)</code>. Nghĩa là:
-*   Nếu <code>x &lt;= 0</code>, kết quả là <code>0</code>.
-*   Nếu <code>x &gt; 0</code>, kết quả là <code>x</code>.</p>
-<p>Nó giống như một cái cổng:
-*   Input tính toán ra âm -&gt; Cổng đóng -&gt; Output = 0.
-*   Input tính toán ra dương -&gt; Cổng mở -&gt; Output = giá trị tính được.</p>
-<h4 id="vai-tro-cua-trong-so-weight-va-thien-vi-bias">Vai trò của Trọng số (Weight) và Thiên vị (Bias):<a class="headerlink" href="#vai-tro-cua-trong-so-weight-va-thien-vi-bias" title="Permanent link">&para;</a></h4>
+<h3 id="the-basic-building-block-a-single-relu-neuron">The Basic Building Block - A Single ReLU Neuron<a class="headerlink" href="#the-basic-building-block-a-single-relu-neuron" title="Permanent link">&para;</a></h3>
+<p>A neuron receives an input, multiplies it by a weight, adds a bias, and then passes it through the ReLU activation function.</p>
+<p><strong>Formula:</strong> <code>output = ReLU(weight * input + bias)</code>
+<strong>ReLU function:</strong> <code>ReLU(x) = max(0, x)</code>. This means:
+*   If <code>x &lt;= 0</code>, the result is <code>0</code>.
+*   If <code>x &gt; 0</code>, the result is <code>x</code>.</p>
+<p>It's like a gate:
+*   Calculated input is negative -&gt; Gate closes -&gt; Output = 0.
+*   Calculated input is positive -&gt; Gate opens -&gt; Output = the calculated value.</p>
+<h4 id="the-role-of-weight-and-bias">The Role of Weight and Bias:<a class="headerlink" href="#the-role-of-weight-and-bias" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p><strong>Trọng số (Weight): Thay đổi độ dốc.</strong></p>
+<p><strong>Weight: Changes the slope.</strong></p>
 <ul>
-<li>Weight lớn -&gt; Đường dốc lên nhanh hơn.</li>
-<li>Weight nhỏ -&gt; Đường dốc lên thoải hơn.</li>
-<li>Weight âm -&gt; Đường bị lật ngược, dốc xuống.</li>
+<li>A large weight -&gt; The line slopes up faster.</li>
+<li>A small weight -&gt; The line slopes up more gently.</li>
+<li>A negative weight -&gt; The line is flipped, sloping down.</li>
 </ul>
 </li>
 <li>
-<p><strong>Thiên vị (Bias): Dịch chuyển điểm "bẻ gãy".</strong></p>
+<p><strong>Bias: Shifts the "break" point.</strong></p>
 <ul>
-<li>Bias quyết định tại giá trị input nào thì neuron bắt đầu "kích hoạt" (tức là cho ra output &gt; 0). Nó dịch chuyển đồ thị sang trái hoặc phải.</li>
+<li>The bias determines at which input value the neuron starts to "activate" (i.e., produce an output &gt; 0). It shifts the graph left or right.</li>
 </ul>
 </li>
 </ol>
-<p><strong>Minh họa ASCII:</strong></p>
-<p>Hãy xem đồ thị của một neuron ReLU. Trục hoành là <code>input</code>, trục tung là <code>output</code>.</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>        Cơ bản (w=1, b=0)          Tăng Weight (w=2)           Thêm Bias (w=1, b= -1)
+<p><strong>ASCII Illustration:</strong></p>
+<p>Let's look at the graph of a ReLU neuron. The horizontal axis is <code>input</code>, the vertical axis is <code>output</code>.</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>        Basic (w=1, b=0)          Increase Weight (w=2)           Add Bias (w=1, b=-1)
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>           /                          //                              /
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>          /                          / /                             /
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>         /                          / /                             /
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a>        +------- (input)          +------- (input)                +------- (input)
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a>                                                                 |
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a>                                                               (điểm bẻ gãy dịch sang phải)
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a>                                                               (break point shifted right)
 </span></code></pre></div>
-<p><strong>Tóm lại:</strong> Với một neuron, chúng ta có thể tạo ra một "đoạn dốc" bắt đầu từ một điểm tùy ý và có độ dốc tùy ý. Nhưng nó vẫn chỉ là một đường thẳng.</p>
+<p><strong>In summary:</strong> With one neuron, we can create a "ramp" that starts at an arbitrary point and has an arbitrary slope. But it's still just a straight line.</p>
 <hr />
-<h3 id="phep-mau-bat-au-ket-hop-hai-neuron">Phép Màu Bắt Đầu - Kết Hợp Hai Neuron<a class="headerlink" href="#phep-mau-bat-au-ket-hop-hai-neuron" title="Permanent link">&para;</a></h3>
-<p>Đây là phần cốt lõi và kỳ diệu nhất. Sách minh họa bằng cách dùng một cặp neuron (một ở lớp ẩn 1, một ở lớp ẩn 2). Khi kết hợp chúng lại, chúng ta có thể tạo ra một thứ gọi là <strong>"vùng ảnh hưởng" (area of effect)</strong>.</p>
-<p>Hãy tưởng tượng thế này:</p>
+<h3 id="the-magic-begins-combining-two-neurons">The Magic Begins - Combining Two Neurons<a class="headerlink" href="#the-magic-begins-combining-two-neurons" title="Permanent link">&para;</a></h3>
+<p>This is the most crucial and magical part. The book illustrates how by using a pair of neurons (one in the first hidden layer, one in the second), we can create something called an <strong>"area of effect."</strong></p>
+<p>Imagine this:</p>
 <ol>
 <li>
-<p><strong>Neuron 1 (Neuron "Kích hoạt"):</strong> Tạo ra một đường dốc lên.</p>
+<p><strong>Neuron 1 (The "Activator" Neuron):</strong> Creates an upward-sloping line.</p>
 <ul>
-<li>Ví dụ: <code>y1 = ReLU(1.0 * x - 0.2)</code></li>
-<li>Nó sẽ tạo ra một đường dốc lên, bắt đầu từ <code>x = 0.2</code>.</li>
+<li>Example: <code>y1 = ReLU(1.0 * x - 0.2)</code></li>
+<li>It will produce an upward slope, starting from <code>x = 0.2</code>.</li>
 </ul>
 </li>
 <li>
-<p><strong>Neuron 2 (Neuron "Vô hiệu hóa"):</strong> Tạo ra một đường dốc xuống.</p>
+<p><strong>Neuron 2 (The "Deactivator" Neuron):</strong> Creates a downward-sloping line.</p>
 <ul>
-<li>Ví dụ: <code>y2 = ReLU(-1.0 * x + 0.8)</code></li>
-<li>Nó sẽ tạo ra một đường dốc xuống, bắt đầu từ <code>x = 0.8</code>.</li>
+<li>Example: <code>y2 = ReLU(-1.0 * x + 0.8)</code></li>
+<li>It will produce a downward slope, starting from <code>x = 0.8</code>.</li>
 </ul>
 </li>
 </ol>
-<p>Khi bạn <strong>cộng kết quả</strong> của hai neuron này lại (đây là điều xảy ra ở lớp tiếp theo), điều thú vị sẽ xảy ra:</p>
+<p>When you <strong>add the results</strong> of these two neurons together (which is what happens in the next layer), something interesting occurs:</p>
 <ul>
-<li><strong>Khi x &lt; 0.2:</strong> Cả hai neuron đều cho output là 0. Tổng là 0.</li>
-<li><strong>Khi 0.2 &lt; x &lt; 0.8:</strong> Neuron 1 hoạt động (dốc lên), Neuron 2 vẫn là 0. Tổng là một đường dốc lên.</li>
-<li><strong>Khi x &gt; 0.8:</strong> Cả hai neuron đều hoạt động. Đường dốc lên của Neuron 1 sẽ bị <strong>triệt tiêu</strong> bởi đường dốc xuống của Neuron 2. Tổng là một đường nằm ngang.</li>
+<li><strong>When x &lt; 0.2:</strong> Both neurons output 0. The sum is 0.</li>
+<li><strong>When 0.2 &lt; x &lt; 0.8:</strong> Neuron 1 is active (sloping up), Neuron 2 is still 0. The sum is an upward-sloping line.</li>
+<li><strong>When x &gt; 0.8:</strong> Both neurons are active. The upward slope of Neuron 1 is <strong>cancelled out</strong> by the downward slope of Neuron 2. The sum is a horizontal line.</li>
 </ul>
-<p><strong>Kết quả là một hình "cái lều" hoặc "cái nón"!</strong></p>
-<p><strong>Minh họa ASCII:</strong></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>   Đầu ra của Neuron 1        +    Đầu ra của Neuron 2        =       Kết quả cuối cùng
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>  (dốc lên từ x=0.2)               (dốc xuống từ x=0.8)                 (hình cái lều)
+<p><strong>The result is a "tent" or "hat" shape!</strong></p>
+<p><strong>ASCII Illustration:</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>   Output of Neuron 1         +    Output of Neuron 2         =       Final Result
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>  (slope up from x=0.2)            (slope down from x=0.8)             (a tent shape)
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>            /                                 |                               /\
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>           /                                  |                              /  \
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>          /                                   |                             /    \
@@ -1373,73 +1704,73 @@
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos="8 "></span></a>                                              \
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos="9 "></span></a>                                               \
 </span></code></pre></div>
-<p><strong>Đây chính là "viên gạch LEGO" hình tam giác của chúng ta!</strong> Bằng cách điều chỉnh weight và bias của cặp neuron này, chúng ta có thể kiểm soát:
-*   <strong>Vị trí</strong> của cái lều (dịch trái/phải).
-*   <strong>Chiều cao</strong> của cái lều.
-*   <strong>Độ dốc</strong> của hai bên sườn lều.</p>
+<p><strong>This is our triangular LEGO brick!</strong> By adjusting the weights and biases of this pair of neurons, we can control:
+*   The <strong>position</strong> of the tent (shift left/right).
+*   The <strong>height</strong> of the tent.
+*   The <strong>slope</strong> of the tent's sides.</p>
 <hr />
-<h3 id="xay-dung-song-sin-ghep-nhieu-vien-gach">Xây Dựng Sóng Sin - Ghép Nhiều "Viên Gạch"<a class="headerlink" href="#xay-dung-song-sin-ghep-nhieu-vien-gach" title="Permanent link">&para;</a></h3>
-<p>Bây giờ bạn đã có những "viên gạch hình lều". Việc xấp xỉ một đường cong hình sin trở nên đơn giản:</p>
-<p><strong>Bạn chỉ cần dùng nhiều cặp neuron, mỗi cặp tạo ra một "cái lều" để mô phỏng một đoạn của sóng sin.</strong></p>
+<h3 id="building-a-sine-wave-assembling-many-bricks">Building a Sine Wave - Assembling Many "Bricks"<a class="headerlink" href="#building-a-sine-wave-assembling-many-bricks" title="Permanent link">&para;</a></h3>
+<p>Now that you have these "tent-shaped bricks," approximating a sine curve becomes simple:</p>
+<p><strong>You just use many pairs of neurons, with each pair creating one "tent" to simulate a segment of the sine wave.</strong></p>
 <ul>
-<li><strong>Cặp neuron 1:</strong> Tạo ra đoạn dốc lên đầu tiên của sóng sin.</li>
-<li><strong>Cặp neuron 2:</strong> Tạo ra đoạn dốc xuống tiếp theo.</li>
-<li><strong>Cặp neuron 3:</strong> Tạo ra đoạn dốc lên của phần âm.</li>
-<li>... và cứ thế.</li>
+<li><strong>Neuron pair 1:</strong> Creates the first upward slope of the sine wave.</li>
+<li><strong>Neuron pair 2:</strong> Creates the next downward slope.</li>
+<li><strong>Neuron pair 3:</strong> Creates the upward slope of the negative part.</li>
+<li>... and so on.</li>
 </ul>
-<p>Quá trình "hand-tuning" (chỉnh tay) trong sách (từ Fig 4.20 đến 4.33) chỉ là để minh họa cho bạn thấy:
-*   "À, nếu tôi chỉnh <code>weight</code> này, cái dốc này sẽ cao hơn."
-*   "Nếu tôi chỉnh <code>bias</code> kia, cái lều này sẽ dịch sang phải."
-*   "Nếu tôi dùng <code>weight</code> âm ở đầu ra, cái lều sẽ bị lật ngược xuống dưới (tạo ra đáy của sóng sin)."</p>
-<p><strong>Minh họa trừu tượng bằng ASCII:</strong></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a>   Sóng sin mục tiêu:
+<p>The "hand-tuning" process in the book (from Fig 4.20 to 4.33) is just to demonstrate to you:
+*   "Ah, if I adjust this <code>weight</code>, this slope gets steeper."
+*   "If I adjust that <code>bias</code>, this tent shifts to the right."
+*   "If I use a negative <code>weight</code> on the output, the tent gets flipped upside down (creating the trough of the sine wave)."</p>
+<p><strong>Abstract ASCII Illustration:</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a>   Target Sine Wave:
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>       __/ \__
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>      /     \
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>     /       \
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>            / \
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>    _______/   \______
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>   Mạng neural xấp xỉ bằng cách cộng các &quot;cái lều&quot;:
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>   Neural Network approximates by adding &quot;tents&quot;:
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>     Lều 1      Lều 2 (lật ngược)     Lều 3...
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>     Tent 1      Tent 2 (inverted)      Tent 3...
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a>       /\               _                /\
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a>      /  \             / \              /  \
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a>     /    \           /   \            /    \
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><a href="#__codelineno-2-14"><span class="linenos" data-linenos="14 "></span></a>    -------  +      \/     +  ...   =   Kết quả gần giống sóng sin
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><a href="#__codelineno-2-14"><span class="linenos" data-linenos="14 "></span></a>    -------  +      \/     +  ...   =   Result approximates a sine wave
 </span></code></pre></div>
 <hr />
-<h3 id="tong-ket">Tổng Kết<a class="headerlink" href="#tong-ket" title="Permanent link">&para;</a></h3>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p><strong>Sức mạnh của ReLU:</strong> Bản thân ReLU rất đơn giản, nhưng khi được kết hợp trong một mạng lưới nhiều lớp, chúng có khả năng tạo ra các hàm tuyến tính từng đoạn (piecewise linear) vô cùng phức tạp. Những hàm này có thể xấp xỉ bất kỳ hàm liên tục nào (đây là ý tưởng của Định lý Xấp xỉ Phổ quát - Universal Approximation Theorem).</p>
+<p><strong>The Power of ReLU:</strong> ReLU itself is very simple, but when combined in a multi-layer network, its units are capable of creating incredibly complex piecewise linear functions. These functions can approximate any continuous function (this is the idea behind the Universal Approximation Theorem).</p>
 </li>
 <li>
-<p><strong>Tại sao cần nhiều lớp ẩn?</strong> Lớp ẩn đầu tiên tạo ra các "đoạn dốc". Lớp ẩn thứ hai kết hợp các "đoạn dốc" đó để tạo thành các "cái lều". Các lớp sau có thể kết hợp các "cái lều" này thành những hình dạng còn phức tạp hơn nữa.</p>
+<p><strong>Why Do We Need Hidden Layers?</strong> The first hidden layer creates the "ramps." The second hidden layer combines those "ramps" to form "tents." Subsequent layers can combine these "tents" into even more complex shapes.</p>
 </li>
 <li>
-<p><strong>Từ "Chỉnh Tay" đến "Tự Học":</strong> Việc chỉnh tay các thông số trong sách rất tốn công và chỉ mang tính minh họa. Trong thực tế, quá trình <strong>huấn luyện (training)</strong> mạng neural chính là quá trình máy tính <strong>tự động</strong> tìm ra các giá trị <code>weight</code> và <code>bias</code> tốt nhất cho tất cả các neuron, để kết quả đầu ra của mạng khớp với dữ liệu mục tiêu nhất có thể. Bộ tối ưu hóa (optimizer) như Gradient Descent chính là "kiến trúc sư trưởng" làm công việc này.</p>
+<p><strong>From "Hand-Tuning" to "Self-Learning":</strong> Manually tuning the parameters in the book is tedious and for illustrative purposes only. In reality, the process of <strong>training</strong> a neural network is the process of the computer <strong>automatically</strong> finding the best <code>weight</code> and <code>bias</code> values for all neurons, so that the network's output matches the target data as closely as possible. An optimizer like Gradient Descent is the "chief architect" that does this job.</p>
 </li>
 <li>
-<p><strong>Nhiều Neuron Hơn = Tốt Hơn:</strong> khi tăng số neuron lên, ví dụ: 64, mạng có nhiều "viên gạch" hơn để xây dựng. Kết quả là đường cong xấp xỉ trông mượt mà và chính xác hơn rất nhiều.</p>
+<p><strong>More Neurons = Better:</strong> By increasing the number of neurons to, for example, 64, the network has more "bricks" to build with. The result is an approximated curve that looks much smoother and more accurate.</p>
 </li>
 </ol>
 <blockquote>
-<p><mark><strong><em>ReLU, dù đơn giản, lại là nền tảng cho sức mạnh phi thường của mạng neural hiện đại.</em></strong></mark></p>
+<p><mark><strong><em>ReLU, despite its simplicity, is the foundation for the extraordinary power of modern neural networks.</em></strong></mark></p>
 </blockquote>
 <hr />
-<h2 id="phan-2-i-sau-vao-qua-trinh-bien-oi-mot-iem-du-lieu-duy-nhat">Phần 2: Đi sâu vào quá trình biến đổi một điểm dữ liệu duy nhất.<a class="headerlink" href="#phan-2-i-sau-vao-qua-trinh-bien-oi-mot-iem-du-lieu-duy-nhat" title="Permanent link">&para;</a></h2>
-<p>Giả sử chúng ta có:</p>
+<h2 id="part-2-a-deep-dive-into-the-transformation-of-a-single-data-point">Part 2: A Deep Dive into the Transformation of a Single Data Point.<a class="headerlink" href="#part-2-a-deep-dive-into-the-transformation-of-a-single-data-point" title="Permanent link">&para;</a></h2>
+<p>Let's assume we have:</p>
 <ul>
-<li>Một điểm dữ liệu đầu vào <code>O</code> có tọa độ <code>(0.5, 1.0)</code>.</li>
-<li>Một lớp <code>Layer_Dense</code> có 2 đầu vào và 3 neuron.</li>
+<li>A single input data point <code>O</code> with coordinates <code>(0.5, 1.0)</code>.</li>
+<li>A <code>Layer_Dense</code> layer with 2 inputs and 3 neurons.</li>
 </ul>
-<h3 id="1-khoi-tao-initialization">1. Khởi Tạo (Initialization)<a class="headerlink" href="#1-khoi-tao-initialization" title="Permanent link">&para;</a></h3>
-<p>Lớp <code>dense1</code> được khởi tạo với <code>weights</code> và <code>biases</code>. Giả sử sau khi khởi tạo ngẫu nhiên, chúng ta có các giá trị cụ thể như sau:</p>
-<h4 id="ma-tran-trong-so-w-selfweights-kich-thuoc-2-3">Ma trận Trọng số <code>W</code> (self.weights) - Kích thước (2, 3)<a class="headerlink" href="#ma-tran-trong-so-w-selfweights-kich-thuoc-2-3" title="Permanent link">&para;</a></h4>
+<h3 id="1-initialization">1. Initialization<a class="headerlink" href="#1-initialization" title="Permanent link">&para;</a></h3>
+<p>The <code>dense1</code> layer is initialized with <code>weights</code> and <code>biases</code>. Let's assume that after random initialization, we have these specific values:</p>
+<h4 id="weight-matrix-w-selfweights-size-2-3">Weight Matrix <code>W</code> (self.weights) - Size (2, 3)<a class="headerlink" href="#weight-matrix-w-selfweights-size-2-3" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Hàng 0:</strong> Trọng số cho đầu vào thứ nhất (<code>i1 = 0.5</code>).</li>
-<li><strong>Hàng 1:</strong> Trọng số cho đầu vào thứ hai (<code>i2 = 1.0</code>).</li>
-<li><strong>Cột 0, 1, 2:</strong> Tương ứng với Neuron 0, 1, 2.</li>
+<li><strong>Row 0:</strong> Weights for the first input (<code>i1 = 0.5</code>).</li>
+<li><strong>Row 1:</strong> Weights for the second input (<code>i2 = 1.0</code>).</li>
+<li><strong>Cols 0, 1, 2:</strong> Correspond to Neuron 0, 1, and 2.</li>
 </ul>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>          Neuron 0   Neuron 1   Neuron 2
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a>         +----------+----------+----------+
@@ -1448,22 +1779,22 @@
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos="5 "></span></a>Input 1  |  -0.9    |   0.2    |   0.4    |
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos="6 "></span></a>(i2=1.0) +----------+----------+----------+
 </span></code></pre></div>
-<h4 id="vector-bias-b-selfbiases-kich-thuoc-1-3">Vector Bias <code>b</code> (self.biases) - Kích thước (1, 3)<a class="headerlink" href="#vector-bias-b-selfbiases-kich-thuoc-1-3" title="Permanent link">&para;</a></h4>
+<h4 id="bias-vector-b-selfbiases-size-1-3">Bias Vector <code>b</code> (self.biases) - Size (1, 3)<a class="headerlink" href="#bias-vector-b-selfbiases-size-1-3" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Mỗi giá trị tương ứng với thiên kiến của một neuron.</li>
+<li>Each value corresponds to the bias of one neuron.</li>
 </ul>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>         +----------+----------+----------+
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a>         |   2.0    |   3.0    |   0.5    |
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a>         +----------+----------+----------+
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a>           Neuron 0   Neuron 1   Neuron 2
 </span></code></pre></div>
-<h3 id="2-qua-trinh-bien-oi-transformation-dense1forwardo">2. Quá trình Biến đổi (Transformation) - <code>dense1.forward(O)</code><a class="headerlink" href="#2-qua-trinh-bien-oi-transformation-dense1forwardo" title="Permanent link">&para;</a></h3>
-<p>Chúng ta thực hiện phép toán: <code>v' = v · W + b</code></p>
-<h4 id="buoc-21-phep-nhan-ma-tran-dot-product-v-w">Bước 2.1: Phép nhân ma trận (Dot Product) <code>v · W</code><a class="headerlink" href="#buoc-21-phep-nhan-ma-tran-dot-product-v-w" title="Permanent link">&para;</a></h4>
+<h3 id="2-the-transformation-process-dense1forwardo">2. The Transformation Process - <code>dense1.forward(O)</code><a class="headerlink" href="#2-the-transformation-process-dense1forwardo" title="Permanent link">&para;</a></h3>
+<p>We perform the operation: <code>v' = v · W + b</code></p>
+<h4 id="step-21-dot-product-v-w">Step 2.1: Dot Product <code>v · W</code><a class="headerlink" href="#step-21-dot-product-v-w" title="Permanent link">&para;</a></h4>
 <ul>
-<li><code>v</code> là vector đầu vào: <code>[0.5, 1.0]</code> (Kích thước 1x2)</li>
-<li><code>W</code> là ma trận trọng số (Kích thước 2x3)</li>
-<li>Kết quả sẽ là một vector kích thước 1x3.</li>
+<li><code>v</code> is the input vector: <code>[0.5, 1.0]</code> (Size 1x2)</li>
+<li><code>W</code> is the weight matrix (Size 2x3)</li>
+<li>The result will be a vector of size 1x3.</li>
 </ul>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos=" 1 "></span></a>                                       +-------+-------+-------+
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos=" 2 "></span></a>                                       |  0.2  |  0.8  | -0.5  |
@@ -1479,20 +1810,20 @@
 </span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><a href="#__codelineno-5-12"><span class="linenos" data-linenos="12 "></span></a>      +-------------------------------------------------------------+
 </span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><a href="#__codelineno-5-13"><span class="linenos" data-linenos="13 "></span></a>      |                                                             |
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a><a href="#__codelineno-5-14"><span class="linenos" data-linenos="14 "></span></a>      v                                                             v
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><a href="#__codelineno-5-15"><span class="linenos" data-linenos="15 "></span></a>    Tính toán cho Neuron 0:                                       Tính toán cho Neuron 1:
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><a href="#__codelineno-5-15"><span class="linenos" data-linenos="15 "></span></a>    Calculation for Neuron 0:                                     Calculation for Neuron 1:
 </span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a><a href="#__codelineno-5-16"><span class="linenos" data-linenos="16 "></span></a>    (0.5 * 0.2) + (1.0 * -0.9)                                    (0.5 * 0.8) + (1.0 * 0.2)
 </span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><a href="#__codelineno-5-17"><span class="linenos" data-linenos="17 "></span></a>    = 0.1 - 0.9                                                   = 0.4 + 0.2
 </span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><a href="#__codelineno-5-18"><span class="linenos" data-linenos="18 "></span></a>    = -0.8                                                        = 0.6
 </span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a><a href="#__codelineno-5-19"><span class="linenos" data-linenos="19 "></span></a>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a><a href="#__codelineno-5-20"><span class="linenos" data-linenos="20 "></span></a>                                                                     Tính toán cho Neuron 2:
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a><a href="#__codelineno-5-20"><span class="linenos" data-linenos="20 "></span></a>                                                                     Calculation for Neuron 2:
 </span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a><a href="#__codelineno-5-21"><span class="linenos" data-linenos="21 "></span></a>                                                                     (0.5 * -0.5) + (1.0 * 0.4)
 </span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a><a href="#__codelineno-5-22"><span class="linenos" data-linenos="22 "></span></a>                                                                     = -0.25 + 0.4
 </span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a><a href="#__codelineno-5-23"><span class="linenos" data-linenos="23 "></span></a>                                                                     = 0.15
 </span></code></pre></div>
-<p>Kết quả của phép nhân ma trận là vector <code>[-0.8, 0.6, 0.15]</code>.</p>
-<h4 id="buoc-22-cong-vector-bias-b">Bước 2.2: Cộng Vector Bias <code>+ b</code><a class="headerlink" href="#buoc-22-cong-vector-bias-b" title="Permanent link">&para;</a></h4>
-<p>Bây giờ, chúng ta lấy kết quả ở trên và cộng với vector bias.</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos=" 1 "></span></a>      Kết quả từ v · W                  Vector Bias b                Vector đầu ra v&#39;
+<p>The result of the dot product is the vector <code>[-0.8, 0.6, 0.15]</code>.</p>
+<h4 id="step-22-add-bias-vector-b">Step 2.2: Add Bias Vector <code>+ b</code><a class="headerlink" href="#step-22-add-bias-vector-b" title="Permanent link">&para;</a></h4>
+<p>Now, we take the result from above and add the bias vector.</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos=" 1 "></span></a>      Result from v · W                 Bias Vector b                  Output Vector v&#39;
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos=" 2 "></span></a>+--------+-------+--------+     +     +-------+-------+-------+     =     +-------+-------+-------+
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos=" 3 "></span></a>|  -0.8  |  0.6  |  0.15  |           |  2.0  |  3.0  |  0.5  |           |  1.2  |  3.6  |  0.65 |
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos=" 4 "></span></a>+--------+-------+--------+           +-------+-------+-------+           +-------+-------+-------+
@@ -1505,11 +1836,11 @@
 </span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><a href="#__codelineno-6-11"><span class="linenos" data-linenos="11 "></span></a>           0.6 + 3.0 = 3.6
 </span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><a href="#__codelineno-6-12"><span class="linenos" data-linenos="12 "></span></a>                 0.15 + 0.5 = 0.65
 </span></code></pre></div>
-<p><strong>Kết quả:</strong> Vector <code>v'</code> (đầu ra của <code>dense1</code>) là <code>[1.2, 3.6, 0.65]</code>.
-Đây chính là tọa độ của điểm <code>O</code> trong không gian 3 chiều mới sau phép biến đổi tuyến tính.</p>
-<h3 id="3-kich-hoat-relu-activation1forwardv">3. Kích Hoạt ReLU - <code>activation1.forward(v')</code><a class="headerlink" href="#3-kich-hoat-relu-activation1forwardv" title="Permanent link">&para;</a></h3>
-<p>Bây giờ, chúng ta đưa vector <code>v'</code> qua hàm ReLU. Hàm này hoạt động trên <strong>từng phần tử (element-wise)</strong>.</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>     Vector đầu vào v&#39; cho ReLU           Hành động của ReLU           Vector cuối cùng v&#39;&#39;
+<p><strong>Result:</strong> The vector <code>v'</code> (the output of <code>dense1</code>) is <code>[1.2, 3.6, 0.65]</code>.
+This is the coordinate of point <code>O</code> in the new 3-dimensional space after the linear transformation.</p>
+<h3 id="3-relu-activation-activation1forwardv">3. ReLU Activation - <code>activation1.forward(v')</code><a class="headerlink" href="#3-relu-activation-activation1forwardv" title="Permanent link">&para;</a></h3>
+<p>Now, we pass the vector <code>v'</code> through the ReLU function. This function operates <strong>element-wise</strong>.</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>     Input vector v&#39; to ReLU             Action of ReLU              Final vector v&#39;&#39;
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos="2 "></span></a>+-------+-------+-------+        max(0, x)       +-------+-------+-------+
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos="3 "></span></a>|  1.2  |  3.6  |  0.65 |  ----------------&gt;     |  1.2  |  3.6  |  0.65 |
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><a href="#__codelineno-7-4"><span class="linenos" data-linenos="4 "></span></a>+-------+-------+-------+                        +-------+-------+-------+
@@ -1518,9 +1849,9 @@
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><a href="#__codelineno-7-7"><span class="linenos" data-linenos="7 "></span></a>     |        +--------------&gt; max(0, 3.6)  = 3.6
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><a href="#__codelineno-7-8"><span class="linenos" data-linenos="8 "></span></a>     +-----------------------&gt; max(0, 1.2)  = 1.2
 </span></code></pre></div>
-<p>Trong ví dụ này, vì tất cả các thành phần của <code>v'</code> đều là số dương, nên đầu ra của ReLU <code>v''</code> giống hệt <code>v'</code>.</p>
-<p><strong>Nếu <code>v'</code> là <code>[-0.8, 0.6, 0.15]</code> (trước khi cộng bias), thì kết quả sẽ khác:</strong></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>     Vector đầu vào v&#39; cho ReLU           Hành động của ReLU           Vector cuối cùng v&#39;&#39;
+<p>In this example, because all components of <code>v'</code> are positive, the output of ReLU <code>v''</code> is identical to <code>v'</code>.</p>
+<p><strong>If <code>v'</code> were <code>[-0.8, 0.6, 0.15]</code> (before adding the bias), the result would be different:</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>     Input vector v&#39; to ReLU             Action of ReLU              Final vector v&#39;&#39;
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a>+--------+-------+--------+        max(0, x)       +-------+-------+--------+
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos="3 "></span></a>|  -0.8  |  0.6  |  0.15  |  ----------------&gt;     |  0.0  |  0.6  |  0.15  |
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos="4 "></span></a>+--------+-------+--------+                        +-------+-------+--------+
@@ -1529,76 +1860,76 @@
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos="7 "></span></a>     |        +--------------&gt; max(0, 0.6)  = 0.6
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><a href="#__codelineno-8-8"><span class="linenos" data-linenos="8 "></span></a>     +-----------------------&gt; max(0, -0.8) = 0.0
 </span></code></pre></div>
-<p>Sơ đồ này đã mô tả toàn bộ quá trình toán học từ một vector đầu vào <code>v</code> đến vector cuối cùng <code>v''</code> sau khi qua một lớp dày đặc và một lớp kích hoạt ReLU.</p>
+<p>This diagram describes the entire mathematical process from an input vector <code>v</code> to the final vector <code>v''</code> after passing through a dense layer and a ReLU activation layer.</p>
 <hr />
-<h2 id="truu-tuong-hoa">Trừu tượng hóa<a class="headerlink" href="#truu-tuong-hoa" title="Permanent link">&para;</a></h2>
-<p><strong>Mỗi neuron đóng góp vào việc tạo ra "chữ ký" cuối cùng như thế nào?</strong></p>
-<h3 id="phan-tich">Phân Tích<a class="headerlink" href="#phan-tich" title="Permanent link">&para;</a></h3>
+<h2 id="abstraction">Abstraction<a class="headerlink" href="#abstraction" title="Permanent link">&para;</a></h2>
+<p><strong>How does each neuron contribute to creating the final "signature"?</strong></p>
+<h3 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p><strong>Neural 1 đóng góp một phần</strong> vào việc tạo ra chữ ký cuối cùng.<br>
-Nó giống như một nhạc công trong dàn nhạc. Nhạc công violin không "mang" bản giao hưởng, anh ta chỉ chơi phần violin của mình. Bản giao hưởng (chữ ký) là sự kết hợp của tất cả các nhạc công.<br>
-<strong>Cách diễn đạt chính xác hơn:</strong> "Neuron 1 có một bộ <strong>tiêu chí riêng</strong> (weights và bias của nó)."</p>
+<p><strong>"Neuron 1 contributes a part"</strong> to creating the final signature.
+    This is like a musician in an orchestra. The violinist doesn't "carry" the symphony; they just play their violin part. The symphony (the signature) is the combination of all the musicians.
+    <strong>A more accurate phrasing:</strong> "Neuron 1 has its own set of <strong>criteria</strong> (its weights and bias)."</p>
 </li>
 <li>
-<p><strong>"biến đổi O(x,y) --&gt; O'(x,y,z)"</strong>: Toàn bộ lớp (gồm cả 3 neuron) cùng nhau thực hiện phép biến đổi này.</p>
+<p><strong>"transforms O(x,y) --&gt; O'(x,y,z)"</strong>: The entire layer (composed of all 3 neurons) collectively performs this transformation.</p>
 </li>
 </ol>
-<h3 id="dien-giai">Diễn Giải<a class="headerlink" href="#dien-giai" title="Permanent link">&para;</a></h3>
+<h3 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p><strong>Mỗi Neuron là một "Máy Đo Đặc Trưng"</strong>:</p>
+<p><strong>Each Neuron is a "Feature Detector"</strong>:</p>
 <ul>
-<li><strong>Neuron 1</strong> được trang bị một bộ tiêu chí <code>(w1, b1)</code>. Nó đo xem điểm <code>O(x,y)</code> phù hợp với tiêu chí này đến đâu và cho ra một điểm số là <code>x'</code>.</li>
-<li><strong>Neuron 2</strong> được trang bị một bộ tiêu chí <code>(w2, b2)</code>. Nó đo xem điểm <code>O(x,y)</code> phù hợp với tiêu chí này đến đâu và cho ra một điểm số là <code>y'</code>.</li>
-<li><strong>Neuron 3</strong> được trang bị một bộ tiêu chí <code>(w3, b3)</code>. Nó đo xem điểm <code>O(x,y)</code> phù hợp với tiêu chí này đến đâu và cho ra một điểm số là <code>z'</code>.</li>
+<li><strong>Neuron 1</strong> is equipped with a set of criteria <code>(w1, b1)</code>. It measures how well the point <code>O(x,y)</code> fits these criteria and outputs a score <code>x'</code>.</li>
+<li><strong>Neuron 2</strong> is equipped with a set of criteria <code>(w2, b2)</code>. It measures how well the point <code>O(x,y)</code> fits these criteria and outputs a score <code>y'</code>.</li>
+<li><strong>Neuron 3</strong> is equipped with a set of criteria <code>(w3, b3)</code>. It measures how well the point <code>O(x,y)</code> fits these criteria and outputs a score <code>z'</code>.</li>
 </ul>
 </li>
 <li>
-<p><strong>Tạo Ra "Chữ Ký"</strong>:</p>
+<p><strong>Creating the "Signature"</strong>:</p>
 <ul>
-<li><strong>"Chữ ký"</strong> của điểm <code>O</code> không phải là do một neuron tạo ra. <strong>"Chữ ký" chính là vector kết quả <code>O'(x', y', z')</code></strong>. Nó là tập hợp các điểm số mà tất cả các "máy đo" đã đưa ra.</li>
+<li>The <strong>"signature"</strong> of point <code>O</code> is not created by a single neuron. <strong>The "signature" is the resulting vector <code>O'(x', y', z')</code></strong>. It is the collection of scores that all the "detectors" have produced.</li>
 </ul>
 </li>
 <li>
-<p><strong>Mục Tiêu Huấn Luyện (Training)</strong>:</p>
+<p><strong>The Goal of Training</strong>:</p>
 <ul>
-<li>Quá trình huấn luyện sẽ <strong>điều chỉnh các bộ tiêu chí <code>(w, b)</code> của từng neuron</strong> sao cho:<ul>
-<li>Tất cả các điểm <code>O</code> thuộc lớp "Xanh" khi đi qua 3 "máy đo" này sẽ tạo ra các vector <code>O'</code> (các chữ ký) nằm gần nhau trong một vùng không gian.</li>
-<li>Tất cả các điểm <code>O</code> thuộc lớp "Đỏ" sẽ tạo ra các chữ ký nằm gần nhau trong một vùng không gian <strong>khác</strong>.</li>
-<li>Và tương tự cho lớp "Lá".</li>
+<li>The training process will <strong>adjust the criteria <code>(w, b)</code> of each neuron</strong> such that:<ul>
+<li>All points <code>O</code> belonging to the "Blue" class, when passed through these 3 "detectors," will produce <code>O'</code> vectors (signatures) that lie close to each other in one region of space.</li>
+<li>All points <code>O</code> belonging to the "Red" class will produce signatures that lie close to each other in a <strong>different</strong> region of space.</li>
+<li>And similarly for the "Green" class.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
-<p><strong>Sơ Đồ ASCII Phản Ánh Ý Tưởng Này</strong></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos=" 1 "></span></a>  Điểm Đầu Vào O(x,y)
+<p><strong>ASCII Diagram Reflecting This Idea</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos=" 1 "></span></a>  Input Point O(x,y)
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos=" 2 "></span></a>          |
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos=" 3 "></span></a>          |
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos=" 4 "></span></a>+---------+---------+
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><a href="#__codelineno-9-5"><span class="linenos" data-linenos=" 5 "></span></a>|                   |
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><a href="#__codelineno-9-6"><span class="linenos" data-linenos=" 6 "></span></a>v                   v
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><a href="#__codelineno-9-7"><span class="linenos" data-linenos=" 7 "></span></a>Máy Đo 1            Máy Đo 2            Máy Đo 3
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><a href="#__codelineno-9-8"><span class="linenos" data-linenos=" 8 "></span></a>(Tiêu chí w1, b1)   (Tiêu chí w2, b2)   (Tiêu chí w3, b3)
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><a href="#__codelineno-9-7"><span class="linenos" data-linenos=" 7 "></span></a>Detector 1          Detector 2          Detector 3
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><a href="#__codelineno-9-8"><span class="linenos" data-linenos=" 8 "></span></a>(Criteria w1, b1)   (Criteria w2, b2)   (Criteria w3, b3)
 </span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a><a href="#__codelineno-9-9"><span class="linenos" data-linenos=" 9 "></span></a>|                   |                   |
 </span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a><a href="#__codelineno-9-10"><span class="linenos" data-linenos="10 "></span></a>v                   v                   v
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><a href="#__codelineno-9-11"><span class="linenos" data-linenos="11 "></span></a>Điểm số x&#39;          Điểm số y&#39;          Điểm số z&#39;
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><a href="#__codelineno-9-11"><span class="linenos" data-linenos="11 "></span></a>Score x&#39;            Score y&#39;            Score z&#39;
 </span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><a href="#__codelineno-9-12"><span class="linenos" data-linenos="12 "></span></a>|                   |                   |
 </span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a><a href="#__codelineno-9-13"><span class="linenos" data-linenos="13 "></span></a>+---------+---------+-------------------+
 </span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a><a href="#__codelineno-9-14"><span class="linenos" data-linenos="14 "></span></a>          |
 </span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15"></a><a href="#__codelineno-9-15"><span class="linenos" data-linenos="15 "></span></a>          v
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a><a href="#__codelineno-9-16"><span class="linenos" data-linenos="16 "></span></a>&quot;Chữ Ký&quot; = O&#39;(x&#39;, y&#39;, z&#39;)
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17"></a><a href="#__codelineno-9-17"><span class="linenos" data-linenos="17 "></span></a>(Vector kết quả trong không gian mới)
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a><a href="#__codelineno-9-16"><span class="linenos" data-linenos="16 "></span></a>&quot;Signature&quot; = O&#39;(x&#39;, y&#39;, z&#39;)
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17"></a><a href="#__codelineno-9-17"><span class="linenos" data-linenos="17 "></span></a>(Resulting vector in a new space)
 </span></code></pre></div>
-<p><strong>Ví dụ:</strong> Sau khi huấn luyện, có thể xảy ra trường hợp:</p>
+<p><strong>Example:</strong> After training, it might be the case that:</p>
 <ul>
-<li><strong>Tiêu chí 1</strong> (của Neuron 1) trở thành "phát hiện đường cong hướng lên".</li>
-<li><strong>Tiêu chí 2</strong> (của Neuron 2) trở thành "phát hiện vị trí gần gốc tọa độ".</li>
-<li>Một điểm <code>O</code> thuộc lớp "Xanh" có thể vừa cong lên, vừa gần gốc tọa độ. Chữ ký của nó sẽ là <code>O'(CAO, CAO, ...)</code>.</li>
-<li>Một điểm <code>O</code> thuộc lớp "Đỏ" có thể cong lên nhưng xa gốc tọa độ. Chữ ký của nó sẽ là <code>O'(CAO, THẤP, ...)</code>.</li>
+<li><strong>Criterion 1</strong> (of Neuron 1) becomes "detect upward curves."</li>
+<li><strong>Criterion 2</strong> (of Neuron 2) becomes "detect proximity to the origin."</li>
+<li>A point <code>O</code> from the "Blue" class might be both curving up and close to the origin. Its signature would be <code>O'(HIGH, HIGH, ...)</code>.</li>
+<li>A point <code>O</code> from the "Red" class might be curving up but far from the origin. Its signature would be <code>O'(HIGH, LOW, ...)</code>.</li>
 </ul>
-<p><strong>Kết luận:</strong> Mỗi neuron có một vai trò riêng. Vai trò đó là <strong>"đo lường một đặc trưng"</strong>. "Chữ ký" cuối cùng của một điểm dữ liệu là <strong>tổ hợp kết quả</strong> từ tất cả các phép đo đặc trưng đó.</p>
+<p><strong>Conclusion:</strong> Each neuron has a specific role. That role is to <strong>"measure a feature."</strong> The final "signature" of a data point is the <strong>combination of results</strong> from all of those feature measurements.</p>
 
 
 
@@ -1637,7 +1968,7 @@ Nó giống như một nhạc công trong dàn nhạc. Nhạc công violin khôn
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Ch4pt3r.01_First_Layer/01-first%20layer_explain/" class="md-footer__link md-footer__link--prev" aria-label="Previous: First Layer">
+          <a href="../02-transformation-relu-diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ReLU Diagram">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1647,20 +1978,20 @@ Nó giống như một nhạc công trong dàn nhạc. Nhạc công violin khôn
                 Previous
               </span>
               <div class="md-ellipsis">
-                First Layer
+                ReLU Diagram
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../Ch4pt3r.03_Softmax/03-schema_math/" class="md-footer__link md-footer__link--next" aria-label="Next: Math Schema">
+          <a href="../../Ch4pt3r.03_Softmax/03-softmax-diagram/" class="md-footer__link md-footer__link--next" aria-label="Next: Softmax Diagram">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Math Schema
+                Softmax Diagram
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1700,12 +2031,12 @@ Nó giống như một nhạc công trong dàn nhạc. Nhạc công violin khôn
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "toc.integrate", "navigation.footer", "navigation.top", "navigation.tabs", "navigation.path"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.follow", "toc.integrate", "navigation.footer", "navigation.top", "navigation.tabs", "navigation.path"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       

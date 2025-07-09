@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-diagram/">
       
       
-        <link rel="prev" href="../04-loss-diagram/">
+        <link rel="prev" href="../../Ch4pt3r.03_Softmax/03-softmax/">
       
       
-        <link rel="next" href="../../../vi/">
+        <link rel="next" href="../04-loss/">
       
       
       <link rel="icon" href="../../../assets/logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>LOSS & ACCURACY - Neural Network From Scratch Documentation</title>
+        <title>LOSS Diagram - Neural Network From Scratch Documentation</title>
       
     
     
@@ -116,11 +116,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#calculating-network-error-with-a-loss-function" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -150,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LOSS & ACCURACY
+              LOSS Diagram
             
           </span>
         </div>
@@ -800,29 +795,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../04-loss-diagram/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    LOSS Diagram
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -833,20 +805,31 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
   
   
   <span class="md-ellipsis">
-    LOSS & ACCURACY
+    LOSS Diagram
     
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+      </a>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-loss/" class="md-nav__link">
         
   
   
@@ -857,93 +840,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#calculating-network-error-with-a-loss-function" class="md-nav__link">
-    <span class="md-ellipsis">
-      Calculating Network Error with a Loss Function
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Calculating Network Error with a Loss Function">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-why-isnt-accuracy-enough" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Why Isn't Accuracy Enough?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-categorical-cross-entropy-the-loss-function-for-classification" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Categorical Cross-Entropy: The Loss Function for Classification
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-implementation-in-python-step-by-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Implementation in Python (Step-by-Step)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-building-a-complete-loss-class" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Building a Complete Loss Class
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-additionally-calculating-accuracy" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Additionally Calculating Accuracy
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1483,210 +1379,140 @@
   
 
 
-  <h1>LOSS & ACCURACY</h1>
+  <h1>LOSS Diagram</h1>
 
-<h3 id="calculating-network-error-with-a-loss-function">Calculating Network Error with a Loss Function<a class="headerlink" href="#calculating-network-error-with-a-loss-function" title="Permanent link">&para;</a></h3>
-<p>Welcome to the lesson on how we "measure the error" of a neural network. In previous chapters, we built a network capable of taking an input and making a prediction. But how do we know if that prediction is "good" or "bad"? And how much "worse" is it compared to another prediction? This is where the <strong>Loss Function</strong> comes into play.</p>
-<h4 id="1-why-isnt-accuracy-enough">1. Why Isn't Accuracy Enough?<a class="headerlink" href="#1-why-isnt-accuracy-enough" title="Permanent link">&para;</a></h4>
-<p>The first question you might ask is: "Why not just use accuracy for measurement? We can just see what percentage of predictions the network gets right."</p>
-<p>Let's consider the classic example from the book:
-Assume the correct class is the middle one (index 1). We have two predictions from the model:</p>
-<ul>
-<li><strong>Prediction A:</strong> <code>[0.22, 0.6, 0.18]</code></li>
-<li><strong>Prediction B:</strong> <code>[0.32, 0.36, 0.32]</code></li>
-</ul>
-<p>If we only use accuracy, we would do the following:
-1.  Use the <strong><code>argmax</code></strong> function to find the index of the largest value.
-2.  The <code>argmax</code> for both A and B is <code>1</code>.
-3.  Compare this to the correct result, which is <code>1</code>. Both are <strong>correct</strong>. The accuracy is 100% for both cases.</p>
-<p>But let's look closer. The output of a neural network (after the Softmax layer) represents its <strong>confidence</strong> level.
-*   In Prediction A, the model is very confident (60%) that it's class 1.
-*   In Prediction B, the model is only slightly more confident (36%) and is quite indecisive among the three classes.</p>
-<p>Clearly, Prediction A is much "better" than Prediction B. We need a metric that can reflect this difference in confidence. <strong>Accuracy is a discrete metric (right or wrong), whereas we need a more continuous and detailed metric.</strong></p>
-<p>This is the purpose of <strong>Loss</strong>. <strong>Loss</strong> is a single number that indicates <em>how much</em> the model was wrong. The goal of training is to adjust the weights and biases to bring this Loss value as close to 0 as possible.</p>
-<h4 id="2-categorical-cross-entropy-the-loss-function-for-classification">2. Categorical Cross-Entropy: The Loss Function for Classification<a class="headerlink" href="#2-categorical-cross-entropy-the-loss-function-for-classification" title="Permanent link">&para;</a></h4>
-<p>In our problem (classifying spiral data), the output layer uses the <strong>Softmax</strong> activation function, which turns numbers (logits) into a <strong>probability distribution</strong> (the sum of values is 1). To compare two probability distributions (one from the model's prediction, one from the ground truth), a mathematical tool called <strong>Cross-Entropy</strong> is commonly used.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p><strong>Side Note: What is Cross-Entropy?</strong>
-In information theory, cross-entropy measures the difference between two probability distributions. If you use an optimal encoding for distribution P to encode data from distribution Q, the cross-entropy H(Q, P) tells you the average number of bits required. The more similar P and Q are, the smaller this value becomes. In Machine Learning, we consider the "ground-truth" as distribution P and the model's "predictions" as distribution Q. The goal is to make Q as similar to P as possible, i.e., to minimize the cross-entropy.
-<em>(Source: <a href="https://www.deeplearningbook.org/contents/prob.html">Deep Learning Book, Chapter 3.13</a>)</em></p>
-</div>
-<p>When applied to a multi-class classification problem, it is called <strong>Categorical Cross-Entropy</strong>.</p>
-<h5 id="mathematical-formula">Mathematical Formula<a class="headerlink" href="#mathematical-formula" title="Permanent link">&para;</a></h5>
-<p>The full formula for calculating the loss for a single sample <code>i</code> is:</p>
-<p><code>L_i = - Σ_j ( y_i,j * log(ŷ_i,j) )</code></p>
-<p>Where:
-*   <code>L_i</code>: The loss value for the <code>i</code>-th sample.
-*   <code>j</code>: The index for each output class (e.g., dog, cat, human).
-*   <code>Σ_j</code>: The summation symbol, summing over all classes <code>j</code>.
-*   <code>y_i,j</code>: The <strong>ground-truth</strong>. It is 1 if sample <code>i</code> truly belongs to class <code>j</code>, and 0 for all other classes.
-*   <code>ŷ_i,j</code> (read as "y-hat"): The <strong>model's prediction</strong>. It is the probability that the model predicts sample <code>i</code> belongs to class <code>j</code> (the value from Softmax).
-*   <code>log</code>: Is the <strong>natural logarithm</strong> (base <em>e</em>), which is <code>math.log()</code> or <code>np.log()</code> in Python.</p>
-<h5 id="the-magic-of-one-hot-encoding">The Magic of One-Hot Encoding<a class="headerlink" href="#the-magic-of-one-hot-encoding" title="Permanent link">&para;</a></h5>
-<p>Let's see how this formula works in practice. Assume we have 3 classes and the ground truth is the first class (index 0).
-*   Model's prediction (ŷ): <code>[0.7, 0.1, 0.2]</code>
-*   Ground truth (y): <code>[1, 0, 0]</code></p>
-<p>The vector <code>[1, 0, 0]</code> is called <strong>one-hot encoding</strong>. "Hot" is 1, "cold" is 0.</p>
-<p>Applying the formula:
-<code>L = - ( y_0*log(ŷ_0) + y_1*log(ŷ_1) + y_2*log(ŷ_2) )</code>
-<code>L = - ( 1*log(0.7) + 0*log(0.1) + 0*log(0.2) )</code>
-<code>L = - ( 1*log(0.7) + 0 + 0 )</code>
-<code>L = -log(0.7)</code></p>
-<p>The initially imposing formula has been simplified to a very simple operation: <strong>just take the natural logarithm of the predicted probability for the correct class, and then negate it.</strong></p>
-<p>This is a critically important insight! It makes the calculation much more efficient.</p>
-<h4 id="3-implementation-in-python-step-by-step">3. Implementation in Python (Step-by-Step)<a class="headerlink" href="#3-implementation-in-python-step-by-step" title="Permanent link">&para;</a></h4>
-<h5 id="31-calculating-loss-for-a-batch">3.1. Calculating Loss for a Batch<a class="headerlink" href="#31-calculating-loss-for-a-batch" title="Permanent link">&para;</a></h5>
-<p>In practice, we don't process samples one by one but in <strong>batches</strong> to speed things up.</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="c1"># Softmax output for a batch of 3 samples, each with 3 classes</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="n">softmax_outputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span>  <span class="c1"># Sample 1</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>                            <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span>  <span class="c1"># Sample 2</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>                            <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">]])</span> <span class="c1"># Sample 3</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="c1"># True labels (target labels). This is in &quot;sparse&quot; format.</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="c1"># Sample 1 is class 0, sample 2 is class 1, sample 3 is class 1</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a><span class="n">class_targets</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="  1 "></span></a>================================================================================
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="  2 "></span></a>          LOSS &amp; ACCURACY CALCULATION DIAGRAM (MATRIX OPERATIONS)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="  3 "></span></a>================================================================================
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="  4 "></span></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="  5 "></span></a>                                    (INPUTS)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="  6 "></span></a>            +---------------------------------+      +---------------------+
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="  7 "></span></a>            |      softmax_outputs (ŷ)        |      |  class_targets (y)  |
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos="  8 "></span></a>            |   (N x C Prediction Matrix)     |      |    (Ground Truth)   |
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos="  9 "></span></a>            | [[0.7, 0.2, 0.1],               |      | [0, 1, 1]           | &lt;-- Sparse format
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos=" 10 "></span></a>            |  [0.5, 0.1, 0.4],               |      |      OR             |
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos=" 11 "></span></a>            |  [0.02, 0.9, 0.08]]             |      | [[1, 0, 0],         |
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos=" 12 "></span></a>            +---------------------------------+      |  [0, 1, 0],         | &lt;-- One-Hot format
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos=" 13 "></span></a>                                                     |  [0, 1, 0]]         |
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><a href="#__codelineno-0-14"><span class="linenos" data-linenos=" 14 "></span></a>                                                     +---------------------+
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><a href="#__codelineno-0-15"><span class="linenos" data-linenos=" 15 "></span></a>                                     |
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><a href="#__codelineno-0-16"><span class="linenos" data-linenos=" 16 "></span></a>                                     v
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><a href="#__codelineno-0-17"><span class="linenos" data-linenos=" 17 "></span></a>+-------------------------------------------------------------------------------+
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><a href="#__codelineno-0-18"><span class="linenos" data-linenos=" 18 "></span></a>|                        FLOW 1: LOSS CALCULATION                               |
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><a href="#__codelineno-0-19"><span class="linenos" data-linenos=" 19 "></span></a>+-------------------------------------------------------------------------------+
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><a href="#__codelineno-0-20"><span class="linenos" data-linenos=" 20 "></span></a>                                     |
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><a href="#__codelineno-0-21"><span class="linenos" data-linenos=" 21 "></span></a>                                     v
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><a href="#__codelineno-0-22"><span class="linenos" data-linenos=" 22 "></span></a>                          (ACTION: Clip to prevent log(0))
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><a href="#__codelineno-0-23"><span class="linenos" data-linenos=" 23 "></span></a>                           np.clip(y_pred, 1e-7, 1-1e-7)
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><a href="#__codelineno-0-24"><span class="linenos" data-linenos=" 24 "></span></a>                                     |
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><a href="#__codelineno-0-25"><span class="linenos" data-linenos=" 25 "></span></a>                                     v
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><a href="#__codelineno-0-26"><span class="linenos" data-linenos=" 26 "></span></a>                      +-------------------------------+
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><a href="#__codelineno-0-27"><span class="linenos" data-linenos=" 27 "></span></a>                      |      y_pred_clipped           |
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><a href="#__codelineno-0-28"><span class="linenos" data-linenos=" 28 "></span></a>                      | [[0.7, 0.2, 0.1],             |
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><a href="#__codelineno-0-29"><span class="linenos" data-linenos=" 29 "></span></a>                      |  [0.5, 0.1, 0.4],             |
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><a href="#__codelineno-0-30"><span class="linenos" data-linenos=" 30 "></span></a>                      |  [0.02, 0.9, 0.08]]           |
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><a href="#__codelineno-0-31"><span class="linenos" data-linenos=" 31 "></span></a>                      +-------------------------------+
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><a href="#__codelineno-0-32"><span class="linenos" data-linenos=" 32 "></span></a>                                     |
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><a href="#__codelineno-0-33"><span class="linenos" data-linenos=" 33 "></span></a>           +-------------------------+-------------------------+
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><a href="#__codelineno-0-34"><span class="linenos" data-linenos=" 34 "></span></a>           |                                                   |
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><a href="#__codelineno-0-35"><span class="linenos" data-linenos=" 35 "></span></a>           v (IF TARGETS ARE SPARSE)                         v (IF TARGETS ARE ONE-HOT)
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><a href="#__codelineno-0-36"><span class="linenos" data-linenos=" 36 "></span></a>+------------------------------------+             +--------------------------------------+
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><a href="#__codelineno-0-37"><span class="linenos" data-linenos=" 37 "></span></a>|       Get values by index          |             |   Element-wise multiplication        |
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><a href="#__codelineno-0-38"><span class="linenos" data-linenos=" 38 "></span></a>|      y_pred[range(N), y_true]      |             |      y_pred_clipped * y_true         |
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><a href="#__codelineno-0-39"><span class="linenos" data-linenos=" 39 "></span></a>|                                    |             |                                      |
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><a href="#__codelineno-0-40"><span class="linenos" data-linenos=" 40 "></span></a>|  [0.7, 0.2, 0.1] ---&lt;--- [0]       |             |  [[0.7, 0.2, 0.1],   * [[1, 0, 0],   |
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><a href="#__codelineno-0-41"><span class="linenos" data-linenos=" 41 "></span></a>|  [0.5, 0.1, 0.4] -------&lt;--- [1]   |             |   [0.5, 0.1, 0.4],     [0, 1, 0],   |
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><a href="#__codelineno-0-42"><span class="linenos" data-linenos=" 42 "></span></a>|  [0.02, 0.9, 0.08] -----^---&lt;--- [1]   |             |   [0.02, 0.9, 0.08]]    [0, 1, 0]]   |
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><a href="#__codelineno-0-43"><span class="linenos" data-linenos=" 43 "></span></a>|                      |           |             |            =                         |
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><a href="#__codelineno-0-44"><span class="linenos" data-linenos=" 44 "></span></a>|                      v           |             |  [[0.7, 0.0, 0.0],                   |
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><a href="#__codelineno-0-45"><span class="linenos" data-linenos=" 45 "></span></a>| (Vector of correct probabilities)|             |   [0.0, 0.1, 0.0],                   |
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a><a href="#__codelineno-0-46"><span class="linenos" data-linenos=" 46 "></span></a>|      [0.7, 0.5, 0.9]             |             |   [0.0, 0.9, 0.0]]                   |
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a><a href="#__codelineno-0-47"><span class="linenos" data-linenos=" 47 "></span></a>+------------------------------------+             |            |                         |
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><a href="#__codelineno-0-48"><span class="linenos" data-linenos=" 48 "></span></a>                                                   |            v (np.sum(axis=1))        |
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><a href="#__codelineno-0-49"><span class="linenos" data-linenos=" 49 "></span></a>                                                   +--------------------------------------+
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><a href="#__codelineno-0-50"><span class="linenos" data-linenos=" 50 "></span></a>                                     |                         |
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><a href="#__codelineno-0-51"><span class="linenos" data-linenos=" 51 "></span></a>                                     +-----------&gt;-------------+
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><a href="#__codelineno-0-52"><span class="linenos" data-linenos=" 52 "></span></a>                                                 |
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><a href="#__codelineno-0-53"><span class="linenos" data-linenos=" 53 "></span></a>                                                 v
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><a href="#__codelineno-0-54"><span class="linenos" data-linenos=" 54 "></span></a>                                    +--------------------------+
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a><a href="#__codelineno-0-55"><span class="linenos" data-linenos=" 55 "></span></a>                                    |  correct_confidences     |
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><a href="#__codelineno-0-56"><span class="linenos" data-linenos=" 56 "></span></a>                                    | (Vector of correct probs)|
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a><a href="#__codelineno-0-57"><span class="linenos" data-linenos=" 57 "></span></a>                                    |    [0.7, 0.5, 0.9]       |
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a><a href="#__codelineno-0-58"><span class="linenos" data-linenos=" 58 "></span></a>                                    +--------------------------+
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a><a href="#__codelineno-0-59"><span class="linenos" data-linenos=" 59 "></span></a>                                                 |
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a><a href="#__codelineno-0-60"><span class="linenos" data-linenos=" 60 "></span></a>                                                 v (ACTION: Take Negative Log)
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61"></a><a href="#__codelineno-0-61"><span class="linenos" data-linenos=" 61 "></span></a>                                                    -np.log()
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62"></a><a href="#__codelineno-0-62"><span class="linenos" data-linenos=" 62 "></span></a>                                                 |
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63"></a><a href="#__codelineno-0-63"><span class="linenos" data-linenos=" 63 "></span></a>                                                 v
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a><a href="#__codelineno-0-64"><span class="linenos" data-linenos=" 64 "></span></a>                                    +--------------------------+
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a><a href="#__codelineno-0-65"><span class="linenos" data-linenos=" 65 "></span></a>                                    |      sample_losses       |
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66"></a><a href="#__codelineno-0-66"><span class="linenos" data-linenos=" 66 "></span></a>                                    | [0.356, 0.693, 0.105]    |
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67"></a><a href="#__codelineno-0-67"><span class="linenos" data-linenos=" 67 "></span></a>                                    +--------------------------+
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68"></a><a href="#__codelineno-0-68"><span class="linenos" data-linenos=" 68 "></span></a>                                                 |
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69"></a><a href="#__codelineno-0-69"><span class="linenos" data-linenos=" 69 "></span></a>                                                 v (ACTION: Take the mean)
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70"></a><a href="#__codelineno-0-70"><span class="linenos" data-linenos=" 70 "></span></a>                                                     np.mean()
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71"></a><a href="#__codelineno-0-71"><span class="linenos" data-linenos=" 71 "></span></a>                                                 |
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72"></a><a href="#__codelineno-0-72"><span class="linenos" data-linenos=" 72 "></span></a>                                                 v
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73"></a><a href="#__codelineno-0-73"><span class="linenos" data-linenos=" 73 "></span></a>                                     +-----------------------+
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74"></a><a href="#__codelineno-0-74"><span class="linenos" data-linenos=" 74 "></span></a>                                     |     average_loss      |
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75"></a><a href="#__codelineno-0-75"><span class="linenos" data-linenos=" 75 "></span></a>                                     |       (Scalar)        |
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76"></a><a href="#__codelineno-0-76"><span class="linenos" data-linenos=" 76 "></span></a>                                     |       0.385           |
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77"></a><a href="#__codelineno-0-77"><span class="linenos" data-linenos=" 77 "></span></a>                                     +-----------------------+
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78"></a><a href="#__codelineno-0-78"><span class="linenos" data-linenos=" 78 "></span></a>
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79"></a><a href="#__codelineno-0-79"><span class="linenos" data-linenos=" 79 "></span></a>
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80"></a><a href="#__codelineno-0-80"><span class="linenos" data-linenos=" 80 "></span></a>+-------------------------------------------------------------------------------+
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81"></a><a href="#__codelineno-0-81"><span class="linenos" data-linenos=" 81 "></span></a>|                  FLOW 2: ACCURACY CALCULATION - CORRECTED                     |
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82"></a><a href="#__codelineno-0-82"><span class="linenos" data-linenos=" 82 "></span></a>+-------------------------------------------------------------------------------+
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83"></a><a href="#__codelineno-0-83"><span class="linenos" data-linenos=" 83 "></span></a>                                     |
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84"></a><a href="#__codelineno-0-84"><span class="linenos" data-linenos=" 84 "></span></a>         (Using original `softmax_outputs`) |
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85"></a><a href="#__codelineno-0-85"><span class="linenos" data-linenos=" 85 "></span></a>+---------------------------------+  |  +---------------------------------------+
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86"></a><a href="#__codelineno-0-86"><span class="linenos" data-linenos=" 86 "></span></a>|      softmax_outputs (ŷ)        |  |  |            class_targets (y)          |
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87"></a><a href="#__codelineno-0-87"><span class="linenos" data-linenos=" 87 "></span></a>| [[0.7, 0.2, 0.1],               |  |  |                                       |
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88"></a><a href="#__codelineno-0-88"><span class="linenos" data-linenos=" 88 "></span></a>|  [0.5, 0.1, 0.4],               |  |  | If One-Hot:                           |
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89"></a><a href="#__codelineno-0-89"><span class="linenos" data-linenos=" 89 "></span></a>|  [0.02, 0.9, 0.08]]             |  |  | [[1,0,0], [0,1,0], [0,1,0]]            |
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90"></a><a href="#__codelineno-0-90"><span class="linenos" data-linenos=" 90 "></span></a>+---------------------------------+  |  |      |                                |
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91"></a><a href="#__codelineno-0-91"><span class="linenos" data-linenos=" 91 "></span></a>                 |                   |  |      v np.argmax(axis=1)              |
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92"></a><a href="#__codelineno-0-92"><span class="linenos" data-linenos=" 92 "></span></a>                 v np.argmax(axis=1)   |  |                                       |
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93"></a><a href="#__codelineno-0-93"><span class="linenos" data-linenos=" 93 "></span></a>                 |                   |  | If Sparse (no action needed):         |
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94"></a><a href="#__codelineno-0-94"><span class="linenos" data-linenos=" 94 "></span></a>+----------------+                   |  | [0, 1, 1]                             |
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95"></a><a href="#__codelineno-0-95"><span class="linenos" data-linenos=" 95 "></span></a>|  predictions   |                   |  +-----------------|---------------------+
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96"></a><a href="#__codelineno-0-96"><span class="linenos" data-linenos=" 96 "></span></a>|   [0, 0, 1]    |                   |                    |
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97"></a><a href="#__codelineno-0-97"><span class="linenos" data-linenos=" 97 "></span></a>+----------------+                   +-----------&gt;&lt;-------+
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98"></a><a href="#__codelineno-0-98"><span class="linenos" data-linenos=" 98 "></span></a>                 |                              |
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99"></a><a href="#__codelineno-0-99"><span class="linenos" data-linenos=" 99 "></span></a>                 +---------------&gt;&lt;-------------+
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100"></a><a href="#__codelineno-0-100"><span class="linenos" data-linenos="100 "></span></a>                                |
+</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101"></a><a href="#__codelineno-0-101"><span class="linenos" data-linenos="101 "></span></a>                                v (ACTION: Compare for equality)
+</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102"></a><a href="#__codelineno-0-102"><span class="linenos" data-linenos="102 "></span></a>                                       predictions == y
+</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103"></a><a href="#__codelineno-0-103"><span class="linenos" data-linenos="103 "></span></a>                                |
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104"></a><a href="#__codelineno-0-104"><span class="linenos" data-linenos="104 "></span></a>                                v
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105"></a><a href="#__codelineno-0-105"><span class="linenos" data-linenos="105 "></span></a>                   +----------------------------+
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106"></a><a href="#__codelineno-0-106"><span class="linenos" data-linenos="106 "></span></a>                   |   [0, 0, 1] == [0, 1, 1]   |
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107"></a><a href="#__codelineno-0-107"><span class="linenos" data-linenos="107 "></span></a>                   +----------------------------+
+</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108"></a><a href="#__codelineno-0-108"><span class="linenos" data-linenos="108 "></span></a>                                |
+</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109"></a><a href="#__codelineno-0-109"><span class="linenos" data-linenos="109 "></span></a>                                v
+</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110"></a><a href="#__codelineno-0-110"><span class="linenos" data-linenos="110 "></span></a>                   +----------------------------+
+</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111"></a><a href="#__codelineno-0-111"><span class="linenos" data-linenos="111 "></span></a>                   |   [True, False, True]      |
+</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112"></a><a href="#__codelineno-0-112"><span class="linenos" data-linenos="112 "></span></a>                   +----------------------------+
+</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113"></a><a href="#__codelineno-0-113"><span class="linenos" data-linenos="113 "></span></a>                                |
+</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114"></a><a href="#__codelineno-0-114"><span class="linenos" data-linenos="114 "></span></a>                                v (ACTION: Take the mean, True=1, False=0)
+</span><span id="__span-0-115"><a id="__codelineno-0-115" name="__codelineno-0-115"></a><a href="#__codelineno-0-115"><span class="linenos" data-linenos="115 "></span></a>                                    np.mean()
+</span><span id="__span-0-116"><a id="__codelineno-0-116" name="__codelineno-0-116"></a><a href="#__codelineno-0-116"><span class="linenos" data-linenos="116 "></span></a>                                |
+</span><span id="__span-0-117"><a id="__codelineno-0-117" name="__codelineno-0-117"></a><a href="#__codelineno-0-117"><span class="linenos" data-linenos="117 "></span></a>                                v
+</span><span id="__span-0-118"><a id="__codelineno-0-118" name="__codelineno-0-118"></a><a href="#__codelineno-0-118"><span class="linenos" data-linenos="118 "></span></a>                         +-----------------------+
+</span><span id="__span-0-119"><a id="__codelineno-0-119" name="__codelineno-0-119"></a><a href="#__codelineno-0-119"><span class="linenos" data-linenos="119 "></span></a>                         |       accuracy        |
+</span><span id="__span-0-120"><a id="__codelineno-0-120" name="__codelineno-0-120"></a><a href="#__codelineno-0-120"><span class="linenos" data-linenos="120 "></span></a>                         |       (Scalar)        |
+</span><span id="__span-0-121"><a id="__codelineno-0-121" name="__codelineno-0-121"></a><a href="#__codelineno-0-121"><span class="linenos" data-linenos="121 "></span></a>                         |    0.666666...        |
+</span><span id="__span-0-122"><a id="__codelineno-0-122" name="__codelineno-0-122"></a><a href="#__codelineno-0-122"><span class="linenos" data-linenos="122 "></span></a>                         +-----------------------+
+</span><span id="__span-0-123"><a id="__codelineno-0-123" name="__codelineno-0-123"></a><a href="#__codelineno-0-123"><span class="linenos" data-linenos="123 "></span></a>
+</span><span id="__span-0-124"><a id="__codelineno-0-124" name="__codelineno-0-124"></a><a href="#__codelineno-0-124"><span class="linenos" data-linenos="124 "></span></a>
+</span><span id="__span-0-125"><a id="__codelineno-0-125" name="__codelineno-0-125"></a><a href="#__codelineno-0-125"><span class="linenos" data-linenos="125 "></span></a>================================================================================
+</span><span id="__span-0-126"><a id="__codelineno-0-126" name="__codelineno-0-126"></a><a href="#__codelineno-0-126"><span class="linenos" data-linenos="126 "></span></a>                                FINAL RESULTS
+</span><span id="__span-0-127"><a id="__codelineno-0-127" name="__codelineno-0-127"></a><a href="#__codelineno-0-127"><span class="linenos" data-linenos="127 "></span></a>                +------------------+     +------------------+
+</span><span id="__span-0-128"><a id="__codelineno-0-128" name="__codelineno-0-128"></a><a href="#__codelineno-0-128"><span class="linenos" data-linenos="128 "></span></a>                |   average_loss   |     |     accuracy     |
+</span><span id="__span-0-129"><a id="__codelineno-0-129" name="__codelineno-0-129"></a><a href="#__codelineno-0-129"><span class="linenos" data-linenos="129 "></span></a>                |      0.385       |     |   0.666666...    |
+</span><span id="__span-0-130"><a id="__codelineno-0-130" name="__codelineno-0-130"></a><a href="#__codelineno-0-130"><span class="linenos" data-linenos="130 "></span></a>                +------------------+     +------------------+
+</span><span id="__span-0-131"><a id="__codelineno-0-131" name="__codelineno-0-131"></a><a href="#__codelineno-0-131"><span class="linenos" data-linenos="131 "></span></a>================================================================================
 </span></code></pre></div>
-<p>How do we extract the correct probabilities from <code>softmax_outputs</code>? We need:
-*   From row 0, get the element at column 0 (<code>0.7</code>)
-*   From row 1, get the element at column 1 (<code>0.5</code>)
-*   From row 2, get the element at column 1 (<code>0.9</code>)</p>
-<p>NumPy provides a very elegant way to do this, called <strong>advanced indexing</strong>:</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Extract the probabilities of the correct classes</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">correct_confidences</span> <span class="o">=</span> <span class="n">softmax_outputs</span><span class="p">[</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>    <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">softmax_outputs</span><span class="p">)),</span> <span class="c1"># Row indices: [0, 1, 2]</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>    <span class="n">class_targets</span>              <span class="c1"># Column indices: [0, 1, 1]</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a><span class="p">]</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos="7 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">correct_confidences</span><span class="p">)</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos="8 "></span></a><span class="c1"># Result: [0.7 0.5 0.9]</span>
-</span></code></pre></div>
-<p>Now, we just need to apply the <code>-log</code> formula to each of these values:</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Calculate the loss for each sample</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">sample_losses</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">correct_confidences</span><span class="p">)</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">sample_losses</span><span class="p">)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a><span class="c1"># Result: [0.35667494 0.69314718 0.10536052]</span>
-</span></code></pre></div>
-<p>Finally, the loss for the entire batch is usually calculated as the <strong>arithmetic mean</strong> of the individual losses:</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Calculate the average loss for the batch</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">average_loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample_losses</span><span class="p">)</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">average_loss</span><span class="p">)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a><span class="c1"># Result: 0.38506088...</span>
-</span></code></pre></div>
-<h5 id="32-the-tricky-problem-log0">3.2. The Tricky Problem: <code>log(0)</code><a class="headerlink" href="#32-the-tricky-problem-log0" title="Permanent link">&para;</a></h5>
-<p>The function <code>log(x)</code> is only defined for <code>x &gt; 0</code>. What happens if the model predicts a probability of 0 for the correct class?</p>
-<p><code>log(0)</code> is <strong>negative infinity</strong>. This will produce a loss value of <code>inf</code> (infinity) in Python, and once <code>inf</code> appears, it will "infect" subsequent calculations (e.g., the mean of a list containing <code>inf</code> is also <code>inf</code>). This will break the entire training process.</p>
-<p>Even worse, if the model is overconfident and predicts a probability of 1.0 for the correct class, then <code>log(1.0) = 0</code>, and the loss will be 0. But due to floating-point rounding errors in computers, the value might be <code>1.0000001</code>. <code>log(1.0000001)</code> is a very small positive number, causing the loss to become a very small negative number. A negative loss is nonsensical.</p>
-<p><strong>Solution: Clipping</strong></p>
-<p>To solve this definitively, we will "clip" the predicted values so they never reach 0 or 1. We'll force them into a very small range, for example, <code>[1e-7, 1 - 1e-7]</code>.</p>
-<ul>
-<li><code>1e-7</code> is scientific notation for <code>0.0000001</code>.</li>
-<li>Any value smaller than <code>1e-7</code> will be set to <code>1e-7</code>.</li>
-<li>Any value larger than <code>1 - 1e-7</code> will be set to <code>1 - 1e-7</code>.</li>
-</ul>
-<p>In NumPy, we use the <code>np.clip()</code> function:</p>
-<p><div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># y_pred is the array of predicted probabilities</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">y_pred_clipped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="mf">1e-7</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">1e-7</span><span class="p">)</span>
-</span></code></pre></div>
-This operation ensures that we will never have to calculate the <code>log</code> of 0 or of a number greater than 1, making the calculation stable.</p>
-<h5 id="33-handling-both-label-formats-one-hot-and-sparse">3.3. Handling Both Label Formats (One-Hot and Sparse)<a class="headerlink" href="#33-handling-both-label-formats-one-hot-and-sparse" title="Permanent link">&para;</a></h5>
-<p>The true labels (targets) can come in two formats:
-1.  <strong>Sparse:</strong> A 1D array containing the indices of the correct classes. Example: <code>[0, 1, 1]</code>.
-2.  <strong>One-Hot:</strong> A 2D array. Example: <code>[[1,0,0], [0,1,0], [0,1,0]]</code>.</p>
-<p>We can check the number of dimensions of the label array (<code>len(y_true.shape)</code>) to determine its format and handle it accordingly.</p>
-<ul>
-<li><strong>If Sparse (shape=1):</strong> Use the indexing method as shown above.</li>
-<li><strong>If One-Hot (shape=2):</strong> We go back to the original formula <code>Σ (y * log(ŷ))</code>. Since <code>y</code> is one-hot, the multiplication <code>y * log(ŷ)</code> will turn all values for the incorrect classes to 0, leaving only the value for the correct class. Then we just need to sum along the rows (<code>axis=1</code>).</li>
-</ul>
-<p><div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Assume y_pred_clipped has been calculated</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a><span class="c1"># And y_true is a one-hot label array</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos="3 "></span></a><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_true</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><a href="#__codelineno-5-4"><span class="linenos" data-linenos="4 "></span></a>    <span class="n">correct_confidences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><a href="#__codelineno-5-5"><span class="linenos" data-linenos="5 "></span></a>        <span class="n">y_pred_clipped</span> <span class="o">*</span> <span class="n">y_true</span><span class="p">,</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><a href="#__codelineno-5-6"><span class="linenos" data-linenos="6 "></span></a>        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><a href="#__codelineno-5-7"><span class="linenos" data-linenos="7 "></span></a>    <span class="p">)</span>
-</span></code></pre></div>
-This method gives an equivalent result to indexing but is more general.</p>
-<h4 id="4-building-a-complete-loss-class">4. Building a Complete Loss Class<a class="headerlink" href="#4-building-a-complete-loss-class" title="Permanent link">&para;</a></h4>
-<p>To keep our code organized and reusable, we will create classes for the Loss.</p>
-<h5 id="the-base-loss-class">The Base <code>Loss</code> Class<a class="headerlink" href="#the-base-loss-class" title="Permanent link">&para;</a></h5>
-<p>This is an abstract parent class. It has a <code>calculate</code> method that is common to all types of loss: calculate the loss for each sample (via a <code>forward</code> method) and then take the average.</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="c1"># Common loss class</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">class</span><span class="w"> </span><span class="nc">Loss</span><span class="p">:</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos=" 3 "></span></a>    <span class="c1"># Calculates the data loss</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos=" 4 "></span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">calculate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><a href="#__codelineno-6-5"><span class="linenos" data-linenos=" 5 "></span></a>        <span class="c1"># Calculate sample losses</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><a href="#__codelineno-6-6"><span class="linenos" data-linenos=" 6 "></span></a>        <span class="n">sample_losses</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><a href="#__codelineno-6-7"><span class="linenos" data-linenos=" 7 "></span></a>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><a href="#__codelineno-6-8"><span class="linenos" data-linenos=" 8 "></span></a>        <span class="c1"># Calculate mean loss</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><a href="#__codelineno-6-9"><span class="linenos" data-linenos=" 9 "></span></a>        <span class="n">data_loss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample_losses</span><span class="p">)</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><a href="#__codelineno-6-10"><span class="linenos" data-linenos="10 "></span></a>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><a href="#__codelineno-6-11"><span class="linenos" data-linenos="11 "></span></a>        <span class="k">return</span> <span class="n">data_loss</span>
-</span></code></pre></div>
-<h5 id="the-loss_categoricalcrossentropy-class">The <code>Loss_CategoricalCrossentropy</code> Class<a class="headerlink" href="#the-loss_categoricalcrossentropy-class" title="Permanent link">&para;</a></h5>
-<p>This class inherits from <code>Loss</code> and implements the specific calculation logic for Categorical Cross-Entropy.</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="c1"># Cross-entropy loss</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="k">class</span><span class="w"> </span><span class="nc">Loss_CategoricalCrossentropy</span><span class="p">(</span><span class="n">Loss</span><span class="p">):</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos=" 3 "></span></a>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><a href="#__codelineno-7-4"><span class="linenos" data-linenos=" 4 "></span></a>    <span class="c1"># Forward pass method</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><a href="#__codelineno-7-5"><span class="linenos" data-linenos=" 5 "></span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><a href="#__codelineno-7-6"><span class="linenos" data-linenos=" 6 "></span></a>        <span class="n">samples</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><a href="#__codelineno-7-7"><span class="linenos" data-linenos=" 7 "></span></a>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><a href="#__codelineno-7-8"><span class="linenos" data-linenos=" 8 "></span></a>        <span class="c1"># 1. Clip data to prevent division by 0</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><a href="#__codelineno-7-9"><span class="linenos" data-linenos=" 9 "></span></a>        <span class="n">y_pred_clipped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="mf">1e-7</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">1e-7</span><span class="p">)</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><a href="#__codelineno-7-10"><span class="linenos" data-linenos="10 "></span></a>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><a href="#__codelineno-7-11"><span class="linenos" data-linenos="11 "></span></a>        <span class="c1"># 2. Check label format and calculate</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><a href="#__codelineno-7-12"><span class="linenos" data-linenos="12 "></span></a>        <span class="c1"># If labels are sparse [0, 1, 1]</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><a href="#__codelineno-7-13"><span class="linenos" data-linenos="13 "></span></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_true</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><a href="#__codelineno-7-14"><span class="linenos" data-linenos="14 "></span></a>            <span class="n">correct_confidences</span> <span class="o">=</span> <span class="n">y_pred_clipped</span><span class="p">[</span>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a><a href="#__codelineno-7-15"><span class="linenos" data-linenos="15 "></span></a>                <span class="nb">range</span><span class="p">(</span><span class="n">samples</span><span class="p">),</span>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a><a href="#__codelineno-7-16"><span class="linenos" data-linenos="16 "></span></a>                <span class="n">y_true</span>
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a><a href="#__codelineno-7-17"><span class="linenos" data-linenos="17 "></span></a>            <span class="p">]</span>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a><a href="#__codelineno-7-18"><span class="linenos" data-linenos="18 "></span></a>        <span class="c1"># If labels are one-hot [[1,0,0], [0,1,0], ...]</span>
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19"></a><a href="#__codelineno-7-19"><span class="linenos" data-linenos="19 "></span></a>        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_true</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20"></a><a href="#__codelineno-7-20"><span class="linenos" data-linenos="20 "></span></a>            <span class="n">correct_confidences</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
-</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21"></a><a href="#__codelineno-7-21"><span class="linenos" data-linenos="21 "></span></a>                <span class="n">y_pred_clipped</span> <span class="o">*</span> <span class="n">y_true</span><span class="p">,</span>
-</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22"></a><a href="#__codelineno-7-22"><span class="linenos" data-linenos="22 "></span></a>                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
-</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a><a href="#__codelineno-7-23"><span class="linenos" data-linenos="23 "></span></a>            <span class="p">)</span>
-</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24"></a><a href="#__codelineno-7-24"><span class="linenos" data-linenos="24 "></span></a>
-</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25"></a><a href="#__codelineno-7-25"><span class="linenos" data-linenos="25 "></span></a>        <span class="c1"># 3. Calculate negative log likelihoods (loss for each sample)</span>
-</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a><a href="#__codelineno-7-26"><span class="linenos" data-linenos="26 "></span></a>        <span class="n">negative_log_likelihoods</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">correct_confidences</span><span class="p">)</span>
-</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27"></a><a href="#__codelineno-7-27"><span class="linenos" data-linenos="27 "></span></a>        <span class="k">return</span> <span class="n">negative_log_likelihoods</span>
-</span></code></pre></div>
-<h4 id="5-additionally-calculating-accuracy">5. Additionally Calculating Accuracy<a class="headerlink" href="#5-additionally-calculating-accuracy" title="Permanent link">&para;</a></h4>
-<p>Although not used for optimization, accuracy is still a very intuitive metric for humans to evaluate a model's performance. We will calculate it in parallel with the loss.</p>
-<p>The way to calculate accuracy is simple:
-1.  Use <code>np.argmax(softmax_outputs, axis=1)</code> to find the predicted class with the highest probability for each sample. <code>axis=1</code> means finding the argmax along each row (each sample).
-2.  Compare this array of predictions with the array of true labels. The comparison <code>predictions == class_targets</code> will return an array of <code>True</code> (if correct) and <code>False</code> (if incorrect) values.
-3.  Take the mean of this boolean array. <code>np.mean()</code> will automatically treat <code>True</code> as 1 and <code>False</code> as 0.</p>
-<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="c1"># Get predictions from the softmax output</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="n">predictions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">softmax_outputs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos=" 3 "></span></a>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="c1"># If labels are one-hot, convert to sparse</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">class_targets</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><a href="#__codelineno-8-6"><span class="linenos" data-linenos=" 6 "></span></a>    <span class="n">class_targets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">class_targets</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos=" 7 "></span></a>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><a href="#__codelineno-8-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="c1"># Compare and calculate the mean</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><a href="#__codelineno-8-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="n">accuracy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">predictions</span> <span class="o">==</span> <span class="n">class_targets</span><span class="p">)</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><a href="#__codelineno-8-10"><span class="linenos" data-linenos="10 "></span></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;acc:&#39;</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
-</span></code></pre></div>
-<h4 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h4>
-<p>In this chapter, we have learned the core concepts:</p>
-<ol>
-<li><strong>Why we need Loss:</strong> Loss is a detailed, continuous measure of the model's "degree of error," which is much better for training than accuracy.</li>
-<li><strong>Categorical Cross-Entropy:</strong> It's the standard loss function for multi-class classification, measuring the difference between the predicted probability distribution and the true distribution.</li>
-<li><strong>Simplified Formula:</strong> When labels are one-hot, the complex formula simplifies to <code>-log(probability of the correct class)</code>.</li>
-<li><strong>Practical Implementation:</strong><ul>
-<li>Using NumPy indexing for efficient batch calculations.</li>
-<li>Solving the <code>log(0)</code> problem with the <strong>clipping</strong> technique.</li>
-<li>Building the code in an object-oriented (OOP) way with <code>Loss</code> classes for easy management and extension.</li>
-</ul>
-</li>
-<li><strong>Accuracy:</strong> It remains an important metric for human monitoring and is calculated in parallel with the loss.</li>
-</ol>
-<p>By being able to calculate the Loss, we now have a "signal" to know where and how the model needs to improve. The next chapter will show us how to use this signal to actually "teach" the neural network through optimization and backpropagation.</p>
 
 
 
@@ -1725,7 +1551,7 @@ This method gives an equivalent result to indexing but is more general.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../04-loss-diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LOSS Diagram">
+          <a href="../../Ch4pt3r.03_Softmax/03-softmax/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Softmax">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1735,20 +1561,20 @@ This method gives an equivalent result to indexing but is more general.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                LOSS Diagram
+                Softmax
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../vi/" class="md-footer__link md-footer__link--next" aria-label="Next: Chào Mừng">
+          <a href="../04-loss/" class="md-footer__link md-footer__link--next" aria-label="Next: LOSS &amp; ACCURACY">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Chào Mừng
+                LOSS & ACCURACY
               </div>
             </div>
             <div class="md-footer__button md-icon">
