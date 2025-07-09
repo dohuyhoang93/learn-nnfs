@@ -10,26 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-schema_math/">
       
       
+        <link rel="prev" href="../../Ch4pt3r.02_Transformation%26ReLU/02-transformation_relu_math_explain/">
       
-        <link rel="next" href="Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/">
+      
+        <link rel="next" href="../03-softmax_explain/">
       
       
-      <link rel="icon" href="assets/logo.svg">
+      <link rel="icon" href="../../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Welcome - Neural Network From Scratch Documentation</title>
+        <title>Math Schema - Neural Network From Scratch Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -89,7 +91,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -115,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-the-digital-cityscape" class="md-skip">
+        <a href="#i-sau-vao-phong-may-cua-mang-no-ron-va-xem-xet-tung-phep-nhan-phep-cong-ma-tran" class="md-skip">
           Skip to content
         </a>
       
@@ -129,9 +131,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Neural Network From Scratch Documentation" class="md-header__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
+    <a href="../../../.." title="Neural Network From Scratch Documentation" class="md-header__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
       
-  <img src="assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -148,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome
+              Math Schema
             
           </span>
         </div>
@@ -201,7 +203,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="vi/" hreflang="vi" class="md-select__link">
+            <a href="../../../" hreflang="vi" class="md-select__link">
               Vietnamese
             </a>
           </li>
@@ -283,11 +285,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
         
   
   
@@ -315,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-tabs__link">
+        <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-tabs__link">
           
   
   
@@ -334,11 +334,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="vi/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
           
   
   
@@ -374,9 +376,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Neural Network From Scratch Documentation" class="md-nav__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
+    <a href="../../../.." title="Neural Network From Scratch Documentation" class="md-nav__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
       
-  <img src="assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
     </a>
     Neural Network From Scratch Documentation
@@ -400,30 +402,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Welcome
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -434,66 +416,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#welcome-to-the-digital-cityscape" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌌 Welcome to the Digital Cityscape 🌃
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🌌 Welcome to the Digital Cityscape 🌃">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-this-journey-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      💾 Why This Journey Matters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explore-the-neuron-city" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌆 Explore the Neuron City
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#join-me-on-this-journey" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Join Me on This Journey!
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -587,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-nav__link">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-nav__link">
         
   
   
@@ -610,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
         
   
   
@@ -645,24 +567,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -675,7 +602,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Vi
@@ -689,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/" class="md-nav__link">
+      <a href="../../../" class="md-nav__link">
         
   
   
@@ -709,6 +636,8 @@
                 
   
   
+    
+  
   
   
     
@@ -719,11 +648,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -739,7 +668,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Explain Documents
@@ -794,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first%20layer_explain/" class="md-nav__link">
+      <a href="../../Ch4pt3r.01_First_Layer/01-first%20layer_explain/" class="md-nav__link">
         
   
   
@@ -866,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation_relu_math_explain/" class="md-nav__link">
+      <a href="../../Ch4pt3r.02_Transformation%26ReLU/02-transformation_relu_math_explain/" class="md-nav__link">
         
   
   
@@ -894,6 +823,8 @@
                 
   
   
+    
+  
   
   
     
@@ -904,11 +835,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
@@ -924,7 +855,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_3">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.03 Softmax
@@ -935,10 +866,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-schema_math/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Math Schema
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -949,6 +900,57 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-sau-vao-phong-may-cua-mang-no-ron-va-xem-xet-tung-phep-nhan-phep-cong-ma-tran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đi sâu vào "phòng máy" của mạng nơ-ron và xem xét từng phép nhân, phép cộng ma trận
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Đi sâu vào &#34;phòng máy&#34; của mạng nơ-ron và xem xét từng phép nhân, phép cộng ma trận">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#so-o-chi-tiet-tung-buoc-tinh-toan-ma-tran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sơ Đồ Chi Tiết: Từng Bước Tính Toán Ma Trận
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ket-qua-cuoi-cung" class="md-nav__link">
+    <span class="md-ellipsis">
+      KẾT QUẢ CUỐI CÙNG
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -961,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax_explain/" class="md-nav__link">
+      <a href="../03-softmax_explain/" class="md-nav__link">
         
   
   
@@ -1033,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-nav__link">
+      <a href="../../Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-nav__link">
         
   
   
@@ -1056,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
+      <a href="../../Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
         
   
   
@@ -1114,51 +1116,140 @@
   
 
 
-  <h1>Welcome</h1>
+  <h1>Math Schema</h1>
 
-<h2 id="welcome-to-the-digital-cityscape">🌌 Welcome to the Digital Cityscape 🌃<a class="headerlink" href="#welcome-to-the-digital-cityscape" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>       ╔════════════════════════════════════╗
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>       ║  NEURAL NETWORKS FROM SCRATCH      ║
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>       ║  A Journey Built from Ground Zero  ║
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>       ╚════════════════════════════════════╝
-</span></code></pre></div>
-<p>Hey there! 😊 I'm just a curious coder diving into the fascinating world of artificial intelligence through <em>Neural Networks from Scratch in Python</em>. This website is my digital journal, capturing every step of my learning journey—from the first lines of Python code to building complex neural networks. It's not a fancy project, just a humble corner of the internet where I share what I've learned, the mistakes I've made, and the excitement of discovering something new.</p>
-<h3 id="why-this-journey-matters">💾 Why This Journey Matters<a class="headerlink" href="#why-this-journey-matters" title="Permanent link">&para;</a></h3>
-<p>In my own cyberpunk-inspired world, I see each chapter of the book as a <em>node</em> in a vast network of knowledge. Every Python file, every documentation folder, is a piece of a digital puzzle I'm piecing together. I'm no expert—just someone passionate about learning—but I believe that starting from scratch, one small step at a time, can lead to incredible discoveries.</p>
-<ul>
-<li><strong>One chapter, one challenge</strong>: Each folder corresponds to a book chapter, with Python code and notes from basic to advanced.</li>
-<li><strong>Learning by doing</strong>: I write, test, and document the code to truly understand how neural networks work.</li>
-<li><strong>Open to collaboration</strong>: I’d love to hear your thoughts, comments, or contributions to make this journey richer!</li>
-</ul>
-<h3 id="explore-the-neuron-city">🌆 Explore the Neuron City<a class="headerlink" href="#explore-the-neuron-city" title="Permanent link">&para;</a></h3>
-<p>Imagine stepping into a futuristic city where buildings are neural layers, neon lights are weights, and data flows like endless streets. This website is your guide through that city:</p>
-<ul>
-<li><strong>Book chapters</strong>: Each folder holds a chapter’s Python code and detailed explanations.</li>
-<li><strong>Personal notes</strong>: My thoughts, lessons learned, and even the bugs I’ve wrestled with.</li>
-<li><strong>Interactive space</strong>: I hope you’ll leave a comment, suggestion, or even a snippet of code to help shape this project!</li>
-</ul>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>   ╔═════════════════════════════╗
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>   ║  // STARTING POINT          ║
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>   ║  &gt; Browse the folders       ║
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>   ║  &gt; Run the Python code      ║
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>   ║  &gt; Leave your mark!         ║
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a>   ╚═════════════════════════════╝
-</span></code></pre></div>
-<h3 id="join-me-on-this-journey">💡 Join Me on This Journey!<a class="headerlink" href="#join-me-on-this-journey" title="Permanent link">&para;</a></h3>
-<p>This project isn’t perfect, but it’s fueled by curiosity and passion. If you’re excited about AI, curious about how neural networks tick, or just love coding, I invite you to:</p>
-<ul>
-<li><strong>Dive into the chapters</strong>: Start with the first folder and build neural networks from the ground up with me.</li>
-<li><strong>Share your thoughts</strong>: Drop a comment, question, or idea in the section below.</li>
-<li><strong>Contribute code</strong>: Spot a better way to code or explain something? Submit a pull request on the repo!</li>
-</ul>
-<p>Thanks for stopping by this little corner of the digital universe. Let’s light up the neon trails of knowledge together! 🚀</p>
-<blockquote>
-<p>CONNECT &amp; CONTRIBUTE<br>
-<a href="https://github.com/dohuyhoang93/learn-nnfs">GitHub</a><br>
-<a href="dohuyhoangvn93@gmail.com">Email</a><br></p>
-</blockquote>
+<h2 id="i-sau-vao-phong-may-cua-mang-no-ron-va-xem-xet-tung-phep-nhan-phep-cong-ma-tran">Đi sâu vào "phòng máy" của mạng nơ-ron và xem xét từng phép nhân, phép cộng ma trận<a class="headerlink" href="#i-sau-vao-phong-may-cua-mang-no-ron-va-xem-xet-tung-phep-nhan-phep-cong-ma-tran" title="Permanent link">&para;</a></h2>
+<p>Giả sử chúng ta có một bài toán đơn giản:
+*   <strong>Đầu vào:</strong> Một vector có 2 đặc trưng (ví dụ: chiều cao, cân nặng).
+*   <strong>Kiến trúc mạng:</strong>
+    *   Lớp ẩn (Hidden Layer) có 3 neuron.
+    *   Lớp ra (Output Layer) có 2 neuron (tương ứng 2 lớp, ví dụ: "Loại A" và "Loại B").
+*   <strong>Hàm kích hoạt:</strong> ReLU cho lớp ẩn, Softmax cho lớp ra.</p>
+<p>Hãy bắt đầu với các giá trị cụ thể.</p>
 <hr />
-<p><em>The journey begins with a single line of code. Are you ready?</em></p>
+<h4 id="so-o-chi-tiet-tung-buoc-tinh-toan-ma-tran">Sơ Đồ Chi Tiết: Từng Bước Tính Toán Ma Trận<a class="headerlink" href="#so-o-chi-tiet-tung-buoc-tinh-toan-ma-tran" title="Permanent link">&para;</a></h4>
+<p><strong>Bước 0: Khởi tạo các tham số</strong></p>
+<ul>
+<li>
+<p><strong>Dữ liệu đầu vào (một mẫu):</strong>
+    <code>inputs = [1, 2]</code>  (shape: 1x2)</p>
+</li>
+<li>
+<p><strong>Trọng số và bias Lớp Ẩn (W1, b1):</strong>
+    <code>W1 = [[0.2, 0.8, -0.5],</code>
+    <code>[0.5, -0.9, 0.3]]</code> (shape: 2x3)</p>
+<p><code>b1 = [2, 3, 0.5]</code> (shape: 1x3)</p>
+</li>
+<li>
+<p><strong>Trọng số và bias Lớp Ra (W2, b2):</strong>
+    <code>W2 = [[0.1, -0.4],</code>
+    <code>[-0.2, 0.6],</code>
+    <code>[0.7, -0.9]]</code> (shape: 3x2)</p>
+<p><code>b2 = [0.1, -0.2]</code> (shape: 1x2)</p>
+</li>
+</ul>
+<hr />
+<p><strong>Bước 1: Tính toán tại Lớp Ẩn (Hidden Layer)</strong></p>
+<p><strong>Phép toán:</strong> <code>z1 = inputs · W1 + b1</code> (Phép nhân ma trận <code>·</code> và cộng vector)</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a>        [ Trọng số W1 ]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>         (shape 2x3)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>      [[0.2, 0.8, -0.5],
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>       [0.5, -0.9, 0.3]]
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>            ^
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>            |
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>[inputs] ·--+
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>(1x2)
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>[1, 2]
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>================== Phép nhân ma trận (inputs · W1) ==================
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a>Kết quả (1x3) = [(1*0.2 + 2*0.5), (1*0.8 + 2*-0.9), (1*-0.5 + 2*0.3)]
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><a href="#__codelineno-0-14"><span class="linenos" data-linenos="14 "></span></a>              = [(0.2 + 1.0),   (0.8 - 1.8),    (-0.5 + 0.6)  ]
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><a href="#__codelineno-0-15"><span class="linenos" data-linenos="15 "></span></a>              = [1.2,           -1.0,           0.1           ]
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><a href="#__codelineno-0-16"><span class="linenos" data-linenos="16 "></span></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><a href="#__codelineno-0-17"><span class="linenos" data-linenos="17 "></span></a>================== Phép cộng bias ( + b1 ) =======================
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><a href="#__codelineno-0-18"><span class="linenos" data-linenos="18 "></span></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><a href="#__codelineno-0-19"><span class="linenos" data-linenos="19 "></span></a>  [1.2, -1.0, 0.1]
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><a href="#__codelineno-0-20"><span class="linenos" data-linenos="20 "></span></a>+ [2.0,  3.0, 0.5]
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><a href="#__codelineno-0-21"><span class="linenos" data-linenos="21 "></span></a>--------------------
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><a href="#__codelineno-0-22"><span class="linenos" data-linenos="22 "></span></a>= [3.2,  2.0, 0.6]  &lt;== Đây là z1 (logits của lớp ẩn)
+</span></code></pre></div>
+<p><strong>Bước 2: Áp dụng hàm kích hoạt ReLU</strong></p>
+<p><strong>Phép toán:</strong> <code>h1 = ReLU(z1) = max(0, z1)</code></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>  Input vào ReLU: z1 = [3.2, 2.0, 0.6]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>  max(0, 3.2) -&gt; 3.2
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>  max(0, 2.0) -&gt; 2.0
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>  max(0, 0.6) -&gt; 0.6
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos="7 "></span></a>  Kết quả: h1 = [3.2, 2.0, 0.6] &lt;== Đầu ra của lớp ẩn sau kích hoạt
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos="8 "></span></a>  (Trong trường hợp này không có giá trị nào bị cắt vì tất cả đều dương)
+</span></code></pre></div>
+<hr />
+<p><strong>Bước 3: Tính toán tại Lớp Ra (Output Layer)</strong></p>
+<p><strong>Phép toán:</strong> <code>z_out = h1 · W2 + b2</code></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a>        [ Trọng số W2 ]
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>         (shape 3x2)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>      [[0.1, -0.4],
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>       [-0.2, 0.6],
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>       [0.7, -0.9]]
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>            ^
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>            |
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>   [h1] ·---+
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>  (1x3)
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>[3.2, 2.0, 0.6]
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a>================== Phép nhân ma trận (h1 · W2) =====================
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><a href="#__codelineno-2-14"><span class="linenos" data-linenos="14 "></span></a>Kết quả (1x2) = [ (3.2*0.1 + 2.0*-0.2 + 0.6*0.7),  (3.2*-0.4 + 2.0*0.6 + 0.6*-0.9) ]
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><a href="#__codelineno-2-15"><span class="linenos" data-linenos="15 "></span></a>              = [ (0.32  - 0.4    + 0.42),       (-1.28    + 1.2    - 0.54)       ]
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a><a href="#__codelineno-2-16"><span class="linenos" data-linenos="16 "></span></a>              = [ 0.34,                          -0.62                         ]
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><a href="#__codelineno-2-17"><span class="linenos" data-linenos="17 "></span></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a><a href="#__codelineno-2-18"><span class="linenos" data-linenos="18 "></span></a>================== Phép cộng bias ( + b2 ) ========================
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a><a href="#__codelineno-2-19"><span class="linenos" data-linenos="19 "></span></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><a href="#__codelineno-2-20"><span class="linenos" data-linenos="20 "></span></a>  [0.34, -0.62]
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><a href="#__codelineno-2-21"><span class="linenos" data-linenos="21 "></span></a>+ [0.1,  -0.2]
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><a href="#__codelineno-2-22"><span class="linenos" data-linenos="22 "></span></a>--------------------
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a><a href="#__codelineno-2-23"><span class="linenos" data-linenos="23 "></span></a>= [0.44, -0.82] &lt;== Đây là z_out (logits cuối cùng trước Softmax)
+</span></code></pre></div>
+<hr />
+<p><strong>Bước 4: Áp dụng hàm kích hoạt Softmax</strong></p>
+<p><strong>Phép toán:</strong> <code>probabilities = Softmax(z_out)</code></p>
+<ol>
+<li>
+<p><strong>Lũy thừa hóa:</strong> <code>e^z_out</code>
+    <code>e^0.44  ≈ 1.55</code>
+    <code>e^-0.82 ≈ 0.44</code></p>
+</li>
+<li>
+<p><strong>Tính tổng:</strong>
+    <code>Tổng = 1.55 + 0.44 = 1.99</code></p>
+</li>
+<li>
+<p><strong>Chuẩn hóa:</strong>
+    <code>Xác suất Lớp A = 1.55 / 1.99 ≈ 0.779</code>
+    <code>Xác suất Lớp B = 0.44 / 1.99 ≈ 0.221</code></p>
+</li>
+</ol>
+<hr />
+<h4 id="ket-qua-cuoi-cung">KẾT QUẢ CUỐI CÙNG<a class="headerlink" href="#ket-qua-cuoi-cung" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a>  Input: [1, 2]
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a>    |
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a>    V
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a>  z1 = [3.2, 2.0, 0.6]  (Sau Lớp Ẩn 1)
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a>    |
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a>    V (ReLU)
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a>  h1 = [3.2, 2.0, 0.6]
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a>    |
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a>    V
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a>  z_out = [0.44, -0.82] (Sau Lớp Ra)
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><a href="#__codelineno-3-11"><span class="linenos" data-linenos="11 "></span></a>    |
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><a href="#__codelineno-3-12"><span class="linenos" data-linenos="12 "></span></a>    V (Softmax)
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><a href="#__codelineno-3-13"><span class="linenos" data-linenos="13 "></span></a>  Probabilities = [0.779, 0.221]
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><a href="#__codelineno-3-14"><span class="linenos" data-linenos="14 "></span></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><a href="#__codelineno-3-15"><span class="linenos" data-linenos="15 "></span></a>==&gt; Dự đoán: &quot;Loại A&quot; với xác suất 77.9%
+</span></code></pre></div>
+<p>Sơ đồ chi tiết này cho thấy chính xác cách một vector đầu vào <code>[1, 2]</code> đi qua từng lớp, qua từng phép nhân ma trận, cộng bias và hàm kích hoạt để cuối cùng cho ra một dự đoán xác suất cụ thể. Mỗi bước đều là một phép toán ma trận hoặc vector đơn giản. Quá trình "học" của mạng nơ-ron chính là việc điều chỉnh các giá trị trong ma trận <code>W1, b1, W2, b2</code> để kết quả cuối cùng ngày càng chính xác.</p>
 
 
 
@@ -1196,15 +1287,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../../Ch4pt3r.02_Transformation%26ReLU/02-transformation_relu_math_explain/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Transformation &amp; ReLU activation function">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Transformation & ReLU activation function
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-footer__link md-footer__link--next" aria-label="Next: LOSS MATH SCHEMA">
+          <a href="../03-softmax_explain/" class="md-footer__link md-footer__link--next" aria-label="Next: Softmax">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                LOSS MATH SCHEMA
+                Softmax
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1244,12 +1351,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["toc.follow", "toc.integrate", "navigation.footer", "navigation.top", "navigation.tabs", "navigation.path"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "toc.integrate", "navigation.footer", "navigation.top", "navigation.tabs", "navigation.path"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       

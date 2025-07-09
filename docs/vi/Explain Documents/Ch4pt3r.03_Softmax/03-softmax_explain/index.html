@@ -10,26 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax_explain/">
       
       
+        <link rel="prev" href="../03-schema_math/">
       
-        <link rel="next" href="Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/">
+      
+        <link rel="next" href="../../Ch4pt3r.04_L0SS/04-loss-math-schema/">
       
       
-      <link rel="icon" href="assets/logo.svg">
+      <link rel="icon" href="../../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Welcome - Neural Network From Scratch Documentation</title>
+        <title>Softmax - Neural Network From Scratch Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -89,7 +91,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -115,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-the-digital-cityscape" class="md-skip">
+        <a href="#giai-thich-ve-softmax-trong-neural-network" class="md-skip">
           Skip to content
         </a>
       
@@ -129,9 +131,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Neural Network From Scratch Documentation" class="md-header__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
+    <a href="../../../.." title="Neural Network From Scratch Documentation" class="md-header__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
       
-  <img src="assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -148,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome
+              Softmax
             
           </span>
         </div>
@@ -201,7 +203,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="vi/" hreflang="vi" class="md-select__link">
+            <a href="../../../" hreflang="vi" class="md-select__link">
               Vietnamese
             </a>
           </li>
@@ -283,11 +285,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
         
   
   
@@ -315,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-tabs__link">
+        <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-tabs__link">
           
   
   
@@ -334,11 +334,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="vi/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
           
   
   
@@ -374,9 +376,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Neural Network From Scratch Documentation" class="md-nav__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
+    <a href="../../../.." title="Neural Network From Scratch Documentation" class="md-nav__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
       
-  <img src="assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
     </a>
     Neural Network From Scratch Documentation
@@ -400,30 +402,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Welcome
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -434,66 +416,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#welcome-to-the-digital-cityscape" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌌 Welcome to the Digital Cityscape 🌃
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🌌 Welcome to the Digital Cityscape 🌃">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-this-journey-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      💾 Why This Journey Matters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#explore-the-neuron-city" class="md-nav__link">
-    <span class="md-ellipsis">
-      🌆 Explore the Neuron City
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#join-me-on-this-journey" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Join Me on This Journey!
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -587,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-nav__link">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-nav__link">
         
   
   
@@ -610,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
         
   
   
@@ -645,24 +567,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -675,7 +602,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Vi
@@ -689,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/" class="md-nav__link">
+      <a href="../../../" class="md-nav__link">
         
   
   
@@ -709,6 +636,8 @@
                 
   
   
+    
+  
   
   
     
@@ -719,11 +648,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -739,7 +668,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Explain Documents
@@ -794,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first%20layer_explain/" class="md-nav__link">
+      <a href="../../Ch4pt3r.01_First_Layer/01-first%20layer_explain/" class="md-nav__link">
         
   
   
@@ -866,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation_relu_math_explain/" class="md-nav__link">
+      <a href="../../Ch4pt3r.02_Transformation%26ReLU/02-transformation_relu_math_explain/" class="md-nav__link">
         
   
   
@@ -894,6 +823,8 @@
                 
   
   
+    
+  
   
   
     
@@ -904,11 +835,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
@@ -924,7 +855,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_3">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.03 Softmax
@@ -938,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-schema_math/" class="md-nav__link">
+      <a href="../03-schema_math/" class="md-nav__link">
         
   
   
@@ -958,10 +889,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax_explain/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Softmax
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -972,6 +923,57 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#giai-thich-ve-softmax-trong-neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giải thích về Softmax trong Neural Network
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Giải thích về Softmax trong Neural Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phan-1-tai-sao-chung-ta-can-softmax-van-e-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 1: Tại sao chúng ta cần Softmax? Vấn đề là gì?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phan-2-giai-thich-truu-tuong-de-hieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 2: Giải Thích Trừu Tượng &amp; Dễ Hiểu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1033,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-nav__link">
+      <a href="../../Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-nav__link">
         
   
   
@@ -1056,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
+      <a href="../../Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
         
   
   
@@ -1114,51 +1116,130 @@
   
 
 
-  <h1>Welcome</h1>
+  <h1>Softmax</h1>
 
-<h2 id="welcome-to-the-digital-cityscape">🌌 Welcome to the Digital Cityscape 🌃<a class="headerlink" href="#welcome-to-the-digital-cityscape" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>       ╔════════════════════════════════════╗
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>       ║  NEURAL NETWORKS FROM SCRATCH      ║
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>       ║  A Journey Built from Ground Zero  ║
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>       ╚════════════════════════════════════╝
+<h2 id="giai-thich-ve-softmax-trong-neural-network">Giải thích về Softmax trong Neural Network<a class="headerlink" href="#giai-thich-ve-softmax-trong-neural-network" title="Permanent link">&para;</a></h2>
+<h3 id="phan-1-tai-sao-chung-ta-can-softmax-van-e-la-gi">Phần 1: Tại sao chúng ta cần Softmax? Vấn đề là gì?<a class="headerlink" href="#phan-1-tai-sao-chung-ta-can-softmax-van-e-la-gi" title="Permanent link">&para;</a></h3>
+<p>Ở các chương trước, bạn có thể đã làm quen với hàm kích hoạt <strong>ReLU (Rectified Linear Unit)</strong>. ReLU rất tốt cho các lớp ẩn (hidden layers) nhưng lại có một vài vấn đề nếu dùng cho lớp cuối cùng (output layer) của một mạng phân loại:</p>
+<ol>
+<li><strong>Không bị chặn (Unbounded):</strong> Đầu ra của ReLU có thể là bất kỳ số dương nào (ví dụ: <code>[12, 99, 318]</code>). Những con số này đứng một mình không có nhiều ý nghĩa. 318 lớn hơn 99, nhưng lớn hơn "bao nhiêu"? Liệu nó có "chắc chắn" hơn nhiều không? Chúng ta không có một "ngữ cảnh" để so sánh.</li>
+<li><strong>Không được chuẩn hóa (Not Normalized):</strong> Các giá trị đầu ra không có mối liên hệ tổng thể. Tổng của chúng không bằng một con số cố định nào cả.</li>
+<li><strong>Độc quyền (Exclusive):</strong> Đầu ra của mỗi neuron là độc lập với các neuron khác.</li>
+</ol>
+<p><strong>Mục tiêu của chúng ta:</strong> Với bài toán phân loại, chúng ta muốn mạng nơ-ron "nói" cho chúng ta biết nó "nghĩ" rằng đầu vào thuộc về lớp nào với một mức độ tự tin (confidence) rõ ràng. Ví dụ, với 3 lớp (chó, mèo, chim), chúng ta muốn đầu ra có dạng như <code>[0.05, 0.9, 0.05]</code>, nghĩa là: "Tôi tin chắc 90% đây là mèo, 5% là chó và 5% là chim."</p>
+<p>=&gt; <strong>Softmax ra đời để giải quyết vấn đề này.</strong> Nó nhận vào các số thực bất kỳ (có thể âm, dương, lớn, nhỏ) và biến chúng thành một <strong>phân phối xác suất (probability distribution)</strong>. Các đặc điểm của phân phối xác suất này là:
+*   Tất cả các giá trị đầu ra đều nằm trong khoảng <code>[0, 1]</code>.
+*   Tổng của tất cả các giá trị đầu ra <strong>luôn bằng 1</strong>.</p>
+<p>Những giá trị này chính là <strong>điểm tự tin (confidence scores)</strong> mà chúng ta cần.</p>
+<h5 id="muc-2-giai-phau-cong-thuc-softmax">Mục 2: "Giải phẫu" công thức Softmax<a class="headerlink" href="#muc-2-giai-phau-cong-thuc-softmax" title="Permanent link">&para;</a></h5>
+<p>Công thức trong sách có vẻ đáng sợ:</p>
+<div class="arithmatex">\[ S_{i,j} = \frac{e^{z_{i,j}}}{\sum_{l=1}^{L} e^{z_{i,l}}} \]</div>
+<p>Đừng lo, hãy chia nó thành 2 bước cực kỳ đơn giản:</p>
+<p><strong>Bước 1: Lũy thừa hóa (Exponentiation) - Tử số <code>e^z</code></strong></p>
+<ul>
+<li><code>z</code> là các giá trị đầu ra từ lớp trước (ví dụ <code>layer_outputs = [4.8, 1.21, 2.385]</code>).</li>
+<li><code>e</code> là hằng số Euler (xấp xỉ 2.71828), là cơ số của logarit tự nhiên.</li>
+<li>"Lũy thừa hóa" đơn giản là lấy <code>e</code> mũ các giá trị <code>z</code> đó. Trong Python, chúng ta dùng <code>E ** output</code> hoặc <code>math.exp(output)</code>.</li>
+</ul>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Ví dụ từ sách</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">layer_outputs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.8</span><span class="p">,</span> <span class="mf">1.21</span><span class="p">,</span> <span class="mf">2.385</span><span class="p">]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">E</span> <span class="o">=</span> <span class="mf">2.71828182846</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a><span class="c1"># Tính e^z cho mỗi giá trị</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a><span class="n">exp_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">E</span><span class="o">**</span><span class="mf">4.8</span><span class="p">,</span> <span class="n">E</span><span class="o">**</span><span class="mf">1.21</span><span class="p">,</span> <span class="n">E</span><span class="o">**</span><span class="mf">2.385</span><span class="p">]</span> 
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a><span class="c1"># Kết quả: [121.51, 3.35, 10.86]</span>
 </span></code></pre></div>
-<p>Hey there! 😊 I'm just a curious coder diving into the fascinating world of artificial intelligence through <em>Neural Networks from Scratch in Python</em>. This website is my digital journal, capturing every step of my learning journey—from the first lines of Python code to building complex neural networks. It's not a fancy project, just a humble corner of the internet where I share what I've learned, the mistakes I've made, and the excitement of discovering something new.</p>
-<h3 id="why-this-journey-matters">💾 Why This Journey Matters<a class="headerlink" href="#why-this-journey-matters" title="Permanent link">&para;</a></h3>
-<p>In my own cyberpunk-inspired world, I see each chapter of the book as a <em>node</em> in a vast network of knowledge. Every Python file, every documentation folder, is a piece of a digital puzzle I'm piecing together. I'm no expert—just someone passionate about learning—but I believe that starting from scratch, one small step at a time, can lead to incredible discoveries.</p>
-<ul>
-<li><strong>One chapter, one challenge</strong>: Each folder corresponds to a book chapter, with Python code and notes from basic to advanced.</li>
-<li><strong>Learning by doing</strong>: I write, test, and document the code to truly understand how neural networks work.</li>
-<li><strong>Open to collaboration</strong>: I’d love to hear your thoughts, comments, or contributions to make this journey richer!</li>
-</ul>
-<h3 id="explore-the-neuron-city">🌆 Explore the Neuron City<a class="headerlink" href="#explore-the-neuron-city" title="Permanent link">&para;</a></h3>
-<p>Imagine stepping into a futuristic city where buildings are neural layers, neon lights are weights, and data flows like endless streets. This website is your guide through that city:</p>
-<ul>
-<li><strong>Book chapters</strong>: Each folder holds a chapter’s Python code and detailed explanations.</li>
-<li><strong>Personal notes</strong>: My thoughts, lessons learned, and even the bugs I’ve wrestled with.</li>
-<li><strong>Interactive space</strong>: I hope you’ll leave a comment, suggestion, or even a snippet of code to help shape this project!</li>
-</ul>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>   ╔═════════════════════════════╗
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>   ║  // STARTING POINT          ║
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>   ║  &gt; Browse the folders       ║
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>   ║  &gt; Run the Python code      ║
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>   ║  &gt; Leave your mark!         ║
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a>   ╚═════════════════════════════╝
+<p><strong>Tại sao phải làm bước này?</strong>
+1.  <strong>Loại bỏ số âm:</strong> <code>e</code> mũ bất cứ số nào cũng luôn cho ra kết quả <strong>dương</strong>. Điều này rất quan trọng vì xác suất không thể là số âm.
+2.  <strong>Khuếch đại sự khác biệt:</strong> Hàm mũ làm cho các giá trị lớn càng lớn hơn một cách vượt trội so với các giá trị nhỏ. Giá trị <code>4.8</code> chỉ lớn hơn <code>2.385</code> khoảng 2 lần, nhưng sau khi lũy thừa, <code>121.51</code> lớn hơn <code>10.86</code> tới hơn 11 lần! Điều này giúp mạng "tự tin" hơn vào dự đoán có điểm số cao nhất.</p>
+<p><strong>Bước 2: Chuẩn hóa (Normalization) - Phép chia</strong></p>
+<p>Sau khi có các giá trị đã được lũy thừa (<code>exp_values</code>), chúng ta chỉ cần làm một việc:</p>
+<ol>
+<li>Tính tổng tất cả các giá trị đó (mẫu số <span class="arithmatex">\(\sum_{l=1}^{L} e^{z_{i,l}}\)</span>).</li>
+<li>Lấy từng giá trị chia cho tổng vừa tính được.</li>
+</ol>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="c1"># Tiếp nối ví dụ trên</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="n">exp_values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">121.51</span><span class="p">,</span> <span class="mf">3.35</span><span class="p">,</span> <span class="mf">10.86</span><span class="p">]</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="c1"># 1. Tính tổng</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">norm_base</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">exp_values</span><span class="p">)</span> <span class="c1"># 121.51 + 3.35 + 10.86 = 135.72</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="c1"># 2. Chia từng giá trị cho tổng</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="n">norm_values</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>    <span class="mf">121.51</span> <span class="o">/</span> <span class="n">norm_base</span><span class="p">,</span> <span class="c1"># ~0.895</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a>    <span class="mf">3.35</span> <span class="o">/</span> <span class="n">norm_base</span><span class="p">,</span>   <span class="c1"># ~0.025</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a>    <span class="mf">10.86</span> <span class="o">/</span> <span class="n">norm_base</span>   <span class="c1"># ~0.080</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a><span class="p">]</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><a href="#__codelineno-1-14"><span class="linenos" data-linenos="14 "></span></a><span class="c1"># Kết quả: [0.895, 0.025, 0.080]</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><a href="#__codelineno-1-15"><span class="linenos" data-linenos="15 "></span></a><span class="c1"># Kiểm tra: 0.895 + 0.025 + 0.080 = 1.0</span>
 </span></code></pre></div>
-<h3 id="join-me-on-this-journey">💡 Join Me on This Journey!<a class="headerlink" href="#join-me-on-this-journey" title="Permanent link">&para;</a></h3>
-<p>This project isn’t perfect, but it’s fueled by curiosity and passion. If you’re excited about AI, curious about how neural networks tick, or just love coding, I invite you to:</p>
+<p>Vậy là xong! Chúng ta đã biến <code>[4.8, 1.21, 2.385]</code> thành một phân phối xác suất <code>[0.895, 0.025, 0.080]</code>.</p>
+<h5 id="muc-3-toi-uu-voi-numpy-va-xu-ly-theo-lo-batch">Mục 3: Tối ưu với NumPy và xử lý theo Lô (Batch)<a class="headerlink" href="#muc-3-toi-uu-voi-numpy-va-xu-ly-theo-lo-batch" title="Permanent link">&para;</a></h5>
+<p>Trong thực tế, chúng ta không xử lý từng mẫu dữ liệu một mà xử lý cả một <strong>lô (batch)</strong> để tăng tốc độ. Một lô dữ liệu sẽ có dạng một ma trận, trong đó mỗi hàng là đầu ra cho một mẫu.</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Một lô có 3 mẫu, mỗi mẫu có 3 đầu ra</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">layer_outputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">4.8</span><span class="p">,</span> <span class="mf">1.21</span><span class="p">,</span> <span class="mf">2.385</span><span class="p">],</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a>                          <span class="p">[</span><span class="mf">8.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.81</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a>                          <span class="p">[</span><span class="mf">1.41</span><span class="p">,</span> <span class="mf">1.051</span><span class="p">,</span> <span class="mf">0.026</span><span class="p">]])</span>
+</span></code></pre></div>
+<p>Bây giờ, chúng ta cần tính Softmax cho <strong>từng hàng một</strong>. Đây là lúc các tham số <code>axis</code> và <code>keepdims</code> của NumPy phát huy tác dụng.</p>
 <ul>
-<li><strong>Dive into the chapters</strong>: Start with the first folder and build neural networks from the ground up with me.</li>
-<li><strong>Share your thoughts</strong>: Drop a comment, question, or idea in the section below.</li>
-<li><strong>Contribute code</strong>: Spot a better way to code or explain something? Submit a pull request on the repo!</li>
+<li><code>np.exp(layer_outputs)</code>: NumPy thông minh sẽ tự động tính lũy thừa cho mọi phần tử trong ma trận.</li>
+<li><code>np.sum(..., axis=1)</code>: Chúng ta cần tính tổng của các giá trị <strong>trên mỗi hàng</strong>.<ul>
+<li><code>axis=0</code>: tính tổng theo cột.</li>
+<li><code>axis=1</code>: tính tổng theo hàng. Đây là cái chúng ta cần.</li>
 </ul>
-<p>Thanks for stopping by this little corner of the digital universe. Let’s light up the neon trails of knowledge together! 🚀</p>
-<blockquote>
-<p>CONNECT &amp; CONTRIBUTE<br>
-<a href="https://github.com/dohuyhoang93/learn-nnfs">GitHub</a><br>
-<a href="dohuyhoangvn93@gmail.com">Email</a><br></p>
-</blockquote>
+</li>
+<li><code>keepdims=True</code>: Khi tính tổng theo <code>axis=1</code>, kết quả sẽ là một vector hàng <code>[8.395, 7.29, 2.487]</code>. Nếu chúng ta lấy ma trận <code>(3, 3)</code> chia cho vector <code>(3,)</code>, NumPy có thể báo lỗi hoặc không thực hiện đúng phép chia theo hàng. <code>keepdims=True</code> sẽ giữ nguyên số chiều, biến kết quả thành một vector cột <code>[[8.395], [7.29], [2.487]]</code> có shape <code>(3, 1)</code>. Lúc này, NumPy có thể thực hiện phép chia ma trận <code>(3, 3)</code> cho vector cột <code>(3, 1)</code> một cách chính xác (mỗi hàng của ma trận được chia cho giá trị tương ứng trong vector cột).</li>
+</ul>
+<h5 id="muc-4-bi-kip-chong-tran-so-overflow-prevention">Mục 4: "Bí kíp" chống tràn số (Overflow Prevention)<a class="headerlink" href="#muc-4-bi-kip-chong-tran-so-overflow-prevention" title="Permanent link">&para;</a></h5>
+<p>Hàm mũ <code>e^x</code> tăng rất nhanh. Nếu đầu vào <code>z</code> là một số lớn (ví dụ <code>1000</code>), <code>np.exp(1000)</code> sẽ trả về <code>inf</code> (vô cực), gây ra lỗi tràn số (overflow) và làm hỏng toàn bộ phép tính.</p>
+<p><strong>Giải pháp:</strong> Chúng ta có thể trừ đi một số bất kỳ từ tất cả các giá trị đầu vào <code>z</code> mà không làm thay đổi kết quả cuối cùng của Softmax. Tại sao? Vì tính chất của phép lũy thừa và phép chia:
+$$ \frac{e<sup>{z_1}}{e</sup>{z_1} + e^{z_2}} = \frac{e^{z_1} \cdot e<sup>{-C}}{e</sup>{z_1} \cdot e^{-C} + e^{z_2} \cdot e^{-C}} = \frac{e^{z_1 - C}}{e^{z_1 - C} + e^{z_2 - C}} $$</p>
+<p>Vậy chúng ta nên trừ đi số nào? <strong>Số lớn nhất (max)</strong> trong các giá trị đầu vào của hàng đó.</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">max_value</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">shifted_inputs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># -&gt; [-2, -1, 0]</span>
+</span></code></pre></div>
+<p>Lợi ích của việc này:
+1.  Giá trị lớn nhất sau khi trừ sẽ là <code>0</code>. (<code>e^0 = 1</code>)
+2.  Tất cả các giá trị khác sẽ là số âm. (<code>e</code> mũ số âm luôn là một số nhỏ hơn 1).
+3.  Điều này đảm bảo rằng đầu vào cho hàm <code>exp</code> sẽ không bao giờ là một số dương lớn, từ đó <strong>ngăn chặn hoàn toàn lỗi tràn số</strong>.</p>
+<p>Đây chính là lý do trong đoạn code cuối cùng của sách, bạn sẽ thấy dòng này:
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">exp_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">inputs</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</span></code></pre></div>
+Đây là phiên bản Softmax hoàn chỉnh, an toàn và hiệu quả.</p>
 <hr />
-<p><em>The journey begins with a single line of code. Are you ready?</em></p>
+<h3 id="phan-2-giai-thich-truu-tuong-de-hieu">Phần 2: Giải Thích Trừu Tượng &amp; Dễ Hiểu<a class="headerlink" href="#phan-2-giai-thich-truu-tuong-de-hieu" title="Permanent link">&para;</a></h3>
+<p>Hãy quên đi công thức toán học và code. Hãy tưởng tượng Softmax là một <strong>"Máy Phân Bổ Sự Tự Tin"</strong> cho một cuộc thi tài năng.</p>
+<p><strong>1. Vòng Sơ Khảo - Điểm thô (Raw Scores)</strong></p>
+<p>Giả sử có 3 thí sinh (Chó, Mèo, Chim) tham gia một cuộc thi. Ban giám khảo (lớp mạng nơ-ron phía trước) cho điểm thô. Điểm này có thể rất lộn xộn:
+<code>Điểm thô = [4.8, 1.21, 2.385]</code></p>
+<p>Nhìn vào điểm này, chúng ta biết thí sinh Chó có điểm cao nhất, nhưng "cao hơn" như thế nào? Mức độ "chiến thắng" có áp đảo không? Rất khó nói.</p>
+<p><strong>2. Bước 1: Máy "Hype" - Lũy thừa hóa</strong></p>
+<p>Để làm cho kết quả rõ ràng hơn, MC cho các điểm số này vào một cái <strong>Máy "Hype"</strong>. Máy này có 2 chức năng:
+*   <strong>Không có điểm âm:</strong> Nó biến mọi điểm số thành điểm "nhiệt tình" (luôn dương).
+*   <strong>Tâng bốc người giỏi nhất:</strong> Máy này cực kỳ "thiên vị". Ai điểm cao sẵn rồi sẽ được tâng bốc lên tận mây xanh, trong khi người điểm thấp chỉ được tăng nhẹ.</p>
+<p>Sau khi qua Máy "Hype" (tức là <code>e^x</code>):
+<code>Điểm Hype = [121.5, 3.4, 10.9]</code></p>
+<p>Bây giờ thì sự khác biệt đã quá rõ ràng! Thí sinh Chó không chỉ cao điểm hơn, mà còn <strong>áp đảo hoàn toàn</strong> phần còn lại.</p>
+<p><strong>3. Bước 2: Chia "Chiếc Bánh Tự Tin" - Chuẩn hóa</strong></p>
+<p>Bây giờ, để khán giả dễ hiểu, MC quyết định không dùng điểm hype nữa mà sẽ chia một "chiếc bánh tự tin" 100% cho 3 thí sinh, dựa trên tỷ lệ điểm hype của họ.</p>
+<ul>
+<li>Tổng điểm Hype = 121.5 + 3.4 + 10.9 = 135.8</li>
+<li>Phần bánh của Chó: <code>121.5 / 135.8 ≈ 89.5%</code></li>
+<li>Phần bánh của Mèo: <code>3.4 / 135.8 ≈ 2.5%</code></li>
+<li>Phần bánh của Chim: <code>10.9 / 135.8 ≈ 8.0%</code></li>
+</ul>
+<p><strong>Kết quả cuối cùng:</strong>
+<code>Mức độ tự tin = [0.895, 0.025, 0.080]</code></p>
+<p>Đây chính là đầu ra của Softmax. Nó cho chúng ta một kết luận rất rõ ràng: "Dựa trên màn trình diễn, tôi <strong>tin chắc 89.5%</strong> người chiến thắng là Chó."</p>
+<p><strong>Về "bí kíp" chống tràn số:</strong> Hãy tưởng tượng một giám khảo quá phấn khích cho điểm <code>1000</code>. Máy "Hype" sẽ bị "cháy" (overflow). MC thông minh nhận ra rằng điều quan trọng là <strong>sự chênh lệch điểm số</strong> chứ không phải bản thân điểm số. Vì vậy, trước khi cho vào máy, anh ta tìm điểm cao nhất (1000) và trừ nó khỏi điểm của mọi người. Kết quả cuối cùng sau khi chia bánh vẫn không hề thay đổi, nhưng cái máy hype đã được cứu!</p>
+<p><strong>Tóm lại, Softmax làm hai việc:</strong></p>
+<ol>
+<li><strong>Sử dụng hàm mũ <code>e^x</code> để khuếch đại điểm số cao nhất, biến nó thành "người dẫn đầu" rõ rệt.</strong></li>
+<li><strong>Chuẩn hóa các điểm số đã được khuếch đại đó thành một tỷ lệ phần trăm (hoặc xác suất), để tất cả cộng lại bằng 1.</strong></li>
+</ol>
 
 
 
@@ -1196,9 +1277,25 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../03-schema_math/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Math Schema">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Math Schema
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-footer__link md-footer__link--next" aria-label="Next: LOSS MATH SCHEMA">
+          <a href="../../Ch4pt3r.04_L0SS/04-loss-math-schema/" class="md-footer__link md-footer__link--next" aria-label="Next: LOSS MATH SCHEMA">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
@@ -1244,12 +1341,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["toc.follow", "toc.integrate", "navigation.footer", "navigation.top", "navigation.tabs", "navigation.path"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "toc.integrate", "navigation.footer", "navigation.top", "navigation.tabs", "navigation.path"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
