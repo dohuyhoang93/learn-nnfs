@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu-diagram/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization-code/">
       
       
-        <link rel="prev" href="../../Ch4pt3r.01_First_Layer/01-first-layer/">
+        <link rel="prev" href="../../Ch4pt3r.04_L0SS/04-loss/">
       
       
-        <link rel="next" href="../02-transformation-relu/">
+        <link rel="next" href="../06-introducing-optimization/">
       
       
-      <link rel="icon" href="../../../assets/logo.svg">
+      <link rel="icon" href="../../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>ReLU Diagram - Neural Network From Scratch Documentation</title>
+        <title>Code Explain - Neural Network From Scratch Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -91,7 +91,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#consolidated-ascii-diagram-from-data-point-to-relu-activation" class="md-skip">
+        <a href="#muc-tieu-cua-oan-ma" class="md-skip">
           Skip to content
         </a>
       
@@ -131,9 +131,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Neural Network From Scratch Documentation" class="md-header__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
+    <a href="../../../.." title="Neural Network From Scratch Documentation" class="md-header__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
       
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -150,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ReLU Diagram
+              Code Explain
             
           </span>
         </div>
@@ -203,7 +203,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../../../vi/" hreflang="vi" class="md-select__link">
+            <a href="../../../" hreflang="vi" class="md-select__link">
               Vietnamese
             </a>
           </li>
@@ -287,7 +287,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   
@@ -304,8 +304,6 @@
   
   
   
-    
-  
   
     
     
@@ -313,13 +311,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../Ch4pt3r.01_First_Layer/01-first-foward-diagram/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-foward-diagram/" class="md-tabs__link">
           
   
   
@@ -338,11 +334,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../vi/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
           
   
   
@@ -378,9 +376,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Neural Network From Scratch Documentation" class="md-nav__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
+    <a href="../../../.." title="Neural Network From Scratch Documentation" class="md-nav__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
       
-  <img src="../../../assets/logo.svg" alt="logo">
+  <img src="../../../../assets/logo.svg" alt="logo">
 
     </a>
     Neural Network From Scratch Documentation
@@ -407,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -426,29 +424,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -461,7 +454,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Explain Documents
@@ -516,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.01_First_Layer/01-first-foward-diagram/" class="md-nav__link">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-foward-diagram/" class="md-nav__link">
         
   
   
@@ -539,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.01_First_Layer/01-first-layer/" class="md-nav__link">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-layer/" class="md-nav__link">
         
   
   
@@ -567,8 +560,6 @@
                 
   
   
-    
-  
   
   
     
@@ -579,11 +570,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -599,7 +590,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.02 Transformation&ReLU
@@ -610,30 +601,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    ReLU Diagram
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu-diagram/" class="md-nav__link">
         
   
   
@@ -644,33 +615,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#consolidated-ascii-diagram-from-data-point-to-relu-activation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Consolidated ASCII Diagram: From Data Point to ReLU Activation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -683,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-transformation-relu/" class="md-nav__link">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu/" class="md-nav__link">
         
   
   
@@ -743,6 +687,505 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ch4pt3r.03 Softmax
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Softmax Diagram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Softmax
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ch4pt3r.04 L0SS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ch4pt3r.04 L0SS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LOSS Diagram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LOSS & ACCURACY
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Vi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chào Mừng
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Explain Documents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Explain Documents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ch4pt3r.01 First Layer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ch4pt3r.01 First Layer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.01_First_Layer/01-first-forward-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    First Forward Diagram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.01_First_Layer/01-first-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    First Layer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ch4pt3r.02 Transformation&ReLU
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Ch4pt3r.02 Transformation&ReLU
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ReLU Diagram
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transformation & ReLU activation function
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ch4pt3r.03 Softmax
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.03 Softmax
           </label>
@@ -820,10 +1263,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
             
   
   
@@ -836,8 +1279,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.04 L0SS
           </label>
@@ -897,80 +1340,11 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Vi
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Vi
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../vi/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Chào Mừng
     
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
   
   
   
@@ -982,432 +1356,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Explain Documents
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            Explain Documents
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Ch4pt3r.01 First Layer
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2_1">
-            <span class="md-nav__icon md-icon"></span>
-            Ch4pt3r.01 First Layer
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-forward-diagram/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    First Forward Diagram
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-layer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    First Layer
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Ch4pt3r.02 Transformation&ReLU
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            Ch4pt3r.02 Transformation&ReLU
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu-diagram/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    ReLU Diagram
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Transformation & ReLU activation function
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Ch4pt3r.03 Softmax
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            Ch4pt3r.03 Softmax
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax-diagram/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Softmax Diagram
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Softmax
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Ch4pt3r.04 L0SS
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2_4">
-            <span class="md-nav__icon md-icon"></span>
-            Ch4pt3r.04 L0SS
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-diagram/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    LOSS Diagram
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    LOSS & ACCURACY
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
@@ -1423,7 +1376,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_5">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.06 Introducing Optimization
@@ -1434,10 +1387,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization-code/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Code Explain
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1448,6 +1421,60 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu-cua-oan-ma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mục tiêu của đoạn mã
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-tich-chi-tiet-tung-khoi-lenh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phân tích chi tiết từng khối lệnh
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-o-minh-hoa-phep-toan-ma-tran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sơ đồ minh họa phép toán ma trận
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan-va-anh-gia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kết luận và Đánh giá
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1460,7 +1487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/" class="md-nav__link">
+      <a href="../06-introducing-optimization/" class="md-nav__link">
         
   
   
@@ -1532,7 +1559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.07_Derivative/07-derivative/" class="md-nav__link">
+      <a href="../../Ch4pt3r.07_Derivative/07-derivative/" class="md-nav__link">
         
   
   
@@ -1604,7 +1631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vi/Explain%20Documents/Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/" class="md-nav__link">
+      <a href="../../Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/" class="md-nav__link">
         
   
   
@@ -1662,85 +1689,147 @@
   
 
 
-  <h1>ReLU Diagram</h1>
+  <h1>Code Explain</h1>
 
-<h4 id="consolidated-ascii-diagram-from-data-point-to-relu-activation"><strong>Consolidated ASCII Diagram: From Data Point to ReLU Activation</strong><a class="headerlink" href="#consolidated-ascii-diagram-from-data-point-to-relu-activation" title="Permanent link">&para;</a></h4>
-<p>This diagram tracks a single data point <code>O(0.5, 1.0)</code> through the entire process: <strong>Dense Layer 1 -&gt; ReLU Activation 1</strong>.</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a>╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>║             COMPLETE FLOW DIAGRAM: LINEAR TRANSFORMATION &amp; NON-LINEAR (RELU) ACTIVATION                      ║
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>    (STEP 1: INPUT)
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>    A single data point in 2D space
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>    ┌─────────────────────────┐
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>    │     Input: O(x, y)      │
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>    │      [0.5, 1.0]         │
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>    └───────────┬─────────────┘
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>                │
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a>                ▼
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a>╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><a href="#__codelineno-0-14"><span class="linenos" data-linenos="14 "></span></a>║   (STEP 2: LINEAR TRANSFORMATION - DENSE LAYER 1) - `output = v · W + b`                                     ║
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><a href="#__codelineno-0-15"><span class="linenos" data-linenos="15 "></span></a>║   Goal: Project the point O from 2D space into a new 3D space.                                               ║
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><a href="#__codelineno-0-16"><span class="linenos" data-linenos="16 "></span></a>╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><a href="#__codelineno-0-17"><span class="linenos" data-linenos="17 "></span></a>    ┌─────────────────────────────────────────┴──────────────────────────────────────────┐
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><a href="#__codelineno-0-18"><span class="linenos" data-linenos="18 "></span></a>    │                                                                                    │
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><a href="#__codelineno-0-19"><span class="linenos" data-linenos="19 "></span></a>    ▼ (2a: Dot Product Operation)                                                        ▼ (Layer&#39;s Parameters)
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><a href="#__codelineno-0-20"><span class="linenos" data-linenos="20 "></span></a>┌───────────┐         ┌─────────────────────────┐                            ┌─────────────────────────┐
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><a href="#__codelineno-0-21"><span class="linenos" data-linenos="21 "></span></a>│ [0.5, 1.0]│         │      Weights: W         │                            │       Biases: b         │
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><a href="#__codelineno-0-22"><span class="linenos" data-linenos="22 "></span></a>└─────┬─────┘         │     (2x3 Matrix)        │                            │     (1x3 Vector)        │
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><a href="#__codelineno-0-23"><span class="linenos" data-linenos="23 "></span></a>      │               │ [[ 0.2, 0.8,-0.5],     │                            │     [[2.0, 3.0, 0.5]]   │
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><a href="#__codelineno-0-24"><span class="linenos" data-linenos="24 "></span></a>      └───────────┐   │  [-0.9, 0.2, 0.4]]      │                            └─────────────┬─────────────┘
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><a href="#__codelineno-0-25"><span class="linenos" data-linenos="25 "></span></a>                  │   └─────────────────────────┘                                          │
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><a href="#__codelineno-0-26"><span class="linenos" data-linenos="26 "></span></a>                  ▼                                                                        │
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><a href="#__codelineno-0-27"><span class="linenos" data-linenos="27 "></span></a>┌─────────────────┴──────────────────────────────────────────────────────────────────────┐ │
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><a href="#__codelineno-0-28"><span class="linenos" data-linenos="28 "></span></a>│          DETAILED CALCULATION FOR EACH NEURON (Each neuron creates a new dimension)    │ │
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><a href="#__codelineno-0-29"><span class="linenos" data-linenos="29 "></span></a>│                                                                                        │ │
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><a href="#__codelineno-0-30"><span class="linenos" data-linenos="30 "></span></a>│  Neuron 0: (0.5 * 0.2) + (1.0 * -0.9) = -0.8  &lt;───┐                                    │ │
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><a href="#__codelineno-0-31"><span class="linenos" data-linenos="31 "></span></a>│  Neuron 1: (0.5 * 0.8) + (1.0 *  0.2) =  0.6  &lt;───┼──┐                                 │ │
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><a href="#__codelineno-0-32"><span class="linenos" data-linenos="32 "></span></a>│  Neuron 2: (0.5 *-0.5) + (1.0 *  0.4) =  0.15 &lt;───┼──┼──┐                              │ │
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><a href="#__codelineno-0-33"><span class="linenos" data-linenos="33 "></span></a>└──────────────────────────────────────────────────┘  │  │  │                              │
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><a href="#__codelineno-0-34"><span class="linenos" data-linenos="34 "></span></a>                                                    │  │  │                              │
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><a href="#__codelineno-0-35"><span class="linenos" data-linenos="35 "></span></a>    (Result of v · W)                               ▼  ▼  ▼                              │
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><a href="#__codelineno-0-36"><span class="linenos" data-linenos="36 "></span></a>    ┌─────────────────────────┐               ┌───────┴───────┐                          │
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><a href="#__codelineno-0-37"><span class="linenos" data-linenos="37 "></span></a>    │  [-0.8,  0.6,   0.15]    │               │  (2b: Add Bias) │                          │
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><a href="#__codelineno-0-38"><span class="linenos" data-linenos="38 "></span></a>    └───────────┬─────────────┘               └───────────────┘                          │
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><a href="#__codelineno-0-39"><span class="linenos" data-linenos="39 "></span></a>                └───────────────────────────────────►   +   ◄────────────────────────────┘
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><a href="#__codelineno-0-40"><span class="linenos" data-linenos="40 "></span></a>                                                    │
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><a href="#__codelineno-0-41"><span class="linenos" data-linenos="41 "></span></a>                                                    ▼
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><a href="#__codelineno-0-42"><span class="linenos" data-linenos="42 "></span></a>                                          ┌─────────────────────────┐
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><a href="#__codelineno-0-43"><span class="linenos" data-linenos="43 "></span></a>                                          │     dense1.output       │ (Coordinates in the new space)
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><a href="#__codelineno-0-44"><span class="linenos" data-linenos="44 "></span></a>                                          │        (Logits)         │
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><a href="#__codelineno-0-45"><span class="linenos" data-linenos="45 "></span></a>                                          │ [1.2,  3.6,  0.65]      │
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a><a href="#__codelineno-0-46"><span class="linenos" data-linenos="46 "></span></a>                                          └───────────┬─────────────┘
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a><a href="#__codelineno-0-47"><span class="linenos" data-linenos="47 "></span></a>                                                      │
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><a href="#__codelineno-0-48"><span class="linenos" data-linenos="48 "></span></a>                                                      ▼
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><a href="#__codelineno-0-49"><span class="linenos" data-linenos="49 "></span></a>╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><a href="#__codelineno-0-50"><span class="linenos" data-linenos="50 "></span></a>║   (STEP 3: NON-LINEAR TRANSFORMATION - RELU ACTIVATION) - `output = max(0, x)`                             ║
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><a href="#__codelineno-0-51"><span class="linenos" data-linenos="51 "></span></a>║   Goal: &quot;Bend&quot; the space, zeroing out negative values to enable non-linear learning.                       ║
-</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><a href="#__codelineno-0-52"><span class="linenos" data-linenos="52 "></span></a>╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><a href="#__codelineno-0-53"><span class="linenos" data-linenos="53 "></span></a>    ┌─────────────────────────────────────────┴──────────────────────────────────────────┐
-</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><a href="#__codelineno-0-54"><span class="linenos" data-linenos="54 "></span></a>    │                                                                                    │
-</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a><a href="#__codelineno-0-55"><span class="linenos" data-linenos="55 "></span></a>    ▼ (Element-wise operation)                                                           ▼
-</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><a href="#__codelineno-0-56"><span class="linenos" data-linenos="56 "></span></a>┌─────────────────────────┐                                                    ┌───────────────────────────┐
-</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a><a href="#__codelineno-0-57"><span class="linenos" data-linenos="57 "></span></a>│     dense1.output       │                                                    │ activation1.output        │
-</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a><a href="#__codelineno-0-58"><span class="linenos" data-linenos="58 "></span></a>│   [1.2, 3.6, 0.65]      │                                                    │      (Final Output)       │
-</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a><a href="#__codelineno-0-59"><span class="linenos" data-linenos="59 "></span></a>└───────────┬─────────────┘                                                    ├───────────────────────────┤
-</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a><a href="#__codelineno-0-60"><span class="linenos" data-linenos="60 "></span></a>            │                                                                  │   [1.2, 3.6, 0.65]        │
-</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61"></a><a href="#__codelineno-0-61"><span class="linenos" data-linenos="61 "></span></a>            └───────────┐                                                      └───────────────────────────┘
-</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62"></a><a href="#__codelineno-0-62"><span class="linenos" data-linenos="62 "></span></a>                        ▼
-</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63"></a><a href="#__codelineno-0-63"><span class="linenos" data-linenos="63 "></span></a>┌───────────────────────┴─────────────────────────┐
-</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a><a href="#__codelineno-0-64"><span class="linenos" data-linenos="64 "></span></a>│           max(0, 1.2)  --&gt;  1.2                 │
-</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a><a href="#__codelineno-0-65"><span class="linenos" data-linenos="65 "></span></a>│           max(0, 3.6)  --&gt;  3.6                 │
-</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66"></a><a href="#__codelineno-0-66"><span class="linenos" data-linenos="66 "></span></a>│           max(0, 0.65) --&gt;  0.65                │
-</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67"></a><a href="#__codelineno-0-67"><span class="linenos" data-linenos="67 "></span></a>└─────────────────────────────────────────────────┘
-</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68"></a><a href="#__codelineno-0-68"><span class="linenos" data-linenos="68 "></span></a>* NOTE: If the input to ReLU were [-0.8, 0.6, 0.15], the output would be [0.0, 0.6, 0.15].
-</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69"></a><a href="#__codelineno-0-69"><span class="linenos" data-linenos="69 "></span></a>* This transformation to 0 is the &quot;bending&quot; action on the space.
-</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70"></a><a href="#__codelineno-0-70"><span class="linenos" data-linenos="70 "></span></a>
-</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71"></a><a href="#__codelineno-0-71"><span class="linenos" data-linenos="71 "></span></a>==============================================================================================================
-</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72"></a><a href="#__codelineno-0-72"><span class="linenos" data-linenos="72 "></span></a>FLOW SUMMARY:
-</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73"></a><a href="#__codelineno-0-73"><span class="linenos" data-linenos="73 "></span></a>Input(2D) ──(Linear Transformation)──&gt; Logits(3D) ──(&quot;Bending&quot; with ReLU)──&gt; Hidden Layer Output(3D)
-</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74"></a><a href="#__codelineno-0-74"><span class="linenos" data-linenos="74 "></span></a>==============================================================================================================
+<p>Đây là phân tích chi tiết về đoạn mã lập trình hoàn chỉnh ở cuối Chương 6, thực thi phương pháp <strong>Tinh chỉnh Ngẫu nhiên (Random Local Search)</strong>.</p>
+<h4 id="muc-tieu-cua-oan-ma"><strong>Mục tiêu của đoạn mã</strong><a class="headerlink" href="#muc-tieu-cua-oan-ma" title="Permanent link">&para;</a></h4>
+<p>Đoạn mã này là một chương trình hoàn chỉnh để minh họa một phương pháp tối ưu hóa <strong>tốt hơn</strong> so với tìm kiếm hoàn toàn ngẫu nhiên. Thay vì "nhảy dù" đến các vị trí ngẫu nhiên, mô hình sẽ bắt đầu từ một điểm, "đi thử" một bước nhỏ ngẫu nhiên, và chỉ chấp nhận bước đi đó nếu nó dẫn đến một kết quả tốt hơn (loss thấp hơn).</p>
+<p>Đây chính là hiện thực hóa của liên hệ trừu tượng <strong>"người leo núi bịt mắt"</strong> đã nói ở trên.</p>
+<hr />
+<h4 id="phan-tich-chi-tiet-tung-khoi-lenh"><strong>Phân tích chi tiết từng khối lệnh</strong><a class="headerlink" href="#phan-tich-chi-tiet-tung-khoi-lenh" title="Permanent link">&para;</a></h4>
+<p>Chúng ta sẽ đi qua từng phần của mã và giải thích ý nghĩa của nó.</p>
+<h5 id="khoi-1-chuan-bi-moi-truong-trang-11"><strong>Khối 1: Chuẩn bị Môi trường (Trang 11)</strong><a class="headerlink" href="#khoi-1-chuan-bi-moi-truong-trang-11" title="Permanent link">&para;</a></h5>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="c1"># Create dataset</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">vertical_data</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="c1"># Create model</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">dense1</span> <span class="o">=</span> <span class="n">Layer_Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="n">activation1</span> <span class="o">=</span> <span class="n">Activation_ReLU</span><span class="p">()</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="n">dense2</span> <span class="o">=</span> <span class="n">Layer_Dense</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="n">activation2</span> <span class="o">=</span> <span class="n">Activation_Softmax</span><span class="p">()</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a><span class="c1"># Create loss function</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a><span class="n">loss_function</span> <span class="o">=</span> <span class="n">Loss_CategoricalCrossentropy</span><span class="p">()</span>
 </span></code></pre></div>
+<ul>
+<li><strong>Giải thích dễ hiểu:</strong> Phần này thiết lập mọi thứ cần thiết trước khi bắt đầu huấn luyện.<ul>
+<li><code>vertical_data</code>: Tạo ra một bộ dữ liệu "dễ". Dữ liệu này gồm 3 cụm điểm được phân tách rõ ràng theo chiều dọc. Một đường thẳng có thể dễ dàng phân chia chúng. Đây là lý do tại sao phương pháp này có thể thành công với nó.</li>
+<li><code>Layer_Dense(2, 3)</code>: Lớp ẩn đầu tiên nhận 2 đầu vào (tọa độ x, y của mỗi điểm dữ liệu) và có 3 neuron.</li>
+<li><code>Layer_Dense(3, 3)</code>: Lớp đầu ra nhận 3 đầu vào (từ lớp trước) và có 3 neuron (tương ứng 3 lớp/cụm dữ liệu cần phân loại).</li>
+<li><code>ReLU</code>, <code>Softmax</code>, <code>CategoricalCrossentropy</code>: Đây là các thành phần tiêu chuẩn của một mạng neural cho bài toán phân loại đa lớp mà chúng ta đã xây dựng ở các chương trước.</li>
+</ul>
+</li>
+</ul>
+<h5 id="khoi-2-khoi-tao-bo-nho-cua-nguoi-leo-nui-trang-11"><strong>Khối 2: Khởi tạo "Bộ nhớ" của Người leo núi (Trang 11)</strong><a class="headerlink" href="#khoi-2-khoi-tao-bo-nho-cua-nguoi-leo-nui-trang-11" title="Permanent link">&para;</a></h5>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Helper variables</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">lowest_loss</span> <span class="o">=</span> <span class="mi">9999999</span> <span class="c1"># some initial value</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">best_dense1_weights</span> <span class="o">=</span> <span class="n">dense1</span><span class="o">.</span><span class="n">weights</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a><span class="n">best_dense1_biases</span> <span class="o">=</span> <span class="n">dense1</span><span class="o">.</span><span class="n">biases</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">best_dense2_weights</span> <span class="o">=</span> <span class="n">dense2</span><span class="o">.</span><span class="n">weights</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a><span class="n">best_dense2_biases</span> <span class="o">=</span> <span class="n">dense2</span><span class="o">.</span><span class="n">biases</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p><strong>Giải thích dễ hiểu:</strong> Đây là bước cực kỳ quan trọng, nó thiết lập "trí nhớ" cho thuật toán.</p>
+<ul>
+<li><code>lowest_loss = 9999999</code>: Chúng ta khởi tạo một biến để lưu lại giá trị loss thấp nhất từng thấy. Gán cho nó một số rất lớn để đảm bảo rằng loss tính được ở lần lặp đầu tiên chắc chắn sẽ nhỏ hơn và được ghi nhận.</li>
+<li><code>best_..._weights = dense1.weights.copy()</code>: Đây là phần cốt lõi của "trí nhớ". Chúng ta tạo ra một <strong>bản sao (copy)</strong> hoàn chỉnh của bộ trọng số và bias ban đầu. Biến này sẽ luôn lưu giữ bộ tham số <strong>tốt nhất</strong> mà chúng ta từng tìm thấy.</li>
+</ul>
+</li>
+<li>
+<p><strong>Đối chiếu kiến thức tổng quát - Tầm quan trọng của <code>.copy()</code>:</strong>
+    Trong Python, khi bạn gán một đối tượng (như mảng NumPy) <code>a = b</code>, bạn không tạo ra một đối tượng mới. <code>a</code> và <code>b</code> sẽ cùng trỏ đến <strong>cùng một vùng nhớ</strong>. Nếu bạn thay đổi <code>b</code>, <code>a</code> cũng sẽ thay đổi theo.
+    Phương thức <code>.copy()</code> tạo ra một đối tượng hoàn toàn mới, độc lập, nằm ở một vùng nhớ khác. Điều này cho phép chúng ta thay đổi <code>dense1.weights</code> một cách tự do mà không làm ảnh hưởng đến <code>best_dense1_weights</code>, thứ đang lưu giữ "kỷ lục" của chúng ta. Nếu không có <code>.copy()</code>, thuật toán sẽ không hoạt động.</p>
+</li>
+</ul>
+<h5 id="khoi-3-vong-lap-toi-uu-hoa-hanh-trinh-leo-nui-trang-11-12"><strong>Khối 3: Vòng lặp Tối ưu hóa - Hành trình leo núi (Trang 11-12)</strong><a class="headerlink" href="#khoi-3-vong-lap-toi-uu-hoa-hanh-trinh-leo-nui-trang-11-12" title="Permanent link">&para;</a></h5>
+<p>Đây là trái tim của thuật toán.</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>    <span class="c1"># --- Bước 1: Đi thử một bước ngẫu nhiên ---</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>    <span class="c1"># Update weights with some small random values</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>    <span class="n">dense1</span><span class="o">.</span><span class="n">weights</span> <span class="o">+=</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>    <span class="n">dense1</span><span class="o">.</span><span class="n">biases</span> <span class="o">+=</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>    <span class="c1"># ... tương tự cho dense2 ...</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>    <span class="c1"># --- Bước 2: Kiểm tra vị trí mới ---</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>    <span class="c1"># Perform a forward pass ...</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>    <span class="n">dense1</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a>    <span class="n">activation1</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">dense1</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a>    <span class="c1"># ...</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a>    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_function</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">activation2</span><span class="o">.</span><span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><a href="#__codelineno-2-14"><span class="linenos" data-linenos="14 "></span></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><a href="#__codelineno-2-15"><span class="linenos" data-linenos="15 "></span></a>    <span class="c1"># --- Bước 3: Đánh giá và Quyết định ---</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a><a href="#__codelineno-2-16"><span class="linenos" data-linenos="16 "></span></a>    <span class="c1"># Calculate accuracy ...</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><a href="#__codelineno-2-17"><span class="linenos" data-linenos="17 "></span></a>    <span class="n">predictions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">activation2</span><span class="o">.</span><span class="n">output</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a><a href="#__codelineno-2-18"><span class="linenos" data-linenos="18 "></span></a>    <span class="n">accuracy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">predictions</span><span class="o">==</span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a><a href="#__codelineno-2-19"><span class="linenos" data-linenos="19 "></span></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><a href="#__codelineno-2-20"><span class="linenos" data-linenos="20 "></span></a>    <span class="c1"># If loss is smaller ...</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><a href="#__codelineno-2-21"><span class="linenos" data-linenos="21 "></span></a>    <span class="k">if</span> <span class="n">loss</span> <span class="o">&lt;</span> <span class="n">lowest_loss</span><span class="p">:</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><a href="#__codelineno-2-22"><span class="linenos" data-linenos="22 "></span></a>        <span class="c1"># Giữ lại vị trí mới</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a><a href="#__codelineno-2-23"><span class="linenos" data-linenos="23 "></span></a>        <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a><a href="#__codelineno-2-24"><span class="linenos" data-linenos="24 "></span></a>        <span class="n">best_dense1_weights</span> <span class="o">=</span> <span class="n">dense1</span><span class="o">.</span><span class="n">weights</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25"></a><a href="#__codelineno-2-25"><span class="linenos" data-linenos="25 "></span></a>        <span class="n">best_dense1_biases</span> <span class="o">=</span> <span class="n">dense1</span><span class="o">.</span><span class="n">biases</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26"></a><a href="#__codelineno-2-26"><span class="linenos" data-linenos="26 "></span></a>        <span class="c1"># ...</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27"></a><a href="#__codelineno-2-27"><span class="linenos" data-linenos="27 "></span></a>        <span class="n">lowest_loss</span> <span class="o">=</span> <span class="n">loss</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28"></a><a href="#__codelineno-2-28"><span class="linenos" data-linenos="28 "></span></a>    <span class="c1"># Revert weights and biases</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29"></a><a href="#__codelineno-2-29"><span class="linenos" data-linenos="29 "></span></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30"></a><a href="#__codelineno-2-30"><span class="linenos" data-linenos="30 "></span></a>        <span class="c1"># Quay về vị trí cũ</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31"></a><a href="#__codelineno-2-31"><span class="linenos" data-linenos="31 "></span></a>        <span class="n">dense1</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">best_dense1_weights</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32"></a><a href="#__codelineno-2-32"><span class="linenos" data-linenos="32 "></span></a>        <span class="n">dense1</span><span class="o">.</span><span class="n">biases</span> <span class="o">=</span> <span class="n">best_dense1_biases</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33"></a><a href="#__codelineno-2-33"><span class="linenos" data-linenos="33 "></span></a>        <span class="c1"># ...</span>
+</span></code></pre></div>
+<ul>
+<li>
+<p><strong>Giải thích dễ hiểu:</strong></p>
+<ol>
+<li><strong>Đi thử một bước (<code>+=</code>):</strong> Thay vì tạo mới trọng số, chúng ta lấy trọng số hiện tại và <strong>cộng thêm</strong> (<code>+=</code>) một giá trị nhiễu loạn ngẫu nhiên rất nhỏ (<code>0.05 * np.random.randn(...)</code>). Con số <code>0.05</code> là "kích thước bước đi", nó quyết định xem bước thử của chúng ta là lớn hay nhỏ.</li>
+<li><strong>Kiểm tra vị trí mới:</strong> Sau khi "đi thử", chúng ta thực hiện lại toàn bộ quá trình lan truyền tiến để tính toán <code>loss</code> với bộ trọng số vừa được điều chỉnh.</li>
+<li><strong>Đánh giá và Quyết định (<code>if/else</code>):</strong><ul>
+<li><strong><code>if loss &lt; lowest_loss</code> (Đi xuống dốc):</strong> Nếu <code>loss</code> mới nhỏ hơn <code>loss</code> tốt nhất từng ghi nhận, đây là một bước đi thành công! Chúng ta sẽ:<ul>
+<li>In ra thông báo tiến bộ.</li>
+<li>Cập nhật <code>lowest_loss</code> với giá trị mới.</li>
+<li>Quan trọng nhất: Cập nhật các biến <code>best_...</code> bằng cách <strong>sao chép</strong> bộ trọng số và bias hiện tại. Vị trí mới này trở thành "vị trí tốt nhất" mới.</li>
+</ul>
+</li>
+<li><strong><code>else</code> (Đi lên dốc hoặc đi ngang):</strong> Nếu <code>loss</code> mới không tốt hơn, bước đi thử này là một sai lầm. Chúng ta sẽ:<ul>
+<li><strong>Hoàn tác</strong> lại thay đổi bằng cách gán các trọng số và bias hiện tại trở lại giá trị đã được lưu trong các biến <code>best_...</code>. Thao tác này đưa "người leo núi" quay trở lại vị trí tốt nhất đã biết trước đó, để chuẩn bị thử một bước đi ngẫu nhiên khác trong lần lặp tiếp theo.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr />
+<h4 id="so-o-minh-hoa-phep-toan-ma-tran"><strong>Sơ đồ minh họa phép toán ma trận</strong><a class="headerlink" href="#so-o-minh-hoa-phep-toan-ma-tran" title="Permanent link">&para;</a></h4>
+<p>Phép toán quan trọng và mới mẻ nhất trong vòng lặp này là <code>dense1.weights += 0.05 * np.random.randn(2, 3)</code>.</p>
+<ul>
+<li><code>dense1.weights</code>: là một ma trận có kích thước <code>(2, 3)</code>.</li>
+<li><code>np.random.randn(2, 3)</code>: tạo ra một ma trận ngẫu nhiên cũng có kích thước <code>(2, 3)</code>.</li>
+<li><code>0.05 * ...</code>: nhân mỗi phần tử trong ma trận ngẫu nhiên với <code>0.05</code>.</li>
+<li><code>+=</code>: cộng hai ma trận theo từng phần tử (element-wise addition).</li>
+</ul>
+<p><strong>Sơ đồ minh họa cho việc cập nhật <code>dense1.weights</code>:</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>Trọng số hiện tại (dense1.weights)       Điều chỉnh ngẫu nhiên (0.05 * randn)          Trọng số mới
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a>      (2x3)                                    (2x3)                                (2x3)
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a>+-------------------+                 +-------------------+                 +--------------------------+
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a>| w_11   w_12   w_13|        +        | r_11   r_12   r_13|        =        | w_11+r_11   w_12+r_12  ... |
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos="5 "></span></a>| w_21   w_22   w_23|                 | r_21   r_22   r_23|                 | w_21+r_21   w_22+r_22  ... |
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos="6 "></span></a>+-------------------+                 +-------------------+                 +--------------------------+
+</span></code></pre></div>
+<p><strong>Sơ đồ minh họa cho việc cập nhật <code>dense1.biases</code> (là một vector hàng):</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a> Bias hiện tại (dense1.biases)       Điều chỉnh ngẫu nhiên (0.05 * randn)           Bias mới
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a>        (1x3)                                   (1x3)                                (1x3)
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a>+---------------+              +        +---------------+              +        +-------------------+
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a>| b_1  b_2  b_3 |              +        | rb_1 rb_2 rb_3|              =        | b_1+rb_1 ...      |
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos="5 "></span></a>+---------------+                       +---------------+                       +-------------------+
+</span></code></pre></div>
+<h4 id="ket-luan-va-anh-gia"><strong>Kết luận và Đánh giá</strong><a class="headerlink" href="#ket-luan-va-anh-gia" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Ưu điểm:</strong> Phương pháp này <strong>có định hướng</strong> hơn nhiều so với tìm kiếm hoàn toàn ngẫu nhiên. Nó xây dựng dựa trên thành công trước đó, từng bước dò dẫm để tìm ra giải pháp tốt hơn. Điều này giải thích tại sao nó hoạt động hiệu quả trên bộ dữ liệu <code>vertical_data</code> đơn giản, đạt độ chính xác cao.</li>
+<li><strong>Nhược điểm chí mạng:</strong> Như đã thấy ở cuối chương, khi áp dụng vào dữ liệu <code>spiral_data</code> phức tạp, nó thất bại. Lý do là nó bị <strong>mắc kẹt ở cực tiểu cục bộ (local minimum)</strong>. "Người leo núi bịt mắt" đã đi xuống một cái hố nhỏ và không thể thoát ra, vì mọi bước đi nhỏ ngẫu nhiên đều dẫn lên dốc.</li>
+<li><strong>Bài học rút ra:</strong> Chúng ta cần một phương pháp "thông minh" hơn là chỉ đi mò mẫm ngẫu nhiên. Chúng ta cần một cách để <strong>biết được hướng nào là dốc nhất</strong> để đi xuống. Đây chính là vai trò của <strong>đạo hàm (derivative)</strong> và <strong>gradient</strong>, sẽ được giới thiệu trong các chương tiếp theo để xây dựng thuật toán <strong>Gradient Descent</strong>.</li>
+</ul>
 
 
 
@@ -1779,7 +1868,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Ch4pt3r.01_First_Layer/01-first-layer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: └───&gt; First Layer">
+          <a href="../../Ch4pt3r.04_L0SS/04-loss/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LOSS &amp; ACCURACY">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1789,20 +1878,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                └───> First Layer
+                LOSS & ACCURACY
               </div>
             </div>
           </a>
         
         
           
-          <a href="../02-transformation-relu/" class="md-footer__link md-footer__link--next" aria-label="Next: Transformation &amp; ReLU activation function">
+          <a href="../06-introducing-optimization/" class="md-footer__link md-footer__link--next" aria-label="Next: Introducing Optimization">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Transformation & ReLU activation function
+                Introducing Optimization
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1842,12 +1931,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.follow", "toc.integrate", "navigation.footer", "navigation.top", "navigation.tabs", "navigation.path"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "toc.integrate", "navigation.footer", "navigation.top", "navigation.tabs", "navigation.path"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       

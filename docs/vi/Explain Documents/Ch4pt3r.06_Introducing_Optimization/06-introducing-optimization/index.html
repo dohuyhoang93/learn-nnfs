@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-forward-diagram/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/">
       
       
-        <link rel="prev" href="../../../">
+        <link rel="prev" href="../06-introducing-optimization-code/">
       
       
-        <link rel="next" href="../01-first-layer/">
+        <link rel="next" href="../../Ch4pt3r.07_Derivative/07-derivative/">
       
       
       <link rel="icon" href="../../../../assets/logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>First Forward Diagram - Neural Network From Scratch Documentation</title>
+        <title>Introducing Optimization - Neural Network From Scratch Documentation</title>
       
     
     
@@ -116,6 +116,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#phan-1-phan-tich-khai-niem-cot-loi-toi-uu-hoa-optimization" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -145,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              First Forward Diagram
+              Introducing Optimization
             
           </span>
         </div>
@@ -959,8 +964,6 @@
                 
   
   
-    
-  
   
   
     
@@ -971,11 +974,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
         
           
           <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
@@ -991,7 +994,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2_1">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.01 First Layer
@@ -1002,17 +1005,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.01_First_Layer/01-first-forward-diagram/" class="md-nav__link">
         
   
   
@@ -1023,7 +1019,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1036,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-first-layer/" class="md-nav__link">
+      <a href="../../Ch4pt3r.01_First_Layer/01-first-layer/" class="md-nav__link">
         
   
   
@@ -1349,6 +1344,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1359,11 +1356,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
@@ -1379,7 +1376,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_5">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.06 Introducing Optimization
@@ -1393,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization-code/" class="md-nav__link">
+      <a href="../06-introducing-optimization-code/" class="md-nav__link">
         
   
   
@@ -1413,10 +1410,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Introducing Optimization
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1427,6 +1444,60 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phan-1-phan-tich-khai-niem-cot-loi-toi-uu-hoa-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 1: Phân tích Khái niệm Cốt lõi - Tối ưu hóa (Optimization)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-2-phan-tich-2-phuong-phap-toi-uu-hoa-ngay-tho-trong-sach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 2: Phân tích 2 Phương pháp Tối ưu hóa "Ngây thơ" trong Sách
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-3-so-o-minh-hoa-cac-phep-tinh-toan-ascii-art" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 3: Sơ đồ minh họa các phép tính toán (ASCII Art)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-4-ket-luan-va-bai-hoc-rut-ra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 4: Kết luận và Bài học Rút ra
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1618,70 +1689,243 @@
   
 
 
-  <h1>First Forward Diagram</h1>
+  <h1>Introducing Optimization</h1>
 
-<h5 id="so-o-chi-tiet-tinh-toan-mot-hang-trong-forward-pass"><strong>Sơ đồ chi tiết: Tính toán một hàng trong Forward Pass</strong><a class="headerlink" href="#so-o-chi-tiet-tinh-toan-mot-hang-trong-forward-pass" title="Permanent link">&para;</a></h5>
-<p>Sơ đồ này "phóng to" vào quá trình tính toán để tạo ra <strong>hàng đầu tiên</strong> của <code>dense1.output</code>.</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a>======================================================================================================
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>     SƠ ĐỒ TRUYỀN XUÔI CHI TIẾT - TÍNH TOÁN CHO MỘT MẪU ĐẦU VÀO (HÀNG ĐẦU TIÊN)
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>======================================================================================================
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>    (ĐẦU VÀO - HÀNG ĐẦU TIÊN CỦA X)                        (TOÀN BỘ TRỌNG SỐ W)
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>    ┌───────────┐                                      ┌───────────────────────┐
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>    │ [x1, y1]  │                                      │ [[w11, w12, w13],     │
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>    └─────┬─────┘                                      │  [w21, w22, w23]]     │
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>          │                                            └───────────┬───────────┘
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>          └────────────────────────────────────────────────────────┘
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>                                      │
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a>                                      ▼
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a>                      (1) PHÉP NHÂN MA TRẬN (DOT PRODUCT)
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><a href="#__codelineno-0-14"><span class="linenos" data-linenos="14 "></span></a>                      &quot;Lấy hàng nhân với từng cột&quot;
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><a href="#__codelineno-0-15"><span class="linenos" data-linenos="15 "></span></a>          ┌───────────────────────────┴───────────────────────────┐
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><a href="#__codelineno-0-16"><span class="linenos" data-linenos="16 "></span></a>          │                                                       │
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><a href="#__codelineno-0-17"><span class="linenos" data-linenos="17 "></span></a>          ▼ (Để tính giá trị ĐẦU TIÊN của hàng kết quả)           ▼ (Để tính giá trị THỨ HAI của hàng kết quả)
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><a href="#__codelineno-0-18"><span class="linenos" data-linenos="18 "></span></a>┌──────────────────────────┐                          ┌──────────────────────────┐
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><a href="#__codelineno-0-19"><span class="linenos" data-linenos="19 "></span></a>│ [x1, y1]  ●  [w11, w21]  │                          │ [x1, y1]  ●  [w12, w22]  │
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><a href="#__codelineno-0-20"><span class="linenos" data-linenos="20 "></span></a>│ (Hàng 1 của X ● Cột 1 của W) │                          │ (Hàng 1 của X ● Cột 2 của W) │
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><a href="#__codelineno-0-21"><span class="linenos" data-linenos="21 "></span></a>│                          │                          │                          │
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><a href="#__codelineno-0-22"><span class="linenos" data-linenos="22 "></span></a>│   x1 * w11               │                          │   x1 * w12               │
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><a href="#__codelineno-0-23"><span class="linenos" data-linenos="23 "></span></a>│      +                   │                          │      +                   │
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><a href="#__codelineno-0-24"><span class="linenos" data-linenos="24 "></span></a>│   y1 * w21               │                          │   y1 * w22               │
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><a href="#__codelineno-0-25"><span class="linenos" data-linenos="25 "></span></a>│      =                   │                          │      =                   │
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><a href="#__codelineno-0-26"><span class="linenos" data-linenos="26 "></span></a>│     o11                  │                          │     o12                  │
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><a href="#__codelineno-0-27"><span class="linenos" data-linenos="27 "></span></a>└──────────┬───────────────┘                          └──────────┬───────────────┘
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><a href="#__codelineno-0-28"><span class="linenos" data-linenos="28 "></span></a>           │                                                       │
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><a href="#__codelineno-0-29"><span class="linenos" data-linenos="29 "></span></a>           └───────────────────────────┐                           │
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><a href="#__codelineno-0-30"><span class="linenos" data-linenos="30 "></span></a>                                       │                           │
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><a href="#__codelineno-0-31"><span class="linenos" data-linenos="31 "></span></a>                                       ▼                           ▼
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><a href="#__codelineno-0-32"><span class="linenos" data-linenos="32 "></span></a>                                ┌─────────────────────────────────────────────────┐
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><a href="#__codelineno-0-33"><span class="linenos" data-linenos="33 "></span></a>                                │   dot_product (HÀNG ĐẦU TIÊN)                   │
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><a href="#__codelineno-0-34"><span class="linenos" data-linenos="34 "></span></a>                                │   [o11, o12, o13]                               │  &lt;-- o13 được tính tương tự với cột 3 của W
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><a href="#__codelineno-0-35"><span class="linenos" data-linenos="35 "></span></a>                                └──────────────────────┬──────────────────────────┘
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><a href="#__codelineno-0-36"><span class="linenos" data-linenos="36 "></span></a>                                                       │
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><a href="#__codelineno-0-37"><span class="linenos" data-linenos="37 "></span></a>                                                       ▼
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><a href="#__codelineno-0-38"><span class="linenos" data-linenos="38 "></span></a>                                      (2) CỘNG THIÊN VỊ (BIAS)
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><a href="#__codelineno-0-39"><span class="linenos" data-linenos="39 "></span></a>                                                       │
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><a href="#__codelineno-0-40"><span class="linenos" data-linenos="40 "></span></a>                                      ┌────────────────┴────────────────┐
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><a href="#__codelineno-0-41"><span class="linenos" data-linenos="41 "></span></a>                                      │                                 │
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><a href="#__codelineno-0-42"><span class="linenos" data-linenos="42 "></span></a>                                      ▼                                 ▼
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><a href="#__codelineno-0-43"><span class="linenos" data-linenos="43 "></span></a>                          ┌───────────────────┐               ┌───────────────────┐
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><a href="#__codelineno-0-44"><span class="linenos" data-linenos="44 "></span></a>                          │  [o11, o12, o13]  │               │    [b1, b2, b3]   │
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><a href="#__codelineno-0-45"><span class="linenos" data-linenos="45 "></span></a>                          └─────────┬─────────┘               └─────────┬─────────┘
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a><a href="#__codelineno-0-46"><span class="linenos" data-linenos="46 "></span></a>                                    │                                 │
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a><a href="#__codelineno-0-47"><span class="linenos" data-linenos="47 "></span></a>                                    └───────────────►    +    ◄───────┘
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><a href="#__codelineno-0-48"><span class="linenos" data-linenos="48 "></span></a>                                                    │
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><a href="#__codelineno-0-49"><span class="linenos" data-linenos="49 "></span></a>                                                    ▼
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><a href="#__codelineno-0-50"><span class="linenos" data-linenos="50 "></span></a>                                        ┌───────────────────────────┐
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><a href="#__codelineno-0-51"><span class="linenos" data-linenos="51 "></span></a>                                        │  output (HÀNG ĐẦU TIÊN)   │
-</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><a href="#__codelineno-0-52"><span class="linenos" data-linenos="52 "></span></a>                                        │ [o11+b1, o12+b2, o13+b3]   │
-</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><a href="#__codelineno-0-53"><span class="linenos" data-linenos="53 "></span></a>                                        └───────────────────────────┘
-</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><a href="#__codelineno-0-54"><span class="linenos" data-linenos="54 "></span></a>
-</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a><a href="#__codelineno-0-55"><span class="linenos" data-linenos="55 "></span></a>------------------------------------------------------------------------------------------------------
-</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><a href="#__codelineno-0-56"><span class="linenos" data-linenos="56 "></span></a>* QUAN TRỌNG: Quá trình này được lặp lại cho TẤT CẢ 100 hàng của ma trận đầu vào X để tạo ra 100 hàng
-</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a><a href="#__codelineno-0-57"><span class="linenos" data-linenos="57 "></span></a>* của ma trận đầu ra `dense1.output`. NumPy thực hiện tất cả các phép tính này song song một cách
-</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a><a href="#__codelineno-0-58"><span class="linenos" data-linenos="58 "></span></a>* hiệu quả.
-</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a><a href="#__codelineno-0-59"><span class="linenos" data-linenos="59 "></span></a>------------------------------------------------------------------------------------------------------
+<p>Chương này là một bước ngoặt quan trọng trong cuốn sách. Sau khi đã xây dựng được một mạng neural hoàn chỉnh có khả năng:</p>
+<ol>
+<li><strong>Lan truyền tiến (Forward Pass):</strong> Nhận đầu vào và tính toán ra đầu ra.</li>
+<li><strong>Tính toán hàm mất mát (Loss Calculation):</strong> Đo lường mức độ sai sót của mạng.</li>
+</ol>
+<p>...thì câu hỏi lớn tiếp theo là: <strong>"Làm thế nào để mạng tự học hỏi và cải thiện?"</strong>. Chương 6 trả lời câu hỏi này bằng cách giới thiệu khái niệm <strong>Tối ưu hóa (Optimization)</strong> – quá trình điều chỉnh các tham số (trọng số và bias) để giảm thiểu hàm mất mát.</p>
+<p>Mục đích của chương này không phải là đưa ra ngay phương pháp tốt nhất, mà là để người đọc hiểu được <em>bản chất của vấn đề</em> bằng cách thử nghiệm hai phương pháp "ngây thơ" (naive) và nhận ra những hạn chế của chúng.</p>
+<hr />
+<h4 id="phan-1-phan-tich-khai-niem-cot-loi-toi-uu-hoa-optimization"><strong>Phần 1: Phân tích Khái niệm Cốt lõi - Tối ưu hóa (Optimization)</strong><a class="headerlink" href="#phan-1-phan-tich-khai-niem-cot-loi-toi-uu-hoa-optimization" title="Permanent link">&para;</a></h4>
+<h5 id="1-giai-thich-de-hieu">1. Giải thích dễ hiểu<a class="headerlink" href="#1-giai-thich-de-hieu" title="Permanent link">&para;</a></h5>
+<p>Tối ưu hóa trong machine learning là hành trình tìm ra bộ tham số (trọng số và bias) "tốt nhất" cho mô hình. "Tốt nhất" ở đây có nghĩa là bộ tham số làm cho hàm mất mát (loss) có giá trị nhỏ nhất có thể.</p>
+<h5 id="2-lien-he-truu-tuong-hanh-trinh-tim-ay-thung-lung">2. Liên hệ trừu tượng: <strong>Hành trình tìm đáy thung lũng</strong><a class="headerlink" href="#2-lien-he-truu-tuong-hanh-trinh-tim-ay-thung-lung" title="Permanent link">&para;</a></h5>
+<p>Hãy tưởng tượng:</p>
+<ul>
+<li><strong>Bề mặt Trái Đất</strong> là <strong>Không gian Tham số (Parameter Space)</strong>: Mỗi điểm trên bề mặt (gồm kinh độ, vĩ độ) tương ứng với một bộ trọng số và bias duy nhất.</li>
+<li><strong>Độ cao tại mỗi điểm</strong> là <strong>Giá trị hàm mất mát (Loss)</strong>: Nơi có độ cao lớn là nơi mô hình dự đoán rất tệ (loss cao). Nơi có độ cao thấp là nơi mô hình dự đoán tốt (loss thấp).</li>
+<li><strong>Mục tiêu của chúng ta</strong> là tìm ra điểm có <strong>độ cao thấp nhất trên toàn bản đồ</strong> (đáy vực sâu nhất) – đó chính là <strong>Cực tiểu toàn cục (Global Minimum)</strong>.</li>
+</ul>
+<p><strong>Tối ưu hóa chính là quá trình tìm đường đi xuống điểm thấp nhất trong thung lũng này.</strong></p>
+<hr />
+<h4 id="phan-2-phan-tich-2-phuong-phap-toi-uu-hoa-ngay-tho-trong-sach"><strong>Phần 2: Phân tích 2 Phương pháp Tối ưu hóa "Ngây thơ" trong Sách</strong><a class="headerlink" href="#phan-2-phan-tich-2-phuong-phap-toi-uu-hoa-ngay-tho-trong-sach" title="Permanent link">&para;</a></h4>
+<p>Sách tiếp cận vấn đề bằng cách đề xuất hai chiến lược rất trực quan nhưng không hiệu quả.</p>
+<h5 id="phuong-phap-1-tim-kiem-hoan-toan-ngau-nhien-random-search"><strong>Phương pháp 1: Tìm kiếm Hoàn toàn Ngẫu nhiên (Random Search)</strong><a class="headerlink" href="#phuong-phap-1-tim-kiem-hoan-toan-ngau-nhien-random-search" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p><strong>Cách hoạt động:</strong></p>
+<ol>
+<li>Tạo ra một bộ trọng số và bias hoàn toàn ngẫu nhiên.</li>
+<li>Dùng bộ tham số này để tính toán loss trên toàn bộ dữ liệu.</li>
+<li>Nếu loss này thấp hơn loss thấp nhất từng ghi nhận, lưu lại bộ tham số này.</li>
+<li>Lặp lại từ bước 1 rất nhiều lần.</li>
+</ol>
+</li>
+<li>
+<p><strong>Liên hệ trừu tượng: "Thả dù mù quáng"</strong>
+    Hãy tưởng tượng bạn đang ở trên máy bay và muốn tìm điểm thấp nhất trong một dãy núi rộng lớn bên dưới. Phương pháp này giống như việc bạn <strong>nhảy dù ngẫu nhiên</strong> xuống một vị trí bất kỳ, đo độ cao, rồi lại lên máy bay và nhảy xuống một vị trí ngẫu nhiên khác. Sau hàng nghìn lần nhảy, bạn hy vọng một trong những lần đó sẽ rơi trúng đáy thung lũng.</p>
+</li>
+<li>
+<p><strong>Kết quả trong sách:</strong></p>
+<ul>
+<li><strong>Cực kỳ không hiệu quả.</strong> Sau 1 tỷ lần lặp, loss giảm không đáng kể và độ chính xác (accuracy) gần như không đổi.</li>
+<li><strong>Lý do:</strong> Không gian tham số của một mạng neural (kể cả mạng nhỏ) là cực kỳ lớn. Việc "thử và sai" một cách mù quáng có xác suất thành công vô cùng nhỏ, giống như mò kim đáy bể.</li>
+</ul>
+</li>
+</ul>
+<h5 id="phuong-phap-2-tinh-chinh-ngau-nhien-random-local-search"><strong>Phương pháp 2: Tinh chỉnh Ngẫu nhiên (Random Local Search)</strong><a class="headerlink" href="#phuong-phap-2-tinh-chinh-ngau-nhien-random-local-search" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p><strong>Cách hoạt động:</strong></p>
+<ol>
+<li>Bắt đầu với bộ trọng số và bias tốt nhất đã tìm thấy (<code>best_weights</code>).</li>
+<li>Tạo ra một bộ trọng số/bias mới bằng cách <strong>cộng thêm một giá trị ngẫu nhiên nhỏ</strong> vào bộ <code>best_weights</code>.</li>
+<li>Tính toán loss với bộ tham số mới này.</li>
+<li><strong>Nếu loss mới thấp hơn:</strong> Cập nhật <code>best_weights</code> bằng bộ tham số mới.</li>
+<li><strong>Nếu loss mới cao hơn:</strong> Hủy bỏ thay đổi, quay trở lại (revert) bộ <code>best_weights</code> cũ.</li>
+<li>Lặp lại từ bước 2.</li>
+</ol>
+</li>
+<li>
+<p><strong>Liên hệ trừu tượng: "Người leo núi bịt mắt"</strong></p>
+<p>Bây giờ, thay vì nhảy dù, bạn đã được thả xuống một sườn đồi. Bạn bị bịt mắt và không biết hướng nào là đi xuống. Bạn làm như sau:
+1.  Bước thử một bước nhỏ theo một hướng ngẫu nhiên.
+2.  Nếu bạn cảm thấy mình đang đi xuống (độ cao giảm), bạn sẽ ở lại vị trí mới.
+3.  Nếu bạn cảm thấy mình đang đi lên hoặc đi ngang (độ cao tăng/không đổi), bạn sẽ quay lại vị trí cũ và thử bước theo một hướng ngẫu nhiên khác.</p>
+</li>
+<li>
+<p><strong>Kết quả trong sách:</strong></p>
+<ul>
+<li><strong>Với dữ liệu đơn giản (<code>vertical_data</code>):</strong> Hoạt động tốt hơn hẳn! Loss giảm đáng kể và accuracy đạt tới ~93%.</li>
+<li><strong>Với dữ liệu phức tạp (<code>spiral_data</code>):</strong> Gần như thất bại hoàn toàn. Nó bị mắc kẹt ở <strong>Cực tiểu cục bộ (Local Minimum)</strong>.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="phan-3-so-o-minh-hoa-cac-phep-tinh-toan-ascii-art"><strong>Phần 3: Sơ đồ minh họa các phép tính toán (ASCII Art)</strong><a class="headerlink" href="#phan-3-so-o-minh-hoa-cac-phep-tinh-toan-ascii-art" title="Permanent link">&para;</a></h4>
+<h5 id="so-o-1-luong-tinh-toan-chung-forward-pass-loss"><strong>Sơ đồ 1: Luồng tính toán chung (Forward Pass &amp; Loss)</strong><a class="headerlink" href="#so-o-1-luong-tinh-toan-chung-forward-pass-loss" title="Permanent link">&para;</a></h5>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a>+----------------+
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>|    Input X     |
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>+----------------+
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>        |
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>        V
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>+----------------+
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>|    Dense 1     |
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>|   (w1, b1)     |
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>+----------------+
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>        |
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>        V
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a>+----------------+
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a>| Activation ReLU|
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><a href="#__codelineno-0-14"><span class="linenos" data-linenos="14 "></span></a>+----------------+
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><a href="#__codelineno-0-15"><span class="linenos" data-linenos="15 "></span></a>        |
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><a href="#__codelineno-0-16"><span class="linenos" data-linenos="16 "></span></a>        V
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><a href="#__codelineno-0-17"><span class="linenos" data-linenos="17 "></span></a>+----------------+
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><a href="#__codelineno-0-18"><span class="linenos" data-linenos="18 "></span></a>|    Dense 2     |
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><a href="#__codelineno-0-19"><span class="linenos" data-linenos="19 "></span></a>|   (w2, b2)     |
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><a href="#__codelineno-0-20"><span class="linenos" data-linenos="20 "></span></a>+----------------+
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><a href="#__codelineno-0-21"><span class="linenos" data-linenos="21 "></span></a>        |
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><a href="#__codelineno-0-22"><span class="linenos" data-linenos="22 "></span></a>        V
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><a href="#__codelineno-0-23"><span class="linenos" data-linenos="23 "></span></a>+----------------+
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><a href="#__codelineno-0-24"><span class="linenos" data-linenos="24 "></span></a>|Activation Softmax|
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><a href="#__codelineno-0-25"><span class="linenos" data-linenos="25 "></span></a>+----------------+
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><a href="#__codelineno-0-26"><span class="linenos" data-linenos="26 "></span></a>        |
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><a href="#__codelineno-0-27"><span class="linenos" data-linenos="27 "></span></a>        V
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><a href="#__codelineno-0-28"><span class="linenos" data-linenos="28 "></span></a>+----------------+     +----------------+
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><a href="#__codelineno-0-29"><span class="linenos" data-linenos="29 "></span></a>|   Predictions  |     |   True Labels  |
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><a href="#__codelineno-0-30"><span class="linenos" data-linenos="30 "></span></a>|     (y_pred)   |     |      (y)       |
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><a href="#__codelineno-0-31"><span class="linenos" data-linenos="31 "></span></a>+----------------+     +----------------+
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><a href="#__codelineno-0-32"><span class="linenos" data-linenos="32 "></span></a>        |                    |
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><a href="#__codelineno-0-33"><span class="linenos" data-linenos="33 "></span></a>        +--------+   +-------+
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><a href="#__codelineno-0-34"><span class="linenos" data-linenos="34 "></span></a>                 |   |
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><a href="#__codelineno-0-35"><span class="linenos" data-linenos="35 "></span></a>                 V   V
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><a href="#__codelineno-0-36"><span class="linenos" data-linenos="36 "></span></a>          +----------------+
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><a href="#__codelineno-0-37"><span class="linenos" data-linenos="37 "></span></a>          |  Loss Function |
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><a href="#__codelineno-0-38"><span class="linenos" data-linenos="38 "></span></a>          | (CrossEntropy) |
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><a href="#__codelineno-0-39"><span class="linenos" data-linenos="39 "></span></a>          +----------------+
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><a href="#__codelineno-0-40"><span class="linenos" data-linenos="40 "></span></a>                 |
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><a href="#__codelineno-0-41"><span class="linenos" data-linenos="41 "></span></a>                 V
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><a href="#__codelineno-0-42"><span class="linenos" data-linenos="42 "></span></a>          +----------------+
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><a href="#__codelineno-0-43"><span class="linenos" data-linenos="43 "></span></a>          |   Final Loss   |
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><a href="#__codelineno-0-44"><span class="linenos" data-linenos="44 "></span></a>          +----------------+
 </span></code></pre></div>
+<h5 id="so-o-2-logic-cua-phuong-phap-1-tim-kiem-hoan-toan-ngau-nhien"><strong>Sơ đồ 2: Logic của Phương pháp 1 (Tìm kiếm Hoàn toàn Ngẫu nhiên)</strong><a class="headerlink" href="#so-o-2-logic-cua-phuong-phap-1-tim-kiem-hoan-toan-ngau-nhien" title="Permanent link">&para;</a></h5>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a>         +----------+
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a>         |  Start   |
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>         +----------+
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a>              |
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a>              V
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>+-------------+------------------+
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a>| khoi_tao lowest_loss = 9999999 |
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a>+--------------------------------+
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>              |
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a>              |   +--------------------------------------+
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a>              +--&gt;|          Loop (10000 lan)            |
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a>                  +--------------------------------------+
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a>                                |
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><a href="#__codelineno-1-14"><span class="linenos" data-linenos="14 "></span></a>                                V
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><a href="#__codelineno-1-15"><span class="linenos" data-linenos="15 "></span></a>                  +--------------------------------------+
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><a href="#__codelineno-1-16"><span class="linenos" data-linenos="16 "></span></a>                  |   Tao bo trong so/bias HOAN TOAN MOI  |
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><a href="#__codelineno-1-17"><span class="linenos" data-linenos="17 "></span></a>                  +--------------------------------------+
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><a href="#__codelineno-1-18"><span class="linenos" data-linenos="18 "></span></a>                                |
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a><a href="#__codelineno-1-19"><span class="linenos" data-linenos="19 "></span></a>                                V
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><a href="#__codelineno-1-20"><span class="linenos" data-linenos="20 "></span></a>                  +--------------------------------------+
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a><a href="#__codelineno-1-21"><span class="linenos" data-linenos="21 "></span></a>                  | Thuc hien Forward Pass &amp; tinh Loss   |
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><a href="#__codelineno-1-22"><span class="linenos" data-linenos="22 "></span></a>                  +--------------------------------------+
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a><a href="#__codelineno-1-23"><span class="linenos" data-linenos="23 "></span></a>                                |
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a><a href="#__codelineno-1-24"><span class="linenos" data-linenos="24 "></span></a>                                V
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a><a href="#__codelineno-1-25"><span class="linenos" data-linenos="25 "></span></a>                  +--------------------------------------+
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a><a href="#__codelineno-1-26"><span class="linenos" data-linenos="26 "></span></a>                  |      loss &lt; lowest_loss ?            |
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><a href="#__codelineno-1-27"><span class="linenos" data-linenos="27 "></span></a>                  +------------------+-------------------+
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a><a href="#__codelineno-1-28"><span class="linenos" data-linenos="28 "></span></a>                                     |
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29"></a><a href="#__codelineno-1-29"><span class="linenos" data-linenos="29 "></span></a>                       +-------------+-------------+
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30"></a><a href="#__codelineno-1-30"><span class="linenos" data-linenos="30 "></span></a>                       |                           |
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31"></a><a href="#__codelineno-1-31"><span class="linenos" data-linenos="31 "></span></a>                       V (Yes)                     V (No)
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32"></a><a href="#__codelineno-1-32"><span class="linenos" data-linenos="32 "></span></a>        +----------------------------+
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33"></a><a href="#__codelineno-1-33"><span class="linenos" data-linenos="33 "></span></a>        | lowest_loss = loss         |         (Khong lam gi)
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34"></a><a href="#__codelineno-1-34"><span class="linenos" data-linenos="34 "></span></a>        | Luu lai bo trong so/bias   |
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35"></a><a href="#__codelineno-1-35"><span class="linenos" data-linenos="35 "></span></a>        +----------------------------+
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36"></a><a href="#__codelineno-1-36"><span class="linenos" data-linenos="36 "></span></a>                       |                           |
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37"></a><a href="#__codelineno-1-37"><span class="linenos" data-linenos="37 "></span></a>                       +-------------+-------------+
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38"></a><a href="#__codelineno-1-38"><span class="linenos" data-linenos="38 "></span></a>                                     |
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39"></a><a href="#__codelineno-1-39"><span class="linenos" data-linenos="39 "></span></a>                                     | (Quay lai dau Loop)
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40"></a><a href="#__codelineno-1-40"><span class="linenos" data-linenos="40 "></span></a>                                     +----------------------+
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41"></a><a href="#__codelineno-1-41"><span class="linenos" data-linenos="41 "></span></a>                                                            |
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42"></a><a href="#__codelineno-1-42"><span class="linenos" data-linenos="42 "></span></a>(Sau khi ket thuc Loop)                                     |
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43"></a><a href="#__codelineno-1-43"><span class="linenos" data-linenos="43 "></span></a>              |                                             |
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44"></a><a href="#__codelineno-1-44"><span class="linenos" data-linenos="44 "></span></a>              V                                             ^
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45"></a><a href="#__codelineno-1-45"><span class="linenos" data-linenos="45 "></span></a>         +----------+                                       |
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46"></a><a href="#__codelineno-1-46"><span class="linenos" data-linenos="46 "></span></a>         |   End    |&lt;--------------------------------------+
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47"></a><a href="#__codelineno-1-47"><span class="linenos" data-linenos="47 "></span></a>         +----------+
+</span></code></pre></div>
+<h5 id="so-o-3-logic-cua-phuong-phap-2-tinh-chinh-ngau-nhien"><strong>Sơ đồ 3: Logic của Phương pháp 2 (Tinh chỉnh Ngẫu nhiên)</strong><a class="headerlink" href="#so-o-3-logic-cua-phuong-phap-2-tinh-chinh-ngau-nhien" title="Permanent link">&para;</a></h5>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a>          +----------+
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>          |  Start   |
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>          +----------+
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>               |
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>               V
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>+--------------+-------------------+
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>| khoi_tao best_weights/biases      |
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>| khoi_tao lowest_loss = 9999999    |
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>+-----------------------------------+
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>               |
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a>               |   +-----------------------------------------+
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a>               +--&gt;|             Loop (10000 lan)            |
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a>                   +-----------------------------------------+
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><a href="#__codelineno-2-14"><span class="linenos" data-linenos="14 "></span></a>                                 |
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><a href="#__codelineno-2-15"><span class="linenos" data-linenos="15 "></span></a>                                 V
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a><a href="#__codelineno-2-16"><span class="linenos" data-linenos="16 "></span></a>                   +-----------------------------------------+
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><a href="#__codelineno-2-17"><span class="linenos" data-linenos="17 "></span></a>                   | weights += gia_tri_ngau_nhien_nho       |
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a><a href="#__codelineno-2-18"><span class="linenos" data-linenos="18 "></span></a>                   | biases  += gia_tri_ngau_nhien_nho       |
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a><a href="#__codelineno-2-19"><span class="linenos" data-linenos="19 "></span></a>                   +-----------------------------------------+
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><a href="#__codelineno-2-20"><span class="linenos" data-linenos="20 "></span></a>                                 |
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><a href="#__codelineno-2-21"><span class="linenos" data-linenos="21 "></span></a>                                 V
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><a href="#__codelineno-2-22"><span class="linenos" data-linenos="22 "></span></a>                   +-----------------------------------------+
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a><a href="#__codelineno-2-23"><span class="linenos" data-linenos="23 "></span></a>                   |  Thuc hien Forward Pass &amp; tinh Loss     |
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a><a href="#__codelineno-2-24"><span class="linenos" data-linenos="24 "></span></a>                   +-----------------------------------------+
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25"></a><a href="#__codelineno-2-25"><span class="linenos" data-linenos="25 "></span></a>                                 |
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26"></a><a href="#__codelineno-2-26"><span class="linenos" data-linenos="26 "></span></a>                                 V
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27"></a><a href="#__codelineno-2-27"><span class="linenos" data-linenos="27 "></span></a>                   +-----------------------------------------+
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28"></a><a href="#__codelineno-2-28"><span class="linenos" data-linenos="28 "></span></a>                   |         loss &lt; lowest_loss ?            |
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29"></a><a href="#__codelineno-2-29"><span class="linenos" data-linenos="29 "></span></a>                   +-------------------+---------------------+
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30"></a><a href="#__codelineno-2-30"><span class="linenos" data-linenos="30 "></span></a>                                       |
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31"></a><a href="#__codelineno-2-31"><span class="linenos" data-linenos="31 "></span></a>                         +-------------+-------------+
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32"></a><a href="#__codelineno-2-32"><span class="linenos" data-linenos="32 "></span></a>                         |                           |
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33"></a><a href="#__codelineno-2-33"><span class="linenos" data-linenos="33 "></span></a>                         V (Yes)                     V (No)
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34"></a><a href="#__codelineno-2-34"><span class="linenos" data-linenos="34 "></span></a>        +----------------------------+  +-----------------------------------+
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35"></a><a href="#__codelineno-2-35"><span class="linenos" data-linenos="35 "></span></a>        | lowest_loss = loss         |  | Hoan tac:                         |
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36"></a><a href="#__codelineno-2-36"><span class="linenos" data-linenos="36 "></span></a>        | best_weights = weights.copy()|  | weights = best_weights.copy()   |
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37"></a><a href="#__codelineno-2-37"><span class="linenos" data-linenos="37 "></span></a>        | best_biases = biases.copy()  |  | biases = best_biases.copy()     |
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38"></a><a href="#__codelineno-2-38"><span class="linenos" data-linenos="38 "></span></a>        +----------------------------+  +-----------------------------------+
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39"></a><a href="#__codelineno-2-39"><span class="linenos" data-linenos="39 "></span></a>                         |                           |
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40"></a><a href="#__codelineno-2-40"><span class="linenos" data-linenos="40 "></span></a>                         +-------------+-------------+
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41"></a><a href="#__codelineno-2-41"><span class="linenos" data-linenos="41 "></span></a>                                       |
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42"></a><a href="#__codelineno-2-42"><span class="linenos" data-linenos="42 "></span></a>                                       | (Quay lai dau Loop)
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43"></a><a href="#__codelineno-2-43"><span class="linenos" data-linenos="43 "></span></a>                                       +-----------------------+
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44"></a><a href="#__codelineno-2-44"><span class="linenos" data-linenos="44 "></span></a>                                                               |
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45"></a><a href="#__codelineno-2-45"><span class="linenos" data-linenos="45 "></span></a>(Sau khi ket thuc Loop)                                        |
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46"></a><a href="#__codelineno-2-46"><span class="linenos" data-linenos="46 "></span></a>               |                                               |
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47"></a><a href="#__codelineno-2-47"><span class="linenos" data-linenos="47 "></span></a>               V                                               ^
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48"></a><a href="#__codelineno-2-48"><span class="linenos" data-linenos="48 "></span></a>          +----------+                                         |
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49"></a><a href="#__codelineno-2-49"><span class="linenos" data-linenos="49 "></span></a>          |   End    |&lt;----------------------------------------+
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50"></a><a href="#__codelineno-2-50"><span class="linenos" data-linenos="50 "></span></a>          +----------+
+</span></code></pre></div>
+<hr />
+<h4 id="phan-4-ket-luan-va-bai-hoc-rut-ra"><strong>Phần 4: Kết luận và Bài học Rút ra</strong><a class="headerlink" href="#phan-4-ket-luan-va-bai-hoc-rut-ra" title="Permanent link">&para;</a></h4>
+<p>Chương 6 đóng một vai trò sư phạm xuất sắc. Bằng cách dẫn dắt người đọc qua các phương pháp "ngây thơ", nó làm nổi bật những thách thức cốt lõi của việc huấn luyện mạng neural:</p>
+<ol>
+<li><strong>Tính phi hiệu quả của tìm kiếm mù quáng:</strong> Không gian tham số quá lớn để có thể tìm kiếm ngẫu nhiên.</li>
+<li><strong>Vấn đề Cực tiểu cục bộ (Local Minima):</strong> Các phương pháp tìm kiếm cục bộ có thể dễ dàng bị "mắc kẹt", ngăn cản mô hình đạt đến hiệu suất tối ưu.</li>
+</ol>
+<p>Chương này tạo tiền đề hoàn hảo cho các chương tiếp theo, nơi một phương pháp "thông minh" hơn sẽ được giới thiệu. Thay vì bước đi ngẫu nhiên, chúng ta cần một cách để xác định <strong>hướng đi nào sẽ làm giảm loss nhanh nhất</strong>. Hướng đi đó chính là <strong>gradient</strong>, và phương pháp sử dụng nó được gọi là <strong>Gradient Descent</strong> – tiêu chuẩn vàng trong tối ưu hóa mạng neural hiện đại.</p>
+<p><strong>Trích dẫn tham khảo khái niệm:</strong></p>
+<ul>
+<li><strong>Optimization Algorithms:</strong> Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <em>Deep Learning</em>. MIT Press. (Chapter 8).</li>
+<li><strong>Local Minima:</strong> Khái niệm cơ bản trong các lĩnh vực tối ưu hóa toán học và khoa học máy tính.</li>
+</ul>
 
 
 
@@ -1720,7 +1964,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Chào Mừng">
+          <a href="../06-introducing-optimization-code/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Code Explain">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1730,20 +1974,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Chào Mừng
+                Code Explain
               </div>
             </div>
           </a>
         
         
           
-          <a href="../01-first-layer/" class="md-footer__link md-footer__link--next" aria-label="Next: First Layer">
+          <a href="../../Ch4pt3r.07_Derivative/07-derivative/" class="md-footer__link md-footer__link--next" aria-label="Next: Derivative">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                First Layer
+                Derivative
               </div>
             </div>
             <div class="md-footer__button md-icon">

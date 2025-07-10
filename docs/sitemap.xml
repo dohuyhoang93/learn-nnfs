@@ -2,74 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-foward-diagram/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-layer/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu-diagram/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax-diagram/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-diagram/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-forward-diagram/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-layer/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu-diagram/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax-diagram/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-diagram/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
     </url>
     <url>
          <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/</loc>
-         <lastmod>2025-07-09</lastmod>
+         <lastmod>2025-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization-code/</loc>
+         <lastmod>2025-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/</loc>
+         <lastmod>2025-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.07_Derivative/07-derivative/</loc>
+         <lastmod>2025-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/</loc>
+         <lastmod>2025-07-10</lastmod>
     </url>
 </urlset>
