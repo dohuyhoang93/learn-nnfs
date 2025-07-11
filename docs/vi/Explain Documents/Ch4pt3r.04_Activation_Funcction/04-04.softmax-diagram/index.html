@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.09_Backpropagation/09-math/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.04_Activation_Funcction/04-04.softmax-diagram/">
       
       
-        <link rel="prev" href="../09-diagram/">
+        <link rel="prev" href="../04-03.softmax/">
       
+      
+        <link rel="next" href="../../Ch4pt3r.05_L0SS/05-loss-diagram/">
       
       
       <link rel="icon" href="../../../../assets/logo.svg">
@@ -22,7 +24,7 @@
     
     
       
-        <title>Math - derivative combining Softmax and Cross-Entropy Loss. - Neural Network From Scratch Documentation</title>
+        <title>Softmax Diagram - Neural Network From Scratch Documentation</title>
       
     
     
@@ -115,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax" class="md-skip">
+        <a href="#so-o-chi-tiet-tu-lop-an-en-phan-phoi-xac-suat-cho-mot-mau" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Math - derivative combining Softmax and Cross-Entropy Loss.
+              Softmax Diagram
             
           </span>
         </div>
@@ -1342,6 +1344,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1352,11 +1356,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
@@ -1372,7 +1376,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_2">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.04 Activation Funcction
@@ -1386,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Funcction/04-01.transformation-relu/" class="md-nav__link">
+      <a href="../04-01.transformation-relu/" class="md-nav__link">
         
   
   
@@ -1409,7 +1413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Funcction/04-02.transformation-relu-diagram/" class="md-nav__link">
+      <a href="../04-02.transformation-relu-diagram/" class="md-nav__link">
         
   
   
@@ -1432,7 +1436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Funcction/04-03.softmax/" class="md-nav__link">
+      <a href="../04-03.softmax/" class="md-nav__link">
         
   
   
@@ -1452,10 +1456,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Funcction/04-04.softmax-diagram/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Softmax Diagram
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1466,6 +1490,66 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#so-o-chi-tiet-tu-lop-an-en-phan-phoi-xac-suat-cho-mot-mau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sơ đồ Chi tiết: Từ Lớp Ẩn đến Phân phối Xác suất (cho một mẫu)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-sau-vao-phong-may-cua-mang-no-ron-va-xem-xet-tung-phep-nhan-phep-cong-ma-tran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Đi sâu vào "phòng máy" của mạng nơ-ron và xem xét từng phép nhân, phép cộng ma trận
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Đi sâu vào &#34;phòng máy&#34; của mạng nơ-ron và xem xét từng phép nhân, phép cộng ma trận">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#so-o-chi-tiet-tung-buoc-tinh-toan-ma-tran" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sơ Đồ Chi Tiết: Từng Bước Tính Toán Ma Trận
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ket-qua-cuoi-cung" class="md-nav__link">
+    <span class="md-ellipsis">
+      KẾT QUẢ CUỐI CÙNG
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1817,8 +1901,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1829,11 +1911,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_7" >
         
           
           <label class="md-nav__link" for="__nav_3_2_7" id="__nav_3_2_7_label" tabindex="0">
@@ -1849,7 +1931,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2_7">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.09 Backpropagation
@@ -1863,7 +1945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-diagram/" class="md-nav__link">
+      <a href="../../Ch4pt3r.09_Backpropagation/09-diagram/" class="md-nav__link">
         
   
   
@@ -1883,30 +1965,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Math - derivative combining Softmax and Cross-Entropy Loss.
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.09_Backpropagation/09-math/" class="md-nav__link">
         
   
   
@@ -1917,51 +1979,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phần 1: Chứng minh chi tiết Đạo hàm của Softmax
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phan-2-chung-minh-chi-tiet-ao-ham-cua-cross-entropy-loss" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phần 2: Chứng minh chi tiết Đạo hàm của Cross-Entropy Loss
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phan-3-ket-hop-bang-quy-tac-chuoi-iem-hoi-tu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phần 3: Kết Hợp Bằng Quy Tắc Chuỗi - Điểm Hội Tụ
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2009,163 +2026,236 @@
   
 
 
-  <h1>Math - derivative combining Softmax and Cross-Entropy Loss.</h1>
+  <h1>Softmax Diagram</h1>
 
-<p>Lần này chúng ta sẽ đi sâu vào bản chất toán học, chứng minh từng bước một cách chi tiết và giải thích lý do đằng sau mỗi phép biến đổi.</p>
-<p>Chúng ta sẽ đi qua 3 phần:</p>
+<p>Vẽ lại sơ đồ, tập trung vào <strong>một mẫu dữ liệu duy nhất</strong> đi qua <strong>Lớp Ra (dense2)</strong> và <strong>Hàm kích hoạt Softmax</strong>. Sơ đồ này sẽ tiếp nối ngay sau khi chúng ta đã có đầu ra của lớp ẩn 1.</p>
+<p>Giả sử đầu ra của <code>activation1.output</code> cho một mẫu duy nhất là <code>[0.8, 0.2, 0.0]</code>. Chúng ta sẽ theo dõi vector này đi qua các bước tiếp theo.</p>
+<hr />
+<h4 id="so-o-chi-tiet-tu-lop-an-en-phan-phoi-xac-suat-cho-mot-mau"><strong>Sơ đồ Chi tiết: Từ Lớp Ẩn đến Phân phối Xác suất (cho một mẫu)</strong><a class="headerlink" href="#so-o-chi-tiet-tu-lop-an-en-phan-phoi-xac-suat-cho-mot-mau" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a>╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>║                SƠ ĐỒ CHI TIẾT TỪNG PHÉP TÍNH: LỚP RA (DENSE 2) &amp; SOFTMAX CHO MỘT MẪU DỮ LIỆU                            ║
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>    (BƯỚC 3: ĐẦU VÀO CHO LỚP RA)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>    Đầu ra của Lớp Ẩn 1 cho một mẫu duy nhất
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>    ┌─────────────────────────┐
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>    │ act1.output: [0.8, 0.2, 0.0] │ (Vector 1xH, H=3)
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>    └───────────┬─────────────┘
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>                │
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>                ▼
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><a href="#__codelineno-0-12"><span class="linenos" data-linenos="12 "></span></a>╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><a href="#__codelineno-0-13"><span class="linenos" data-linenos="13 "></span></a>║                                        (BƯỚC 4a: PHÉP BIẾN ĐỔI TUYẾN TÍNH - LỚP DENSE 2)                                  ║
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><a href="#__codelineno-0-14"><span class="linenos" data-linenos="14 "></span></a>╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><a href="#__codelineno-0-15"><span class="linenos" data-linenos="15 "></span></a>    ┌─────────────────────────────────────────┴──────────────────────────────────────────┐
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><a href="#__codelineno-0-16"><span class="linenos" data-linenos="16 "></span></a>    │                                                                                    │
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><a href="#__codelineno-0-17"><span class="linenos" data-linenos="17 "></span></a>    ▼ (Phép nhân Dot Product: v&#39; · W2)                                                   ▼ (Thông số của Lớp Ra)
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><a href="#__codelineno-0-18"><span class="linenos" data-linenos="18 "></span></a>┌───────────┐     ┌───────────────────────┐                                          ┌───────────────────────┐
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><a href="#__codelineno-0-19"><span class="linenos" data-linenos="19 "></span></a>│[0.8,0.2,0.0]│     │     Weights W2 (HxC)    │                                          │      Biases b2 (1xC)    │
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><a href="#__codelineno-0-20"><span class="linenos" data-linenos="20 "></span></a>└─────┬─────┘     │ [[ 0.1,  0.4, -0.3],    │ (C=3)                                    │      [[2.0, 1.5, 0.9]]  │
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><a href="#__codelineno-0-21"><span class="linenos" data-linenos="21 "></span></a>      │           │  [ 0.6, -0.9,  0.2],    │                                          └─────────────┬─────────────┘
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><a href="#__codelineno-0-22"><span class="linenos" data-linenos="22 "></span></a>      └───────┐   │  [-0.2,  0.5,  0.7]]    │                                                        │
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><a href="#__codelineno-0-23"><span class="linenos" data-linenos="23 "></span></a>              │   └───────────────────────┘                                                        │
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><a href="#__codelineno-0-24"><span class="linenos" data-linenos="24 "></span></a>              ▼                                                                                    │
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a><a href="#__codelineno-0-25"><span class="linenos" data-linenos="25 "></span></a>┌─────────────┴──────────────────────────────────────────────────────────────────────────────────┐ │
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a><a href="#__codelineno-0-26"><span class="linenos" data-linenos="26 "></span></a>│          TÍNH TOÁN CHI TIẾT CHO TỪNG NEURON RA (OUTPUT NEURON)                                   │ │
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a><a href="#__codelineno-0-27"><span class="linenos" data-linenos="27 "></span></a>│                                                                                                │ │
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a><a href="#__codelineno-0-28"><span class="linenos" data-linenos="28 "></span></a>│ Neuron Ra 0: (0.8*0.1) + (0.2*0.6) + (0.0*-0.2) = 0.08 + 0.12 + 0.0 = 0.2 &lt;──────────┐           │ │
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a><a href="#__codelineno-0-29"><span class="linenos" data-linenos="29 "></span></a>│ Neuron Ra 1: (0.8*0.4) + (0.2*-0.9) + (0.0*0.5) = 0.32 - 0.18 + 0.0 = 0.14 &lt;────────┼───┐       │ │
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a><a href="#__codelineno-0-30"><span class="linenos" data-linenos="30 "></span></a>│ Neuron Ra 2: (0.8*-0.3) + (0.2*0.2) + (0.0*0.7) = -0.24 + 0.04 + 0.0 = -0.2 &lt;───────┼───┼───┐   │ │
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><a href="#__codelineno-0-31"><span class="linenos" data-linenos="31 "></span></a>└────────────────────────────────────────────────────────────────────────────────────┘   │   │   │   │
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><a href="#__codelineno-0-32"><span class="linenos" data-linenos="32 "></span></a>                                                                                       │   │   │   │
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><a href="#__codelineno-0-33"><span class="linenos" data-linenos="33 "></span></a>(Kết quả v&#39;·W2) ┌─────────────────┐                                                    ▼   ▼   ▼   │
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a><a href="#__codelineno-0-34"><span class="linenos" data-linenos="34 "></span></a>                │ [0.2, 0.14, -0.2] │ ────────────────────────►         +         ◄─────────────────┘
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a><a href="#__codelineno-0-35"><span class="linenos" data-linenos="35 "></span></a>                └─────────────────┘                     (Cộng Bias)
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a><a href="#__codelineno-0-36"><span class="linenos" data-linenos="36 "></span></a>                                                              │
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a><a href="#__codelineno-0-37"><span class="linenos" data-linenos="37 "></span></a>                                                              ▼
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a><a href="#__codelineno-0-38"><span class="linenos" data-linenos="38 "></span></a>                                               ┌──────────────────────────────────┐
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a><a href="#__codelineno-0-39"><span class="linenos" data-linenos="39 "></span></a>                                               │   dense2.output (Logits)         │
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a><a href="#__codelineno-0-40"><span class="linenos" data-linenos="40 "></span></a>                                               │ [0.2+2.0, 0.14+1.5, -0.2+0.9]    │
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><a href="#__codelineno-0-41"><span class="linenos" data-linenos="41 "></span></a>                                               │      [2.2, 1.64, 0.7]            │
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><a href="#__codelineno-0-42"><span class="linenos" data-linenos="42 "></span></a>                                               └──────────────┬───────────────────┘
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a><a href="#__codelineno-0-43"><span class="linenos" data-linenos="43 "></span></a>                                                              │
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><a href="#__codelineno-0-44"><span class="linenos" data-linenos="44 "></span></a>                                                              ▼
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><a href="#__codelineno-0-45"><span class="linenos" data-linenos="45 "></span></a>╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a><a href="#__codelineno-0-46"><span class="linenos" data-linenos="46 "></span></a>║                                        (BƯỚC 4b: HÀM KÍCH HOẠT SOFTMAX)                                                  ║
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a><a href="#__codelineno-0-47"><span class="linenos" data-linenos="47 "></span></a>╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><a href="#__codelineno-0-48"><span class="linenos" data-linenos="48 "></span></a>                                  ┌───────────────────────┴───────────────────────┐
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><a href="#__codelineno-0-49"><span class="linenos" data-linenos="49 "></span></a>                                  │   (i) TRỪ ĐI MAX ĐỂ CHỐNG TRÀN SỐ             │
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><a href="#__codelineno-0-50"><span class="linenos" data-linenos="50 "></span></a>                                  │   max([2.2, 1.64, 0.7]) = 2.2                 │
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><a href="#__codelineno-0-51"><span class="linenos" data-linenos="51 "></span></a>                                  │   [2.2-2.2, 1.64-2.2, 0.7-2.2]                │
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><a href="#__codelineno-0-52"><span class="linenos" data-linenos="52 "></span></a>                                  └───────────────────────┬───────────────────────┘
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a><a href="#__codelineno-0-53"><span class="linenos" data-linenos="53 "></span></a>                                                          │
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a><a href="#__codelineno-0-54"><span class="linenos" data-linenos="54 "></span></a>                                                          ▼
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a><a href="#__codelineno-0-55"><span class="linenos" data-linenos="55 "></span></a>                                  ┌───────────────────────┴───────────────────────┐
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a><a href="#__codelineno-0-56"><span class="linenos" data-linenos="56 "></span></a>                                  │      Shifted Logits: [0.0, -0.56, -1.5]       │
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57"></a><a href="#__codelineno-0-57"><span class="linenos" data-linenos="57 "></span></a>                                  └───────────────────────┬───────────────────────┘
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58"></a><a href="#__codelineno-0-58"><span class="linenos" data-linenos="58 "></span></a>                                                          │
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59"></a><a href="#__codelineno-0-59"><span class="linenos" data-linenos="59 "></span></a>                                                          ▼
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60"></a><a href="#__codelineno-0-60"><span class="linenos" data-linenos="60 "></span></a>                                  ┌───────────────────────┴───────────────────────┐
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61"></a><a href="#__codelineno-0-61"><span class="linenos" data-linenos="61 "></span></a>                                  │       (ii) LŨY THỪA HÓA (e^x)                 │
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62"></a><a href="#__codelineno-0-62"><span class="linenos" data-linenos="62 "></span></a>                                  │   e^0.0   = 1.0                               │
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63"></a><a href="#__codelineno-0-63"><span class="linenos" data-linenos="63 "></span></a>                                  │   e^-0.56 = 0.571                             │
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64"></a><a href="#__codelineno-0-64"><span class="linenos" data-linenos="64 "></span></a>                                  │   e^-1.5  = 0.223                             │
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65"></a><a href="#__codelineno-0-65"><span class="linenos" data-linenos="65 "></span></a>                                  └───────────────────────┬───────────────────────┘
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66"></a><a href="#__codelineno-0-66"><span class="linenos" data-linenos="66 "></span></a>                                                          │
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67"></a><a href="#__codelineno-0-67"><span class="linenos" data-linenos="67 "></span></a>                                                          ▼
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68"></a><a href="#__codelineno-0-68"><span class="linenos" data-linenos="68 "></span></a>                                  ┌───────────────────────┴───────────────────────┐
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69"></a><a href="#__codelineno-0-69"><span class="linenos" data-linenos="69 "></span></a>                                  │   Exponentiated: [1.0, 0.571, 0.223]          │
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70"></a><a href="#__codelineno-0-70"><span class="linenos" data-linenos="70 "></span></a>                                  └───────────────────────┬───────────────────────┘
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71"></a><a href="#__codelineno-0-71"><span class="linenos" data-linenos="71 "></span></a>                                                          │
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72"></a><a href="#__codelineno-0-72"><span class="linenos" data-linenos="72 "></span></a>                                                          ▼
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73"></a><a href="#__codelineno-0-73"><span class="linenos" data-linenos="73 "></span></a>                                  ┌───────────────────────┴───────────────────────┐
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74"></a><a href="#__codelineno-0-74"><span class="linenos" data-linenos="74 "></span></a>                                  │       (iii) CHUẨN HÓA (Chia cho tổng)         │
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75"></a><a href="#__codelineno-0-75"><span class="linenos" data-linenos="75 "></span></a>                                  │   Tổng = 1.0 + 0.571 + 0.223 = 1.794          │
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76"></a><a href="#__codelineno-0-76"><span class="linenos" data-linenos="76 "></span></a>                                  │                                               │
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77"></a><a href="#__codelineno-0-77"><span class="linenos" data-linenos="77 "></span></a>                                  │   1.0   / 1.794 = 0.557                       │
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78"></a><a href="#__codelineno-0-78"><span class="linenos" data-linenos="78 "></span></a>                                  │   0.571 / 1.794 = 0.318                       │
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79"></a><a href="#__codelineno-0-79"><span class="linenos" data-linenos="79 "></span></a>                                  │   0.223 / 1.794 = 0.124                       │
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80"></a><a href="#__codelineno-0-80"><span class="linenos" data-linenos="80 "></span></a>                                  └───────────────────────┬───────────────────────┘
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81"></a><a href="#__codelineno-0-81"><span class="linenos" data-linenos="81 "></span></a>                                                          │
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82"></a><a href="#__codelineno-0-82"><span class="linenos" data-linenos="82 "></span></a>                                                          ▼
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83"></a><a href="#__codelineno-0-83"><span class="linenos" data-linenos="83 "></span></a>╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84"></a><a href="#__codelineno-0-84"><span class="linenos" data-linenos="84 "></span></a>║                                              (BƯỚC 5: KẾT QUẢ CUỐI CÙNG)                                                ║
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85"></a><a href="#__codelineno-0-85"><span class="linenos" data-linenos="85 "></span></a>╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86"></a><a href="#__codelineno-0-86"><span class="linenos" data-linenos="86 "></span></a>                                  ┌───────────────────────────────────────────────┐
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87"></a><a href="#__codelineno-0-87"><span class="linenos" data-linenos="87 "></span></a>                                  │      Final Probabilities (Độ tự tin)          │
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88"></a><a href="#__codelineno-0-88"><span class="linenos" data-linenos="88 "></span></a>                                  │         [0.557, 0.318, 0.124]                 │
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89"></a><a href="#__codelineno-0-89"><span class="linenos" data-linenos="89 "></span></a>                                  │ (Tổng = 0.557 + 0.318 + 0.124 = 0.999 ≈ 1.0)  │
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90"></a><a href="#__codelineno-0-90"><span class="linenos" data-linenos="90 "></span></a>                                  └───────────────────────────────────────────────┘
+</span></code></pre></div>
+<hr />
+<h2 id="i-sau-vao-phong-may-cua-mang-no-ron-va-xem-xet-tung-phep-nhan-phep-cong-ma-tran">Đi sâu vào "phòng máy" của mạng nơ-ron và xem xét từng phép nhân, phép cộng ma trận<a class="headerlink" href="#i-sau-vao-phong-may-cua-mang-no-ron-va-xem-xet-tung-phep-nhan-phep-cong-ma-tran" title="Permanent link">&para;</a></h2>
+<p>Giả sử chúng ta có một bài toán đơn giản:
+*   <strong>Đầu vào:</strong> Một vector có 2 đặc trưng (ví dụ: chiều cao, cân nặng).
+*   <strong>Kiến trúc mạng:</strong>
+    *   Lớp ẩn (Hidden Layer) có 3 neuron.
+    *   Lớp ra (Output Layer) có 2 neuron (tương ứng 2 lớp, ví dụ: "Loại A" và "Loại B").
+*   <strong>Hàm kích hoạt:</strong> ReLU cho lớp ẩn, Softmax cho lớp ra.</p>
+<p>Hãy bắt đầu với các giá trị cụ thể.</p>
+<hr />
+<h4 id="so-o-chi-tiet-tung-buoc-tinh-toan-ma-tran">Sơ Đồ Chi Tiết: Từng Bước Tính Toán Ma Trận<a class="headerlink" href="#so-o-chi-tiet-tung-buoc-tinh-toan-ma-tran" title="Permanent link">&para;</a></h4>
+<p><strong>Bước 0: Khởi tạo các tham số</strong></p>
+<ul>
+<li>
+<p><strong>Dữ liệu đầu vào (một mẫu):</strong>
+    <code>inputs = [1, 2]</code>  (shape: 1x2)</p>
+</li>
+<li>
+<p><strong>Trọng số và bias Lớp Ẩn (W1, b1):</strong>
+    <code>W1 = [[0.2, 0.8, -0.5],</code>
+    <code>[0.5, -0.9, 0.3]]</code> (shape: 2x3)</p>
+<p><code>b1 = [2, 3, 0.5]</code> (shape: 1x3)</p>
+</li>
+<li>
+<p><strong>Trọng số và bias Lớp Ra (W2, b2):</strong>
+    <code>W2 = [[0.1, -0.4],</code>
+    <code>[-0.2, 0.6],</code>
+    <code>[0.7, -0.9]]</code> (shape: 3x2)</p>
+<p><code>b2 = [0.1, -0.2]</code> (shape: 1x2)</p>
+</li>
+</ul>
+<hr />
+<p><strong>Bước 1: Tính toán tại Lớp Ẩn (Hidden Layer)</strong></p>
+<p><strong>Phép toán:</strong> <code>z1 = inputs · W1 + b1</code> (Phép nhân ma trận <code>·</code> và cộng vector)</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a>        [ Trọng số W1 ]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a>         (shape 2x3)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>      [[0.2, 0.8, -0.5],
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a>       [0.5, -0.9, 0.3]]
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a>            ^
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>            |
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a>[inputs] ·--+
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a>(1x2)
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>[1, 2]
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a>================== Phép nhân ma trận (inputs · W1) ==================
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a>Kết quả (1x3) = [(1*0.2 + 2*0.5), (1*0.8 + 2*-0.9), (1*-0.5 + 2*0.3)]
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><a href="#__codelineno-1-14"><span class="linenos" data-linenos="14 "></span></a>              = [(0.2 + 1.0),   (0.8 - 1.8),    (-0.5 + 0.6)  ]
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><a href="#__codelineno-1-15"><span class="linenos" data-linenos="15 "></span></a>              = [1.2,           -1.0,           0.1           ]
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><a href="#__codelineno-1-16"><span class="linenos" data-linenos="16 "></span></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><a href="#__codelineno-1-17"><span class="linenos" data-linenos="17 "></span></a>================== Phép cộng bias ( + b1 ) =======================
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><a href="#__codelineno-1-18"><span class="linenos" data-linenos="18 "></span></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a><a href="#__codelineno-1-19"><span class="linenos" data-linenos="19 "></span></a>  [1.2, -1.0, 0.1]
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><a href="#__codelineno-1-20"><span class="linenos" data-linenos="20 "></span></a>+ [2.0,  3.0, 0.5]
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a><a href="#__codelineno-1-21"><span class="linenos" data-linenos="21 "></span></a>--------------------
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><a href="#__codelineno-1-22"><span class="linenos" data-linenos="22 "></span></a>= [3.2,  2.0, 0.6]  &lt;== Đây là z1 (logits của lớp ẩn)
+</span></code></pre></div>
+<p><strong>Bước 2: Áp dụng hàm kích hoạt ReLU</strong></p>
+<p><strong>Phép toán:</strong> <code>h1 = ReLU(z1) = max(0, z1)</code></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a>  Input vào ReLU: z1 = [3.2, 2.0, 0.6]
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a>  max(0, 3.2) -&gt; 3.2
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a>  max(0, 2.0) -&gt; 2.0
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos="5 "></span></a>  max(0, 0.6) -&gt; 0.6
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos="6 "></span></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos="7 "></span></a>  Kết quả: h1 = [3.2, 2.0, 0.6] &lt;== Đầu ra của lớp ẩn sau kích hoạt
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos="8 "></span></a>  (Trong trường hợp này không có giá trị nào bị cắt vì tất cả đều dương)
+</span></code></pre></div>
+<hr />
+<p><strong>Bước 3: Tính toán tại Lớp Ra (Output Layer)</strong></p>
+<p><strong>Phép toán:</strong> <code>z_out = h1 · W2 + b2</code></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a>        [ Trọng số W2 ]
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a>         (shape 3x2)
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a>      [[0.1, -0.4],
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a>       [-0.2, 0.6],
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a>       [0.7, -0.9]]
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a>            ^
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a>            |
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a>   [h1] ·---+
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a>  (1x3)
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a>[3.2, 2.0, 0.6]
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><a href="#__codelineno-3-11"><span class="linenos" data-linenos="11 "></span></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><a href="#__codelineno-3-12"><span class="linenos" data-linenos="12 "></span></a>================== Phép nhân ma trận (h1 · W2) =====================
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><a href="#__codelineno-3-13"><span class="linenos" data-linenos="13 "></span></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><a href="#__codelineno-3-14"><span class="linenos" data-linenos="14 "></span></a>Kết quả (1x2) = [ (3.2*0.1 + 2.0*-0.2 + 0.6*0.7),  (3.2*-0.4 + 2.0*0.6 + 0.6*-0.9) ]
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><a href="#__codelineno-3-15"><span class="linenos" data-linenos="15 "></span></a>              = [ (0.32  - 0.4    + 0.42),       (-1.28    + 1.2    - 0.54)       ]
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><a href="#__codelineno-3-16"><span class="linenos" data-linenos="16 "></span></a>              = [ 0.34,                          -0.62                         ]
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17"></a><a href="#__codelineno-3-17"><span class="linenos" data-linenos="17 "></span></a>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18"></a><a href="#__codelineno-3-18"><span class="linenos" data-linenos="18 "></span></a>================== Phép cộng bias ( + b2 ) ========================
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19"></a><a href="#__codelineno-3-19"><span class="linenos" data-linenos="19 "></span></a>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20"></a><a href="#__codelineno-3-20"><span class="linenos" data-linenos="20 "></span></a>  [0.34, -0.62]
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21"></a><a href="#__codelineno-3-21"><span class="linenos" data-linenos="21 "></span></a>+ [0.1,  -0.2]
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22"></a><a href="#__codelineno-3-22"><span class="linenos" data-linenos="22 "></span></a>--------------------
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23"></a><a href="#__codelineno-3-23"><span class="linenos" data-linenos="23 "></span></a>= [0.44, -0.82] &lt;== Đây là z_out (logits cuối cùng trước Softmax)
+</span></code></pre></div>
+<hr />
+<p><strong>Bước 4: Áp dụng hàm kích hoạt Softmax</strong></p>
+<p><strong>Phép toán:</strong> <code>probabilities = Softmax(z_out)</code></p>
 <ol>
-<li><strong>Chứng minh Đạo hàm của hàm Softmax.</strong></li>
-<li><strong>Chứng minh Đạo hàm của hàm Cross-Entropy Loss.</strong></li>
-<li><strong>Kết hợp cả hai bằng Quy tắc Chuỗi để có được kết quả cuối cùng.</strong></li>
+<li>
+<p><strong>Lũy thừa hóa:</strong> <code>e^z_out</code>
+    <code>e^0.44  ≈ 1.55</code>
+    <code>e^-0.82 ≈ 0.44</code></p>
+</li>
+<li>
+<p><strong>Tính tổng:</strong>
+    <code>Tổng = 1.55 + 0.44 = 1.99</code></p>
+</li>
+<li>
+<p><strong>Chuẩn hóa:</strong>
+    <code>Xác suất Lớp A = 1.55 / 1.99 ≈ 0.779</code>
+    <code>Xác suất Lớp B = 0.44 / 1.99 ≈ 0.221</code></p>
+</li>
 </ol>
 <hr />
-<h4 id="phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax"><strong>Phần 1: Chứng minh chi tiết Đạo hàm của Softmax</strong><a class="headerlink" href="#phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax" title="Permanent link">&para;</a></h4>
-<p><strong>Mục tiêu:</strong> Tính <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_k}\)</span>, tức là sự thay đổi của một xác suất đầu ra <span class="arithmatex">\(\hat{y}_j\)</span> khi một điểm số đầu vào <span class="arithmatex">\(z_k\)</span> thay đổi một chút.</p>
-<p><strong>Công thức hàm Softmax:</strong>
-Xác suất đầu ra cho class <span class="arithmatex">\(j\)</span> được tính từ tất cả các điểm số <span class="arithmatex">\(z\)</span>:</p>
-<div class="arithmatex">\[
-\hat{y}_j = \frac{e^{z_j}}{\sum_{i=1}^{N} e^{z_i}}
-\]</div>
-<p>Để tính đạo hàm này, chúng ta phải sử dụng <strong>Quy tắc đạo hàm của một thương (Quotient Rule)</strong>:</p>
-<p>Nếu <span class="arithmatex">\(f(x) = \frac{u(x)}{v(x)}\)</span>, thì</p>
-<p><span class="arithmatex">\(f'(x) = \frac{u'(x)v(x) - u(x)v'(x)}{[v(x)]^2}\)</span>.</p>
-<p>Ở đây, <span class="arithmatex">\(u = e^{z_j}\)</span> và <span class="arithmatex">\(v = \sum_{i=1}^{N} e^{z_i}\)</span>. Phép đạo hàm sẽ khác nhau tùy thuộc vào <span class="arithmatex">\(j\)</span> có bằng <span class="arithmatex">\(k\)</span> hay không.</p>
-<h5 id="truong-hop-1-j-k-ao-ham-cua-mot-output-theo-chinh-input-tuong-ung"><strong>Trường hợp 1: <code>j = k</code> (Đạo hàm của một output theo chính input tương ứng)</strong><a class="headerlink" href="#truong-hop-1-j-k-ao-ham-cua-mot-output-theo-chinh-input-tuong-ung" title="Permanent link">&para;</a></h5>
-<p>Chúng ta đang tính <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_j}\)</span>.</p>
-<ol>
-<li>
-<p><strong>Tính đạo hàm của tử số (<span class="arithmatex">\(u'\)</span>):</strong>
-    <span class="arithmatex">\(\frac{\partial u}{\partial z_j} = \frac{\partial}{\partial z_j} (e^{z_j}) = e^{z_j}\)</span>.</p>
-</li>
-<li>
-<p><strong>Tính đạo hàm của mẫu số (<span class="arithmatex">\(v'\)</span>):</strong></p>
-<p><span class="arithmatex">\(\frac{\partial v}{\partial z_j} = \frac{\partial}{\partial z_j} \left( \sum_{i=1}^{N} e^{z_i} \right) = \frac{\partial}{\partial z_j} (e^{z_1} + e^{z_2} + ... + e^{z_j} + ... + e^{z_N})\)</span>.</p>
-<p>Trong tổng này, chỉ có số hạng <span class="arithmatex">\(e^{z_j}\)</span> là phụ thuộc vào <span class="arithmatex">\(z_j\)</span>. Đạo hàm của các số hạng khác bằng 0.</p>
-<p>Vậy, <span class="arithmatex">\(\frac{\partial v}{\partial z_j} = e^{z_j}\)</span>.</p>
-</li>
-<li>
-<p><strong>Áp dụng vào Quy tắc thương:</strong></p>
-</li>
-</ol>
-<div class="arithmatex">\[
-    \begin{align*}
-    \frac{\partial \hat{y}_j}{\partial z_j} &amp;= \frac{(e^{z_j}) \cdot (\sum_{i} e^{z_i}) - (e^{z_j}) \cdot (e^{z_j})}{(\sum_{i} e^{z_i})^2} \\
-    &amp;= \frac{e^{z_j}}{\sum_{i} e^{z_i}} \cdot \frac{\sum_{i} e^{z_i}}{\sum_{i} e^{z_i}} - \frac{e^{z_j}}{\sum_{i} e^{z_i}} \cdot \frac{e^{z_j}}{\sum_{i} e^{z_i}} \quad \text{(Tách thành hai phân số)} \\
-    &amp;= \hat{y}_j \cdot 1 - \hat{y}_j \cdot \hat{y}_j \quad \text{(Nhận ra các thành phần chính là } \hat{y}_j \text{)} \\
-    &amp;= \hat{y}_j (1 - \hat{y}_j)
-    \end{align*}
-\]</div>
-<p><strong>Kết quả 1:</strong> <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_j} = \hat{y}_j (1 - \hat{y}_j)\)</span>.</p>
-<h5 id="truong-hop-2-j-k-ao-ham-cua-mot-output-theo-mot-input-khac"><strong>Trường hợp 2: <code>j ≠ k</code> (Đạo hàm của một output theo một input khác)</strong><a class="headerlink" href="#truong-hop-2-j-k-ao-ham-cua-mot-output-theo-mot-input-khac" title="Permanent link">&para;</a></h5>
-<p>Chúng ta đang tính <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_k}\)</span>.</p>
-<ol>
-<li>
-<p><strong>Tính đạo hàm của tử số (<span class="arithmatex">\(u'\)</span>):</strong></p>
-<p><span class="arithmatex">\(\frac{\partial u}{\partial z_k} = \frac{\partial}{\partial z_k} (e^{z_j})\)</span>. Vì <span class="arithmatex">\(j \neq k\)</span>, <span class="arithmatex">\(e^{z_j}\)</span> là một hằng số đối với <span class="arithmatex">\(z_k\)</span>. Vậy đạo hàm bằng 0.</p>
-</li>
-<li>
-<p><strong>Tính đạo hàm của mẫu số (<span class="arithmatex">\(v'\)</span>):</strong></p>
-<p><span class="arithmatex">\(\frac{\partial v}{\partial z_k} = \frac{\partial}{\partial z_k} \left( \sum_{i=1}^{N} e^{z_i} \right)\)</span>. </p>
-<p>Tương tự như trên, chỉ có số hạng <span class="arithmatex">\(e^{z_k}\)</span> là phụ thuộc vào <span class="arithmatex">\(z_k\)</span>.</p>
-<p>Vậy, <span class="arithmatex">\(\frac{\partial v}{\partial z_k} = e^{z_k}\)</span>.</p>
-</li>
-<li>
-<p><strong>Áp dụng vào Quy tắc thương:</strong></p>
-</li>
-</ol>
-<div class="arithmatex">\[
-    \begin{align*}
-    \frac{\partial \hat{y}_j}{\partial z_k} &amp;= \frac{(0) \cdot (\sum_{i} e^{z_i}) - (e^{z_j}) \cdot (e^{z_k})}{(\sum_{i} e^{z_i})^2} \\
-    &amp;= - \frac{e^{z_j} \cdot e^{z_k}}{(\sum_{i} e^{z_i})^2} \\
-    &amp;= - \left( \frac{e^{z_j}}{\sum_{i} e^{z_i}} \right) \cdot \left( \frac{e^{z_k}}{\sum_{i} e^{z_i}} \right) \quad \text{(Tách mẫu số)} \\
-    &amp;= - \hat{y}_j \cdot \hat{y}_k
-    \end{align*}
-\]</div>
-<p><strong>Kết quả 2:</strong> <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_k} = - \hat{y}_j \hat{y}_k\)</span>.</p>
-<hr />
-<h4 id="phan-2-chung-minh-chi-tiet-ao-ham-cua-cross-entropy-loss"><strong>Phần 2: Chứng minh chi tiết Đạo hàm của Cross-Entropy Loss</strong><a class="headerlink" href="#phan-2-chung-minh-chi-tiet-ao-ham-cua-cross-entropy-loss" title="Permanent link">&para;</a></h4>
-<p><strong>Mục tiêu:</strong> Tính <span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k}\)</span>, tức là sự thay đổi của Loss khi một xác suất dự đoán <span class="arithmatex">\(\hat{y}_k\)</span> thay đổi.</p>
-<p><strong>Công thức Cross-Entropy Loss:</strong></p>
-<div class="arithmatex">\[
-L = - \sum_{j=1}^{N} y_j \log(\hat{y}_j)
-\]</div>
-<p>Ở đây, <span class="arithmatex">\(y_j\)</span> là nhãn thực (ground-truth), có giá trị là 1 cho class đúng và 0 cho các class khác (one-hot encoding).</p>
-<ol>
-<li>
-<p><strong>Áp dụng phép đạo hàm:</strong></p>
-<p><span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = \frac{\partial}{\partial \hat{y}_k} \left( - \sum_{j=1}^{N} y_j \log(\hat{y}_j) \right)\)</span>.</p>
-</li>
-<li>
-<p><strong>Đưa đạo hàm vào trong tổng:</strong></p>
-<p><span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = - \sum_{j=1}^{N} y_j \cdot \frac{\partial}{\partial \hat{y}_k} \left( \log(\hat{y}_j) \right)\)</span>.</p>
-</li>
-<li>
-<p><strong>Phân tích đạo hàm bên trong:</strong></p>
-<p>Phép đạo hàm <span class="arithmatex">\(\frac{\partial}{\partial \hat{y}_k} \left( \log(\hat{y}_j) \right)\)</span> chỉ khác 0 khi <span class="arithmatex">\(j=k\)</span>.
-*   Nếu <span class="arithmatex">\(j=k\)</span>, <span class="arithmatex">\(\frac{\partial}{\partial \hat{y}_k} \log(\hat{y}_k) = \frac{1}{\hat{y}_k}\)</span>.
-*   Nếu <span class="arithmatex">\(j \neq k\)</span>, <span class="arithmatex">\(\frac{\partial}{\partial \hat{y}_k} \log(\hat{y}_j) = 0\)</span>.</p>
-</li>
-<li>
-<p><strong>Rút gọn tổng:</strong></p>
-<p>Do đó, toàn bộ tổng <span class="arithmatex">\(\sum_{j=1}^{N}\)</span> chỉ còn lại duy nhất một số hạng tại <span class="arithmatex">\(j=k\)</span>.
-<span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = - y_k \cdot \frac{1}{\hat{y}_k} = - \frac{y_k}{\hat{y}_k}\)</span>.</p>
-</li>
-</ol>
-<p><strong>Kết quả 3:</strong> <span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = - \frac{y_k}{\hat{y}_k}\)</span>.</p>
-<hr />
-<h4 id="phan-3-ket-hop-bang-quy-tac-chuoi-iem-hoi-tu"><strong>Phần 3: Kết Hợp Bằng Quy Tắc Chuỗi - Điểm Hội Tụ</strong><a class="headerlink" href="#phan-3-ket-hop-bang-quy-tac-chuoi-iem-hoi-tu" title="Permanent link">&para;</a></h4>
-<p>Bây giờ chúng ta đã có tất cả các mảnh ghép. Ta sẽ thay chúng vào công thức Quy tắc Chuỗi ban đầu:</p>
-<div class="arithmatex">\[
-\frac{\partial L}{\partial z_k} = \sum_j \frac{\partial L}{\partial \hat{y}_j} \cdot \frac{\partial \hat{y}_j}{\partial z_k}
-\]</div>
-<p>Để giải quyết tổng này, chúng ta lại tách nó thành hai phần: phần tử tại <code>j=k</code> và các phần tử còn lại <code>j ≠ k</code>. Đây là bước đi mấu chốt của phép chứng minh.</p>
-<div class="arithmatex">\[
-\frac{\partial L}{\partial z_k} = \left( \frac{\partial L}{\partial \hat{y}_k} \cdot \frac{\partial \hat{y}_k}{\partial z_k} \right) + \sum_{j \neq k} \left( \frac{\partial L}{\partial \hat{y}_j} \cdot \frac{\partial \hat{y}_j}{\partial z_k} \right)
-\]</div>
-<ol>
-<li>
-<p><strong>Thay giá trị vào phần tử <code>j=k</code>:</strong></p>
-<p>Sử dụng Kết quả 3 và Kết quả 1:</p>
-<p><span class="arithmatex">\(\left( - \frac{y_k}{\hat{y}_k} \right) \cdot \left( \hat{y}_k (1 - \hat{y}_k) \right) = -y_k(1-\hat{y}_k) = -y_k + y_k \hat{y}_k\)</span>.</p>
-</li>
-<li>
-<p><strong>Thay giá trị vào tổng các phần tử <code>j ≠ k</code>:</strong></p>
-<p>Sử dụng Kết quả 3 và Kết quả 2:</p>
-<p><span class="arithmatex">\(\sum_{j \neq k} \left( - \frac{y_j}{\hat{y}_j} \right) \cdot \left( - \hat{y}_j \hat{y}_k \right) = \sum_{j \neq k} (y_j \hat{y}_k)\)</span>.</p>
-</li>
-<li>
-<p><strong>Ghép tất cả lại:</strong></p>
-</li>
-</ol>
-<div class="arithmatex">\[
-    \begin{align*}
-    \frac{\partial L}{\partial z_k} &amp;= (-y_k + y_k \hat{y}_k) + \sum_{j \neq k} y_j \hat{y}_k \\
-    &amp;= -y_k + \left( y_k \hat{y}_k + \sum_{j \neq k} y_j \hat{y}_k \right) \quad \text{(Nhóm các số hạng có } \hat{y}_k \text{)} \\
-    &amp;= -y_k + \hat{y}_k \left( y_k + \sum_{j \neq k} y_j \right) \quad \text{(Rút } \hat{y}_k \text{ làm nhân tử chung)}
-    \end{align*}
-\]</div>
-<ol>
-<li>
-<p><strong>Phân tích cuối cùng:</strong></p>
-<p>Hãy nhìn vào biểu thức trong ngoặc: <span class="arithmatex">\((y_k + \sum_{j \neq k} y_j)\)</span>. 
-Đây chính là tổng của tất cả các phần tử trong vector ground-truth <span class="arithmatex">\(y\)</span>, tức là <span class="arithmatex">\(\sum_j y_j\)</span>.
-Vì <span class="arithmatex">\(y\)</span> là vector one-hot, nó chỉ chứa một số 1 và còn lại là 0. Do đó, tổng của tất cả các phần tử của nó luôn luôn bằng 1.</p>
-<div class="arithmatex">\[
-\sum_j y_j = 1
-\]</div>
-</li>
-<li>
-<p><strong>Kết quả cuối cùng:</strong>
-    Thay 1 vào biểu thức trên, ta có:</p>
-</li>
-</ol>
-<div class="arithmatex">\[
-    \begin{align*}
-    \frac{\partial L}{\partial z_k} &amp;= -y_k + \hat{y}_k \cdot (1) \\
-    &amp;= \hat{y}_k - y_k
-    \end{align*}
-\]</div>
-<p>Như vậy, chúng ta đã chứng minh một cách đầy đủ và chi tiết rằng gradient kết hợp là <code>Dự đoán - Sự thật</code>.</p>
+<h4 id="ket-qua-cuoi-cung">KẾT QUẢ CUỐI CÙNG<a class="headerlink" href="#ket-qua-cuoi-cung" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a>  Input: [1, 2]
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a>    |
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a>    V
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a>  z1 = [3.2, 2.0, 0.6]  (Sau Lớp Ẩn 1)
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a>    |
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a>    V (ReLU)
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a>  h1 = [3.2, 2.0, 0.6]
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a>    |
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a>    V
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a>  z_out = [0.44, -0.82] (Sau Lớp Ra)
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a><a href="#__codelineno-4-11"><span class="linenos" data-linenos="11 "></span></a>    |
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><a href="#__codelineno-4-12"><span class="linenos" data-linenos="12 "></span></a>    V (Softmax)
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><a href="#__codelineno-4-13"><span class="linenos" data-linenos="13 "></span></a>  Probabilities = [0.779, 0.221]
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a><a href="#__codelineno-4-14"><span class="linenos" data-linenos="14 "></span></a>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a><a href="#__codelineno-4-15"><span class="linenos" data-linenos="15 "></span></a>==&gt; Dự đoán: &quot;Loại A&quot; với xác suất 77.9%
+</span></code></pre></div>
+<p>Sơ đồ chi tiết này cho thấy chính xác cách một vector đầu vào <code>[1, 2]</code> đi qua từng lớp, qua từng phép nhân ma trận, cộng bias và hàm kích hoạt để cuối cùng cho ra một dự đoán xác suất cụ thể. Mỗi bước đều là một phép toán ma trận hoặc vector đơn giản. Quá trình "học" của mạng nơ-ron chính là việc điều chỉnh các giá trị trong ma trận <code>W1, b1, W2, b2</code> để kết quả cuối cùng ngày càng chính xác.</p>
 
 
 
@@ -2204,7 +2294,7 @@ Vì <span class="arithmatex">\(y\)</span> là vector one-hot, nó chỉ chứa m
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../09-diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Diagram">
+          <a href="../04-03.softmax/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Softmax">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2214,11 +2304,27 @@ Vì <span class="arithmatex">\(y\)</span> là vector one-hot, nó chỉ chứa m
                 Previous
               </span>
               <div class="md-ellipsis">
-                Diagram
+                Softmax
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../../Ch4pt3r.05_L0SS/05-loss-diagram/" class="md-footer__link md-footer__link--next" aria-label="Next: LOSS Diagram">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                LOSS Diagram
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

@@ -52,21 +52,31 @@ NNFS-Codex/
 
 This is the central control panel, tracking the progress of the entire mission.
 
-| Chapter / Module | Core Concepts | Status | Quick Link |
-|:----------------:|:------------------------------|:----------:|:--------------:|
-| **01** | Introduction & Environment Setup | 🟢 Complete | `[Updating...]` |
-| **02** | First Neurons & Layers | 🟢 Complete | `[Updating...]` |
-| **03** | The Loss Function | 🟢 Complete | `[Updating...]` |
-| **04** | Activation Functions | 🟢 Complete | `[Updating...]` |
-| **05** | Calculating Loss | 🟢 Complete | `[Updating...]` |
-| **06** | Optimization | ⚫️ Not Started | `[Updating...]` |
-| **07** | Backpropagation | ⚫️ Not Started | `[Updating...]` |
-| **08** | Implementing Backpropagation | ⚫️ Not Started | `[Updating...]` |
-| **09** | Intro to Optimization | ⚫️ Not Started | `[Updating...]` |
-| **10** | Optimizers | ⚫️ Not Started | `[Updating...]` |
-| **11** | Dropout | ⚫️ Not Started | `[Updating...]` |
-| **12** | The Model Object | ⚫️ Not Started | `[Updating...]` |
-| **...** | *Advanced Missions...* | ⚫️ Not Started | `[Updating...]` |
+| Chapter / Module | Core Concepts                                      |     Status     |    Quick Link   |
+| :--------------: | :------------------------------------------------- | :------------: | :-------------: |
+|      **01**      | Introducing Neural Networks                        |   🟢 Complete  | `[Updating...]` |
+|      **02**      | Coding Our First Neurons                           |   🟢 Complete  | `[Updating...]` |
+|      **03**      | Adding Layers                                      |   🟢 Complete  | `[Updating...]` |
+|      **04**      | Activation Functions                               |   🟢 Complete  | `[Updating...]` |
+|      **05**      | Loss                                               |   🟢 Complete  | `[Updating...]` |
+|      **06**      | Introducing Optimization                           |   🟢 Complete  | `[Updating...]` |
+|      **07**      | Derivatives                                        |   🟢 Complete  | `[Updating...]` |
+|      **08**      | Gradients, Partial Derivatives, and the Chain Rule |   🟢 Complete  | `[Updating...]` |
+|      **09**      | Backpropagation                                    | 🟡 In Progress | `[Updating...]` |
+|      **10**      | Optimizers                                         | ⚫️ Not Started | `[Updating...]` |
+|      **11**      | Testing Data                                       | ⚫️ Not Started | `[Updating...]` |
+|      **12**      | Validation Data                                    | ⚫️ Not Started | `[Updating...]` |
+|      **13**      | Training Dataset                                   | ⚫️ Not Started | `[Updating...]` |
+|      **14**      | L1 and L2 Regularization                           | ⚫️ Not Started | `[Updating...]` |
+|      **15**      | Dropout                                            | ⚫️ Not Started | `[Updating...]` |
+|      **16**      | Binary Logistic Regression                         | ⚫️ Not Started | `[Updating...]` |
+|      **17**      | Regression                                         | ⚫️ Not Started | `[Updating...]` |
+|      **18**      | Model Object                                       | ⚫️ Not Started | `[Updating...]` |
+|      **19**      | A Real Dataset                                     | ⚫️ Not Started | `[Updating...]` |
+|      **20**      | Model Evaluation                                   | ⚫️ Not Started | `[Updating...]` |
+|      **21**      | Saving and Loading Model Information               | ⚫️ Not Started | `[Updating...]` |
+|      **22**      | Model Predicting & Inference                       | ⚫️ Not Started | `[Updating...]` |
+
 
 **Legend:**
 *   🟢 **Complete (System Online):** Module has been decoded and executed.
@@ -167,21 +177,31 @@ NNFS-Codex/
 
 Đây là bảng điều khiển trung tâm, theo dõi tiến độ của toàn bộ nhiệm vụ.
 
-| Chương / Module | Nội Dung Chính (Core Concepts) | Trạng Thái | Liên Kết Nhanh |
-|:---------------:|:------------------------------|:----------:|:--------------:|
-| **01** | Giới thiệu & Thiết lập Môi trường | 🟢 Hoàn thành | `[Đang cập nhật]` |
-| **02** | Nơ-ron & Lớp Nơ-ron Đầu tiên | 🟢 Hoàn thành | `[Đang cập nhật]` |
-| **03** | Hàm Mất mát (Loss Function) | 🟢 Hoàn thành | `[Đang cập nhật]` |
-| **04** | Hàm Kích hoạt (Activation Functions) | 🟢 Hoàn thành | `[Đang cập nhật]` |
-| **05** | Tính toán Hàm Mất mát | 🟢 Hoàn thành | `[Đang cập nhật]` |
-| **06** | Tối ưu hóa (Optimization) | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
-| **07** | Lan truyền ngược (Backpropagation) | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
-| **08** | Cài đặt Lan truyền ngược | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
-| **09** | Giới thiệu về Tối ưu hóa | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
-| **10** | Các Bộ tối ưu (Optimizers) | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
-| **11** | Dropout | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
-| **12** | Đối tượng Mô hình (Model Object) | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
-| **...** | *Các nhiệm vụ nâng cao...* | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+| Chương / Module | Nội Dung Chính (Core Concepts)           |    Trạng Thái   |   Liên Kết Nhanh  |
+| :-------------: | :--------------------------------------- | :-------------: | :---------------: |
+|      **01**     | Giới thiệu Mạng Nơ-ron                   |  🟢 Hoàn thành  | `[Đang cập nhật]` |
+|      **02**     | Lập trình Nơ-ron Đầu tiên                |  🟢 Hoàn thành  | `[Đang cập nhật]` |
+|      **03**     | Thêm các Lớp                             |  🟢 Hoàn thành  | `[Đang cập nhật]` |
+|      **04**     | Hàm Kích hoạt                            |  🟢 Hoàn thành  | `[Đang cập nhật]` |
+|      **05**     | Hàm Mất mát                              |  🟢 Hoàn thành  | `[Đang cập nhật]` |
+|      **06**     | Giới thiệu về Tối ưu hóa                 |  🟢 Hoàn thành  | `[Đang cập nhật]` |
+|      **07**     | Đạo hàm                                  |  🟢 Hoàn thành  | `[Đang cập nhật]` |
+|      **08**     | Gradient, Đạo hàm riêng và Quy tắc Chuỗi |  🟢 Hoàn thành  | `[Đang cập nhật]` |
+|      **09**     | Lan truyền ngược (Backpropagation)       |🟡 Đang tiến hành| `[Đang cập nhật]` |
+|      **10**     | Các Bộ Tối ưu (Optimizers)               | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **11**     | Dữ liệu Kiểm thử                         | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **12**     | Dữ liệu Xác thực                         | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **13**     | Tập Dữ liệu Huấn luyện                   | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **14**     | Regularization: L1 và L2                 | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **15**     | Dropout                                  | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **16**     | Hồi quy Logistic Nhị phân                | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **17**     | Hồi quy Tuyến tính                       | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **18**     | Đối tượng Mô hình                        | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **19**     | Một Tập Dữ liệu Thực                     | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **20**     | Đánh giá Mô hình                         | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **21**     | Lưu và Tải Thông tin Mô hình             | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+|      **22**     | Dự đoán & Suy luận Mô hình               | ⚫️ Chưa bắt đầu | `[Đang cập nhật]` |
+
 
 **Chú thích:**
 *   🟢 **Hoàn thành (System Online):** Module đã được giải mã và thực thi.

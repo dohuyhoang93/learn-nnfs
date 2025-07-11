@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.02.03_Coding_First_Neural/02-first-layer/">
       
       
-        <link rel="prev" href="../../Ch4pt3r.07_Derivative/07-derivative/">
+        <link rel="prev" href="../02-first-layer-diagram/">
       
       
-        <link rel="next" href="../../Ch4pt3r.09_Backpropagation/09-diagram/">
+        <link rel="next" href="../../Ch4pt3r.04_Activation_Function/04-01-transformation-relu/">
       
       
       <link rel="icon" href="../../../assets/logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Gradients, Partial Derivatives and the Chain Rule - Neural Network From Scratch Documentation</title>
+        <title>First Layer - Neural Network From Scratch Documentation</title>
       
     
     
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#abstract-example" class="md-skip">
+        <a href="#detailed-code-explanation" class="md-skip">
           Skip to content
         </a>
       
@@ -150,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gradients, Partial Derivatives and the Chain Rule
+              First Layer
             
           </span>
         </div>
@@ -319,7 +319,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../Ch4pt3r.02.03_Coding_First_Neural/02-first-layer-diagram/" class="md-tabs__link">
+        <a href="../02-first-layer-diagram/" class="md-tabs__link">
           
   
   
@@ -472,6 +472,8 @@
                 
   
   
+    
+  
   
   
     
@@ -482,11 +484,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -502,7 +504,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.02.03 Coding First Neural
@@ -516,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.02.03_Coding_First_Neural/02-first-layer-diagram/" class="md-nav__link">
+      <a href="../02-first-layer-diagram/" class="md-nav__link">
         
   
   
@@ -536,10 +538,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Ch4pt3r.02.03_Coding_First_Neural/02-first-layer/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    First Layer
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -550,6 +572,126 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-code-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Code Explanation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Code Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-preparing-tools-and-materials-imports-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: Preparing Tools and Materials (Imports &amp; Data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-building-the-blueprint-for-a-judge-class-layer_dense" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Building the "Blueprint for a Judge" (class Layer_Dense)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-the-competition-begins-using-the-class-and-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: The Competition Begins! (Using the Class and Data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-4-abstract-interpretation-the-fruit-classification-competition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: Abstract Interpretation - The Fruit Classification Competition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-5-ascii-illustration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 5: ASCII Illustration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appendix-explaining-spiral-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appendix - Explaining Spiral Data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix - Explaining Spiral Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-simple-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Simple Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-why-is-it-so-important-and-famous" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Why is it so important and famous?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-what-does-the-spiral_data-function-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. What does the spiral_data function create?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -970,8 +1112,6 @@
                 
   
   
-    
-  
   
   
     
@@ -982,11 +1122,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1002,7 +1142,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.08 Gradients Partial Derivative Chain Rule
@@ -1013,30 +1153,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Gradients, Partial Derivatives and the Chain Rule
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/" class="md-nav__link">
         
   
   
@@ -1047,51 +1167,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#abstract-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Abstract Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#analyzing-each-component-each-computational-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Analyzing Each Component (Each Computational Node)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#putting-it-all-together-a-chain-of-responsibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      Putting It All Together: A Chain of Responsibility
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2011,154 +2086,306 @@
   
 
 
-  <h1>Gradients, Partial Derivatives and the Chain Rule</h1>
+  <h1>First Layer</h1>
 
-<h4 id="abstract-example"><strong>Abstract Example</strong><a class="headerlink" href="#abstract-example" title="Permanent link">&para;</a></h4>
-<p>We will combine the intuitive story of "responsibility" with diagrams and specific explanations for each node in a neural network. This will create a solid bridge between abstract theory and practical computation.</p>
-<h5 id="story-summary"><strong>Story Summary</strong><a class="headerlink" href="#story-summary" title="Permanent link">&para;</a></h5>
-<ul>
-<li><strong>Neural Network</strong>: An archer with hundreds of technical "knobs" (weights, biases).</li>
-<li><strong>Objective</strong>: To hit the bullseye (reduce Error/Loss to 0).</li>
-<li><strong>Backpropagation</strong>: The process of "Distributing Responsibility," figuring out how much responsibility each knob bears for the final error.</li>
-<li><strong>Gradient</strong>: The instruction sheet that compiles all "responsibilities." We will adjust the knobs in the <strong>opposite</strong> direction of this instruction sheet.</li>
-</ul>
-<p>Now, let's act as engineers, open the hood of the "archer machine," and examine each part. We will see how "responsibility" (the gradient) flows backward through each type of component.</p>
-<p><strong>Conventions</strong>:</p>
-<ul>
-<li><code>Forward</code>: Data flows from left to right.</li>
-<li><code>Backward</code>: "Responsibility" (Gradient) flows backward from right to left.</li>
-<li><code>Input Responsibility</code>: The gradient that a node receives from the next layer.</li>
-<li><code>Output Responsibility</code>: The gradient that a node calculates and sends to the previous layer (against the data flow).</li>
-</ul>
+<h2 id="detailed-code-explanation">Detailed Code Explanation<a class="headerlink" href="#detailed-code-explanation" title="Permanent link">&para;</a></h2>
+<p>The <code>chapter01.py</code> program</p>
+<p><strong>Overview: What is the goal of this program?</strong></p>
+<p>Imagine we want to build a simple artificial "brain". This program performs the <strong>first and most fundamental step</strong>:</p>
+<ol>
+<li><strong>Build a "neuron"</strong>: Create a basic information processing unit.</li>
+<li><strong>Prepare the data</strong>: Generate a sample dataset for the "brain" to process.</li>
+<li><strong>Perform a calculation</strong>: Pass the data through the "brain" and see what the output is.</li>
+</ol>
+<p>This is the foundation of every neural network. Understanding each line of code here will help you grasp more complex concepts later on.</p>
 <hr />
-<h4 id="analyzing-each-component-each-computational-node"><strong>Analyzing Each Component (Each Computational Node)</strong><a class="headerlink" href="#analyzing-each-component-each-computational-node" title="Permanent link">&para;</a></h4>
-<h5 id="1-the-addition-component-the-synergy-unit"><strong>1. The ADDITION Component (The Synergy Unit)</strong><a class="headerlink" href="#1-the-addition-component-the-synergy-unit" title="Permanent link">&para;</a></h5>
-<p>This is the simplest component. It takes two or more input values and adds them together.</p>
-<ul>
-<li><strong>Example in a Neural Network</strong>: <code>Sum = (Input * Weight) + Bias</code>. The addition with the Bias is an addition node.</li>
-</ul>
-<h6 id="responsibility-distribution-diagram"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram" title="Permanent link">&para;</a></h6>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Sum&#39; = 10
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input * Weight]-------&gt;|                             |
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |        ADDITION NODE (+)    |--&gt;[Sum]--
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>    --[Bias]------------&gt;|                             |
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>           +-----------------------------------------+
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>        ^                                   ^
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>        |                                   |
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>Responsibility for &#39;Input*Weight&#39;= 10      Responsibility for &#39;Bias&#39;= 10
+<h4 id="part-1-preparing-tools-and-materials-imports-data"><strong>Part 1: Preparing Tools and Materials (Imports &amp; Data)</strong><a class="headerlink" href="#part-1-preparing-tools-and-materials-imports-data" title="Permanent link">&para;</a></h4>
+<p>This is the step where we gather the necessary libraries and data before we start "building".</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="kn">import</span><span class="w"> </span><span class="nn">nnfs</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a><span class="kn">from</span><span class="w"> </span><span class="nn">nnfs.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">spiral_data</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a><span class="n">nnfs</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 </span></code></pre></div>
+<h5 id="detailed-line-by-line-explanation"><strong>Detailed Line-by-Line Explanation:</strong><a class="headerlink" href="#detailed-line-by-line-explanation" title="Permanent link">&para;</a></h5>
 <ul>
 <li>
-<p><strong>Forward</strong>: Takes the value of <code>(Input * Weight)</code> and adds it to the value of <code>Bias</code> to get the <code>Sum</code>.</p>
+<p><code>import numpy as np</code>:</p>
+<ul>
+<li><strong>What is it?</strong>: <code>NumPy</code> (Numerical Python) is the <strong>most fundamental and important</strong> library for data science in Python. It provides an extremely efficient data structure called an array and tools to perform operations on these arrays, especially matrix math.</li>
+<li><strong>Why do we need it?</strong>: A neural network is, in essence, a series of matrix operations. NumPy helps us perform these matrix multiplications and additions much more quickly and efficiently than using Python's standard lists. <code>as np</code> is a common convention for aliasing the library.</li>
+</ul>
 </li>
 <li>
-<p><strong>Backward (Distributing Responsibility)</strong>:</p>
+<p><code>import nnfs</code>:</p>
 <ul>
-<li><strong>Principle</strong>: In addition, all inputs contribute <strong>equally</strong> and directly to the result. The influence of each input on the output is 1-to-1 (increasing an input by 1 unit increases the output by 1 unit).</li>
-<li><strong>Action</strong>: The addition node receives "responsibility" from the next layer and <strong>copies it exactly</strong> to all of its input branches.</li>
-<li><strong>Derivative at this node</strong>: The derivative of <code>Sum</code> with respect to <code>Bias</code> is 1. The derivative of <code>Sum</code> with respect to <code>(Input * Weight)</code> is also 1. Therefore, the responsibility is multiplied by 1, meaning it remains unchanged.</li>
+<li><strong>What is it?</strong>: <code>nnfs</code> (Neural Networks from Scratch) is a helper library written specifically for the book of the same name. Its purpose is to help learners focus on the concepts of neural networks rather than getting bogged down in minor details.</li>
+<li><strong>Why do we need it?</strong>: It provides utility functions, such as creating sample data (<code>spiral_data</code>) and initializing the environment (<code>init</code>), to ensure that everyone's results are the same, making it easier to learn and debug.</li>
 </ul>
-</li>
-</ul>
-<h5 id="2-the-multiplication-component-the-leverage-unit"><strong>2. The MULTIPLICATION Component (The Leverage Unit)</strong><a class="headerlink" href="#2-the-multiplication-component-the-leverage-unit" title="Permanent link">&para;</a></h5>
-<p>This component takes two values and multiplies them together.</p>
-<ul>
-<li><strong>Example in a Neural Network</strong>: <code>Result = Input * Weight</code>. This is the core operation in a layer.</li>
-</ul>
-<h6 id="responsibility-distribution-diagram_1"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram_1" title="Permanent link">&para;</a></h6>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Result&#39; = 10
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a>  --[Input = 3]----------&gt;|                             |
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |   MULTIPLICATION NODE (*)   |--&gt;[Result = 15]--
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a>--[Weight = 5]---------&gt;|                             |
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a>           +-----------------------------------------+
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>        ^                                   ^
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a>        |                                   |
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a>Responsibility for &#39;Input&#39;           Responsibility for &#39;Weight&#39;
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a> = 10 * 5 = 50                        = 10 * 3 = 30
-</span></code></pre></div>
-<ul>
-<li>
-<p><strong>Forward</strong>: Takes the <code>Input</code> (let's assume its value is 3) and multiplies it by the <code>Weight</code> (let's assume its value is 5) to get the <code>Result</code> (15).</p>
 </li>
 <li>
-<p><strong>Backward (Distributing Responsibility)</strong>:</p>
+<p><code>import matplotlib.pyplot as plt</code>:</p>
 <ul>
-<li><strong>Principle</strong>: In multiplication, the influence of one input on the result depends on the <strong>value of the other input</strong>. This is the leverage effect.</li>
-<li><strong>Action</strong>: To calculate the responsibility for one branch, the multiplication node takes the "responsibility" from the next layer and multiplies it by the <strong>value of the other branch</strong> (the value that was stored from the Forward pass).</li>
-<li><strong>Derivative at this node</strong>: The derivative of <code>Result</code> with respect to <code>Input</code> is the value of the <code>Weight</code>. The derivative of <code>Result</code> with respect to <code>Weight</code> is the value of the <code>Input</code>.</li>
+<li><strong>What is it?</strong>: <code>Matplotlib</code> is the most popular data visualization (plotting) library in Python. <code>pyplot</code> is a module within Matplotlib that provides an interface similar to MATLAB.</li>
+<li><strong>Why do we need it?</strong>: "A picture is worth a thousand words." This library allows us to plot the data on a graph to see what it looks like. Seeing the spiral data visually helps us better understand the problem the neural network is trying to solve.</li>
 </ul>
-</li>
-</ul>
-<h5 id="3-the-relu-component-the-gatekeeper"><strong>3. The ReLU Component (The Gatekeeper)</strong><a class="headerlink" href="#3-the-relu-component-the-gatekeeper" title="Permanent link">&para;</a></h5>
-<p>This component is very special. It only has one input. If the input is a positive number, it lets it pass through. If the input is a negative number, it blocks it and returns 0. The official name is <code>ReLU(x) = max(0, x)</code>.</p>
-<ul>
-<li><strong>Example in a Neural Network</strong>: This is a popular activation function that helps the network learn complex relationships.</li>
-</ul>
-<h6 id="responsibility-distribution-diagram_2"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram_2" title="Permanent link">&para;</a></h6>
-<p><strong>Case 1: Positive Input (Gate is open)</strong></p>
-<p><div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Output&#39; = 10
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input = 3]-----------&gt;|                             |
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |       ReLU NODE (Open)      |--&gt;[Output = 3]--
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>           +-----------------------------------------+
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>                                ^
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>                                |
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>                   Responsibility for &#39;Input&#39; = 10
-</span></code></pre></div>
-*   <strong>Case 2: Negative Input (Gate is closed)</strong></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Output&#39; = 10
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input = -2]----------&gt;|                             |
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |      ReLU NODE (Closed)     |--&gt;[Output = 0]--
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a>           +-----------------------------------------+
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a>                                ^
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a>                                |
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a>                   Responsibility for &#39;Input&#39; = 0
-</span></code></pre></div>
-<ul>
-<li>
-<p><strong>Forward</strong>: Checks the input. If positive, it remains unchanged. If negative, it becomes 0.</p>
 </li>
 <li>
-<p><strong>Backward (Distributing Responsibility)</strong>:</p>
+<p><code>from nnfs.datasets import spiral_data</code>:</p>
 <ul>
-<li><strong>Principle</strong>: ReLU acts as a gatekeeper for the flow of "responsibility."</li>
-<li><strong>Action</strong>:<ul>
-<li>If during the forward pass, the input was positive (the gate was open), then during the backward pass, the "responsibility" is allowed to pass through unchanged.</li>
-<li>If during the forward pass, the input was negative (the gate was closed), then during the backward pass, the "responsibility" is completely blocked (becomes 0). This component did not contribute to the final positive result, so it bears no responsibility.</li>
+<li><strong>What is it?</strong>: This is a specific <code>import</code> statement. Instead of importing the entire <code>nnfs.datasets</code> library, we only import the <code>spiral_data</code> function from it.</li>
+<li><strong>Why do we need it?</strong>: <code>spiral_data</code> is a function that helps create the famous spiral dataset, a classic problem for testing classification models.</li>
 </ul>
 </li>
-<li><strong>Derivative at this node</strong>: The derivative of <code>ReLU(x)</code> is 1 if <code>x &gt; 0</code>, and 0 if <code>x &lt; 0</code>. Therefore, the "responsibility" is multiplied by 1 (unchanged) or 0 (annihilated).</li>
+<li>
+<p><code>nnfs.init()</code>:</p>
+<ul>
+<li><strong>What is it?</strong>: This command calls the <code>init</code> function from the <code>nnfs</code> library.</li>
+<li><strong>Why do we need it?</strong>: This function performs some background setup, most importantly <strong>setting the seed for NumPy's random number generation</strong> and establishing a default data type. This ensures that every time you run the code, the "random weights" and "data" generated will be <strong>exactly the same</strong>, making learning and reproducing results consistent.</li>
 </ul>
 </li>
 </ul>
 <hr />
-<h4 id="putting-it-all-together-a-chain-of-responsibility"><strong>Putting It All Together: A Chain of Responsibility</strong><a class="headerlink" href="#putting-it-all-together-a-chain-of-responsibility" title="Permanent link">&para;</a></h4>
-<p>Now, let's see how these components work together in a simple neuron:</p>
-<p><code>Input * Weight --&gt; [Multiplication Node] --&gt; Intermediate Sum + Bias --&gt; [Addition Node] --&gt; Final Result</code></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a>Final responsibility (from the next layer)
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a>      |
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a>      v
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a> [Addition Node] &lt;--- Responsibility is copied to Bias and &#39;Intermediate Sum&#39;
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a>      |
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a>      v
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a> [Multiplication Node] &lt;--- Responsibility is multiplied by the value of the other branch
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a>      |
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a>      v
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a>Responsibility of the Weight and Input
+<h4 id="part-2-building-the-blueprint-for-a-judge-class-layer_dense"><strong>Part 2: Building the "Blueprint for a Judge" (<code>class Layer_Dense</code>)</strong><a class="headerlink" href="#part-2-building-the-blueprint-for-a-judge-class-layer_dense" title="Permanent link">&para;</a></h4>
+<p>This is the heart of the program. We aren't building a single neuron, but a "blueprint" (<code>class</code>) so that we can easily create an entire layer/panel of judges.</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">class</span><span class="w"> </span><span class="nc">Layer_Dense</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_inputs</span><span class="p">,</span> <span class="n">n_neurons</span><span class="p">):</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_inputs</span><span class="p">,</span> <span class="n">n_neurons</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">biases</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_neurons</span><span class="p">))</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>        <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">biases</span>
 </span></code></pre></div>
-<p>This "Responsibility Distribution" process flows backward through the entire network, through hundreds, thousands of components like these. It's like a reverse investigation, starting from the "crime scene" (the Loss Function) and following the traces back to find the "responsibility" of each "suspect" (each weight and bias).</p>
-<p>When the investigation is complete, each weight and bias will have received its own "responsibility" number. That is the Gradient. Based on that, the Coach (you) will know how to adjust each knob to make the next shot more accurate.</p>
+<h5 id="detailed-section-by-section-explanation"><strong>Detailed Section-by-Section Explanation:</strong><a class="headerlink" href="#detailed-section-by-section-explanation" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p><code>class Layer_Dense:</code>: Declares a "blueprint" named <code>Layer_Dense</code>. Everything inside it will define the properties and behaviors of a dense neural network layer.</p>
+</li>
+<li>
+<p><code>def __init__(self, n_inputs, n_neurons):</code>: The <strong>initializer</strong> (constructor).</p>
+<ul>
+<li><strong>What does it do?</strong>: This function is automatically called every time a new object is created from this blueprint (e.g., <code>dense1 = Layer_Dense(...)</code>). It is used to set up initial properties.</li>
+<li><code>self</code>: Represents the object that will be created. When you call <code>dense1.weights</code>, <code>self</code> is <code>dense1</code>.</li>
+<li><code>n_inputs</code>: The number of input features this layer will receive (e.g., 2 features like "Redness" and "Roundness" of fruits).</li>
+<li><code>n_neurons</code>: The number of neurons in this layer (e.g., 3 judges, one for each type of fruit).</li>
+<li><code>self.weights = 0.01 * np.random.randn(n_inputs, n_neurons)</code>: This is an <strong>extremely important</strong> line.<ul>
+<li><code>np.random.randn(n_inputs, n_neurons)</code>: Creates a matrix of size <code>(number_of_inputs, number_of_neurons)</code> filled with random numbers from a standard normal distribution (Gaussian distribution, with a mean of 0 and variance of 1). This represents the initial, completely random "preferences" of the judges.</li>
+<li><code>* 0.01</code>: Multiplies all the random weights by a very small number. This is a common technique to prevent the initial output values from being too large, which helps stabilize the training process later on.</li>
+</ul>
+</li>
+<li><code>self.biases = np.zeros((1, n_neurons))</code>:<ul>
+<li><code>np.zeros((1, n_neurons))</code>: Creates a row matrix (vector) of size <code>(1, number_of_neurons)</code> filled with all zeros. This represents the initial "bias" or "mood" of the judges. Initializing with zeros means that, initially, they have no predisposition.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>def forward(self, inputs):</code>: The <strong>action</strong> method.</p>
+<ul>
+<li><strong>What does it do?</strong>: Defines the main behavior of the layer: receiving input data and calculating an output. This process is called the <strong>forward pass</strong>.</li>
+<li><code>inputs</code>: The input data that will be fed into the layer (e.g., a list of features for all fruits).</li>
+<li><code>self.output = np.dot(inputs, self.weights) + self.biases</code>: The core mathematical formula.<ul>
+<li><code>np.dot(inputs, self.weights)</code>: Matrix multiplication. This is where each judge "looks" at the features of the fruits and multiplies them by their "preferences" (weights) to come up with a preliminary score.</li>
+<li><code>+ self.biases</code>: Adds the "bias" (prejudice) of each judge to their score.</li>
+<li><code>self.output = ...</code>: The final result is stored in the <code>output</code> attribute of the layer.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="part-3-the-competition-begins-using-the-class-and-data"><strong>Part 3: The Competition Begins! (Using the Class and Data)</strong><a class="headerlink" href="#part-3-the-competition-begins-using-the-class-and-data" title="Permanent link">&para;</a></h4>
+<p>Now we will use the "blueprint" and "materials" prepared above to conduct a real competition.</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Create dataset</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">spiral_data</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="c1"># Visualize dataset</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;brg&#39;</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<ul>
+<li><code>X, y = spiral_data(samples=100, classes=3)</code>: Calls the imported function to create data.<ul>
+<li><code>X</code>: Will be a NumPy array of size <code>(300, 2)</code>. It's 300 because there are 3 <code>classes</code>, each with 100 <code>samples</code>. It's 2 because each sample has 2 features (x, y coordinates). This is the "list of fruit contestants and their characteristics."</li>
+<li><code>y</code>: Will be a NumPy array of size <code>(300,)</code> containing the labels <code>0, 1, 2</code>. This is the "correct answer" for each contestant (Apple, Orange, or Banana).</li>
+</ul>
+</li>
+<li><code>plt.scatter(X[:,0], X[:,1], c=y, cmap='brg')</code>: Prepares to plot the graph.<ul>
+<li><code>X[:,0]</code>: Gets all rows, first column (all x-coordinates).</li>
+<li><code>X[:,1]</code>: Gets all rows, second column (all y-coordinates).</li>
+<li><code>c=y</code>: <code>c</code> is short for color. This command tells Matplotlib to color each point <code>(x, y)</code> based on the corresponding value in the <code>y</code> array. Points with <code>y=0</code> will have one color, <code>y=1</code> another, and so on.</li>
+<li><code>cmap='brg'</code>: Color map. Selects the Blue-Red-Green color palette.</li>
+</ul>
+</li>
+<li><code>plt.show()</code>: Displays the prepared plot on the screen.</li>
+</ul>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Create Dense layer with 2 input features and 3 output values</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">dense1</span> <span class="o">=</span> <span class="n">Layer_Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li>This is where we <strong>create an object</strong> from the <code>Layer_Dense</code> blueprint. We are "hiring a panel of judges."</li>
+<li><code>dense1 = ...</code>: Creates a specific panel of judges named <code>dense1</code>.</li>
+<li><code>Layer_Dense(2, 3)</code>: Calls the <code>__init__</code> function.<ul>
+<li><code>n_inputs=2</code>: Because each "fruit contestant" (<code>X</code>) has 2 features (x, y coordinates).</li>
+<li><code>n_neurons=3</code>: Because we need to classify into 3 types of fruit (3 classes in <code>y</code>). We need 3 judges, each specializing in one type.</li>
+</ul>
+</li>
+</ul>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Let&#39;s see initial weights and biases</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt; Initial weights and biases of the first layer:&quot;</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">dense1</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">dense1</span><span class="o">.</span><span class="n">biases</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li>Prints the <code>weights</code> and <code>biases</code> attributes of the newly created <code>dense1</code> object. This shows us the initial, completely random "preferences" and "biases" of the judges before they've scored any contestants.</li>
+</ul>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Perform a forward pass of our training data through this layer</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">dense1</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li>This is the moment of action. We call the <code>forward</code> method of <code>dense1</code> and pass the entire "list of contestants" (<code>X</code>) into it. The calculation <code>np.dot(X, dense1.weights) + dense1.biases</code> is executed. The judges begin scoring.</li>
+</ul>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Let&#39;s see output of the first few samples:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt; Output of the first few samples:&quot;</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">dense1</span><span class="o">.</span><span class="n">output</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</span></code></pre></div>
+<ul>
+<li>After <code>forward()</code> finishes running, the result is stored in <code>dense1.output</code>.</li>
+<li><code>dense1.output[:5]</code>: We print the scoring results for the first 5 "fruit contestants" to see a sample. Each row is a contestant, each column is a score from a judge. These values are called <strong>logits</strong>.</li>
+</ul>
+<hr />
+<h4 id="part-4-abstract-interpretation-the-fruit-classification-competition"><strong>Part 4: Abstract Interpretation - The Fruit Classification Competition</strong><a class="headerlink" href="#part-4-abstract-interpretation-the-fruit-classification-competition" title="Permanent link">&para;</a></h4>
+<p>Let's retell the whole story seamlessly:</p>
+<ol>
+<li>
+<p><strong>The Scene</strong>: We are organizing a competition to classify 3 types of fruit: <strong>Apples, Oranges, and Bananas</strong>.</p>
+</li>
+<li>
+<p><strong>The Contestants (<code>X</code>, <code>y</code>)</strong>: 300 fruits are participating. For each fruit, we use a machine to measure 2 characteristics: <strong>"Redness"</strong> and <strong>"Roundness"</strong> (these are the 2 columns of <code>X</code>). We also know the correct answer for each fruit (this is <code>y</code>).</p>
+</li>
+<li>
+<p><strong>Hiring the Judges (<code>dense1 = Layer_Dense(2, 3)</code>)</strong>: We hire a panel of 3 judges:</p>
+<ul>
+<li><strong>Judge 1</strong>: An expert on Apples.</li>
+<li><strong>Judge 2</strong>: An expert on Oranges.</li>
+<li><strong>Judge 3</strong>: An expert on Bananas.
+They are new to the job, so their "knowledge" is initially random.</li>
+</ul>
+</li>
+<li>
+<p><strong>The Judges' Knowledge (<code>weights</code> and <code>biases</code>)</strong>:</p>
+<ul>
+<li><strong>Preferences (<code>weights</code>)</strong>: Each judge has their own set of "preferences" for the 2 characteristics "Redness" and "Roundness". For example, an ideal Apple expert would have a high preference for "Redness" and "Roundness". A Banana expert would have a negative preference for "Roundness" (since bananas are long). But because they are new, these preferences are assigned randomly (e.g., the Apple expert might prefer non-red fruits, the Banana expert might prefer round ones).</li>
+<li><strong>Mood (<code>biases</code>)</strong>: Initially, all 3 judges have a neutral mood (equal to 0).</li>
+</ul>
+</li>
+<li>
+<p><strong>The Scoring Process (<code>dense1.forward(X)</code>)</strong>:</p>
+<ul>
+<li>One by one, each fruit is presented to the panel.</li>
+<li>Each judge calculates their score using the formula:
+    <code>Score = (Redness * Preference for Redness) + (Roundness * Preference for Roundness) + Mood</code></li>
+<li>This process happens for all 300 fruits.</li>
+</ul>
+</li>
+<li>
+<p><strong>The Scoreboard (<code>dense1.output</code>)</strong>:</p>
+<ul>
+<li>The final result is a large scoreboard. Each row is a fruit, each column is a score from a judge.</li>
+<li>For example, the first row might be <code>[0.0012, -0.0045, 0.0031]</code>. This means that with their current random knowledge, the Apple Judge gives this fruit 0.0012 points, the Orange Judge gives it -0.0045 points, and the Banana Judge gives it 0.0031 points.</li>
+</ul>
+</li>
+</ol>
+<p><strong>The Key Takeaway</strong>: Because the judges' "knowledge" (weights) is random, this "scoreboard" (output) is completely meaningless. The process of <strong>"training"</strong>, which is not in this code, is the act of showing the judges the correct answers (<code>y</code>), pointing out their mistakes, and helping them <strong>adjust their "preferences" (<code>weights</code>) and "moods" (<code>biases</code>)</strong> over thousands of iterations, so that eventually their scoreboard accurately reflects the type of fruit.</p>
+<hr />
+<h4 id="part-5-ascii-illustration"><strong>Part 5: ASCII Illustration</strong><a class="headerlink" href="#part-5-ascii-illustration" title="Permanent link">&para;</a></h4>
+<p>Diagram for a single fruit passing through the panel of judges:
+<br>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos=" 1 "></span></a>           INPUT (1 fruit)
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos=" 2 "></span></a>          (2 features)
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos=" 3 "></span></a>        +----------------------+
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><a href="#__codelineno-7-4"><span class="linenos" data-linenos=" 4 "></span></a>        | Redness, Roundness   |
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><a href="#__codelineno-7-5"><span class="linenos" data-linenos=" 5 "></span></a>        +----------------------+
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><a href="#__codelineno-7-6"><span class="linenos" data-linenos=" 6 "></span></a>               |
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><a href="#__codelineno-7-7"><span class="linenos" data-linenos=" 7 "></span></a>               |                               JUDGING PANEL (dense1)
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><a href="#__codelineno-7-8"><span class="linenos" data-linenos=" 8 "></span></a>               |                                (3 Judges/Neurons)
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><a href="#__codelineno-7-9"><span class="linenos" data-linenos=" 9 "></span></a>               |
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><a href="#__codelineno-7-10"><span class="linenos" data-linenos="10 "></span></a>               |       Preferences (w11, w21)  +--------------------+   (Score from Apple Judge)
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><a href="#__codelineno-7-11"><span class="linenos" data-linenos="11 "></span></a>               +-----------------------------&gt;|    APPLE Judge   + b1|-----&gt; output_1
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><a href="#__codelineno-7-12"><span class="linenos" data-linenos="12 "></span></a>               |                             +--------------------+
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><a href="#__codelineno-7-13"><span class="linenos" data-linenos="13 "></span></a>               |
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><a href="#__codelineno-7-14"><span class="linenos" data-linenos="14 "></span></a>               |       Preferences (w12, w22)  +--------------------+   (Score from Orange Judge)
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a><a href="#__codelineno-7-15"><span class="linenos" data-linenos="15 "></span></a>               +-----------------------------&gt;|   ORANGE Judge   + b2|-----&gt; output_2
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a><a href="#__codelineno-7-16"><span class="linenos" data-linenos="16 "></span></a>               |                             +--------------------+
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a><a href="#__codelineno-7-17"><span class="linenos" data-linenos="17 "></span></a>               |
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a><a href="#__codelineno-7-18"><span class="linenos" data-linenos="18 "></span></a>               |       Preferences (w13, w23)  +--------------------+   (Score from Banana Judge)
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19"></a><a href="#__codelineno-7-19"><span class="linenos" data-linenos="19 "></span></a>               +-----------------------------&gt;|   BANANA Judge   + b3|-----&gt; output_3
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20"></a><a href="#__codelineno-7-20"><span class="linenos" data-linenos="20 "></span></a>                                             +--------------------+
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21"></a><a href="#__codelineno-7-21"><span class="linenos" data-linenos="21 "></span></a>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22"></a><a href="#__codelineno-7-22"><span class="linenos" data-linenos="22 "></span></a>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a><a href="#__codelineno-7-23"><span class="linenos" data-linenos="23 "></span></a>Scoring formula for the APPLE Judge:
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24"></a><a href="#__codelineno-7-24"><span class="linenos" data-linenos="24 "></span></a>output_1 = (Redness * w11) + (Roundness * w21) + b1
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25"></a><a href="#__codelineno-7-25"><span class="linenos" data-linenos="25 "></span></a>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a><a href="#__codelineno-7-26"><span class="linenos" data-linenos="26 "></span></a>The final result for 1 fruit is a set of 3 scores: [output_1, output_2, output_3]
+</span></code></pre></div></p>
+<hr />
+<h3 id="appendix-explaining-spiral-data">Appendix - Explaining Spiral Data<a class="headerlink" href="#appendix-explaining-spiral-data" title="Permanent link">&para;</a></h3>
+<p>This is an explanation of <strong><em>"Spiral Data"</em></strong> - it might sound abstract, but it's one of the most classic and important sample datasets when you start learning about neural networks.</p>
+<p>Let's break it down.</p>
+<h4 id="1-simple-definition">1. Simple Definition<a class="headerlink" href="#1-simple-definition" title="Permanent link">&para;</a></h4>
+<p><strong>Spiral Data</strong> is a synthetically generated dataset where data points belonging to different classes are arranged in interlocking spirals.</p>
+<p>Take another look at the very plot you generated:</p>
+<ul>
+<li>You have 3 classes, corresponding to 3 colors: <strong>Red</strong>, <strong>Green</strong>, and <strong>Blue</strong>.</li>
+<li>Each point has a position (x, y coordinates).</li>
+<li>Points of the same color form a spiral "arm".</li>
+<li>These arms are intertwined, wrapping around each other.</li>
+</ul>
+<h4 id="2-why-is-it-so-important-and-famous">2. Why is it so important and famous?<a class="headerlink" href="#2-why-is-it-so-important-and-famous" title="Permanent link">&para;</a></h4>
+<p>The reason this dataset is used so widely is because it's a <strong>perfect challenge</strong> to demonstrate the power of neural networks.</p>
+<h5 id="a-it-defeats-simple-linear-models"><strong>A. It "defeats" simple (Linear) models</strong><a class="headerlink" href="#a-it-defeats-simple-linear-models" title="Permanent link">&para;</a></h5>
+<p>Imagine you only have a <strong>ruler</strong>. Your task is to draw one or more <strong>straight lines</strong> to separate these 3 color groups, such that each region contains only one color.</p>
+<p>You will quickly find that this is <strong>impossible</strong>.</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos=" 1 "></span></a>       /
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos=" 2 "></span></a>      /    &lt;-- You cannot draw any single straight line
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos=" 3 "></span></a>     /         to separate Red (R) from Green (G) and Blue (B)
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos=" 4 "></span></a>    /
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos=" 5 "></span></a>   RRRRR
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><a href="#__codelineno-8-6"><span class="linenos" data-linenos=" 6 "></span></a>  G B R G
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos=" 7 "></span></a> B G R B G
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><a href="#__codelineno-8-8"><span class="linenos" data-linenos=" 8 "></span></a>B B G G B B
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><a href="#__codelineno-8-9"><span class="linenos" data-linenos=" 9 "></span></a> R R B R R
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><a href="#__codelineno-8-10"><span class="linenos" data-linenos="10 "></span></a>  R G B R
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><a href="#__codelineno-8-11"><span class="linenos" data-linenos="11 "></span></a>   BBBBB
+</span></code></pre></div>
+<p>A model that can only draw straight lines for classification is called a <strong>linear model</strong>. Spiral data is a classic example of <strong>non-linear</strong> data, where the boundary between classes is not a straight line but a complex curve.</p>
+<p>In other words, spiral data is <strong>intentionally designed to be difficult</strong> for simple classification algorithms.</p>
+<h5 id="b-it-demonstrates-the-necessity-of-neural-networks"><strong>B. It demonstrates the necessity of Neural Networks</strong><a class="headerlink" href="#b-it-demonstrates-the-necessity-of-neural-networks" title="Permanent link">&para;</a></h5>
+<p>Neural networks, especially those with hidden layers and non-linear activation functions (which we will learn about later), are capable of learning extremely complex and winding <strong>decision boundaries</strong>.</p>
+<p>A well-trained neural network can create a boundary that looks something like this:</p>
+<p>It doesn't use a "ruler"; it learns to "draw" smooth curves to perfectly enclose each group of data.</p>
+<p><strong>Conclusion:</strong> Spiral data is a "graduation" test for a classification model. If your model can solve this problem, it proves that it is capable of handling complex, non-linear relationships in data, something that simple models cannot do.</p>
+<h4 id="3-what-does-the-spiral_data-function-create">3. What does the <code>spiral_data</code> function create?<a class="headerlink" href="#3-what-does-the-spiral_data-function-create" title="Permanent link">&para;</a></h4>
+<p>When you call <code>X, y = spiral_data(samples=100, classes=3)</code>, the function calculates and returns two things:</p>
+<ol>
+<li>
+<p><strong><code>X</code> (The Features):</strong></p>
+<ul>
+<li>This is a NumPy array containing the <code>[x, y]</code> coordinates of all the points.</li>
+<li>With <code>samples=100</code> and <code>classes=3</code>, it will create <code>100 * 3 = 300</code> points.</li>
+<li>Therefore, <code>X</code> will have the shape <code>(300, 2)</code>.</li>
+<li>In our "fruit judges" story, <code>X</code> is equivalent to a list of 300 fruits, each with 2 features: "Redness" and "Roundness".</li>
+</ul>
+</li>
+<li>
+<p><strong><code>y</code> (The Labels):</strong></p>
+<ul>
+<li>This is a NumPy array containing the class label for each corresponding point in <code>X</code>.</li>
+<li>It will contain 300 numbers, consisting of 100 <code>0</code>s, 100 <code>1</code>s, and 100 <code>2</code>s.</li>
+<li><code>y[i]</code> is the label (the correct answer) for the point <code>X[i]</code>.</li>
+<li>In our story, <code>y</code> is the list of correct answers: which fruit is an "Apple" (class 0), which is an "Orange" (class 1), and which is a "Banana" (class 2).</li>
+</ul>
+</li>
+</ol>
+<p>So, <code>spiral_data</code> isn't just a dataset; it's a <strong>classic non-linear classification problem</strong> packaged and ready for you to quickly test your models.</p>
 
 
 
@@ -2197,7 +2424,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Ch4pt3r.07_Derivative/07-derivative/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Derivative">
+          <a href="../02-first-layer-diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: First Layer Diagram">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2207,20 +2434,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Derivative
+                First Layer Diagram
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../Ch4pt3r.09_Backpropagation/09-diagram/" class="md-footer__link md-footer__link--next" aria-label="Next: Diagram">
+          <a href="../../Ch4pt3r.04_Activation_Function/04-01-transformation-relu/" class="md-footer__link md-footer__link--next" aria-label="Next: Transformation &amp; ReLU activation function">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Diagram
+                Transformation & ReLU activation function
               </div>
             </div>
             <div class="md-footer__button md-icon">

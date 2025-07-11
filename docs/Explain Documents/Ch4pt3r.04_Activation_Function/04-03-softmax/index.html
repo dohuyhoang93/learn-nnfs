@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.04_Activation_Function/04-03-softmax/">
       
       
-        <link rel="prev" href="../../Ch4pt3r.07_Derivative/07-derivative/">
+        <link rel="prev" href="../04-02-transformation-relu-diagram/">
       
       
-        <link rel="next" href="../../Ch4pt3r.09_Backpropagation/09-diagram/">
+        <link rel="next" href="../04-04-softmax-diagram/">
       
       
       <link rel="icon" href="../../../assets/logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Gradients, Partial Derivatives and the Chain Rule - Neural Network From Scratch Documentation</title>
+        <title>Softmax - Neural Network From Scratch Documentation</title>
       
     
     
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#abstract-example" class="md-skip">
+        <a href="#explanation-of-softmax-in-neural-networks" class="md-skip">
           Skip to content
         </a>
       
@@ -150,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gradients, Partial Derivatives and the Chain Rule
+              Softmax
             
           </span>
         </div>
@@ -567,6 +567,8 @@
                 
   
   
+    
+  
   
   
     
@@ -577,11 +579,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -597,7 +599,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.04 Activation Function
@@ -611,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Function/04-01-transformation-relu/" class="md-nav__link">
+      <a href="../04-01-transformation-relu/" class="md-nav__link">
         
   
   
@@ -634,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Function/04-02-transformation-relu-diagram/" class="md-nav__link">
+      <a href="../04-02-transformation-relu-diagram/" class="md-nav__link">
         
   
   
@@ -654,10 +656,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Function/04-03-softmax/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Softmax
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -668,6 +690,57 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explanation-of-softmax-in-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of Softmax in Neural Networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explanation of Softmax in Neural Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#part-1-why-do-we-need-softmax-whats-the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: Why Do We Need Softmax? What's the Problem?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-abstract-easy-to-understand-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Abstract &amp; Easy-to-Understand Explanation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -680,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Function/04-04-softmax-diagram/" class="md-nav__link">
+      <a href="../04-04-softmax-diagram/" class="md-nav__link">
         
   
   
@@ -970,8 +1043,6 @@
                 
   
   
-    
-  
   
   
     
@@ -982,11 +1053,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1002,7 +1073,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.08 Gradients Partial Derivative Chain Rule
@@ -1013,30 +1084,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Gradients, Partial Derivatives and the Chain Rule
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/" class="md-nav__link">
         
   
   
@@ -1047,51 +1098,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#abstract-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Abstract Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#analyzing-each-component-each-computational-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Analyzing Each Component (Each Computational Node)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#putting-it-all-together-a-chain-of-responsibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      Putting It All Together: A Chain of Responsibility
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2011,154 +2017,130 @@
   
 
 
-  <h1>Gradients, Partial Derivatives and the Chain Rule</h1>
+  <h1>Softmax</h1>
 
-<h4 id="abstract-example"><strong>Abstract Example</strong><a class="headerlink" href="#abstract-example" title="Permanent link">&para;</a></h4>
-<p>We will combine the intuitive story of "responsibility" with diagrams and specific explanations for each node in a neural network. This will create a solid bridge between abstract theory and practical computation.</p>
-<h5 id="story-summary"><strong>Story Summary</strong><a class="headerlink" href="#story-summary" title="Permanent link">&para;</a></h5>
+<h2 id="explanation-of-softmax-in-neural-networks">Explanation of Softmax in Neural Networks<a class="headerlink" href="#explanation-of-softmax-in-neural-networks" title="Permanent link">&para;</a></h2>
+<h3 id="part-1-why-do-we-need-softmax-whats-the-problem">Part 1: Why Do We Need Softmax? What's the Problem?<a class="headerlink" href="#part-1-why-do-we-need-softmax-whats-the-problem" title="Permanent link">&para;</a></h3>
+<p>In previous chapters, you may have become familiar with the <strong>ReLU (Rectified Linear Unit)</strong> activation function. ReLU is excellent for hidden layers but has a few problems if used for the final output layer of a classification network:</p>
+<ol>
+<li><strong>Unbounded:</strong> The output of ReLU can be any positive number (e.g., <code>[12, 99, 318]</code>). These numbers don't mean much on their own. 318 is larger than 99, but "how much" larger? Is it significantly more "certain"? We don't have a "context" for comparison.</li>
+<li><strong>Not Normalized:</strong> The output values have no overall relationship. Their sum doesn't equal any fixed number.</li>
+<li><strong>Exclusive:</strong> The output of each neuron is independent of the other neurons.</li>
+</ol>
+<p><strong>Our Goal:</strong> For a classification problem, we want the neural network to "tell" us which class it "thinks" the input belongs to, with a clear level of confidence. For example, with 3 classes (dog, cat, bird), we want an output that looks like <code>[0.05, 0.9, 0.05]</code>, which means: "I am 90% certain this is a cat, 5% it's a dog, and 5% it's a bird."</p>
+<p>=&gt; <strong>Softmax was created to solve this problem.</strong> It takes any real numbers (positive, negative, large, or small) and transforms them into a <strong>probability distribution</strong>. The characteristics of this probability distribution are:
+*   All output values are in the range <code>[0, 1]</code>.
+*   The sum of all output values <strong>always equals 1</strong>.</p>
+<p>These values are precisely the <strong>confidence scores</strong> we need.</p>
+<h5 id="section-2-anatomy-of-the-softmax-formula">Section 2: "Anatomy" of the Softmax Formula<a class="headerlink" href="#section-2-anatomy-of-the-softmax-formula" title="Permanent link">&para;</a></h5>
+<p>The formula in the book might look intimidating:</p>
+<div class="arithmatex">\[ S_{i,j} = \frac{e^{z_{i,j}}}{\sum_{l=1}^{L} e^{z_{i,l}}} \]</div>
+<p>Don't worry, let's break it down into two extremely simple steps:</p>
+<p><strong>Step 1: Exponentiation - The Numerator <code>e^z</code></strong></p>
 <ul>
-<li><strong>Neural Network</strong>: An archer with hundreds of technical "knobs" (weights, biases).</li>
-<li><strong>Objective</strong>: To hit the bullseye (reduce Error/Loss to 0).</li>
-<li><strong>Backpropagation</strong>: The process of "Distributing Responsibility," figuring out how much responsibility each knob bears for the final error.</li>
-<li><strong>Gradient</strong>: The instruction sheet that compiles all "responsibilities." We will adjust the knobs in the <strong>opposite</strong> direction of this instruction sheet.</li>
+<li><code>z</code> are the output values from the previous layer (e.g., <code>layer_outputs = [4.8, 1.21, 2.385]</code>).</li>
+<li><code>e</code> is Euler's number (approximately 2.71828), the base of the natural logarithm.</li>
+<li>"Exponentiation" simply means raising <code>e</code> to the power of those <code>z</code> values. In Python, we use <code>E ** output</code> or <code>math.exp(output)</code>.</li>
 </ul>
-<p>Now, let's act as engineers, open the hood of the "archer machine," and examine each part. We will see how "responsibility" (the gradient) flows backward through each type of component.</p>
-<p><strong>Conventions</strong>:</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Example from the book</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">layer_outputs</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.8</span><span class="p">,</span> <span class="mf">1.21</span><span class="p">,</span> <span class="mf">2.385</span><span class="p">]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">E</span> <span class="o">=</span> <span class="mf">2.71828182846</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a><span class="c1"># Calculate e^z for each value</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a><span class="n">exp_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">E</span><span class="o">**</span><span class="mf">4.8</span><span class="p">,</span> <span class="n">E</span><span class="o">**</span><span class="mf">1.21</span><span class="p">,</span> <span class="n">E</span><span class="o">**</span><span class="mf">2.385</span><span class="p">]</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a><span class="c1"># Result: [121.51, 3.35, 10.86]</span>
+</span></code></pre></div>
+<p><strong>Why do this step?</strong>
+1.  <strong>Eliminate Negative Numbers:</strong> <code>e</code> raised to any power always results in a <strong>positive</strong> number. This is crucial because probabilities cannot be negative.
+2.  <strong>Amplify Differences:</strong> The exponential function makes large values overwhelmingly larger than small values. The value <code>4.8</code> is only about 2 times larger than <code>2.385</code>, but after exponentiation, <code>121.51</code> is more than 11 times larger than <code>10.86</code>! This helps the network become more "confident" in the prediction with the highest score.</p>
+<p><strong>Step 2: Normalization - The Division</strong></p>
+<p>After getting the exponentiated values (<code>exp_values</code>), we just need to do one thing:</p>
+<ol>
+<li>Calculate the sum of all those values (the denominator <span class="arithmatex">\(\sum_{l=1}^{L} e^{z_{i,l}}\)</span>).</li>
+<li>Divide each value by the sum you just calculated.</li>
+</ol>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="c1"># Continuing the example above</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="n">exp_values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">121.51</span><span class="p">,</span> <span class="mf">3.35</span><span class="p">,</span> <span class="mf">10.86</span><span class="p">]</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="c1"># 1. Calculate the sum</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="n">norm_base</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">exp_values</span><span class="p">)</span> <span class="c1"># 121.51 + 3.35 + 10.86 = 135.72</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="c1"># 2. Divide each value by the sum</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="n">norm_values</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>    <span class="mf">121.51</span> <span class="o">/</span> <span class="n">norm_base</span><span class="p">,</span> <span class="c1"># ~0.895</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a>    <span class="mf">3.35</span> <span class="o">/</span> <span class="n">norm_base</span><span class="p">,</span>   <span class="c1"># ~0.025</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a>    <span class="mf">10.86</span> <span class="o">/</span> <span class="n">norm_base</span>   <span class="c1"># ~0.080</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a><span class="p">]</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><a href="#__codelineno-1-14"><span class="linenos" data-linenos="14 "></span></a><span class="c1"># Result: [0.895, 0.025, 0.080]</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><a href="#__codelineno-1-15"><span class="linenos" data-linenos="15 "></span></a><span class="c1"># Check: 0.895 + 0.025 + 0.080 = 1.0</span>
+</span></code></pre></div>
+<p>And that's it! We have transformed <code>[4.8, 1.21, 2.385]</code> into a probability distribution <code>[0.895, 0.025, 0.080]</code>.</p>
+<h5 id="section-3-optimization-with-numpy-and-batch-processing">Section 3: Optimization with NumPy and Batch Processing<a class="headerlink" href="#section-3-optimization-with-numpy-and-batch-processing" title="Permanent link">&para;</a></h5>
+<p>In practice, we don't process data samples one by one but in an entire <strong>batch</strong> to speed things up. A batch of data will be in the form of a matrix, where each row is the output for one sample.</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># A batch of 3 samples, each with 3 outputs</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">layer_outputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">4.8</span><span class="p">,</span> <span class="mf">1.21</span><span class="p">,</span> <span class="mf">2.385</span><span class="p">],</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a>                          <span class="p">[</span><span class="mf">8.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.81</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a>                          <span class="p">[</span><span class="mf">1.41</span><span class="p">,</span> <span class="mf">1.051</span><span class="p">,</span> <span class="mf">0.026</span><span class="p">]])</span>
+</span></code></pre></div>
+<p>Now, we need to calculate the Softmax for <strong>each row individually</strong>. This is where NumPy's <code>axis</code> and <code>keepdims</code> parameters shine.</p>
 <ul>
-<li><code>Forward</code>: Data flows from left to right.</li>
-<li><code>Backward</code>: "Responsibility" (Gradient) flows backward from right to left.</li>
-<li><code>Input Responsibility</code>: The gradient that a node receives from the next layer.</li>
-<li><code>Output Responsibility</code>: The gradient that a node calculates and sends to the previous layer (against the data flow).</li>
+<li><code>np.exp(layer_outputs)</code>: NumPy is smart and will automatically calculate the exponential for every element in the matrix.</li>
+<li><code>np.sum(..., axis=1)</code>: We need to calculate the sum of values <strong>along each row</strong>.<ul>
+<li><code>axis=0</code>: calculates the sum down the columns.</li>
+<li><code>axis=1</code>: calculates the sum across the rows. This is what we need.</li>
 </ul>
+</li>
+<li><code>keepdims=True</code>: When summing along <code>axis=1</code>, the result would be a row vector <code>[8.395, 7.29, 2.487]</code>. If we try to divide a <code>(3, 3)</code> matrix by a <code>(3,)</code> vector, NumPy might throw an error or not perform the division row-wise as intended. <code>keepdims=True</code> preserves the dimensions, turning the result into a column vector <code>[[8.395], [7.29], [2.487]]</code> with a shape of <code>(3, 1)</code>. Now, NumPy can correctly perform the division of a <code>(3, 3)</code> matrix by a <code>(3, 1)</code> column vector (each row of the matrix is divided by the corresponding value in the column vector).</li>
+</ul>
+<h5 id="section-4-the-secret-trick-for-overflow-prevention">Section 4: The "Secret Trick" for Overflow Prevention<a class="headerlink" href="#section-4-the-secret-trick-for-overflow-prevention" title="Permanent link">&para;</a></h5>
+<p>The exponential function <code>e^x</code> grows very rapidly. If the input <code>z</code> is a large number (e.g., <code>1000</code>), <code>np.exp(1000)</code> will return <code>inf</code> (infinity), causing an overflow error and breaking the entire calculation.</p>
+<p><strong>The Solution:</strong> We can subtract any arbitrary number from all input values <code>z</code> without changing the final result of the Softmax. Why? Because of the properties of exponents and division:
+$$ \frac{e<sup>{z_1}}{e</sup>{z_1} + e^{z_2}} = \frac{e^{z_1} \cdot e<sup>{-C}}{e</sup>{z_1} \cdot e^{-C} + e^{z_2} \cdot e^{-C}} = \frac{e^{z_1 - C}}{e^{z_1 - C} + e^{z_2 - C}} $$</p>
+<p>So, what number should we subtract? <strong>The largest number (max)</strong> among the input values of that row.</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">max_value</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="n">shifted_inputs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># -&gt; [-2, -1, 0]</span>
+</span></code></pre></div>
+<p>The benefits of this are:
+1.  The largest value after subtraction will be <code>0</code>. (<code>e^0 = 1</code>)
+2.  All other values will be negative. (<code>e</code> to a negative power is always a number less than 1).
+3.  This ensures that the input to the <code>exp</code> function will never be a large positive number, thereby <strong>completely preventing overflow errors</strong>.</p>
+<p>This is exactly why in the final code snippet of the book, you will see this line:
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="n">exp_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">inputs</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</span></code></pre></div>
+This is the complete, safe, and efficient version of Softmax.</p>
 <hr />
-<h4 id="analyzing-each-component-each-computational-node"><strong>Analyzing Each Component (Each Computational Node)</strong><a class="headerlink" href="#analyzing-each-component-each-computational-node" title="Permanent link">&para;</a></h4>
-<h5 id="1-the-addition-component-the-synergy-unit"><strong>1. The ADDITION Component (The Synergy Unit)</strong><a class="headerlink" href="#1-the-addition-component-the-synergy-unit" title="Permanent link">&para;</a></h5>
-<p>This is the simplest component. It takes two or more input values and adds them together.</p>
+<h3 id="part-2-abstract-easy-to-understand-explanation">Part 2: Abstract &amp; Easy-to-Understand Explanation<a class="headerlink" href="#part-2-abstract-easy-to-understand-explanation" title="Permanent link">&para;</a></h3>
+<p>Forget the math formulas and code. Imagine Softmax is a <strong>"Confidence Distribution Machine"</strong> for a talent competition.</p>
+<p><strong>1. The Preliminary Round - Raw Scores</strong></p>
+<p>Suppose there are 3 contestants (Dog, Cat, Bird) in a competition. The judges (the preceding neural network layer) give them raw scores. These scores can be messy:
+<code>Raw Scores = [4.8, 1.21, 2.385]</code></p>
+<p>Looking at these scores, we know the Dog contestant has the highest score, but how much "higher"? Is the lead "overwhelming"? It's hard to say.</p>
+<p><strong>2. Step 1: The "Hype" Machine - Exponentiation</strong></p>
+<p>To make the results clearer, the MC puts these scores into a <strong>"Hype" Machine</strong>. This machine has two functions:
+*   <strong>No Negative Scores:</strong> It turns all scores into "enthusiasm" points (always positive).
+*   <strong>Hypes Up the Best:</strong> This machine is extremely "biased." Whoever already has a high score gets hyped up to the moon, while those with low scores only get a slight boost.</p>
+<p>After passing through the "Hype" Machine (i.e., <code>e^x</code>):
+<code>Hype Scores = [121.5, 3.4, 10.9]</code></p>
+<p>Now the difference is crystal clear! The Dog contestant not only has a higher score but is <strong>completely dominating</strong> the rest.</p>
+<p><strong>3. Step 2: Slicing the "Confidence Pie" - Normalization</strong></p>
+<p>Now, to make it easy for the audience to understand, the MC decides to stop using hype scores and instead divide a 100% "confidence pie" among the 3 contestants, based on the ratio of their hype scores.</p>
 <ul>
-<li><strong>Example in a Neural Network</strong>: <code>Sum = (Input * Weight) + Bias</code>. The addition with the Bias is an addition node.</li>
+<li>Total Hype Score = 121.5 + 3.4 + 10.9 = 135.8</li>
+<li>Dog's Slice of the Pie: <code>121.5 / 135.8 ≈ 89.5%</code></li>
+<li>Cat's Slice of the Pie: <code>3.4 / 135.8 ≈ 2.5%</code></li>
+<li>Bird's Slice of the Pie: <code>10.9 / 135.8 ≈ 8.0%</code></li>
 </ul>
-<h6 id="responsibility-distribution-diagram"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram" title="Permanent link">&para;</a></h6>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Sum&#39; = 10
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input * Weight]-------&gt;|                             |
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |        ADDITION NODE (+)    |--&gt;[Sum]--
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>    --[Bias]------------&gt;|                             |
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>           +-----------------------------------------+
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>        ^                                   ^
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>        |                                   |
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>Responsibility for &#39;Input*Weight&#39;= 10      Responsibility for &#39;Bias&#39;= 10
-</span></code></pre></div>
-<ul>
-<li>
-<p><strong>Forward</strong>: Takes the value of <code>(Input * Weight)</code> and adds it to the value of <code>Bias</code> to get the <code>Sum</code>.</p>
-</li>
-<li>
-<p><strong>Backward (Distributing Responsibility)</strong>:</p>
-<ul>
-<li><strong>Principle</strong>: In addition, all inputs contribute <strong>equally</strong> and directly to the result. The influence of each input on the output is 1-to-1 (increasing an input by 1 unit increases the output by 1 unit).</li>
-<li><strong>Action</strong>: The addition node receives "responsibility" from the next layer and <strong>copies it exactly</strong> to all of its input branches.</li>
-<li><strong>Derivative at this node</strong>: The derivative of <code>Sum</code> with respect to <code>Bias</code> is 1. The derivative of <code>Sum</code> with respect to <code>(Input * Weight)</code> is also 1. Therefore, the responsibility is multiplied by 1, meaning it remains unchanged.</li>
-</ul>
-</li>
-</ul>
-<h5 id="2-the-multiplication-component-the-leverage-unit"><strong>2. The MULTIPLICATION Component (The Leverage Unit)</strong><a class="headerlink" href="#2-the-multiplication-component-the-leverage-unit" title="Permanent link">&para;</a></h5>
-<p>This component takes two values and multiplies them together.</p>
-<ul>
-<li><strong>Example in a Neural Network</strong>: <code>Result = Input * Weight</code>. This is the core operation in a layer.</li>
-</ul>
-<h6 id="responsibility-distribution-diagram_1"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram_1" title="Permanent link">&para;</a></h6>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Result&#39; = 10
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a>  --[Input = 3]----------&gt;|                             |
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |   MULTIPLICATION NODE (*)   |--&gt;[Result = 15]--
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a>--[Weight = 5]---------&gt;|                             |
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a>           +-----------------------------------------+
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>        ^                                   ^
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a>        |                                   |
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a>Responsibility for &#39;Input&#39;           Responsibility for &#39;Weight&#39;
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a> = 10 * 5 = 50                        = 10 * 3 = 30
-</span></code></pre></div>
-<ul>
-<li>
-<p><strong>Forward</strong>: Takes the <code>Input</code> (let's assume its value is 3) and multiplies it by the <code>Weight</code> (let's assume its value is 5) to get the <code>Result</code> (15).</p>
-</li>
-<li>
-<p><strong>Backward (Distributing Responsibility)</strong>:</p>
-<ul>
-<li><strong>Principle</strong>: In multiplication, the influence of one input on the result depends on the <strong>value of the other input</strong>. This is the leverage effect.</li>
-<li><strong>Action</strong>: To calculate the responsibility for one branch, the multiplication node takes the "responsibility" from the next layer and multiplies it by the <strong>value of the other branch</strong> (the value that was stored from the Forward pass).</li>
-<li><strong>Derivative at this node</strong>: The derivative of <code>Result</code> with respect to <code>Input</code> is the value of the <code>Weight</code>. The derivative of <code>Result</code> with respect to <code>Weight</code> is the value of the <code>Input</code>.</li>
-</ul>
-</li>
-</ul>
-<h5 id="3-the-relu-component-the-gatekeeper"><strong>3. The ReLU Component (The Gatekeeper)</strong><a class="headerlink" href="#3-the-relu-component-the-gatekeeper" title="Permanent link">&para;</a></h5>
-<p>This component is very special. It only has one input. If the input is a positive number, it lets it pass through. If the input is a negative number, it blocks it and returns 0. The official name is <code>ReLU(x) = max(0, x)</code>.</p>
-<ul>
-<li><strong>Example in a Neural Network</strong>: This is a popular activation function that helps the network learn complex relationships.</li>
-</ul>
-<h6 id="responsibility-distribution-diagram_2"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram_2" title="Permanent link">&para;</a></h6>
-<p><strong>Case 1: Positive Input (Gate is open)</strong></p>
-<p><div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Output&#39; = 10
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input = 3]-----------&gt;|                             |
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |       ReLU NODE (Open)      |--&gt;[Output = 3]--
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>           +-----------------------------------------+
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>                                ^
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>                                |
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>                   Responsibility for &#39;Input&#39; = 10
-</span></code></pre></div>
-*   <strong>Case 2: Negative Input (Gate is closed)</strong></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Output&#39; = 10
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input = -2]----------&gt;|                             |
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |      ReLU NODE (Closed)     |--&gt;[Output = 0]--
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a>           +-----------------------------------------+
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a>                                ^
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a>                                |
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a>                   Responsibility for &#39;Input&#39; = 0
-</span></code></pre></div>
-<ul>
-<li>
-<p><strong>Forward</strong>: Checks the input. If positive, it remains unchanged. If negative, it becomes 0.</p>
-</li>
-<li>
-<p><strong>Backward (Distributing Responsibility)</strong>:</p>
-<ul>
-<li><strong>Principle</strong>: ReLU acts as a gatekeeper for the flow of "responsibility."</li>
-<li><strong>Action</strong>:<ul>
-<li>If during the forward pass, the input was positive (the gate was open), then during the backward pass, the "responsibility" is allowed to pass through unchanged.</li>
-<li>If during the forward pass, the input was negative (the gate was closed), then during the backward pass, the "responsibility" is completely blocked (becomes 0). This component did not contribute to the final positive result, so it bears no responsibility.</li>
-</ul>
-</li>
-<li><strong>Derivative at this node</strong>: The derivative of <code>ReLU(x)</code> is 1 if <code>x &gt; 0</code>, and 0 if <code>x &lt; 0</code>. Therefore, the "responsibility" is multiplied by 1 (unchanged) or 0 (annihilated).</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h4 id="putting-it-all-together-a-chain-of-responsibility"><strong>Putting It All Together: A Chain of Responsibility</strong><a class="headerlink" href="#putting-it-all-together-a-chain-of-responsibility" title="Permanent link">&para;</a></h4>
-<p>Now, let's see how these components work together in a simple neuron:</p>
-<p><code>Input * Weight --&gt; [Multiplication Node] --&gt; Intermediate Sum + Bias --&gt; [Addition Node] --&gt; Final Result</code></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a>Final responsibility (from the next layer)
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a>      |
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a>      v
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a> [Addition Node] &lt;--- Responsibility is copied to Bias and &#39;Intermediate Sum&#39;
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a>      |
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a>      v
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a> [Multiplication Node] &lt;--- Responsibility is multiplied by the value of the other branch
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a>      |
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a>      v
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a>Responsibility of the Weight and Input
-</span></code></pre></div>
-<p>This "Responsibility Distribution" process flows backward through the entire network, through hundreds, thousands of components like these. It's like a reverse investigation, starting from the "crime scene" (the Loss Function) and following the traces back to find the "responsibility" of each "suspect" (each weight and bias).</p>
-<p>When the investigation is complete, each weight and bias will have received its own "responsibility" number. That is the Gradient. Based on that, the Coach (you) will know how to adjust each knob to make the next shot more accurate.</p>
+<p><strong>The Final Result:</strong>
+<code>Confidence Levels = [0.895, 0.025, 0.080]</code></p>
+<p>This is the output of Softmax. It gives us a very clear conclusion: "Based on the performance, I am <strong>89.5% confident</strong> that the winner is the Dog."</p>
+<p><strong>Regarding the "overflow prevention trick":</strong> Imagine a judge gets overly excited and gives a score of <code>1000</code>. The "Hype" Machine would "burn out" (overflow). A clever MC realizes that what matters is the <strong>difference between scores</strong>, not the absolute scores themselves. So, before putting them in the machine, he finds the highest score (1000) and subtracts it from everyone's score. The final result after slicing the pie remains exactly the same, but the hype machine is saved!</p>
+<p><strong>In summary, Softmax does two things:</strong></p>
+<ol>
+<li><strong>It uses the exponential function <code>e^x</code> to amplify the highest score, making it a clear "front-runner."</strong></li>
+<li><strong>It normalizes those amplified scores into a percentage (or probability), so that they all add up to 1.</strong></li>
+</ol>
 
 
 
@@ -2197,7 +2179,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Ch4pt3r.07_Derivative/07-derivative/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Derivative">
+          <a href="../04-02-transformation-relu-diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ReLU Diagram">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2207,20 +2189,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Derivative
+                ReLU Diagram
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../Ch4pt3r.09_Backpropagation/09-diagram/" class="md-footer__link md-footer__link--next" aria-label="Next: Diagram">
+          <a href="../04-04-softmax-diagram/" class="md-footer__link md-footer__link--next" aria-label="Next: Softmax Diagram">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Diagram
+                Softmax Diagram
               </div>
             </div>
             <div class="md-footer__button md-icon">

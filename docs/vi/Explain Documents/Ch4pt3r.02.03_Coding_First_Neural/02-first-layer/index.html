@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.09_Backpropagation/09-math/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.02.03_Coding_First_Neural/02-first-layer/">
       
       
-        <link rel="prev" href="../09-diagram/">
+        <link rel="prev" href="../02-first-layer-diagram/">
       
+      
+        <link rel="next" href="../../Ch4pt3r.04_Activation_Funcction/04-01.transformation-relu/">
       
       
       <link rel="icon" href="../../../../assets/logo.svg">
@@ -22,7 +24,7 @@
     
     
       
-        <title>Math - derivative combining Softmax and Cross-Entropy Loss. - Neural Network From Scratch Documentation</title>
+        <title>First Layer - Neural Network From Scratch Documentation</title>
       
     
     
@@ -115,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax" class="md-skip">
+        <a href="#giai-thich-chi-tiet-cho-oan-ma" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Math - derivative combining Softmax and Cross-Entropy Loss.
+              First Layer
             
           </span>
         </div>
@@ -1247,6 +1249,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1257,11 +1261,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
@@ -1277,7 +1281,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_1">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.02.03 Coding First Neural
@@ -1291,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.02.03_Coding_First_Neural/02-first-layer-diagram/" class="md-nav__link">
+      <a href="../02-first-layer-diagram/" class="md-nav__link">
         
   
   
@@ -1311,10 +1315,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Ch4pt3r.02.03_Coding_First_Neural/02-first-layer/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    First Layer
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1325,6 +1349,126 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#giai-thich-chi-tiet-cho-oan-ma" class="md-nav__link">
+    <span class="md-ellipsis">
+      Giải thích chi tiết cho đoạn mã.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Giải thích chi tiết cho đoạn mã.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phan-1-chuan-bi-cong-cu-va-nguyen-lieu-imports-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 1: Chuẩn bị công cụ và nguyên liệu (Imports &amp; Data)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phan-2-xay-dung-ban-thiet-ke-cua-mot-vi-giam-khao-class-layer_dense" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 2: Xây dựng "Bản thiết kế của một Vị Giám khảo" (class Layer_Dense)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phan-3-cuoc-thi-bat-au-su-dung-lop-va-du-lieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 3: Cuộc thi bắt đầu! (Sử dụng lớp và dữ liệu)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phan-4-dien-giai-truu-tuong-cuoc-thi-phan-loai-hoa-qua" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 4: Diễn giải trừu tượng - Cuộc thi phân loại hoa quả
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phan-5-so-o-minh-hoa-ascii" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 5: Sơ đồ minh họa (ASCII)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phu-luc-giai-thich-spiral-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phụ Lục Giải Thích - Spiral Data :
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phụ Lục Giải Thích - Spiral Data :">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-inh-nghia-on-gian" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Định nghĩa đơn giản
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-tai-sao-no-lai-quan-trong-va-noi-tieng" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Tại sao nó lại quan trọng và nổi tiếng?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ham-spiral_data-tao-ra-cai-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Hàm spiral_data tạo ra cái gì?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1817,8 +1961,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1829,11 +1971,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_7" >
         
           
           <label class="md-nav__link" for="__nav_3_2_7" id="__nav_3_2_7_label" tabindex="0">
@@ -1849,7 +1991,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2_7">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.09 Backpropagation
@@ -1863,7 +2005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-diagram/" class="md-nav__link">
+      <a href="../../Ch4pt3r.09_Backpropagation/09-diagram/" class="md-nav__link">
         
   
   
@@ -1883,30 +2025,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Math - derivative combining Softmax and Cross-Entropy Loss.
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.09_Backpropagation/09-math/" class="md-nav__link">
         
   
   
@@ -1917,51 +2039,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phần 1: Chứng minh chi tiết Đạo hàm của Softmax
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phan-2-chung-minh-chi-tiet-ao-ham-cua-cross-entropy-loss" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phần 2: Chứng minh chi tiết Đạo hàm của Cross-Entropy Loss
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phan-3-ket-hop-bang-quy-tac-chuoi-iem-hoi-tu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phần 3: Kết Hợp Bằng Quy Tắc Chuỗi - Điểm Hội Tụ
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2009,163 +2086,306 @@
   
 
 
-  <h1>Math - derivative combining Softmax and Cross-Entropy Loss.</h1>
+  <h1>First Layer</h1>
 
-<p>Lần này chúng ta sẽ đi sâu vào bản chất toán học, chứng minh từng bước một cách chi tiết và giải thích lý do đằng sau mỗi phép biến đổi.</p>
-<p>Chúng ta sẽ đi qua 3 phần:</p>
+<h2 id="giai-thich-chi-tiet-cho-oan-ma">Giải thích chi tiết cho đoạn mã.<a class="headerlink" href="#giai-thich-chi-tiet-cho-oan-ma" title="Permanent link">&para;</a></h2>
+<p>Chương trình <code>chapter01.py</code></p>
+<p><strong>Tổng quan: Mục tiêu của chương trình là gì?</strong></p>
+<p>Hãy tưởng tượng chúng ta muốn xây dựng một "bộ não" nhân tạo đơn giản. Chương trình này thực hiện <strong>bước đầu tiên và cơ bản nhất</strong>:</p>
 <ol>
-<li><strong>Chứng minh Đạo hàm của hàm Softmax.</strong></li>
-<li><strong>Chứng minh Đạo hàm của hàm Cross-Entropy Loss.</strong></li>
-<li><strong>Kết hợp cả hai bằng Quy tắc Chuỗi để có được kết quả cuối cùng.</strong></li>
+<li><strong>Xây dựng một "nơ-ron thần kinh"</strong>: Tạo ra một đơn vị xử lý thông tin cơ bản.</li>
+<li><strong>Chuẩn bị dữ liệu</strong>: Tạo ra một bộ dữ liệu mẫu để "bộ não" có cái để xử lý.</li>
+<li><strong>Thực hiện một phép tính</strong>: Đưa dữ liệu qua "bộ não" và xem kết quả đầu ra là gì.</li>
 </ol>
+<p>Đây là nền tảng của mọi mạng nơ-ron. Hiểu rõ từng dòng mã ở đây sẽ giúp bạn nắm vững các khái niệm phức tạp hơn sau này.</p>
 <hr />
-<h4 id="phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax"><strong>Phần 1: Chứng minh chi tiết Đạo hàm của Softmax</strong><a class="headerlink" href="#phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax" title="Permanent link">&para;</a></h4>
-<p><strong>Mục tiêu:</strong> Tính <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_k}\)</span>, tức là sự thay đổi của một xác suất đầu ra <span class="arithmatex">\(\hat{y}_j\)</span> khi một điểm số đầu vào <span class="arithmatex">\(z_k\)</span> thay đổi một chút.</p>
-<p><strong>Công thức hàm Softmax:</strong>
-Xác suất đầu ra cho class <span class="arithmatex">\(j\)</span> được tính từ tất cả các điểm số <span class="arithmatex">\(z\)</span>:</p>
-<div class="arithmatex">\[
-\hat{y}_j = \frac{e^{z_j}}{\sum_{i=1}^{N} e^{z_i}}
-\]</div>
-<p>Để tính đạo hàm này, chúng ta phải sử dụng <strong>Quy tắc đạo hàm của một thương (Quotient Rule)</strong>:</p>
-<p>Nếu <span class="arithmatex">\(f(x) = \frac{u(x)}{v(x)}\)</span>, thì</p>
-<p><span class="arithmatex">\(f'(x) = \frac{u'(x)v(x) - u(x)v'(x)}{[v(x)]^2}\)</span>.</p>
-<p>Ở đây, <span class="arithmatex">\(u = e^{z_j}\)</span> và <span class="arithmatex">\(v = \sum_{i=1}^{N} e^{z_i}\)</span>. Phép đạo hàm sẽ khác nhau tùy thuộc vào <span class="arithmatex">\(j\)</span> có bằng <span class="arithmatex">\(k\)</span> hay không.</p>
-<h5 id="truong-hop-1-j-k-ao-ham-cua-mot-output-theo-chinh-input-tuong-ung"><strong>Trường hợp 1: <code>j = k</code> (Đạo hàm của một output theo chính input tương ứng)</strong><a class="headerlink" href="#truong-hop-1-j-k-ao-ham-cua-mot-output-theo-chinh-input-tuong-ung" title="Permanent link">&para;</a></h5>
-<p>Chúng ta đang tính <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_j}\)</span>.</p>
-<ol>
+<h4 id="phan-1-chuan-bi-cong-cu-va-nguyen-lieu-imports-data"><strong>Phần 1: Chuẩn bị công cụ và nguyên liệu (Imports &amp; Data)</strong><a class="headerlink" href="#phan-1-chuan-bi-cong-cu-va-nguyen-lieu-imports-data" title="Permanent link">&para;</a></h4>
+<p>Đây là bước chúng ta tập hợp các thư viện và dữ liệu cần thiết trước khi bắt đầu "xây dựng".</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a><span class="kn">import</span><span class="w"> </span><span class="nn">nnfs</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a><span class="kn">from</span><span class="w"> </span><span class="nn">nnfs.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">spiral_data</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a><span class="n">nnfs</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</span></code></pre></div>
+<h5 id="giai-thich-chi-tiet-tung-dong"><strong>Giải thích chi tiết từng dòng:</strong><a class="headerlink" href="#giai-thich-chi-tiet-tung-dong" title="Permanent link">&para;</a></h5>
+<ul>
 <li>
-<p><strong>Tính đạo hàm của tử số (<span class="arithmatex">\(u'\)</span>):</strong>
-    <span class="arithmatex">\(\frac{\partial u}{\partial z_j} = \frac{\partial}{\partial z_j} (e^{z_j}) = e^{z_j}\)</span>.</p>
+<p><code>import numpy as np</code>:</p>
+<ul>
+<li><strong>Nó là gì?</strong>: <code>NumPy</code> (Numerical Python) là thư viện <strong>cơ bản và quan trọng nhất</strong> cho khoa học dữ liệu trong Python. Nó cung cấp một cấu trúc dữ liệu cực kỳ hiệu quả gọi là mảng (array) và các công cụ để thực hiện các phép toán trên mảng đó, đặc biệt là toán ma trận.</li>
+<li><strong>Tại sao cần nó?</strong>: Mạng nơ-ron về bản chất là một chuỗi các phép toán ma trận. NumPy giúp chúng ta thực hiện các phép nhân, cộng ma trận này một cách nhanh chóng và hiệu quả hơn rất nhiều so với việc dùng list thông thường của Python. <code>as np</code> là một quy ước phổ biến để đặt tên viết tắt cho thư viện.</li>
+</ul>
 </li>
 <li>
-<p><strong>Tính đạo hàm của mẫu số (<span class="arithmatex">\(v'\)</span>):</strong></p>
-<p><span class="arithmatex">\(\frac{\partial v}{\partial z_j} = \frac{\partial}{\partial z_j} \left( \sum_{i=1}^{N} e^{z_i} \right) = \frac{\partial}{\partial z_j} (e^{z_1} + e^{z_2} + ... + e^{z_j} + ... + e^{z_N})\)</span>.</p>
-<p>Trong tổng này, chỉ có số hạng <span class="arithmatex">\(e^{z_j}\)</span> là phụ thuộc vào <span class="arithmatex">\(z_j\)</span>. Đạo hàm của các số hạng khác bằng 0.</p>
-<p>Vậy, <span class="arithmatex">\(\frac{\partial v}{\partial z_j} = e^{z_j}\)</span>.</p>
+<p><code>import nnfs</code>:</p>
+<ul>
+<li><strong>Nó là gì?</strong>: <code>nnfs</code> (Neural Networks from Scratch) là một thư viện hỗ trợ được viết riêng cho cuốn sách cùng tên. Mục đích của nó là giúp người học tập trung vào khái niệm mạng nơ-ron thay vì bị sa đà vào các chi tiết phụ.</li>
+<li><strong>Tại sao cần nó?</strong>: Nó cung cấp các hàm tiện ích, như tạo dữ liệu mẫu (<code>spiral_data</code>) và khởi tạo môi trường (<code>init</code>) để đảm bảo kết quả của mọi người đều giống nhau, dễ dàng cho việc học và gỡ lỗi.</li>
+</ul>
 </li>
 <li>
-<p><strong>Áp dụng vào Quy tắc thương:</strong></p>
-</li>
-</ol>
-<div class="arithmatex">\[
-    \begin{align*}
-    \frac{\partial \hat{y}_j}{\partial z_j} &amp;= \frac{(e^{z_j}) \cdot (\sum_{i} e^{z_i}) - (e^{z_j}) \cdot (e^{z_j})}{(\sum_{i} e^{z_i})^2} \\
-    &amp;= \frac{e^{z_j}}{\sum_{i} e^{z_i}} \cdot \frac{\sum_{i} e^{z_i}}{\sum_{i} e^{z_i}} - \frac{e^{z_j}}{\sum_{i} e^{z_i}} \cdot \frac{e^{z_j}}{\sum_{i} e^{z_i}} \quad \text{(Tách thành hai phân số)} \\
-    &amp;= \hat{y}_j \cdot 1 - \hat{y}_j \cdot \hat{y}_j \quad \text{(Nhận ra các thành phần chính là } \hat{y}_j \text{)} \\
-    &amp;= \hat{y}_j (1 - \hat{y}_j)
-    \end{align*}
-\]</div>
-<p><strong>Kết quả 1:</strong> <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_j} = \hat{y}_j (1 - \hat{y}_j)\)</span>.</p>
-<h5 id="truong-hop-2-j-k-ao-ham-cua-mot-output-theo-mot-input-khac"><strong>Trường hợp 2: <code>j ≠ k</code> (Đạo hàm của một output theo một input khác)</strong><a class="headerlink" href="#truong-hop-2-j-k-ao-ham-cua-mot-output-theo-mot-input-khac" title="Permanent link">&para;</a></h5>
-<p>Chúng ta đang tính <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_k}\)</span>.</p>
-<ol>
-<li>
-<p><strong>Tính đạo hàm của tử số (<span class="arithmatex">\(u'\)</span>):</strong></p>
-<p><span class="arithmatex">\(\frac{\partial u}{\partial z_k} = \frac{\partial}{\partial z_k} (e^{z_j})\)</span>. Vì <span class="arithmatex">\(j \neq k\)</span>, <span class="arithmatex">\(e^{z_j}\)</span> là một hằng số đối với <span class="arithmatex">\(z_k\)</span>. Vậy đạo hàm bằng 0.</p>
+<p><code>import matplotlib.pyplot as plt</code>:</p>
+<ul>
+<li><strong>Nó là gì?</strong>: <code>Matplotlib</code> là thư viện trực quan hóa dữ liệu (vẽ đồ thị) phổ biến nhất trong Python. <code>pyplot</code> là một module trong Matplotlib cung cấp giao diện giống như MATLAB.</li>
+<li><strong>Tại sao cần nó?</strong>: "Trăm nghe không bằng một thấy". Thư viện này cho phép chúng ta vẽ dữ liệu lên biểu đồ để xem nó trông như thế nào. Việc nhìn thấy dữ liệu hình xoắn ốc giúp ta hiểu rõ hơn bài toán mà mạng nơ-ron đang cố gắng giải quyết.</li>
+</ul>
 </li>
 <li>
-<p><strong>Tính đạo hàm của mẫu số (<span class="arithmatex">\(v'\)</span>):</strong></p>
-<p><span class="arithmatex">\(\frac{\partial v}{\partial z_k} = \frac{\partial}{\partial z_k} \left( \sum_{i=1}^{N} e^{z_i} \right)\)</span>. </p>
-<p>Tương tự như trên, chỉ có số hạng <span class="arithmatex">\(e^{z_k}\)</span> là phụ thuộc vào <span class="arithmatex">\(z_k\)</span>.</p>
-<p>Vậy, <span class="arithmatex">\(\frac{\partial v}{\partial z_k} = e^{z_k}\)</span>.</p>
+<p><code>from nnfs.datasets import spiral_data</code>:</p>
+<ul>
+<li><strong>Nó là gì?</strong>: Đây là một lệnh <code>import</code> cụ thể. Thay vì nhập cả thư viện <code>nnfs.datasets</code>, chúng ta chỉ lấy riêng hàm <code>spiral_data</code> từ đó.</li>
+<li><strong>Tại sao cần nó?</strong>: <code>spiral_data</code> là một hàm giúp tạo ra bộ dữ liệu hình xoắn ốc nổi tiếng, một bài toán kinh điển để kiểm tra khả năng của các mô hình phân loại.</li>
+</ul>
 </li>
 <li>
-<p><strong>Áp dụng vào Quy tắc thương:</strong></p>
+<p><code>nnfs.init()</code>:</p>
+<ul>
+<li><strong>Nó là gì?</strong>: Lệnh này gọi hàm <code>init</code> từ thư viện <code>nnfs</code>.</li>
+<li><strong>Tại sao cần nó?</strong>: Hàm này thực hiện một số cài đặt nền, quan trọng nhất là <strong>cố định seed cho việc sinh số ngẫu nhiên</strong> của NumPy và thiết lập kiểu dữ liệu mặc định. Điều này đảm bảo rằng mỗi khi bạn chạy lại mã, các "trọng số ngẫu nhiên" và "dữ liệu" được tạo ra sẽ <strong>luôn giống hệt nhau</strong>, giúp việc học và tái tạo kết quả trở nên nhất quán.</li>
+</ul>
 </li>
-</ol>
-<div class="arithmatex">\[
-    \begin{align*}
-    \frac{\partial \hat{y}_j}{\partial z_k} &amp;= \frac{(0) \cdot (\sum_{i} e^{z_i}) - (e^{z_j}) \cdot (e^{z_k})}{(\sum_{i} e^{z_i})^2} \\
-    &amp;= - \frac{e^{z_j} \cdot e^{z_k}}{(\sum_{i} e^{z_i})^2} \\
-    &amp;= - \left( \frac{e^{z_j}}{\sum_{i} e^{z_i}} \right) \cdot \left( \frac{e^{z_k}}{\sum_{i} e^{z_i}} \right) \quad \text{(Tách mẫu số)} \\
-    &amp;= - \hat{y}_j \cdot \hat{y}_k
-    \end{align*}
-\]</div>
-<p><strong>Kết quả 2:</strong> <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_k} = - \hat{y}_j \hat{y}_k\)</span>.</p>
+</ul>
 <hr />
-<h4 id="phan-2-chung-minh-chi-tiet-ao-ham-cua-cross-entropy-loss"><strong>Phần 2: Chứng minh chi tiết Đạo hàm của Cross-Entropy Loss</strong><a class="headerlink" href="#phan-2-chung-minh-chi-tiet-ao-ham-cua-cross-entropy-loss" title="Permanent link">&para;</a></h4>
-<p><strong>Mục tiêu:</strong> Tính <span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k}\)</span>, tức là sự thay đổi của Loss khi một xác suất dự đoán <span class="arithmatex">\(\hat{y}_k\)</span> thay đổi.</p>
-<p><strong>Công thức Cross-Entropy Loss:</strong></p>
-<div class="arithmatex">\[
-L = - \sum_{j=1}^{N} y_j \log(\hat{y}_j)
-\]</div>
-<p>Ở đây, <span class="arithmatex">\(y_j\)</span> là nhãn thực (ground-truth), có giá trị là 1 cho class đúng và 0 cho các class khác (one-hot encoding).</p>
-<ol>
+<h4 id="phan-2-xay-dung-ban-thiet-ke-cua-mot-vi-giam-khao-class-layer_dense"><strong>Phần 2: Xây dựng "Bản thiết kế của một Vị Giám khảo" (<code>class Layer_Dense</code>)</strong><a class="headerlink" href="#phan-2-xay-dung-ban-thiet-ke-cua-mot-vi-giam-khao-class-layer_dense" title="Permanent link">&para;</a></h4>
+<p>Đây là trái tim của chương trình. Chúng ta không xây dựng một nơ-ron riêng lẻ, mà là một "bản thiết kế" (<code>class</code>) để có thể tạo ra cả một lớp/một ban giám khảo một cách dễ dàng.</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">class</span><span class="w"> </span><span class="nc">Layer_Dense</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_inputs</span><span class="p">,</span> <span class="n">n_neurons</span><span class="p">):</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_inputs</span><span class="p">,</span> <span class="n">n_neurons</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">biases</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_neurons</span><span class="p">))</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>        <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">biases</span>
+</span></code></pre></div>
+<h5 id="giai-thich-chi-tiet-tung-phan"><strong>Giải thích chi tiết từng phần:</strong><a class="headerlink" href="#giai-thich-chi-tiet-tung-phan" title="Permanent link">&para;</a></h5>
+<ul>
 <li>
-<p><strong>Áp dụng phép đạo hàm:</strong></p>
-<p><span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = \frac{\partial}{\partial \hat{y}_k} \left( - \sum_{j=1}^{N} y_j \log(\hat{y}_j) \right)\)</span>.</p>
+<p><code>class Layer_Dense:</code>: Khai báo một "bản thiết kế" tên là <code>Layer_Dense</code>. Mọi thứ bên trong nó sẽ định nghĩa các thuộc tính và hành vi của một lớp nơ-ron dày đặc.</p>
 </li>
 <li>
-<p><strong>Đưa đạo hàm vào trong tổng:</strong></p>
-<p><span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = - \sum_{j=1}^{N} y_j \cdot \frac{\partial}{\partial \hat{y}_k} \left( \log(\hat{y}_j) \right)\)</span>.</p>
+<p><code>def __init__(self, n_inputs, n_neurons):</code>: Hàm <strong>khởi tạo</strong> (constructor).</p>
+<ul>
+<li><strong>Nó làm gì?</strong>: Hàm này được tự động gọi mỗi khi một đối tượng mới được tạo ra từ bản thiết kế này (ví dụ <code>dense1 = Layer_Dense(...)</code>). Nó dùng để thiết lập các thuộc tính ban đầu.</li>
+<li><code>self</code>: Đại diện cho chính đối tượng sẽ được tạo ra. Khi bạn gọi <code>dense1.weights</code>, <code>self</code> chính là <code>dense1</code>.</li>
+<li><code>n_inputs</code>: Số lượng đặc trưng đầu vào mà lớp này sẽ nhận (ví dụ: 2 đặc trưng là "Độ đỏ" và "Độ tròn" của hoa quả).</li>
+<li><code>n_neurons</code>: Số lượng nơ-ron trong lớp này (ví dụ: 3 giám khảo, mỗi người cho một loại quả).</li>
+<li><code>self.weights = 0.01 * np.random.randn(n_inputs, n_neurons)</code>: Đây là dòng <strong>cực kỳ quan trọng</strong>.<ul>
+<li><code>np.random.randn(n_inputs, n_neurons)</code>: Tạo một ma trận có kích thước <code>(số_đầu_vào, số_nơ_ron)</code> chứa đầy các số ngẫu nhiên theo phân phối chuẩn (phân phối Gauss, có giá trị trung bình là 0 và phương sai là 1). Đây chính là "sự ưu tiên" ban đầu, hoàn toàn ngẫu nhiên của các vị giám khảo.</li>
+<li><code>* 0.01</code>: Nhân tất cả các trọng số ngẫu nhiên với một số rất nhỏ. Đây là một kỹ thuật phổ biến để ngăn các giá trị đầu ra ban đầu quá lớn, giúp quá trình huấn luyện sau này ổn định hơn.</li>
+</ul>
+</li>
+<li><code>self.biases = np.zeros((1, n_neurons))</code>:<ul>
+<li><code>np.zeros((1, n_neurons))</code>: Tạo một ma trận hàng (vector) có kích thước <code>(1, số_nơ_ron)</code> chứa toàn số 0. Đây là "thành kiến" hay "tâm trạng" ban đầu của các vị giám khảo. Việc khởi tạo bằng 0 có nghĩa là ban đầu, họ không có bất kỳ thiên vị nào.</li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
-<p><strong>Phân tích đạo hàm bên trong:</strong></p>
-<p>Phép đạo hàm <span class="arithmatex">\(\frac{\partial}{\partial \hat{y}_k} \left( \log(\hat{y}_j) \right)\)</span> chỉ khác 0 khi <span class="arithmatex">\(j=k\)</span>.
-*   Nếu <span class="arithmatex">\(j=k\)</span>, <span class="arithmatex">\(\frac{\partial}{\partial \hat{y}_k} \log(\hat{y}_k) = \frac{1}{\hat{y}_k}\)</span>.
-*   Nếu <span class="arithmatex">\(j \neq k\)</span>, <span class="arithmatex">\(\frac{\partial}{\partial \hat{y}_k} \log(\hat{y}_j) = 0\)</span>.</p>
+<p><code>def forward(self, inputs):</code>: Phương thức <strong>hành động</strong>.</p>
+<ul>
+<li><strong>Nó làm gì?</strong>: Định nghĩa hành vi chính của lớp: nhận dữ liệu đầu vào và tính toán đầu ra. Quá trình này được gọi là <strong>truyền xuôi (forward pass)</strong>.</li>
+<li><code>inputs</code>: Dữ liệu đầu vào sẽ được đưa vào lớp (ví dụ: danh sách các đặc điểm của tất cả hoa quả).</li>
+<li><code>self.output = np.dot(inputs, self.weights) + self.biases</code>: Công thức toán học cốt lõi.<ul>
+<li><code>np.dot(inputs, self.weights)</code>: Phép nhân ma trận. Đây là lúc mỗi giám khảo "nhìn" vào các đặc điểm của hoa quả và nhân chúng với "sự ưu tiên" (trọng số) của mình để đưa ra một điểm số sơ bộ.</li>
+<li><code>+ self.biases</code>: Cộng thêm "thành kiến" (thiên vị) của mỗi giám khảo vào điểm số của họ.</li>
+<li><code>self.output = ...</code>: Kết quả cuối cùng được lưu vào thuộc tính <code>output</code> của lớp.</li>
+</ul>
 </li>
-<li>
-<p><strong>Rút gọn tổng:</strong></p>
-<p>Do đó, toàn bộ tổng <span class="arithmatex">\(\sum_{j=1}^{N}\)</span> chỉ còn lại duy nhất một số hạng tại <span class="arithmatex">\(j=k\)</span>.
-<span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = - y_k \cdot \frac{1}{\hat{y}_k} = - \frac{y_k}{\hat{y}_k}\)</span>.</p>
+</ul>
 </li>
-</ol>
-<p><strong>Kết quả 3:</strong> <span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = - \frac{y_k}{\hat{y}_k}\)</span>.</p>
+</ul>
 <hr />
-<h4 id="phan-3-ket-hop-bang-quy-tac-chuoi-iem-hoi-tu"><strong>Phần 3: Kết Hợp Bằng Quy Tắc Chuỗi - Điểm Hội Tụ</strong><a class="headerlink" href="#phan-3-ket-hop-bang-quy-tac-chuoi-iem-hoi-tu" title="Permanent link">&para;</a></h4>
-<p>Bây giờ chúng ta đã có tất cả các mảnh ghép. Ta sẽ thay chúng vào công thức Quy tắc Chuỗi ban đầu:</p>
-<div class="arithmatex">\[
-\frac{\partial L}{\partial z_k} = \sum_j \frac{\partial L}{\partial \hat{y}_j} \cdot \frac{\partial \hat{y}_j}{\partial z_k}
-\]</div>
-<p>Để giải quyết tổng này, chúng ta lại tách nó thành hai phần: phần tử tại <code>j=k</code> và các phần tử còn lại <code>j ≠ k</code>. Đây là bước đi mấu chốt của phép chứng minh.</p>
-<div class="arithmatex">\[
-\frac{\partial L}{\partial z_k} = \left( \frac{\partial L}{\partial \hat{y}_k} \cdot \frac{\partial \hat{y}_k}{\partial z_k} \right) + \sum_{j \neq k} \left( \frac{\partial L}{\partial \hat{y}_j} \cdot \frac{\partial \hat{y}_j}{\partial z_k} \right)
-\]</div>
+<h4 id="phan-3-cuoc-thi-bat-au-su-dung-lop-va-du-lieu"><strong>Phần 3: Cuộc thi bắt đầu! (Sử dụng lớp và dữ liệu)</strong><a class="headerlink" href="#phan-3-cuoc-thi-bat-au-su-dung-lop-va-du-lieu" title="Permanent link">&para;</a></h4>
+<p>Bây giờ chúng ta sẽ sử dụng "bản thiết kế" và "nguyên liệu" đã chuẩn bị ở trên để tiến hành một cuộc thi thực sự.</p>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Create dataset</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">spiral_data</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="c1"># Visualize dataset</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;brg&#39;</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos="5 "></span></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<ul>
+<li><code>X, y = spiral_data(samples=100, classes=3)</code>: Gọi hàm đã nhập để tạo dữ liệu.<ul>
+<li><code>X</code>: Sẽ là một mảng NumPy kích thước <code>(300, 2)</code>. 300 là vì có 3 lớp (<code>classes</code>), mỗi lớp 100 mẫu (<code>samples</code>). 2 là vì mỗi mẫu có 2 đặc trưng (tọa độ x, y). Đây là "danh sách các thí sinh hoa quả và đặc điểm của chúng".</li>
+<li><code>y</code>: Sẽ là một mảng NumPy kích thước <code>(300,)</code> chứa các nhãn <code>0, 1, 2</code>. Đây là "đáp án đúng" cho mỗi thí sinh (Táo, Cam, hay Chuối).</li>
+</ul>
+</li>
+<li><code>plt.scatter(X[:,0], X[:,1], c=y, cmap='brg')</code>: Chuẩn bị vẽ đồ thị.<ul>
+<li><code>X[:,0]</code>: Lấy tất cả các hàng, cột đầu tiên (tất cả tọa độ x).</li>
+<li><code>X[:,1]</code>: Lấy tất cả các hàng, cột thứ hai (tất cả tọa độ y).</li>
+<li><code>c=y</code>: <code>c</code> là viết tắt của color. Lệnh này bảo Matplotlib hãy tô màu cho mỗi điểm <code>(x, y)</code> dựa trên giá trị tương ứng trong mảng <code>y</code>. Các điểm có <code>y=0</code> sẽ cùng màu, <code>y=1</code> cùng màu khác,...</li>
+<li><code>cmap='brg'</code>: Color map. Chọn bảng màu Xanh-Đỏ-Lá (Blue-Red-Green).</li>
+</ul>
+</li>
+<li><code>plt.show()</code>: Hiển thị đồ thị đã chuẩn bị lên màn hình.</li>
+</ul>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Create Dense layer with 2 input features and 3 output values</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">dense1</span> <span class="o">=</span> <span class="n">Layer_Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li>Đây là lúc chúng ta <strong>tạo ra một đối tượng</strong> từ bản thiết kế <code>Layer_Dense</code>. Chúng ta đang "thuê một ban giám khảo".</li>
+<li><code>dense1 = ...</code>: Tạo một ban giám khảo cụ thể tên là <code>dense1</code>.</li>
+<li><code>Layer_Dense(2, 3)</code>: Gọi hàm <code>__init__</code>.<ul>
+<li><code>n_inputs=2</code>: Vì mỗi "thí sinh hoa quả" (<code>X</code>) có 2 đặc trưng (tọa độ x, y).</li>
+<li><code>n_neurons=3</code>: Vì chúng ta cần phân loại thành 3 loại quả (3 lớp trong <code>y</code>). Chúng ta cần 3 giám khảo, mỗi người chuyên về một loại.</li>
+</ul>
+</li>
+</ul>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Let&#39;s see initial weights and biases</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt; Initial weights and biases of the first layer:&quot;</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">dense1</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">dense1</span><span class="o">.</span><span class="n">biases</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li>In ra các thuộc tính <code>weights</code> và <code>biases</code> của đối tượng <code>dense1</code> vừa tạo. Điều này cho chúng ta thấy "sự ưu tiên" và "thành kiến" ban đầu, hoàn toàn ngẫu nhiên của ban giám khảo trước khi họ chấm điểm bất kỳ thí sinh nào.</li>
+</ul>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Perform a forward pass of our training data through this layer</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a><span class="n">dense1</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li>Đây là khoảnh khắc hành động. Chúng ta gọi phương thức <code>forward</code> của <code>dense1</code> và đưa toàn bộ "danh sách thí sinh" (<code>X</code>) vào. Phép tính <code>np.dot(X, dense1.weights) + dense1.biases</code> được thực thi. Ban giám khảo bắt đầu chấm điểm.</li>
+</ul>
+<div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="c1"># Let&#39;s see output of the first few samples:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt; Output of the first few samples:&quot;</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos="3 "></span></a><span class="nb">print</span><span class="p">(</span><span class="n">dense1</span><span class="o">.</span><span class="n">output</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</span></code></pre></div>
+<ul>
+<li>Sau khi <code>forward()</code> chạy xong, kết quả được lưu trong <code>dense1.output</code>.</li>
+<li><code>dense1.output[:5]</code>: Chúng ta in ra kết quả chấm điểm cho 5 "thí sinh hoa quả" đầu tiên để xem thử. Mỗi hàng là một thí sinh, mỗi cột là điểm số từ một giám khảo. Các giá trị này được gọi là <strong>logits</strong>.</li>
+</ul>
+<hr />
+<h4 id="phan-4-dien-giai-truu-tuong-cuoc-thi-phan-loai-hoa-qua"><strong>Phần 4: Diễn giải trừu tượng - Cuộc thi phân loại hoa quả</strong><a class="headerlink" href="#phan-4-dien-giai-truu-tuong-cuoc-thi-phan-loai-hoa-qua" title="Permanent link">&para;</a></h4>
+<p>Hãy kể lại toàn bộ câu chuyện một cách liền mạch:</p>
 <ol>
 <li>
-<p><strong>Thay giá trị vào phần tử <code>j=k</code>:</strong></p>
-<p>Sử dụng Kết quả 3 và Kết quả 1:</p>
-<p><span class="arithmatex">\(\left( - \frac{y_k}{\hat{y}_k} \right) \cdot \left( \hat{y}_k (1 - \hat{y}_k) \right) = -y_k(1-\hat{y}_k) = -y_k + y_k \hat{y}_k\)</span>.</p>
+<p><strong>Bối cảnh</strong>: Chúng ta tổ chức một cuộc thi để phân loại 3 loại quả: <strong>Táo, Cam, và Chuối</strong>.</p>
 </li>
 <li>
-<p><strong>Thay giá trị vào tổng các phần tử <code>j ≠ k</code>:</strong></p>
-<p>Sử dụng Kết quả 3 và Kết quả 2:</p>
-<p><span class="arithmatex">\(\sum_{j \neq k} \left( - \frac{y_j}{\hat{y}_j} \right) \cdot \left( - \hat{y}_j \hat{y}_k \right) = \sum_{j \neq k} (y_j \hat{y}_k)\)</span>.</p>
+<p><strong>Các thí sinh (<code>X</code>, <code>y</code>)</strong>: Có 300 quả tham gia. Với mỗi quả, chúng ta dùng máy đo được 2 đặc điểm: <strong>"Độ đỏ"</strong> và <strong>"Độ tròn"</strong> (đây là 2 cột của <code>X</code>). Chúng ta cũng biết trước đáp án mỗi quả là gì (đây là <code>y</code>).</p>
 </li>
 <li>
-<p><strong>Ghép tất cả lại:</strong></p>
+<p><strong>Thuê ban giám khảo (<code>dense1 = Layer_Dense(2, 3)</code>)</strong>: Chúng ta thuê một ban giám khảo gồm 3 người:</p>
+<ul>
+<li><strong>Giám khảo 1</strong>: Chuyên gia về Táo.</li>
+<li><strong>Giám khảo 2</strong>: Chuyên gia về Cam.</li>
+<li><strong>Giám khảo 3</strong>: Chuyên gia về Chuối.
+Họ là những người mới vào nghề, nên "kiến thức" của họ ban đầu là ngẫu nhiên.</li>
+</ul>
+</li>
+<li>
+<p><strong>Kiến thức của giám khảo (<code>weights</code> và <code>biases</code>)</strong>:</p>
+<ul>
+<li><strong>Sự ưu tiên (<code>weights</code>)</strong>: Mỗi giám khảo có một bộ "ưu tiên" riêng cho 2 đặc điểm "Độ đỏ" và "Độ tròn". Ví dụ, chuyên gia Táo lý tưởng sẽ có ưu tiên cao cho "Độ đỏ" và "Độ tròn". Chuyên gia Chuối sẽ có ưu tiên âm cho "Độ tròn" (vì chuối dài). Nhưng vì họ là người mới, các ưu tiên này được gán ngẫu nhiên (ví dụ: chuyên gia Táo lại có thể thích quả không đỏ, chuyên gia Chuối lại thích quả tròn).</li>
+<li><strong>Tâm trạng (<code>biases</code>)</strong>: Ban đầu, cả 3 giám khảo đều có tâm trạng trung lập (bằng 0).</li>
+</ul>
+</li>
+<li>
+<p><strong>Quá trình chấm điểm (<code>dense1.forward(X)</code>)</strong>:</p>
+<ul>
+<li>Từng quả một được đưa ra trước ban giám khảo.</li>
+<li>Mỗi giám khảo tính điểm của mình theo công thức:
+    <code>Điểm = (Độ đỏ * Ưu tiên cho độ đỏ) + (Độ tròn * Ưu tiên cho độ tròn) + Tâm trạng</code></li>
+<li>Quá trình này diễn ra cho tất cả 300 quả.</li>
+</ul>
+</li>
+<li>
+<p><strong>Bảng điểm (<code>dense1.output</code>)</strong>:</p>
+<ul>
+<li>Kết quả cuối cùng là một bảng điểm lớn. Mỗi hàng là một quả, mỗi cột là điểm số từ một giám khảo.</li>
+<li>Ví dụ, dòng đầu tiên có thể là <code>[0.0012, -0.0045, 0.0031]</code>. Điều này có nghĩa là với kiến thức ngẫu nhiên hiện tại, Giám khảo Táo cho quả này 0.0012 điểm, Giám khảo Cam cho -0.0045 điểm, và Giám khảo Chuối cho 0.0031 điểm.</li>
+</ul>
 </li>
 </ol>
-<div class="arithmatex">\[
-    \begin{align*}
-    \frac{\partial L}{\partial z_k} &amp;= (-y_k + y_k \hat{y}_k) + \sum_{j \neq k} y_j \hat{y}_k \\
-    &amp;= -y_k + \left( y_k \hat{y}_k + \sum_{j \neq k} y_j \hat{y}_k \right) \quad \text{(Nhóm các số hạng có } \hat{y}_k \text{)} \\
-    &amp;= -y_k + \hat{y}_k \left( y_k + \sum_{j \neq k} y_j \right) \quad \text{(Rút } \hat{y}_k \text{ làm nhân tử chung)}
-    \end{align*}
-\]</div>
+<p><strong>Kết luận quan trọng</strong>: Vì "kiến thức" (weights) của ban giám khảo là ngẫu nhiên, nên "bảng điểm" (output) này hoàn toàn vô nghĩa. Quá trình <strong>"huấn luyện" (training)</strong>, không có trong mã này, chính là việc cho ban giám khảo xem đáp án đúng (<code>y</code>), chỉ ra lỗi sai của họ, và giúp họ <strong>điều chỉnh lại "sự ưu tiên" (<code>weights</code>) và "tâm trạng" (<code>biases</code>)</strong> qua hàng ngàn lần lặp, để cuối cùng bảng điểm của họ phản ánh đúng loại quả.</p>
+<hr />
+<h4 id="phan-5-so-o-minh-hoa-ascii"><strong>Phần 5: Sơ đồ minh họa (ASCII)</strong><a class="headerlink" href="#phan-5-so-o-minh-hoa-ascii" title="Permanent link">&para;</a></h4>
+<p>Sơ đồ cho một quả duy nhất đi qua ban giám khảo:
+<br>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos=" 1 "></span></a>        ĐẦU VÀO (1 quả)
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos=" 2 "></span></a>        (2 đặc trưng)
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos=" 3 "></span></a>        +----------------------+
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><a href="#__codelineno-7-4"><span class="linenos" data-linenos=" 4 "></span></a>        | Độ đỏ, Độ tròn       |
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><a href="#__codelineno-7-5"><span class="linenos" data-linenos=" 5 "></span></a>        +----------------------+
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><a href="#__codelineno-7-6"><span class="linenos" data-linenos=" 6 "></span></a>               |
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><a href="#__codelineno-7-7"><span class="linenos" data-linenos=" 7 "></span></a>               |                                 BAN GIÁM KHẢO (dense1)
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><a href="#__codelineno-7-8"><span class="linenos" data-linenos=" 8 "></span></a>               |                                 (3 Giám khảo/Nơ-ron)
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><a href="#__codelineno-7-9"><span class="linenos" data-linenos=" 9 "></span></a>               |
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><a href="#__codelineno-7-10"><span class="linenos" data-linenos="10 "></span></a>               |       Ưu tiên (w11, w21)      +--------------------+   (Điểm từ GK Táo)
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><a href="#__codelineno-7-11"><span class="linenos" data-linenos="11 "></span></a>               +-----------------------------&gt;|  Giám khảo TÁO   + b1|-----&gt; output_1
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><a href="#__codelineno-7-12"><span class="linenos" data-linenos="12 "></span></a>               |                             +--------------------+
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><a href="#__codelineno-7-13"><span class="linenos" data-linenos="13 "></span></a>               |
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><a href="#__codelineno-7-14"><span class="linenos" data-linenos="14 "></span></a>               |       Ưu tiên (w12, w22)      +--------------------+   (Điểm từ GK Cam)
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a><a href="#__codelineno-7-15"><span class="linenos" data-linenos="15 "></span></a>               +-----------------------------&gt;|  Giám khảo CAM   + b2|-----&gt; output_2
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a><a href="#__codelineno-7-16"><span class="linenos" data-linenos="16 "></span></a>               |                             +--------------------+
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a><a href="#__codelineno-7-17"><span class="linenos" data-linenos="17 "></span></a>               |
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a><a href="#__codelineno-7-18"><span class="linenos" data-linenos="18 "></span></a>               |       Ưu tiên (w13, w23)      +--------------------+   (Điểm từ GK Chuối)
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19"></a><a href="#__codelineno-7-19"><span class="linenos" data-linenos="19 "></span></a>               +-----------------------------&gt;|  Giám khảo CHUỐI + b3|-----&gt; output_3
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20"></a><a href="#__codelineno-7-20"><span class="linenos" data-linenos="20 "></span></a>                                             +--------------------+
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21"></a><a href="#__codelineno-7-21"><span class="linenos" data-linenos="21 "></span></a>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22"></a><a href="#__codelineno-7-22"><span class="linenos" data-linenos="22 "></span></a>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a><a href="#__codelineno-7-23"><span class="linenos" data-linenos="23 "></span></a>Công thức tính điểm của Giám khảo TÁO:
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24"></a><a href="#__codelineno-7-24"><span class="linenos" data-linenos="24 "></span></a>output_1 = (Độ đỏ * w11) + (Độ tròn * w21) + b1
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25"></a><a href="#__codelineno-7-25"><span class="linenos" data-linenos="25 "></span></a>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a><a href="#__codelineno-7-26"><span class="linenos" data-linenos="26 "></span></a>Kết quả cuối cùng cho 1 quả là một bộ 3 điểm: [output_1, output_2, output_3]
+</span></code></pre></div></p>
+<hr />
+<h3 id="phu-luc-giai-thich-spiral-data">Phụ Lục Giải Thích - Spiral Data :<a class="headerlink" href="#phu-luc-giai-thich-spiral-data" title="Permanent link">&para;</a></h3>
+<p>Đây là phần giải thích về <strong><em>"Dữ liệu hình xoắn ốc"</em></strong> - nghe có vẻ trừu tượng, nhưng nó là một trong những bộ dữ liệu mẫu kinh điển và quan trọng nhất khi bắt đầu học về mạng nơ-ron.</p>
+<p>Hãy cùng phân tích.</p>
+<h4 id="1-inh-nghia-on-gian">1. Định nghĩa đơn giản<a class="headerlink" href="#1-inh-nghia-on-gian" title="Permanent link">&para;</a></h4>
+<p><strong>Dữ liệu hình xoắn ốc (Spiral Data)</strong> là một bộ dữ liệu được tạo ra một cách nhân tạo, trong đó các điểm dữ liệu thuộc các lớp khác nhau được sắp xếp thành các hình xoắn ốc lồng vào nhau.</p>
+<p>Hãy nhìn lại chính biểu đồ mà bạn đã tạo ra:</p>
+<ul>
+<li>Bạn có 3 lớp (classes), tương ứng với 3 màu: <strong>Đỏ</strong>, <strong>Xanh lá</strong>, và <strong>Xanh dương</strong>.</li>
+<li>Mỗi điểm có một vị trí (tọa độ x, y).</li>
+<li>Các điểm cùng màu tạo thành một "cánh tay" xoắn ốc.</li>
+<li>Các cánh tay này đan xen, quấn lấy nhau.</li>
+</ul>
+<h4 id="2-tai-sao-no-lai-quan-trong-va-noi-tieng">2. Tại sao nó lại quan trọng và nổi tiếng?<a class="headerlink" href="#2-tai-sao-no-lai-quan-trong-va-noi-tieng" title="Permanent link">&para;</a></h4>
+<p>Lý do bộ dữ liệu này được sử dụng rộng rãi là vì nó là một <strong>thử thách hoàn hảo</strong> để chứng minh sức mạnh của mạng nơ-ron.</p>
+<h5 id="a-no-anh-bai-cac-mo-hinh-on-gian-tuyen-tinh"><strong>A. Nó "đánh bại" các mô hình đơn giản (Tuyến tính)</strong><a class="headerlink" href="#a-no-anh-bai-cac-mo-hinh-on-gian-tuyen-tinh" title="Permanent link">&para;</a></h5>
+<p>Hãy tưởng tượng bạn chỉ có một <strong>cây thước kẻ</strong>. Nhiệm vụ của bạn là kẻ một hoặc nhiều <strong>đường thẳng</strong> để phân chia 3 nhóm màu này ra, sao cho mỗi vùng chỉ chứa một màu duy nhất.</p>
+<p>Bạn sẽ thấy ngay là <strong>bất khả thi</strong>.</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos=" 1 "></span></a>       /
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos=" 2 "></span></a>      /    &lt;-- Bạn không thể kẻ một đường thẳng nào
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos=" 3 "></span></a>     /         để tách màu Đỏ (R) ra khỏi Xanh (G) và Xanh dương (B)
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos=" 4 "></span></a>    /
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos=" 5 "></span></a>   RRRRR
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><a href="#__codelineno-8-6"><span class="linenos" data-linenos=" 6 "></span></a>  G B R G
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos=" 7 "></span></a> B G R B G
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><a href="#__codelineno-8-8"><span class="linenos" data-linenos=" 8 "></span></a>B B G G B B
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><a href="#__codelineno-8-9"><span class="linenos" data-linenos=" 9 "></span></a> R R B R R
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><a href="#__codelineno-8-10"><span class="linenos" data-linenos="10 "></span></a>  R G B R
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><a href="#__codelineno-8-11"><span class="linenos" data-linenos="11 "></span></a>   BBBBB
+</span></code></pre></div>
+<p>Một mô hình chỉ có thể kẻ các đường thẳng để phân loại được gọi là <strong>mô hình tuyến tính (linear model)</strong>. Dữ liệu xoắn ốc là một ví dụ kinh điển của dữ liệu <strong>phi tuyến (non-linear)</strong>, nơi ranh giới giữa các lớp không phải là đường thẳng mà là những đường cong phức tạp.</p>
+<p>Nói cách khác, dữ liệu xoắn ốc được tạo ra để <strong>cố tình làm khó</strong> các thuật toán phân loại đơn giản.</p>
+<h5 id="b-no-chung-to-su-can-thiet-cua-mang-no-ron"><strong>B. Nó chứng tỏ sự cần thiết của Mạng Nơ-ron</strong><a class="headerlink" href="#b-no-chung-to-su-can-thiet-cua-mang-no-ron" title="Permanent link">&para;</a></h5>
+<p>Mạng nơ-ron, đặc biệt là các mạng có các lớp ẩn (hidden layers) và các hàm kích hoạt phi tuyến (sẽ học sau), có khả năng học được các <strong>ranh giới quyết định (decision boundaries)</strong> cực kỳ phức tạp và uốn lượn.</p>
+<p>Một mạng nơ-ron được huấn luyện tốt có thể tạo ra một ranh giới trông giống như thế này:</p>
+<p>Nó không dùng "thước kẻ", mà nó học cách "vẽ" ra những đường cong mềm mại để bao quanh từng nhóm dữ liệu một cách hoàn hảo.</p>
+<p><strong>Kết luận:</strong> Dữ liệu xoắn ốc là một bài kiểm tra "tốt nghiệp" cho một mô hình phân loại. Nếu mô hình của bạn có thể giải quyết được bài toán này, nó chứng tỏ rằng nó có khả năng xử lý các mối quan hệ phức tạp, phi tuyến trong dữ liệu, điều mà các mô hình đơn giản không làm được.</p>
+<h4 id="3-ham-spiral_data-tao-ra-cai-gi">3. Hàm <code>spiral_data</code> tạo ra cái gì?<a class="headerlink" href="#3-ham-spiral_data-tao-ra-cai-gi" title="Permanent link">&para;</a></h4>
+<p>Khi bạn gọi <code>X, y = spiral_data(samples=100, classes=3)</code>, hàm này sẽ tính toán và trả về hai thứ:</p>
 <ol>
 <li>
-<p><strong>Phân tích cuối cùng:</strong></p>
-<p>Hãy nhìn vào biểu thức trong ngoặc: <span class="arithmatex">\((y_k + \sum_{j \neq k} y_j)\)</span>. 
-Đây chính là tổng của tất cả các phần tử trong vector ground-truth <span class="arithmatex">\(y\)</span>, tức là <span class="arithmatex">\(\sum_j y_j\)</span>.
-Vì <span class="arithmatex">\(y\)</span> là vector one-hot, nó chỉ chứa một số 1 và còn lại là 0. Do đó, tổng của tất cả các phần tử của nó luôn luôn bằng 1.</p>
-<div class="arithmatex">\[
-\sum_j y_j = 1
-\]</div>
+<p><strong><code>X</code> (Các đặc trưng - The Features):</strong></p>
+<ul>
+<li>Là một mảng NumPy chứa tọa độ <code>[x, y]</code> của tất cả các điểm.</li>
+<li>Với <code>samples=100</code> và <code>classes=3</code>, nó sẽ tạo ra <code>100 * 3 = 300</code> điểm.</li>
+<li>Vì vậy, <code>X</code> sẽ có kích thước là <code>(300, 2)</code>.</li>
+<li>Trong câu chuyện "giám khảo hoa quả" của chúng ta, <code>X</code> tương đương với một danh sách 300 quả, mỗi quả có 2 đặc điểm là "Độ đỏ" và "Đ Độ tròn".</li>
+</ul>
 </li>
 <li>
-<p><strong>Kết quả cuối cùng:</strong>
-    Thay 1 vào biểu thức trên, ta có:</p>
+<p><strong><code>y</code> (Các nhãn - The Labels):</strong></p>
+<ul>
+<li>Là một mảng NumPy chứa nhãn lớp cho mỗi điểm tương ứng trong <code>X</code>.</li>
+<li>Nó sẽ chứa 300 con số, bao gồm 100 số <code>0</code>, 100 số <code>1</code>, và 100 số <code>2</code>.</li>
+<li><code>y[i]</code> là nhãn (đáp án đúng) cho điểm <code>X[i]</code>.</li>
+<li>Trong câu chuyện của chúng ta, <code>y</code> là danh sách đáp án đúng: quả nào là "Táo" (lớp 0), quả nào là "Cam" (lớp 1), quả nào là "Chuối" (lớp 2).</li>
+</ul>
 </li>
 </ol>
-<div class="arithmatex">\[
-    \begin{align*}
-    \frac{\partial L}{\partial z_k} &amp;= -y_k + \hat{y}_k \cdot (1) \\
-    &amp;= \hat{y}_k - y_k
-    \end{align*}
-\]</div>
-<p>Như vậy, chúng ta đã chứng minh một cách đầy đủ và chi tiết rằng gradient kết hợp là <code>Dự đoán - Sự thật</code>.</p>
+<p>Vì vậy, <code>spiral_data</code> không chỉ là một bộ dữ liệu, mà nó là một <strong>bài toán phân loại phi tuyến kinh điển</strong> được đóng gói sẵn để bạn có thể nhanh chóng kiểm tra mô hình của mình.</p>
 
 
 
@@ -2204,7 +2424,7 @@ Vì <span class="arithmatex">\(y\)</span> là vector one-hot, nó chỉ chứa m
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../09-diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Diagram">
+          <a href="../02-first-layer-diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: First Forward Diagram">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2214,11 +2434,27 @@ Vì <span class="arithmatex">\(y\)</span> là vector one-hot, nó chỉ chứa m
                 Previous
               </span>
               <div class="md-ellipsis">
-                Diagram
+                First Forward Diagram
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../../Ch4pt3r.04_Activation_Funcction/04-01.transformation-relu/" class="md-footer__link md-footer__link--next" aria-label="Next: Transformation &amp; ReLU activation function">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Transformation & ReLU activation function
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

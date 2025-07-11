@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.04_Activation_Function/04-01-transformation-relu/">
       
       
-        <link rel="prev" href="../../Ch4pt3r.07_Derivative/07-derivative/">
+        <link rel="prev" href="../../Ch4pt3r.02.03_Coding_First_Neural/02-first-layer/">
       
       
-        <link rel="next" href="../../Ch4pt3r.09_Backpropagation/09-diagram/">
+        <link rel="next" href="../04-02-transformation-relu-diagram/">
       
       
       <link rel="icon" href="../../../assets/logo.svg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Gradients, Partial Derivatives and the Chain Rule - Neural Network From Scratch Documentation</title>
+        <title>Transformation & ReLU activation function - Neural Network From Scratch Documentation</title>
       
     
     
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#abstract-example" class="md-skip">
+        <a href="#part-1-the-relu-activation-function" class="md-skip">
           Skip to content
         </a>
       
@@ -150,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gradients, Partial Derivatives and the Chain Rule
+              Transformation & ReLU activation function
             
           </span>
         </div>
@@ -567,6 +567,8 @@
                 
   
   
+    
+  
   
   
     
@@ -577,11 +579,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -597,7 +599,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.04 Activation Function
@@ -608,10 +610,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Function/04-01-transformation-relu/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Transformation & ReLU activation function
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -622,6 +644,222 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-the-relu-activation-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: The ReLU Activation Function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: The ReLU Activation Function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-big-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Big Idea
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-basic-building-block-a-single-relu-neuron" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Basic Building Block - A Single ReLU Neuron
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Basic Building Block - A Single ReLU Neuron">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-role-of-weight-and-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Role of Weight and Bias:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-magic-begins-combining-two-neurons" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Magic Begins - Combining Two Neurons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-sine-wave-assembling-many-bricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building a Sine Wave - Assembling Many "Bricks"
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-a-deep-dive-into-the-transformation-of-a-single-data-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: A Deep Dive into the Transformation of a Single Data Point.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: A Deep Dive into the Transformation of a Single Data Point.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Initialization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Initialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#weight-matrix-w-selfweights-size-2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weight Matrix W (self.weights) - Size (2, 3)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bias-vector-b-selfbiases-size-1-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bias Vector b (self.biases) - Size (1, 3)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-transformation-process-dense1forwardo" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The Transformation Process - dense1.forward(O)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. The Transformation Process - dense1.forward(O)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-21-dot-product-v-w" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2.1: Dot Product v · W
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-22-add-bias-vector-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2.2: Add Bias Vector + b
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-relu-activation-activation1forwardv" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. ReLU Activation - activation1.forward(v')
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstraction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Abstraction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpretation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -634,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Function/04-02-transformation-relu-diagram/" class="md-nav__link">
+      <a href="../04-02-transformation-relu-diagram/" class="md-nav__link">
         
   
   
@@ -657,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Function/04-03-softmax/" class="md-nav__link">
+      <a href="../04-03-softmax/" class="md-nav__link">
         
   
   
@@ -680,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_Activation_Function/04-04-softmax-diagram/" class="md-nav__link">
+      <a href="../04-04-softmax-diagram/" class="md-nav__link">
         
   
   
@@ -970,8 +1208,6 @@
                 
   
   
-    
-  
   
   
     
@@ -982,11 +1218,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -1002,7 +1238,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.08 Gradients Partial Derivative Chain Rule
@@ -1013,30 +1249,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Gradients, Partial Derivatives and the Chain Rule
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/" class="md-nav__link">
         
   
   
@@ -1047,51 +1263,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#abstract-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Abstract Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#analyzing-each-component-each-computational-node" class="md-nav__link">
-    <span class="md-ellipsis">
-      Analyzing Each Component (Each Computational Node)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#putting-it-all-together-a-chain-of-responsibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      Putting It All Together: A Chain of Responsibility
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2011,154 +2182,324 @@
   
 
 
-  <h1>Gradients, Partial Derivatives and the Chain Rule</h1>
+  <h1>Transformation & ReLU activation function</h1>
 
-<h4 id="abstract-example"><strong>Abstract Example</strong><a class="headerlink" href="#abstract-example" title="Permanent link">&para;</a></h4>
-<p>We will combine the intuitive story of "responsibility" with diagrams and specific explanations for each node in a neural network. This will create a solid bridge between abstract theory and practical computation.</p>
-<h5 id="story-summary"><strong>Story Summary</strong><a class="headerlink" href="#story-summary" title="Permanent link">&para;</a></h5>
+<h2 id="part-1-the-relu-activation-function">Part 1: The ReLU Activation Function<a class="headerlink" href="#part-1-the-relu-activation-function" title="Permanent link">&para;</a></h2>
+<p>This is one of the best illustrations of the power of the ReLU activation function, a fundamental concept in modern neural networks.</p>
+<p>The main goal of this chapter is to answer the question: <strong>"How can a simple function like ReLU, which is just a straight line 'broken' at point 0, help a neural network learn incredibly complex non-linear relationships (like a sine wave)?"</strong></p>
+<p>Let's dissect it step by step.</p>
+<h3 id="the-big-idea">The Big Idea<a class="headerlink" href="#the-big-idea" title="Permanent link">&para;</a></h3>
+<p>Imagine you only have straight LEGO bricks. How would you use them to build a curved wall?</p>
+<p>The answer is: You can't create a smooth curve, but you can <strong>approximate</strong> it by piecing together many short, straight bricks. The more short bricks you use, the more curved and smooth your wall will look.</p>
+<p>In a neural network:</p>
 <ul>
-<li><strong>Neural Network</strong>: An archer with hundreds of technical "knobs" (weights, biases).</li>
-<li><strong>Objective</strong>: To hit the bullseye (reduce Error/Loss to 0).</li>
-<li><strong>Backpropagation</strong>: The process of "Distributing Responsibility," figuring out how much responsibility each knob bears for the final error.</li>
-<li><strong>Gradient</strong>: The instruction sheet that compiles all "responsibilities." We will adjust the knobs in the <strong>opposite</strong> direction of this instruction sheet.</li>
+<li>The <strong>ReLU function</strong> is our <strong>straight brick</strong>.</li>
+<li><strong>Each neuron (or pair of neurons)</strong> is a builder, tasked with placing one brick.</li>
+<li>The <strong>neural network</strong> is the entire construction, assembling these bricks to create the final complex shape (like a sine curve).</li>
 </ul>
-<p>Now, let's act as engineers, open the hood of the "archer machine," and examine each part. We will see how "responsibility" (the gradient) flows backward through each type of component.</p>
-<p><strong>Conventions</strong>:</p>
-<ul>
-<li><code>Forward</code>: Data flows from left to right.</li>
-<li><code>Backward</code>: "Responsibility" (Gradient) flows backward from right to left.</li>
-<li><code>Input Responsibility</code>: The gradient that a node receives from the next layer.</li>
-<li><code>Output Responsibility</code>: The gradient that a node calculates and sends to the previous layer (against the data flow).</li>
-</ul>
+<p>Now let's dive into the details of how the neuron "builder" works.</p>
 <hr />
-<h4 id="analyzing-each-component-each-computational-node"><strong>Analyzing Each Component (Each Computational Node)</strong><a class="headerlink" href="#analyzing-each-component-each-computational-node" title="Permanent link">&para;</a></h4>
-<h5 id="1-the-addition-component-the-synergy-unit"><strong>1. The ADDITION Component (The Synergy Unit)</strong><a class="headerlink" href="#1-the-addition-component-the-synergy-unit" title="Permanent link">&para;</a></h5>
-<p>This is the simplest component. It takes two or more input values and adds them together.</p>
+<h3 id="the-basic-building-block-a-single-relu-neuron">The Basic Building Block - A Single ReLU Neuron<a class="headerlink" href="#the-basic-building-block-a-single-relu-neuron" title="Permanent link">&para;</a></h3>
+<p>A neuron receives an input, multiplies it by a weight, adds a bias, and then passes it through the ReLU activation function.</p>
+<p><strong>Formula:</strong> <code>output = ReLU(weight * input + bias)</code>
+<strong>ReLU function:</strong> <code>ReLU(x) = max(0, x)</code>. This means:
+*   If <code>x &lt;= 0</code>, the result is <code>0</code>.
+*   If <code>x &gt; 0</code>, the result is <code>x</code>.</p>
+<p>It's like a gate:
+*   Calculated input is negative -&gt; Gate closes -&gt; Output = 0.
+*   Calculated input is positive -&gt; Gate opens -&gt; Output = the calculated value.</p>
+<h4 id="the-role-of-weight-and-bias">The Role of Weight and Bias:<a class="headerlink" href="#the-role-of-weight-and-bias" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>Weight: Changes the slope.</strong></p>
 <ul>
-<li><strong>Example in a Neural Network</strong>: <code>Sum = (Input * Weight) + Bias</code>. The addition with the Bias is an addition node.</li>
+<li>A large weight -&gt; The line slopes up faster.</li>
+<li>A small weight -&gt; The line slopes up more gently.</li>
+<li>A negative weight -&gt; The line is flipped, sloping down.</li>
 </ul>
-<h6 id="responsibility-distribution-diagram"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram" title="Permanent link">&para;</a></h6>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Sum&#39; = 10
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input * Weight]-------&gt;|                             |
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |        ADDITION NODE (+)    |--&gt;[Sum]--
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>    --[Bias]------------&gt;|                             |
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>           +-----------------------------------------+
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>        ^                                   ^
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>        |                                   |
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>Responsibility for &#39;Input*Weight&#39;= 10      Responsibility for &#39;Bias&#39;= 10
+</li>
+<li>
+<p><strong>Bias: Shifts the "break" point.</strong></p>
+<ul>
+<li>The bias determines at which input value the neuron starts to "activate" (i.e., produce an output &gt; 0). It shifts the graph left or right.</li>
+</ul>
+</li>
+</ol>
+<p><strong>ASCII Illustration:</strong></p>
+<p>Let's look at the graph of a ReLU neuron. The horizontal axis is <code>input</code>, the vertical axis is <code>output</code>.</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>        Basic (w=1, b=0)          Increase Weight (w=2)           Add Bias (w=1, b=-1)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>           /                          //                              /
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>          /                          / /                             /
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>         /                          / /                             /
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a>        +------- (input)          +------- (input)                +------- (input)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a>                                                                 |
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a>                                                               (break point shifted right)
 </span></code></pre></div>
-<ul>
-<li>
-<p><strong>Forward</strong>: Takes the value of <code>(Input * Weight)</code> and adds it to the value of <code>Bias</code> to get the <code>Sum</code>.</p>
-</li>
-<li>
-<p><strong>Backward (Distributing Responsibility)</strong>:</p>
-<ul>
-<li><strong>Principle</strong>: In addition, all inputs contribute <strong>equally</strong> and directly to the result. The influence of each input on the output is 1-to-1 (increasing an input by 1 unit increases the output by 1 unit).</li>
-<li><strong>Action</strong>: The addition node receives "responsibility" from the next layer and <strong>copies it exactly</strong> to all of its input branches.</li>
-<li><strong>Derivative at this node</strong>: The derivative of <code>Sum</code> with respect to <code>Bias</code> is 1. The derivative of <code>Sum</code> with respect to <code>(Input * Weight)</code> is also 1. Therefore, the responsibility is multiplied by 1, meaning it remains unchanged.</li>
-</ul>
-</li>
-</ul>
-<h5 id="2-the-multiplication-component-the-leverage-unit"><strong>2. The MULTIPLICATION Component (The Leverage Unit)</strong><a class="headerlink" href="#2-the-multiplication-component-the-leverage-unit" title="Permanent link">&para;</a></h5>
-<p>This component takes two values and multiplies them together.</p>
-<ul>
-<li><strong>Example in a Neural Network</strong>: <code>Result = Input * Weight</code>. This is the core operation in a layer.</li>
-</ul>
-<h6 id="responsibility-distribution-diagram_1"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram_1" title="Permanent link">&para;</a></h6>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Result&#39; = 10
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a>  --[Input = 3]----------&gt;|                             |
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |   MULTIPLICATION NODE (*)   |--&gt;[Result = 15]--
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a>--[Weight = 5]---------&gt;|                             |
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a>           +-----------------------------------------+
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>        ^                                   ^
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a>        |                                   |
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a>Responsibility for &#39;Input&#39;           Responsibility for &#39;Weight&#39;
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a> = 10 * 5 = 50                        = 10 * 3 = 30
-</span></code></pre></div>
-<ul>
-<li>
-<p><strong>Forward</strong>: Takes the <code>Input</code> (let's assume its value is 3) and multiplies it by the <code>Weight</code> (let's assume its value is 5) to get the <code>Result</code> (15).</p>
-</li>
-<li>
-<p><strong>Backward (Distributing Responsibility)</strong>:</p>
-<ul>
-<li><strong>Principle</strong>: In multiplication, the influence of one input on the result depends on the <strong>value of the other input</strong>. This is the leverage effect.</li>
-<li><strong>Action</strong>: To calculate the responsibility for one branch, the multiplication node takes the "responsibility" from the next layer and multiplies it by the <strong>value of the other branch</strong> (the value that was stored from the Forward pass).</li>
-<li><strong>Derivative at this node</strong>: The derivative of <code>Result</code> with respect to <code>Input</code> is the value of the <code>Weight</code>. The derivative of <code>Result</code> with respect to <code>Weight</code> is the value of the <code>Input</code>.</li>
-</ul>
-</li>
-</ul>
-<h5 id="3-the-relu-component-the-gatekeeper"><strong>3. The ReLU Component (The Gatekeeper)</strong><a class="headerlink" href="#3-the-relu-component-the-gatekeeper" title="Permanent link">&para;</a></h5>
-<p>This component is very special. It only has one input. If the input is a positive number, it lets it pass through. If the input is a negative number, it blocks it and returns 0. The official name is <code>ReLU(x) = max(0, x)</code>.</p>
-<ul>
-<li><strong>Example in a Neural Network</strong>: This is a popular activation function that helps the network learn complex relationships.</li>
-</ul>
-<h6 id="responsibility-distribution-diagram_2"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram_2" title="Permanent link">&para;</a></h6>
-<p><strong>Case 1: Positive Input (Gate is open)</strong></p>
-<p><div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Output&#39; = 10
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input = 3]-----------&gt;|                             |
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |       ReLU NODE (Open)      |--&gt;[Output = 3]--
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>           +-----------------------------------------+
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>                                ^
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>                                |
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>                   Responsibility for &#39;Input&#39; = 10
-</span></code></pre></div>
-*   <strong>Case 2: Negative Input (Gate is closed)</strong></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Output&#39; = 10
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input = -2]----------&gt;|                             |
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |      ReLU NODE (Closed)     |--&gt;[Output = 0]--
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a>           +-----------------------------------------+
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a>                                ^
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a>                                |
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a>                   Responsibility for &#39;Input&#39; = 0
-</span></code></pre></div>
-<ul>
-<li>
-<p><strong>Forward</strong>: Checks the input. If positive, it remains unchanged. If negative, it becomes 0.</p>
-</li>
-<li>
-<p><strong>Backward (Distributing Responsibility)</strong>:</p>
-<ul>
-<li><strong>Principle</strong>: ReLU acts as a gatekeeper for the flow of "responsibility."</li>
-<li><strong>Action</strong>:<ul>
-<li>If during the forward pass, the input was positive (the gate was open), then during the backward pass, the "responsibility" is allowed to pass through unchanged.</li>
-<li>If during the forward pass, the input was negative (the gate was closed), then during the backward pass, the "responsibility" is completely blocked (becomes 0). This component did not contribute to the final positive result, so it bears no responsibility.</li>
-</ul>
-</li>
-<li><strong>Derivative at this node</strong>: The derivative of <code>ReLU(x)</code> is 1 if <code>x &gt; 0</code>, and 0 if <code>x &lt; 0</code>. Therefore, the "responsibility" is multiplied by 1 (unchanged) or 0 (annihilated).</li>
-</ul>
-</li>
-</ul>
+<p><strong>In summary:</strong> With one neuron, we can create a "ramp" that starts at an arbitrary point and has an arbitrary slope. But it's still just a straight line.</p>
 <hr />
-<h4 id="putting-it-all-together-a-chain-of-responsibility"><strong>Putting It All Together: A Chain of Responsibility</strong><a class="headerlink" href="#putting-it-all-together-a-chain-of-responsibility" title="Permanent link">&para;</a></h4>
-<p>Now, let's see how these components work together in a simple neuron:</p>
-<p><code>Input * Weight --&gt; [Multiplication Node] --&gt; Intermediate Sum + Bias --&gt; [Addition Node] --&gt; Final Result</code></p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a>Final responsibility (from the next layer)
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a>      |
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a>      v
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a> [Addition Node] &lt;--- Responsibility is copied to Bias and &#39;Intermediate Sum&#39;
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a>      |
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a>      v
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a> [Multiplication Node] &lt;--- Responsibility is multiplied by the value of the other branch
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a>      |
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a>      v
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a>Responsibility of the Weight and Input
+<h3 id="the-magic-begins-combining-two-neurons">The Magic Begins - Combining Two Neurons<a class="headerlink" href="#the-magic-begins-combining-two-neurons" title="Permanent link">&para;</a></h3>
+<p>This is the most crucial and magical part. The book illustrates how by using a pair of neurons (one in the first hidden layer, one in the second), we can create something called an <strong>"area of effect."</strong></p>
+<p>Imagine this:</p>
+<ol>
+<li>
+<p><strong>Neuron 1 (The "Activator" Neuron):</strong> Creates an upward-sloping line.</p>
+<ul>
+<li>Example: <code>y1 = ReLU(1.0 * x - 0.2)</code></li>
+<li>It will produce an upward slope, starting from <code>x = 0.2</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Neuron 2 (The "Deactivator" Neuron):</strong> Creates a downward-sloping line.</p>
+<ul>
+<li>Example: <code>y2 = ReLU(-1.0 * x + 0.8)</code></li>
+<li>It will produce a downward slope, starting from <code>x = 0.8</code>.</li>
+</ul>
+</li>
+</ol>
+<p>When you <strong>add the results</strong> of these two neurons together (which is what happens in the next layer), something interesting occurs:</p>
+<ul>
+<li><strong>When x &lt; 0.2:</strong> Both neurons output 0. The sum is 0.</li>
+<li><strong>When 0.2 &lt; x &lt; 0.8:</strong> Neuron 1 is active (sloping up), Neuron 2 is still 0. The sum is an upward-sloping line.</li>
+<li><strong>When x &gt; 0.8:</strong> Both neurons are active. The upward slope of Neuron 1 is <strong>cancelled out</strong> by the downward slope of Neuron 2. The sum is a horizontal line.</li>
+</ul>
+<p><strong>The result is a "tent" or "hat" shape!</strong></p>
+<p><strong>ASCII Illustration:</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>   Output of Neuron 1         +    Output of Neuron 2         =       Final Result
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>  (slope up from x=0.2)            (slope down from x=0.8)             (a tent shape)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>            /                                 |                               /\
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>           /                                  |                              /  \
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>          /                                   |                             /    \
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a>---------+---------- (input)    --------------+---------- (input)   ---------+----+------ (input)
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos="7 "></span></a>       0.2                                  0.8                             0.2  0.8
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos="8 "></span></a>                                              \
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos="9 "></span></a>                                               \
 </span></code></pre></div>
-<p>This "Responsibility Distribution" process flows backward through the entire network, through hundreds, thousands of components like these. It's like a reverse investigation, starting from the "crime scene" (the Loss Function) and following the traces back to find the "responsibility" of each "suspect" (each weight and bias).</p>
-<p>When the investigation is complete, each weight and bias will have received its own "responsibility" number. That is the Gradient. Based on that, the Coach (you) will know how to adjust each knob to make the next shot more accurate.</p>
+<p><strong>This is our triangular LEGO brick!</strong> By adjusting the weights and biases of this pair of neurons, we can control:
+*   The <strong>position</strong> of the tent (shift left/right).
+*   The <strong>height</strong> of the tent.
+*   The <strong>slope</strong> of the tent's sides.</p>
+<hr />
+<h3 id="building-a-sine-wave-assembling-many-bricks">Building a Sine Wave - Assembling Many "Bricks"<a class="headerlink" href="#building-a-sine-wave-assembling-many-bricks" title="Permanent link">&para;</a></h3>
+<p>Now that you have these "tent-shaped bricks," approximating a sine curve becomes simple:</p>
+<p><strong>You just use many pairs of neurons, with each pair creating one "tent" to simulate a segment of the sine wave.</strong></p>
+<ul>
+<li><strong>Neuron pair 1:</strong> Creates the first upward slope of the sine wave.</li>
+<li><strong>Neuron pair 2:</strong> Creates the next downward slope.</li>
+<li><strong>Neuron pair 3:</strong> Creates the upward slope of the negative part.</li>
+<li>... and so on.</li>
+</ul>
+<p>The "hand-tuning" process in the book (from Fig 4.20 to 4.33) is just to demonstrate to you:
+*   "Ah, if I adjust this <code>weight</code>, this slope gets steeper."
+*   "If I adjust that <code>bias</code>, this tent shifts to the right."
+*   "If I use a negative <code>weight</code> on the output, the tent gets flipped upside down (creating the trough of the sine wave)."</p>
+<p><strong>Abstract ASCII Illustration:</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a>   Target Sine Wave:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>       __/ \__
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>      /     \
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>     /       \
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>            / \
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>    _______/   \______
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>   Neural Network approximates by adding &quot;tents&quot;:
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>     Tent 1      Tent 2 (inverted)      Tent 3...
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a>       /\               _                /\
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a>      /  \             / \              /  \
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a>     /    \           /   \            /    \
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><a href="#__codelineno-2-14"><span class="linenos" data-linenos="14 "></span></a>    -------  +      \/     +  ...   =   Result approximates a sine wave
+</span></code></pre></div>
+<hr />
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>The Power of ReLU:</strong> ReLU itself is very simple, but when combined in a multi-layer network, its units are capable of creating incredibly complex piecewise linear functions. These functions can approximate any continuous function (this is the idea behind the Universal Approximation Theorem).</p>
+</li>
+<li>
+<p><strong>Why Do We Need Hidden Layers?</strong> The first hidden layer creates the "ramps." The second hidden layer combines those "ramps" to form "tents." Subsequent layers can combine these "tents" into even more complex shapes.</p>
+</li>
+<li>
+<p><strong>From "Hand-Tuning" to "Self-Learning":</strong> Manually tuning the parameters in the book is tedious and for illustrative purposes only. In reality, the process of <strong>training</strong> a neural network is the process of the computer <strong>automatically</strong> finding the best <code>weight</code> and <code>bias</code> values for all neurons, so that the network's output matches the target data as closely as possible. An optimizer like Gradient Descent is the "chief architect" that does this job.</p>
+</li>
+<li>
+<p><strong>More Neurons = Better:</strong> By increasing the number of neurons to, for example, 64, the network has more "bricks" to build with. The result is an approximated curve that looks much smoother and more accurate.</p>
+</li>
+</ol>
+<blockquote>
+<p><mark><strong><em>ReLU, despite its simplicity, is the foundation for the extraordinary power of modern neural networks.</em></strong></mark></p>
+</blockquote>
+<hr />
+<h2 id="part-2-a-deep-dive-into-the-transformation-of-a-single-data-point">Part 2: A Deep Dive into the Transformation of a Single Data Point.<a class="headerlink" href="#part-2-a-deep-dive-into-the-transformation-of-a-single-data-point" title="Permanent link">&para;</a></h2>
+<p>Let's assume we have:</p>
+<ul>
+<li>A single input data point <code>O</code> with coordinates <code>(0.5, 1.0)</code>.</li>
+<li>A <code>Layer_Dense</code> layer with 2 inputs and 3 neurons.</li>
+</ul>
+<h3 id="1-initialization">1. Initialization<a class="headerlink" href="#1-initialization" title="Permanent link">&para;</a></h3>
+<p>The <code>dense1</code> layer is initialized with <code>weights</code> and <code>biases</code>. Let's assume that after random initialization, we have these specific values:</p>
+<h4 id="weight-matrix-w-selfweights-size-2-3">Weight Matrix <code>W</code> (self.weights) - Size (2, 3)<a class="headerlink" href="#weight-matrix-w-selfweights-size-2-3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Row 0:</strong> Weights for the first input (<code>i1 = 0.5</code>).</li>
+<li><strong>Row 1:</strong> Weights for the second input (<code>i2 = 1.0</code>).</li>
+<li><strong>Cols 0, 1, 2:</strong> Correspond to Neuron 0, 1, and 2.</li>
+</ul>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a>          Neuron 0   Neuron 1   Neuron 2
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a>         +----------+----------+----------+
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a>Input 0  |   0.2    |   0.8    |  -0.5    |
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a>(i1=0.5) +----------+----------+----------+
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos="5 "></span></a>Input 1  |  -0.9    |   0.2    |   0.4    |
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos="6 "></span></a>(i2=1.0) +----------+----------+----------+
+</span></code></pre></div>
+<h4 id="bias-vector-b-selfbiases-size-1-3">Bias Vector <code>b</code> (self.biases) - Size (1, 3)<a class="headerlink" href="#bias-vector-b-selfbiases-size-1-3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Each value corresponds to the bias of one neuron.</li>
+</ul>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>         +----------+----------+----------+
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a>         |   2.0    |   3.0    |   0.5    |
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a>         +----------+----------+----------+
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a>           Neuron 0   Neuron 1   Neuron 2
+</span></code></pre></div>
+<h3 id="2-the-transformation-process-dense1forwardo">2. The Transformation Process - <code>dense1.forward(O)</code><a class="headerlink" href="#2-the-transformation-process-dense1forwardo" title="Permanent link">&para;</a></h3>
+<p>We perform the operation: <code>v' = v · W + b</code></p>
+<h4 id="step-21-dot-product-v-w">Step 2.1: Dot Product <code>v · W</code><a class="headerlink" href="#step-21-dot-product-v-w" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>v</code> is the input vector: <code>[0.5, 1.0]</code> (Size 1x2)</li>
+<li><code>W</code> is the weight matrix (Size 2x3)</li>
+<li>The result will be a vector of size 1x3.</li>
+</ul>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos=" 1 "></span></a>                                       +-------+-------+-------+
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos=" 2 "></span></a>                                       |  0.2  |  0.8  | -0.5  |
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos=" 3 "></span></a>                                       | -0.9  |  0.2  |  0.4  |
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><a href="#__codelineno-5-4"><span class="linenos" data-linenos=" 4 "></span></a>                                       +-------+-------+-------+
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><a href="#__codelineno-5-5"><span class="linenos" data-linenos=" 5 "></span></a>                                                 ^
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><a href="#__codelineno-5-6"><span class="linenos" data-linenos=" 6 "></span></a>                                                 |
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><a href="#__codelineno-5-7"><span class="linenos" data-linenos=" 7 "></span></a>                                                 · (Dot Product)
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><a href="#__codelineno-5-8"><span class="linenos" data-linenos=" 8 "></span></a>+-------+-------+
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><a href="#__codelineno-5-9"><span class="linenos" data-linenos=" 9 "></span></a>|  0.5  |  1.0  |
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><a href="#__codelineno-5-10"><span class="linenos" data-linenos="10 "></span></a>+-------+-------+
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a><a href="#__codelineno-5-11"><span class="linenos" data-linenos="11 "></span></a>      |
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><a href="#__codelineno-5-12"><span class="linenos" data-linenos="12 "></span></a>      +-------------------------------------------------------------+
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><a href="#__codelineno-5-13"><span class="linenos" data-linenos="13 "></span></a>      |                                                             |
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a><a href="#__codelineno-5-14"><span class="linenos" data-linenos="14 "></span></a>      v                                                             v
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a><a href="#__codelineno-5-15"><span class="linenos" data-linenos="15 "></span></a>    Calculation for Neuron 0:                                     Calculation for Neuron 1:
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a><a href="#__codelineno-5-16"><span class="linenos" data-linenos="16 "></span></a>    (0.5 * 0.2) + (1.0 * -0.9)                                    (0.5 * 0.8) + (1.0 * 0.2)
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><a href="#__codelineno-5-17"><span class="linenos" data-linenos="17 "></span></a>    = 0.1 - 0.9                                                   = 0.4 + 0.2
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><a href="#__codelineno-5-18"><span class="linenos" data-linenos="18 "></span></a>    = -0.8                                                        = 0.6
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a><a href="#__codelineno-5-19"><span class="linenos" data-linenos="19 "></span></a>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a><a href="#__codelineno-5-20"><span class="linenos" data-linenos="20 "></span></a>                                                                     Calculation for Neuron 2:
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a><a href="#__codelineno-5-21"><span class="linenos" data-linenos="21 "></span></a>                                                                     (0.5 * -0.5) + (1.0 * 0.4)
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a><a href="#__codelineno-5-22"><span class="linenos" data-linenos="22 "></span></a>                                                                     = -0.25 + 0.4
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a><a href="#__codelineno-5-23"><span class="linenos" data-linenos="23 "></span></a>                                                                     = 0.15
+</span></code></pre></div>
+<p>The result of the dot product is the vector <code>[-0.8, 0.6, 0.15]</code>.</p>
+<h4 id="step-22-add-bias-vector-b">Step 2.2: Add Bias Vector <code>+ b</code><a class="headerlink" href="#step-22-add-bias-vector-b" title="Permanent link">&para;</a></h4>
+<p>Now, we take the result from above and add the bias vector.</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos=" 1 "></span></a>      Result from v · W                 Bias Vector b                  Output Vector v&#39;
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos=" 2 "></span></a>+--------+-------+--------+     +     +-------+-------+-------+     =     +-------+-------+-------+
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos=" 3 "></span></a>|  -0.8  |  0.6  |  0.15  |           |  2.0  |  3.0  |  0.5  |           |  1.2  |  3.6  |  0.65 |
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos=" 4 "></span></a>+--------+-------+--------+           +-------+-------+-------+           +-------+-------+-------+
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><a href="#__codelineno-6-5"><span class="linenos" data-linenos=" 5 "></span></a>     |        |        |                 |        |        |                 |        |        |
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><a href="#__codelineno-6-6"><span class="linenos" data-linenos=" 6 "></span></a>     |        |        +-----------------|--------|--------|-----------------+        |
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><a href="#__codelineno-6-7"><span class="linenos" data-linenos=" 7 "></span></a>     |        +--------------------------|--------|--------+--------------------------+
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><a href="#__codelineno-6-8"><span class="linenos" data-linenos=" 8 "></span></a>     +-----------------------------------|--------+-----------------------------------+
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><a href="#__codelineno-6-9"><span class="linenos" data-linenos=" 9 "></span></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><a href="#__codelineno-6-10"><span class="linenos" data-linenos="10 "></span></a>     -0.8 + 2.0 = 1.2
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><a href="#__codelineno-6-11"><span class="linenos" data-linenos="11 "></span></a>           0.6 + 3.0 = 3.6
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><a href="#__codelineno-6-12"><span class="linenos" data-linenos="12 "></span></a>                 0.15 + 0.5 = 0.65
+</span></code></pre></div>
+<p><strong>Result:</strong> The vector <code>v'</code> (the output of <code>dense1</code>) is <code>[1.2, 3.6, 0.65]</code>.
+This is the coordinate of point <code>O</code> in the new 3-dimensional space after the linear transformation.</p>
+<h3 id="3-relu-activation-activation1forwardv">3. ReLU Activation - <code>activation1.forward(v')</code><a class="headerlink" href="#3-relu-activation-activation1forwardv" title="Permanent link">&para;</a></h3>
+<p>Now, we pass the vector <code>v'</code> through the ReLU function. This function operates <strong>element-wise</strong>.</p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>     Input vector v&#39; to ReLU             Action of ReLU              Final vector v&#39;&#39;
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><a href="#__codelineno-7-2"><span class="linenos" data-linenos="2 "></span></a>+-------+-------+-------+        max(0, x)       +-------+-------+-------+
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><a href="#__codelineno-7-3"><span class="linenos" data-linenos="3 "></span></a>|  1.2  |  3.6  |  0.65 |  ----------------&gt;     |  1.2  |  3.6  |  0.65 |
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><a href="#__codelineno-7-4"><span class="linenos" data-linenos="4 "></span></a>+-------+-------+-------+                        +-------+-------+-------+
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><a href="#__codelineno-7-5"><span class="linenos" data-linenos="5 "></span></a>     |        |        |
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><a href="#__codelineno-7-6"><span class="linenos" data-linenos="6 "></span></a>     |        |        +-----&gt; max(0, 0.65) = 0.65
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><a href="#__codelineno-7-7"><span class="linenos" data-linenos="7 "></span></a>     |        +--------------&gt; max(0, 3.6)  = 3.6
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><a href="#__codelineno-7-8"><span class="linenos" data-linenos="8 "></span></a>     +-----------------------&gt; max(0, 1.2)  = 1.2
+</span></code></pre></div>
+<p>In this example, because all components of <code>v'</code> are positive, the output of ReLU <code>v''</code> is identical to <code>v'</code>.</p>
+<p><strong>If <code>v'</code> were <code>[-0.8, 0.6, 0.15]</code> (before adding the bias), the result would be different:</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>     Input vector v&#39; to ReLU             Action of ReLU              Final vector v&#39;&#39;
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a>+--------+-------+--------+        max(0, x)       +-------+-------+--------+
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos="3 "></span></a>|  -0.8  |  0.6  |  0.15  |  ----------------&gt;     |  0.0  |  0.6  |  0.15  |
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos="4 "></span></a>+--------+-------+--------+                        +-------+-------+--------+
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos="5 "></span></a>     |        |        |
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><a href="#__codelineno-8-6"><span class="linenos" data-linenos="6 "></span></a>     |        |        +-----&gt; max(0, 0.15) = 0.15
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos="7 "></span></a>     |        +--------------&gt; max(0, 0.6)  = 0.6
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><a href="#__codelineno-8-8"><span class="linenos" data-linenos="8 "></span></a>     +-----------------------&gt; max(0, -0.8) = 0.0
+</span></code></pre></div>
+<p>This diagram describes the entire mathematical process from an input vector <code>v</code> to the final vector <code>v''</code> after passing through a dense layer and a ReLU activation layer.</p>
+<hr />
+<h2 id="abstraction">Abstraction<a class="headerlink" href="#abstraction" title="Permanent link">&para;</a></h2>
+<p><strong>How does each neuron contribute to creating the final "signature"?</strong></p>
+<h3 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>"Neuron 1 contributes a part"</strong> to creating the final signature.
+    This is like a musician in an orchestra. The violinist doesn't "carry" the symphony; they just play their violin part. The symphony (the signature) is the combination of all the musicians.
+    <strong>A more accurate phrasing:</strong> "Neuron 1 has its own set of <strong>criteria</strong> (its weights and bias)."</p>
+</li>
+<li>
+<p><strong>"transforms O(x,y) &rarr; O'(x,y,z)"</strong>: The entire layer (composed of all 3 neurons) collectively performs this transformation.</p>
+</li>
+</ol>
+<h3 id="interpretation">Interpretation<a class="headerlink" href="#interpretation" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Each Neuron is a "Feature Detector"</strong>:</p>
+<ul>
+<li><strong>Neuron 1</strong> is equipped with a set of criteria <code>(w1, b1)</code>. It measures how well the point <code>O(x,y)</code> fits these criteria and outputs a score <code>x'</code>.</li>
+<li><strong>Neuron 2</strong> is equipped with a set of criteria <code>(w2, b2)</code>. It measures how well the point <code>O(x,y)</code> fits these criteria and outputs a score <code>y'</code>.</li>
+<li><strong>Neuron 3</strong> is equipped with a set of criteria <code>(w3, b3)</code>. It measures how well the point <code>O(x,y)</code> fits these criteria and outputs a score <code>z'</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Creating the "Signature"</strong>:</p>
+<ul>
+<li>The <strong>"signature"</strong> of point <code>O</code> is not created by a single neuron. <strong>The "signature" is the resulting vector <code>O'(x', y', z')</code></strong>. It is the collection of scores that all the "detectors" have produced.</li>
+</ul>
+</li>
+<li>
+<p><strong>The Goal of Training</strong>:</p>
+<ul>
+<li>The training process will <strong>adjust the criteria <code>(w, b)</code> of each neuron</strong> such that:<ul>
+<li>All points <code>O</code> belonging to the "Blue" class, when passed through these 3 "detectors," will produce <code>O'</code> vectors (signatures) that lie close to each other in one region of space.</li>
+<li>All points <code>O</code> belonging to the "Red" class will produce signatures that lie close to each other in a <strong>different</strong> region of space.</li>
+<li>And similarly for the "Green" class.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>ASCII Diagram Reflecting This Idea</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos=" 1 "></span></a>  Input Point O(x,y)
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos=" 2 "></span></a>          |
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos=" 3 "></span></a>          |
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos=" 4 "></span></a>+---------+---------+
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><a href="#__codelineno-9-5"><span class="linenos" data-linenos=" 5 "></span></a>|                   |
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><a href="#__codelineno-9-6"><span class="linenos" data-linenos=" 6 "></span></a>v                   v
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><a href="#__codelineno-9-7"><span class="linenos" data-linenos=" 7 "></span></a>Detector 1          Detector 2          Detector 3
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><a href="#__codelineno-9-8"><span class="linenos" data-linenos=" 8 "></span></a>(Criteria w1, b1)   (Criteria w2, b2)   (Criteria w3, b3)
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a><a href="#__codelineno-9-9"><span class="linenos" data-linenos=" 9 "></span></a>|                   |                   |
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a><a href="#__codelineno-9-10"><span class="linenos" data-linenos="10 "></span></a>v                   v                   v
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><a href="#__codelineno-9-11"><span class="linenos" data-linenos="11 "></span></a>Score x&#39;            Score y&#39;            Score z&#39;
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><a href="#__codelineno-9-12"><span class="linenos" data-linenos="12 "></span></a>|                   |                   |
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a><a href="#__codelineno-9-13"><span class="linenos" data-linenos="13 "></span></a>+---------+---------+-------------------+
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a><a href="#__codelineno-9-14"><span class="linenos" data-linenos="14 "></span></a>          |
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15"></a><a href="#__codelineno-9-15"><span class="linenos" data-linenos="15 "></span></a>          v
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a><a href="#__codelineno-9-16"><span class="linenos" data-linenos="16 "></span></a>&quot;Signature&quot; = O&#39;(x&#39;, y&#39;, z&#39;)
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17"></a><a href="#__codelineno-9-17"><span class="linenos" data-linenos="17 "></span></a>(Resulting vector in a new space)
+</span></code></pre></div>
+<p><strong>Example:</strong> After training, it might be the case that:</p>
+<ul>
+<li><strong>Criterion 1</strong> (of Neuron 1) becomes "detect upward curves."</li>
+<li><strong>Criterion 2</strong> (of Neuron 2) becomes "detect proximity to the origin."</li>
+<li>A point <code>O</code> from the "Blue" class might be both curving up and close to the origin. Its signature would be <code>O'(HIGH, HIGH, ...)</code>.</li>
+<li>A point <code>O</code> from the "Red" class might be curving up but far from the origin. Its signature would be <code>O'(HIGH, LOW, ...)</code>.</li>
+</ul>
+<p><strong>Conclusion:</strong> Each neuron has a specific role. That role is to <strong>"measure a feature."</strong> The final "signature" of a data point is the <strong>combination of results</strong> from all of those feature measurements.</p>
 
 
 
@@ -2197,7 +2538,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Ch4pt3r.07_Derivative/07-derivative/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Derivative">
+          <a href="../../Ch4pt3r.02.03_Coding_First_Neural/02-first-layer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: First Layer">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2207,20 +2548,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Derivative
+                First Layer
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../Ch4pt3r.09_Backpropagation/09-diagram/" class="md-footer__link md-footer__link--next" aria-label="Next: Diagram">
+          <a href="../04-02-transformation-relu-diagram/" class="md-footer__link md-footer__link--next" aria-label="Next: ReLU Diagram">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Diagram
+                ReLU Diagram
               </div>
             </div>
             <div class="md-footer__button md-icon">
