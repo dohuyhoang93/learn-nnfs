@@ -10,28 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.07_Derivative/07-derivative/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/Explain%20Documents/Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/">
       
       
-        <link rel="prev" href="../../Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/">
+        <link rel="prev" href="../../Ch4pt3r.07_Derivative/07-derivative/">
       
       
-        <link rel="next" href="../../Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/">
+        <link rel="next" href="../../Ch4pt3r.09_Backpropagation/09-diagram/">
       
       
-      <link rel="icon" href="../../../../assets/logo.svg">
+      <link rel="icon" href="../../../assets/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Derivative - Neural Network From Scratch Documentation</title>
+        <title>Gradients, Partial Derivatives and the Chain Rule - Neural Network From Scratch Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -91,7 +91,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -116,6 +116,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#abstract-example" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -126,9 +131,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Neural Network From Scratch Documentation" class="md-header__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
+    <a href="../../.." title="Neural Network From Scratch Documentation" class="md-header__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
       
-  <img src="../../../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -145,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Derivative
+              Gradients, Partial Derivatives and the Chain Rule
             
           </span>
         </div>
@@ -192,13 +197,13 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../../" hreflang="en" class="md-select__link">
+            <a href="../../../" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../../../" hreflang="vi" class="md-select__link">
+            <a href="../../../vi/" hreflang="vi" class="md-select__link">
               Vietnamese
             </a>
           </li>
@@ -282,7 +287,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -299,6 +304,8 @@
   
   
   
+    
+  
   
     
     
@@ -306,11 +313,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-foward-diagram/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Ch4pt3r.01_First_Layer/01-first-foward-diagram/" class="md-tabs__link">
           
   
   
@@ -329,13 +338,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../vi/" class="md-tabs__link">
           
   
   
@@ -371,9 +378,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Neural Network From Scratch Documentation" class="md-nav__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
+    <a href="../../.." title="Neural Network From Scratch Documentation" class="md-nav__button md-logo" aria-label="Neural Network From Scratch Documentation" data-md-component="logo">
       
-  <img src="../../../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     Neural Network From Scratch Documentation
@@ -400,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -419,24 +426,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -449,7 +461,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Explain Documents
@@ -504,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-foward-diagram/" class="md-nav__link">
+      <a href="../../Ch4pt3r.01_First_Layer/01-first-foward-diagram/" class="md-nav__link">
         
   
   
@@ -527,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-layer/" class="md-nav__link">
+      <a href="../../Ch4pt3r.01_First_Layer/01-first-layer/" class="md-nav__link">
         
   
   
@@ -599,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu-diagram/" class="md-nav__link">
+      <a href="../../Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu-diagram/" class="md-nav__link">
         
   
   
@@ -622,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu/" class="md-nav__link">
+      <a href="../../Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu/" class="md-nav__link">
         
   
   
@@ -694,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax-diagram/" class="md-nav__link">
+      <a href="../../Ch4pt3r.03_Softmax/03-softmax-diagram/" class="md-nav__link">
         
   
   
@@ -717,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax/" class="md-nav__link">
+      <a href="../../Ch4pt3r.03_Softmax/03-softmax/" class="md-nav__link">
         
   
   
@@ -789,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-diagram/" class="md-nav__link">
+      <a href="../../Ch4pt3r.04_L0SS/04-loss-diagram/" class="md-nav__link">
         
   
   
@@ -812,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
+      <a href="../../Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
         
   
   
@@ -884,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization-code/" class="md-nav__link">
+      <a href="../../Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization-code/" class="md-nav__link">
         
   
   
@@ -907,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/" class="md-nav__link">
+      <a href="../../Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/" class="md-nav__link">
         
   
   
@@ -979,7 +991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.07_Derivative/07-derivative/" class="md-nav__link">
+      <a href="../../Ch4pt3r.07_Derivative/07-derivative/" class="md-nav__link">
         
   
   
@@ -1007,6 +1019,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1017,11 +1031,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
         
           
           <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
@@ -1037,7 +1051,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.08 Gradients Partial Derivative Chain Rule
@@ -1048,10 +1062,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Gradients, Partial Derivatives and the Chain Rule
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1062,6 +1096,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyzing-each-component-each-computational-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyzing Each Component (Each Computational Node)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-a-chain-of-responsibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: A Chain of Responsibility
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1123,7 +1202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.09_Backpropagation/09-diagram/" class="md-nav__link">
+      <a href="../../Ch4pt3r.09_Backpropagation/09-diagram/" class="md-nav__link">
         
   
   
@@ -1146,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Explain%20Documents/Ch4pt3r.09_Backpropagation/09-math/" class="md-nav__link">
+      <a href="../../Ch4pt3r.09_Backpropagation/09-math/" class="md-nav__link">
         
   
   
@@ -1181,29 +1260,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -1216,7 +1290,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Vi
@@ -1230,7 +1304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../../../vi/" class="md-nav__link">
         
   
   
@@ -1250,8 +1324,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1262,11 +1334,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -1282,7 +1354,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Explain Documents
@@ -1337,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.01_First_Layer/01-first-forward-diagram/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-forward-diagram/" class="md-nav__link">
         
   
   
@@ -1360,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.01_First_Layer/01-first-layer/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.01_First_Layer/01-first-layer/" class="md-nav__link">
         
   
   
@@ -1432,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu-diagram/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu-diagram/" class="md-nav__link">
         
   
   
@@ -1455,7 +1527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.02_Transformation%26ReLU/02-transformation-relu/" class="md-nav__link">
         
   
   
@@ -1527,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.03_Softmax/03-softmax-diagram/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax-diagram/" class="md-nav__link">
         
   
   
@@ -1550,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.03_Softmax/03-softmax/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.03_Softmax/03-softmax/" class="md-nav__link">
         
   
   
@@ -1622,7 +1694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_L0SS/04-loss-diagram/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss-diagram/" class="md-nav__link">
         
   
   
@@ -1645,7 +1717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.04_L0SS/04-loss/" class="md-nav__link">
         
   
   
@@ -1717,7 +1789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization-code/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization-code/" class="md-nav__link">
         
   
   
@@ -1740,7 +1812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/" class="md-nav__link">
         
   
   
@@ -1768,8 +1840,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1780,11 +1850,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_6" >
         
           
           <label class="md-nav__link" for="__nav_3_2_6" id="__nav_3_2_6_label" tabindex="0">
@@ -1800,7 +1870,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2_6">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.07 Derivative
@@ -1811,17 +1881,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.07_Derivative/07-derivative/" class="md-nav__link">
         
   
   
@@ -1832,7 +1895,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1894,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/" class="md-nav__link">
         
   
   
@@ -1966,7 +2028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.09_Backpropagation/09-diagram/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.09_Backpropagation/09-diagram/" class="md-nav__link">
         
   
   
@@ -1989,7 +2051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.09_Backpropagation/09-math/" class="md-nav__link">
+      <a href="../../../vi/Explain%20Documents/Ch4pt3r.09_Backpropagation/09-math/" class="md-nav__link">
         
   
   
@@ -2047,165 +2109,154 @@
   
 
 
-  <h1>Derivative</h1>
+  <h1>Gradients, Partial Derivatives and the Chain Rule</h1>
 
-<p>Chương 7 là một trong những chương bản lề quan trọng nhất của cuốn sách. Nó đánh dấu sự chuyển đổi từ phương pháp "thử và sai" (random search) sang một phương pháp tối ưu hóa có hệ thống, thông minh và hiệu quả dựa trên giải tích (calculus). Đây là nền móng để hiểu được thuật toán <strong>Lan truyền ngược (Backpropagation)</strong>.</p>
-<h5 id="1-boi-canh-tai-sao-can-en-ao-ham"><strong>1. Bối Cảnh - Tại Sao Cần Đến Đạo Hàm?</strong><a class="headerlink" href="#1-boi-canh-tai-sao-can-en-ao-ham" title="Permanent link">&para;</a></h5>
+<h4 id="abstract-example"><strong>Abstract Example</strong><a class="headerlink" href="#abstract-example" title="Permanent link">&para;</a></h4>
+<p>We will combine the intuitive story of "responsibility" with diagrams and specific explanations for each node in a neural network. This will create a solid bridge between abstract theory and practical computation.</p>
+<h5 id="story-summary"><strong>Story Summary</strong><a class="headerlink" href="#story-summary" title="Permanent link">&para;</a></h5>
 <ul>
-<li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Ở các chương trước, chúng ta đã cố gắng tìm bộ trọng số (weights) và độ lệch (biases) tốt nhất bằng cách thay đổi chúng một cách ngẫu nhiên. Tác giả chỉ ra rằng phương pháp này không hiệu quả vì không gian chứa tất cả các kết hợp của trọng số và độ lệch là <strong>vô hạn</strong>. Việc tìm kiếm ngẫu nhiên giống như mò kim đáy bể. Chúng ta cần một cách "thông minh hơn" để biết nên điều chỉnh các tham số theo hướng nào để giảm thiểu hàm mất mát (loss).</p>
-</li>
-<li>
-<p><strong>Liên hệ trừu tượng: Người leo núi bịt mắt</strong></p>
-<p>Hãy tưởng tượng bạn đang đứng trên một sườn núi và bị bịt mắt, mục tiêu của bạn là đi xuống thung lũng (nơi có độ cao thấp nhất, tương ứng với loss thấp nhất).
-*   <strong>Phương pháp ngẫu nhiên (Random Search):</strong> Bạn dịch chuyển tức thời (teleport) đến một vị trí ngẫu nhiên trên núi. Bạn có thể may mắn đáp xuống gần thung lũng, nhưng khả năng cao là bạn sẽ ở một nơi còn tệ hơn.
-*   <strong>Phương pháp thông minh (Sử dụng đạo hàm):</strong> Thay vì nhảy lung tung, bạn dùng chân dậm nhẹ xuống đất xung quanh vị trí hiện tại để cảm nhận <strong>độ dốc</strong> của mặt đất. Bạn sẽ bước theo hướng dốc nhất xuống dưới. Bước đi này có thể nhỏ, nhưng nó đảm bảo bạn đang đi đúng hướng để xuống núi. "Cảm nhận độ dốc" chính là vai trò của đạo hàm.</p>
-</li>
-<li>
-<p><strong>Đối chiếu khái niệm:</strong></p>
-<p>Sách gọi đây là việc tìm hiểu "tác động" (impact) của một trọng số/độ lệch lên hàm mất mát. Trong toán học, khái niệm này được định nghĩa chính xác là <strong>đạo hàm (derivative)</strong>. Đạo hàm của một hàm số tại một điểm cho ta biết "tốc độ thay đổi tức thời" (instantaneous rate of change) của hàm số tại điểm đó.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p><strong>Nguồn:</strong> Theo Khan Academy, "The derivative of a function... can be interpreted as the instantaneous rate of change... or the slope of the tangent line to the graph of the function at that point." (Đạo hàm của một hàm số... có thể được diễn giải là tốc độ thay đổi tức thời... hoặc độ dốc của đường tiếp tuyến với đồ thị hàm số tại điểm đó.)</p>
-</div>
-</li>
+<li><strong>Neural Network</strong>: An archer with hundreds of technical "knobs" (weights, biases).</li>
+<li><strong>Objective</strong>: To hit the bullseye (reduce Error/Loss to 0).</li>
+<li><strong>Backpropagation</strong>: The process of "Distributing Responsibility," figuring out how much responsibility each knob bears for the final error.</li>
+<li><strong>Gradient</strong>: The instruction sheet that compiles all "responsibilities." We will adjust the knobs in the <strong>opposite</strong> direction of this instruction sheet.</li>
 </ul>
-<h5 id="2-tac-ong-impact-tu-o-doc-en-ao-ham"><strong>2. "Tác Động" (Impact) - Từ Độ Dốc Đến Đạo Hàm</strong><a class="headerlink" href="#2-tac-ong-impact-tu-o-doc-en-ao-ham" title="Permanent link">&para;</a></h5>
-<p>Chương sách bắt đầu xây dựng trực giác về đạo hàm từ khái niệm độ dốc (slope) quen thuộc trong đại số.</p>
-<p><strong>2.1. Trường hợp đơn giản - Hàm tuyến tính (<code>y = 2x</code>)</strong></p>
+<p>Now, let's act as engineers, open the hood of the "archer machine," and examine each part. We will see how "responsibility" (the gradient) flows backward through each type of component.</p>
+<p><strong>Conventions</strong>:</p>
 <ul>
-<li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Với một đường thẳng, độ dốc là không đổi tại mọi điểm. Độ dốc được tính bằng công thức "rise over run" hay <code>Δy / Δx</code> (thay đổi trên trục y chia cho thay đổi trên trục x). Với hàm <code>y = 2x</code>, cứ mỗi khi <code>x</code> tăng 1 đơn vị, <code>y</code> sẽ tăng 2 đơn vị. Vì vậy, "tác động" của <code>x</code> lên <code>y</code> luôn là 2.</p>
-</li>
-<li>
-<p><strong>Sơ đồ minh họa phép tính độ dốc:</strong></p>
-<p>Chọn 2 điểm bất kỳ trên đường thẳng <code>y=2x</code>, ví dụ <code>p1 = (1, 2)</code> và <code>p2 = (3, 6)</code>.</p>
-</li>
+<li><code>Forward</code>: Data flows from left to right.</li>
+<li><code>Backward</code>: "Responsibility" (Gradient) flows backward from right to left.</li>
+<li><code>Input Responsibility</code>: The gradient that a node receives from the next layer.</li>
+<li><code>Output Responsibility</code>: The gradient that a node calculates and sends to the previous layer (against the data flow).</li>
 </ul>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>    p1 = (x1, y1) = (1, 2)
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>    p2 = (x2, y2) = (3, 6)
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>    Change in x (Δx) = x2 - x1 = 3 - 1 = 2
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a>    Change in y (Δy) = y2 - y1 = 6 - 2 = 4
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a>    Slope = Δy / Δx = 4 / 2 = 2
+<hr />
+<h4 id="analyzing-each-component-each-computational-node"><strong>Analyzing Each Component (Each Computational Node)</strong><a class="headerlink" href="#analyzing-each-component-each-computational-node" title="Permanent link">&para;</a></h4>
+<h5 id="1-the-addition-component-the-synergy-unit"><strong>1. The ADDITION Component (The Synergy Unit)</strong><a class="headerlink" href="#1-the-addition-component-the-synergy-unit" title="Permanent link">&para;</a></h5>
+<p>This is the simplest component. It takes two or more input values and adds them together.</p>
+<ul>
+<li><strong>Example in a Neural Network</strong>: <code>Sum = (Input * Weight) + Bias</code>. The addition with the Bias is an addition node.</li>
+</ul>
+<h6 id="responsibility-distribution-diagram"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram" title="Permanent link">&para;</a></h6>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Sum&#39; = 10
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input * Weight]-------&gt;|                             |
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |        ADDITION NODE (+)    |--&gt;[Sum]--
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a>    --[Bias]------------&gt;|                             |
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>           +-----------------------------------------+
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a>        ^                                   ^
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a>        |                                   |
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><a href="#__codelineno-0-11"><span class="linenos" data-linenos="11 "></span></a>Responsibility for &#39;Input*Weight&#39;= 10      Responsibility for &#39;Bias&#39;= 10
 </span></code></pre></div>
-<p><strong>2.2. Thách thức - Hàm phi tuyến (<code>y = 2x²</code>)</strong></p>
 <ul>
 <li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Khi đồ thị là một đường cong, độ dốc không còn cố định nữa. Nếu bạn tính độ dốc giữa <code>x=1</code> và <code>x=2</code>, bạn sẽ nhận được một kết quả khác với khi tính giữa <code>x=3</code> và <code>x=4</code>. Độ dốc của đường cong thay đổi tùy thuộc vào vị trí bạn đang xét. Điều này dẫn đến câu hỏi: "Độ dốc tại <em>một điểm duy nhất</em> là bao nhiêu?"</p>
+<p><strong>Forward</strong>: Takes the value of <code>(Input * Weight)</code> and adds it to the value of <code>Bias</code> to get the <code>Sum</code>.</p>
 </li>
-</ul>
-<p><strong>2.3. Đạo hàm số (Numerical Derivative) - Phép tính xấp xỉ</strong></p>
+<li>
+<p><strong>Backward (Distributing Responsibility)</strong>:</p>
 <ul>
-<li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Để tìm độ dốc tại một điểm (ví dụ tại <code>x=1</code>), ta không thể dùng công thức <code>Δy / Δx</code> vì <code>Δx</code> sẽ bằng 0 (chia cho 0 là bất hợp pháp). Sách giới thiệu một mẹo: thay vì chọn 2 điểm xa nhau, ta chọn 2 điểm <em>cực kỳ gần nhau</em>. Ví dụ, ta chọn điểm <code>x1 = 1</code> và <code>x2 = 1.0001</code>. Khoảng cách <code>Δx</code> lúc này rất nhỏ (<code>0.0001</code>) nhưng không phải là 0. Độ dốc tính được giữa hai điểm này sẽ là một <strong>xấp xỉ rất tốt</strong> cho độ dốc thực sự của đường tiếp tuyến tại <code>x=1</code>. Đây được gọi là <strong>đạo hàm số (numerical derivative)</strong>.</p>
-</li>
-<li>
-<p><strong>Đối chiếu khái niệm:</strong></p>
-<p>Phương pháp này là một cách hiện thực hóa định nghĩa giới hạn của đạo hàm trong giải tích.</p>
-<blockquote>
-<p>Định nghĩa chính thức của đạo hàm:
-<code>f'(x) = lim (h→0) [f(x+h) - f(x)] / h</code>
-Trong đó, <code>h</code> chính là giá trị <code>p2_delta = 0.0001</code> mà sách sử dụng. Vì máy tính không thể tính toán với <code>h</code> tiến tới 0 vô hạn, chúng ta chọn một giá trị <code>h</code> đủ nhỏ. Sách cũng lưu ý về sự cân bằng: <code>h</code> phải đủ nhỏ để xấp xỉ chính xác, nhưng không quá nhỏ đến mức gây ra lỗi làm tròn số của máy tính (floating-point precision error).</p>
-</blockquote>
+<li><strong>Principle</strong>: In addition, all inputs contribute <strong>equally</strong> and directly to the result. The influence of each input on the output is 1-to-1 (increasing an input by 1 unit increases the output by 1 unit).</li>
+<li><strong>Action</strong>: The addition node receives "responsibility" from the next layer and <strong>copies it exactly</strong> to all of its input branches.</li>
+<li><strong>Derivative at this node</strong>: The derivative of <code>Sum</code> with respect to <code>Bias</code> is 1. The derivative of <code>Sum</code> with respect to <code>(Input * Weight)</code> is also 1. Therefore, the responsibility is multiplied by 1, meaning it remains unchanged.</li>
+</ul>
 </li>
 </ul>
-<h5 id="3-hai-phuong-phap-tinh-ao-ham-so-vs-giai-tich"><strong>3. Hai Phương Pháp Tính Đạo Hàm: Số vs. Giải Tích</strong><a class="headerlink" href="#3-hai-phuong-phap-tinh-ao-ham-so-vs-giai-tich" title="Permanent link">&para;</a></h5>
-<p><strong>3.1. Hạn chế của Đạo hàm số trong Mạng Neural</strong></p>
+<h5 id="2-the-multiplication-component-the-leverage-unit"><strong>2. The MULTIPLICATION Component (The Leverage Unit)</strong><a class="headerlink" href="#2-the-multiplication-component-the-leverage-unit" title="Permanent link">&para;</a></h5>
+<p>This component takes two values and multiplies them together.</p>
 <ul>
-<li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Mặc dù đạo hàm số dễ hiểu và dễ lập trình, nó lại <strong>cực kỳ chậm</strong> đối với mạng neural. Hãy tưởng tượng một mạng neural có 1 triệu tham số (weights và biases). Để cập nhật các tham số này chỉ một lần, chúng ta cần:</p>
-<ol>
-<li>Tính loss ban đầu (1 lần forward pass).</li>
-<li>
-<p>Với <strong>mỗi</strong> tham số trong 1 triệu tham số đó:</p>
-<ul>
-<li>Nhích tham số đó lên một chút (<code>+h</code>).</li>
-<li>Tính lại loss (1 lần forward pass nữa).</li>
-<li>Tính đạo hàm xấp xỉ.</li>
-<li>Trả tham số về giá trị cũ.
-    Điều này có nghĩa là chúng ta cần khoảng <code>1 + 1,000,000</code> lượt forward pass chỉ để tính toán cho một bước cập nhật duy nhất! Đây là một sự "brute-force" không khả thi.</li>
+<li><strong>Example in a Neural Network</strong>: <code>Result = Input * Weight</code>. This is the core operation in a layer.</li>
 </ul>
-</li>
-</ol>
-</li>
-<li>
-<p><strong>Liên hệ trừu tượng:</strong></p>
-<p>Quay lại với người leo núi bịt mắt trên một "ngọn núi" triệu chiều. Để tìm hướng dốc nhất, họ phải thử nhích một bước nhỏ theo từng chiều trong số một triệu chiều không gian, đo sự thay đổi độ cao, rồi mới quyết định bước đi tổng hợp. Việc này tốn thời gian một cách khủng khiếp.</p>
-</li>
-</ul>
-<p><strong>3.2. Đạo hàm giải tích (Analytical Derivative) - Lời giải chính xác</strong></p>
-<ul>
-<li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Thay vì tính xấp xỉ bằng số, phương pháp giải tích cho chúng ta một <strong>công thức chính xác</strong> để tính đạo hàm. Ví dụ, thay vì phải tính xấp xỉ đạo hàm của <code>f(x) = 2x²</code> tại <code>x=1</code> và <code>x=2</code>, chúng ta tìm ra công thức đạo hàm chung là <code>f'(x) = 4x</code>. Bây giờ, muốn tính đạo hàm tại điểm nào, ta chỉ cần thay số vào công thức này:</p>
-<ul>
-<li>Tại <code>x=1</code>, đạo hàm là <code>4 * 1 = 4</code>.</li>
-<li>Tại <code>x=2</code>, đạo hàm là <code>4 * 2 = 8</code>.
-Việc này nhanh hơn hàng triệu lần so với phương pháp số.</li>
-</ul>
-</li>
-<li>
-<p><strong>Các quy tắc đạo hàm cơ bản (Building Blocks):</strong></p>
-<p>Chương sách giới thiệu các quy tắc cơ bản để "phá vỡ" các hàm phức tạp thành những phần đơn giản hơn và tính đạo hàm của chúng:</p>
-<ol>
-<li><strong>Quy tắc Hằng số:</strong> <code>d/dx (c) = 0</code> (Độ dốc của một đường nằm ngang là 0).</li>
-<li><strong>Quy tắc Lũy thừa:</strong> <code>d/dx (x^n) = n * x^(n-1)</code> (Đây là quy tắc mạnh nhất).</li>
-<li><strong>Quy tắc Hằng số nhân:</strong> <code>d/dx (c*f(x)) = c * d/dx (f(x))</code>.</li>
-<li><strong>Quy tắc Tổng/Hiệu:</strong> <code>d/dx (f(x) + g(x)) = d/dx (f(x)) + d/dx (g(x))</code>.</li>
-</ol>
-</li>
-<li>
-<p><strong>Sơ đồ minh họa phép tính giải tích:</strong></p>
-<p>Ví dụ, tính đạo hàm của <code>f(x) = 3x² + 5x</code>.</p>
-</li>
-</ul>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a>f(x) = 3x² + 5x
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>// Áp dụng Quy tắc Tổng (Sum Rule) để tách thành 2 phần
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a>f&#39;(x) = d/dx(3x²) + d/dx(5x)
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>// Xét phần thứ nhất: d/dx(3x²)
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a>// Áp dụng Quy tắc Hằng số nhân (Constant Multiple Rule)
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a>// -&gt; 3 * d/dx(x²)
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>// Áp dụng Quy tắc Lũy thừa (Power Rule) với n=2
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a>// -&gt; 3 * (2 * x^(2-1))
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a>// -&gt; 3 * (2x¹) = 6x
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a>// Xét phần thứ hai: d/dx(5x) hay d/dx(5x¹)
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><a href="#__codelineno-1-14"><span class="linenos" data-linenos="14 "></span></a>// Áp dụng Quy tắc Hằng số nhân
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><a href="#__codelineno-1-15"><span class="linenos" data-linenos="15 "></span></a>// -&gt; 5 * d/dx(x¹)
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><a href="#__codelineno-1-16"><span class="linenos" data-linenos="16 "></span></a>// Áp dụng Quy tắc Lũy thừa với n=1
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><a href="#__codelineno-1-17"><span class="linenos" data-linenos="17 "></span></a>// -&gt; 5 * (1 * x^(1-1))
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><a href="#__codelineno-1-18"><span class="linenos" data-linenos="18 "></span></a>// -&gt; 5 * (1 * x⁰)
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a><a href="#__codelineno-1-19"><span class="linenos" data-linenos="19 "></span></a>// -&gt; 5 * 1 = 5
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><a href="#__codelineno-1-20"><span class="linenos" data-linenos="20 "></span></a>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a><a href="#__codelineno-1-21"><span class="linenos" data-linenos="21 "></span></a>// Kết hợp lại
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><a href="#__codelineno-1-22"><span class="linenos" data-linenos="22 "></span></a>f&#39;(x) = 6x + 5
+<h6 id="responsibility-distribution-diagram_1"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram_1" title="Permanent link">&para;</a></h6>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Result&#39; = 10
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a>  --[Input = 3]----------&gt;|                             |
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |   MULTIPLICATION NODE (*)   |--&gt;[Result = 15]--
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a>--[Weight = 5]---------&gt;|                             |
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a>           +-----------------------------------------+
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>        ^                                   ^
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a>        |                                   |
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a>Responsibility for &#39;Input&#39;           Responsibility for &#39;Weight&#39;
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a> = 10 * 5 = 50                        = 10 * 3 = 30
 </span></code></pre></div>
-<p>Đây là một quy trình có cấu trúc, cho phép máy tính tìm ra công thức đạo hàm một cách hiệu quả, thay vì phải tính toán xấp xỉ lặp đi lặp lại.</p>
-<h5 id="4-tom-tat-ket-noi"><strong>4. Tóm Tắt &amp; Kết Nối</strong><a class="headerlink" href="#4-tom-tat-ket-noi" title="Permanent link">&para;</a></h5>
 <ul>
 <li>
-<p><strong>Tóm tắt nội dung chính:</strong></p>
-<ol>
-<li>Tối ưu hóa mạng neural cần một phương pháp "thông minh" hơn là tìm kiếm ngẫu nhiên.</li>
-<li>Đạo hàm cho chúng ta biết "tác động" hay "độ dốc" của một tham số lên hàm mất mát, từ đó chỉ ra hướng cần điều chỉnh tham số.</li>
-<li>Có hai cách tính đạo hàm: <strong>Số</strong> (xấp xỉ, chậm nhưng dễ) và <strong>Giải tích</strong> (chính xác, nhanh, là lựa chọn cho mạng neural).</li>
-<li>Đạo hàm giải tích hoạt động bằng cách sử dụng các quy tắc cơ bản (lũy thừa, tổng, hằng số...) để tìm ra một công thức đạo hàm chính xác.</li>
-</ol>
+<p><strong>Forward</strong>: Takes the <code>Input</code> (let's assume its value is 3) and multiplies it by the <code>Weight</code> (let's assume its value is 5) to get the <code>Result</code> (15).</p>
 </li>
 <li>
-<p><strong>Cầu nối đến chương tiếp theo:</strong></p>
-<p>Chương này đã dạy chúng ta cách tính đạo hàm cho các hàm có <strong>một biến đầu vào</strong> (<code>x</code>). Tuy nhiên, hàm mất mát của mạng neural phụ thuộc vào <strong>hàng triệu biến</strong> (tất cả các weights và biases). Khi một hàm có nhiều biến đầu vào, việc tính "độ dốc" theo từng biến riêng lẻ được gọi là <strong>đạo hàm riêng (partial derivative)</strong>. Đây chính là chủ đề của chương tiếp theo và là bước đệm cuối cùng trước khi chúng ta tìm hiểu về thuật toán lan truyền ngược (backpropagation), nơi tất cả các khái niệm này sẽ được kết hợp lại.</p>
+<p><strong>Backward (Distributing Responsibility)</strong>:</p>
+<ul>
+<li><strong>Principle</strong>: In multiplication, the influence of one input on the result depends on the <strong>value of the other input</strong>. This is the leverage effect.</li>
+<li><strong>Action</strong>: To calculate the responsibility for one branch, the multiplication node takes the "responsibility" from the next layer and multiplies it by the <strong>value of the other branch</strong> (the value that was stored from the Forward pass).</li>
+<li><strong>Derivative at this node</strong>: The derivative of <code>Result</code> with respect to <code>Input</code> is the value of the <code>Weight</code>. The derivative of <code>Result</code> with respect to <code>Weight</code> is the value of the <code>Input</code>.</li>
+</ul>
 </li>
 </ul>
+<h5 id="3-the-relu-component-the-gatekeeper"><strong>3. The ReLU Component (The Gatekeeper)</strong><a class="headerlink" href="#3-the-relu-component-the-gatekeeper" title="Permanent link">&para;</a></h5>
+<p>This component is very special. It only has one input. If the input is a positive number, it lets it pass through. If the input is a negative number, it blocks it and returns 0. The official name is <code>ReLU(x) = max(0, x)</code>.</p>
+<ul>
+<li><strong>Example in a Neural Network</strong>: This is a popular activation function that helps the network learn complex relationships.</li>
+</ul>
+<h6 id="responsibility-distribution-diagram_2"><strong>Responsibility Distribution Diagram</strong><a class="headerlink" href="#responsibility-distribution-diagram_2" title="Permanent link">&para;</a></h6>
+<p><strong>Case 1: Positive Input (Gate is open)</strong></p>
+<p><div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Output&#39; = 10
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input = 3]-----------&gt;|                             |
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |       ReLU NODE (Open)      |--&gt;[Output = 3]--
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a>           +-----------------------------------------+
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a>                                ^
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a>                                |
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a>                   Responsibility for &#39;Input&#39; = 10
+</span></code></pre></div>
+*   <strong>Case 2: Negative Input (Gate is closed)</strong></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos=" 1 "></span></a>                   Responsibility for &#39;Output&#39; = 10
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos=" 2 "></span></a>                                |
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos=" 3 "></span></a>                                v
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos=" 4 "></span></a>           +-----------------------------------------+
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><a href="#__codelineno-3-5"><span class="linenos" data-linenos=" 5 "></span></a>--[Input = -2]----------&gt;|                             |
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos=" 6 "></span></a>                         |      ReLU NODE (Closed)     |--&gt;[Output = 0]--
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos=" 7 "></span></a>           +-----------------------------------------+
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><a href="#__codelineno-3-8"><span class="linenos" data-linenos=" 8 "></span></a>                                ^
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><a href="#__codelineno-3-9"><span class="linenos" data-linenos=" 9 "></span></a>                                |
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><a href="#__codelineno-3-10"><span class="linenos" data-linenos="10 "></span></a>                   Responsibility for &#39;Input&#39; = 0
+</span></code></pre></div>
+<ul>
+<li>
+<p><strong>Forward</strong>: Checks the input. If positive, it remains unchanged. If negative, it becomes 0.</p>
+</li>
+<li>
+<p><strong>Backward (Distributing Responsibility)</strong>:</p>
+<ul>
+<li><strong>Principle</strong>: ReLU acts as a gatekeeper for the flow of "responsibility."</li>
+<li><strong>Action</strong>:<ul>
+<li>If during the forward pass, the input was positive (the gate was open), then during the backward pass, the "responsibility" is allowed to pass through unchanged.</li>
+<li>If during the forward pass, the input was negative (the gate was closed), then during the backward pass, the "responsibility" is completely blocked (becomes 0). This component did not contribute to the final positive result, so it bears no responsibility.</li>
+</ul>
+</li>
+<li><strong>Derivative at this node</strong>: The derivative of <code>ReLU(x)</code> is 1 if <code>x &gt; 0</code>, and 0 if <code>x &lt; 0</code>. Therefore, the "responsibility" is multiplied by 1 (unchanged) or 0 (annihilated).</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="putting-it-all-together-a-chain-of-responsibility"><strong>Putting It All Together: A Chain of Responsibility</strong><a class="headerlink" href="#putting-it-all-together-a-chain-of-responsibility" title="Permanent link">&para;</a></h4>
+<p>Now, let's see how these components work together in a simple neuron:</p>
+<p><code>Input * Weight --&gt; [Multiplication Node] --&gt; Intermediate Sum + Bias --&gt; [Addition Node] --&gt; Final Result</code></p>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos=" 1 "></span></a>Final responsibility (from the next layer)
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos=" 2 "></span></a>      |
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos=" 3 "></span></a>      v
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos=" 4 "></span></a> [Addition Node] &lt;--- Responsibility is copied to Bias and &#39;Intermediate Sum&#39;
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><a href="#__codelineno-4-5"><span class="linenos" data-linenos=" 5 "></span></a>      |
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><a href="#__codelineno-4-6"><span class="linenos" data-linenos=" 6 "></span></a>      v
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><a href="#__codelineno-4-7"><span class="linenos" data-linenos=" 7 "></span></a> [Multiplication Node] &lt;--- Responsibility is multiplied by the value of the other branch
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><a href="#__codelineno-4-8"><span class="linenos" data-linenos=" 8 "></span></a>      |
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a><a href="#__codelineno-4-9"><span class="linenos" data-linenos=" 9 "></span></a>      v
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><a href="#__codelineno-4-10"><span class="linenos" data-linenos="10 "></span></a>Responsibility of the Weight and Input
+</span></code></pre></div>
+<p>This "Responsibility Distribution" process flows backward through the entire network, through hundreds, thousands of components like these. It's like a reverse investigation, starting from the "crime scene" (the Loss Function) and following the traces back to find the "responsibility" of each "suspect" (each weight and bias).</p>
+<p>When the investigation is complete, each weight and bias will have received its own "responsibility" number. That is the Gradient. Based on that, the Coach (you) will know how to adjust each knob to make the next shot more accurate.</p>
 
 
 
@@ -2244,7 +2295,7 @@ Việc này nhanh hơn hàng triệu lần so với phương pháp số.</li>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introducing Optimization">
+          <a href="../../Ch4pt3r.07_Derivative/07-derivative/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Derivative">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2254,20 +2305,20 @@ Việc này nhanh hơn hàng triệu lần so với phương pháp số.</li>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Introducing Optimization
+                Derivative
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/" class="md-footer__link md-footer__link--next" aria-label="Next: Gradients, Partial Derivatives and the Chain Rule">
+          <a href="../../Ch4pt3r.09_Backpropagation/09-diagram/" class="md-footer__link md-footer__link--next" aria-label="Next: Diagram">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Gradients, Partial Derivatives and the Chain Rule
+                Diagram
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2307,12 +2358,12 @@ Việc này nhanh hơn hàng triệu lần so với phương pháp số.</li>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "toc.integrate", "navigation.footer", "navigation.top", "navigation.tabs", "navigation.path"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.follow", "toc.integrate", "navigation.footer", "navigation.top", "navigation.tabs", "navigation.path"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       

@@ -10,13 +10,11 @@
       
       
       
-        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.07_Derivative/07-derivative/">
+        <link rel="canonical" href="https://dohuyhoang93.github.io/learn-nnfs/vi/Explain%20Documents/Ch4pt3r.09_Backpropagation/09-math/">
       
       
-        <link rel="prev" href="../../Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/">
+        <link rel="prev" href="../09-diagram/">
       
-      
-        <link rel="next" href="../../Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/">
       
       
       <link rel="icon" href="../../../../assets/logo.svg">
@@ -24,7 +22,7 @@
     
     
       
-        <title>Derivative - Neural Network From Scratch Documentation</title>
+        <title>Math - derivative combining Softmax and Cross-Entropy Loss. - Neural Network From Scratch Documentation</title>
       
     
     
@@ -116,6 +114,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -145,7 +148,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Derivative
+              Math - derivative combining Softmax and Cross-Entropy Loss.
             
           </span>
         </div>
@@ -1768,8 +1771,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1780,11 +1781,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_6" >
         
           
           <label class="md-nav__link" for="__nav_3_2_6" id="__nav_3_2_6_label" tabindex="0">
@@ -1800,7 +1801,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2_6">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.07 Derivative
@@ -1811,17 +1812,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Ch4pt3r.07_Derivative/07-derivative/" class="md-nav__link">
         
   
   
@@ -1832,7 +1826,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1922,6 +1915,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1932,11 +1927,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_8" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_8" id="__nav_3_2_8_label" tabindex="0">
@@ -1952,7 +1947,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_8">
             <span class="md-nav__icon md-icon"></span>
             Ch4pt3r.09 Backpropagation
@@ -1966,7 +1961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Ch4pt3r.09_Backpropagation/09-diagram/" class="md-nav__link">
+      <a href="../09-diagram/" class="md-nav__link">
         
   
   
@@ -1986,10 +1981,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Ch4pt3r.09_Backpropagation/09-math/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Math - derivative combining Softmax and Cross-Entropy Loss.
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2000,6 +2015,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 1: Chứng minh chi tiết Đạo hàm của Softmax
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-2-chung-minh-chi-tiet-ao-ham-cua-cross-entropy-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 2: Chứng minh chi tiết Đạo hàm của Cross-Entropy Loss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phan-3-ket-hop-bang-quy-tac-chuoi-iem-hoi-tu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phần 3: Kết Hợp Bằng Quy Tắc Chuỗi - Điểm Hội Tụ
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2047,165 +2107,163 @@
   
 
 
-  <h1>Derivative</h1>
+  <h1>Math - derivative combining Softmax and Cross-Entropy Loss.</h1>
 
-<p>Chương 7 là một trong những chương bản lề quan trọng nhất của cuốn sách. Nó đánh dấu sự chuyển đổi từ phương pháp "thử và sai" (random search) sang một phương pháp tối ưu hóa có hệ thống, thông minh và hiệu quả dựa trên giải tích (calculus). Đây là nền móng để hiểu được thuật toán <strong>Lan truyền ngược (Backpropagation)</strong>.</p>
-<h5 id="1-boi-canh-tai-sao-can-en-ao-ham"><strong>1. Bối Cảnh - Tại Sao Cần Đến Đạo Hàm?</strong><a class="headerlink" href="#1-boi-canh-tai-sao-can-en-ao-ham" title="Permanent link">&para;</a></h5>
-<ul>
-<li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Ở các chương trước, chúng ta đã cố gắng tìm bộ trọng số (weights) và độ lệch (biases) tốt nhất bằng cách thay đổi chúng một cách ngẫu nhiên. Tác giả chỉ ra rằng phương pháp này không hiệu quả vì không gian chứa tất cả các kết hợp của trọng số và độ lệch là <strong>vô hạn</strong>. Việc tìm kiếm ngẫu nhiên giống như mò kim đáy bể. Chúng ta cần một cách "thông minh hơn" để biết nên điều chỉnh các tham số theo hướng nào để giảm thiểu hàm mất mát (loss).</p>
-</li>
-<li>
-<p><strong>Liên hệ trừu tượng: Người leo núi bịt mắt</strong></p>
-<p>Hãy tưởng tượng bạn đang đứng trên một sườn núi và bị bịt mắt, mục tiêu của bạn là đi xuống thung lũng (nơi có độ cao thấp nhất, tương ứng với loss thấp nhất).
-*   <strong>Phương pháp ngẫu nhiên (Random Search):</strong> Bạn dịch chuyển tức thời (teleport) đến một vị trí ngẫu nhiên trên núi. Bạn có thể may mắn đáp xuống gần thung lũng, nhưng khả năng cao là bạn sẽ ở một nơi còn tệ hơn.
-*   <strong>Phương pháp thông minh (Sử dụng đạo hàm):</strong> Thay vì nhảy lung tung, bạn dùng chân dậm nhẹ xuống đất xung quanh vị trí hiện tại để cảm nhận <strong>độ dốc</strong> của mặt đất. Bạn sẽ bước theo hướng dốc nhất xuống dưới. Bước đi này có thể nhỏ, nhưng nó đảm bảo bạn đang đi đúng hướng để xuống núi. "Cảm nhận độ dốc" chính là vai trò của đạo hàm.</p>
-</li>
-<li>
-<p><strong>Đối chiếu khái niệm:</strong></p>
-<p>Sách gọi đây là việc tìm hiểu "tác động" (impact) của một trọng số/độ lệch lên hàm mất mát. Trong toán học, khái niệm này được định nghĩa chính xác là <strong>đạo hàm (derivative)</strong>. Đạo hàm của một hàm số tại một điểm cho ta biết "tốc độ thay đổi tức thời" (instantaneous rate of change) của hàm số tại điểm đó.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p><strong>Nguồn:</strong> Theo Khan Academy, "The derivative of a function... can be interpreted as the instantaneous rate of change... or the slope of the tangent line to the graph of the function at that point." (Đạo hàm của một hàm số... có thể được diễn giải là tốc độ thay đổi tức thời... hoặc độ dốc của đường tiếp tuyến với đồ thị hàm số tại điểm đó.)</p>
-</div>
-</li>
-</ul>
-<h5 id="2-tac-ong-impact-tu-o-doc-en-ao-ham"><strong>2. "Tác Động" (Impact) - Từ Độ Dốc Đến Đạo Hàm</strong><a class="headerlink" href="#2-tac-ong-impact-tu-o-doc-en-ao-ham" title="Permanent link">&para;</a></h5>
-<p>Chương sách bắt đầu xây dựng trực giác về đạo hàm từ khái niệm độ dốc (slope) quen thuộc trong đại số.</p>
-<p><strong>2.1. Trường hợp đơn giản - Hàm tuyến tính (<code>y = 2x</code>)</strong></p>
-<ul>
-<li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Với một đường thẳng, độ dốc là không đổi tại mọi điểm. Độ dốc được tính bằng công thức "rise over run" hay <code>Δy / Δx</code> (thay đổi trên trục y chia cho thay đổi trên trục x). Với hàm <code>y = 2x</code>, cứ mỗi khi <code>x</code> tăng 1 đơn vị, <code>y</code> sẽ tăng 2 đơn vị. Vì vậy, "tác động" của <code>x</code> lên <code>y</code> luôn là 2.</p>
-</li>
-<li>
-<p><strong>Sơ đồ minh họa phép tính độ dốc:</strong></p>
-<p>Chọn 2 điểm bất kỳ trên đường thẳng <code>y=2x</code>, ví dụ <code>p1 = (1, 2)</code> và <code>p2 = (3, 6)</code>.</p>
-</li>
-</ul>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a>    p1 = (x1, y1) = (1, 2)
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>    p2 = (x2, y2) = (3, 6)
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos="3 "></span></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos="4 "></span></a>    Change in x (Δx) = x2 - x1 = 3 - 1 = 2
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a>    Change in y (Δy) = y2 - y1 = 6 - 2 = 4
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a>    Slope = Δy / Δx = 4 / 2 = 2
-</span></code></pre></div>
-<p><strong>2.2. Thách thức - Hàm phi tuyến (<code>y = 2x²</code>)</strong></p>
-<ul>
-<li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Khi đồ thị là một đường cong, độ dốc không còn cố định nữa. Nếu bạn tính độ dốc giữa <code>x=1</code> và <code>x=2</code>, bạn sẽ nhận được một kết quả khác với khi tính giữa <code>x=3</code> và <code>x=4</code>. Độ dốc của đường cong thay đổi tùy thuộc vào vị trí bạn đang xét. Điều này dẫn đến câu hỏi: "Độ dốc tại <em>một điểm duy nhất</em> là bao nhiêu?"</p>
-</li>
-</ul>
-<p><strong>2.3. Đạo hàm số (Numerical Derivative) - Phép tính xấp xỉ</strong></p>
-<ul>
-<li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Để tìm độ dốc tại một điểm (ví dụ tại <code>x=1</code>), ta không thể dùng công thức <code>Δy / Δx</code> vì <code>Δx</code> sẽ bằng 0 (chia cho 0 là bất hợp pháp). Sách giới thiệu một mẹo: thay vì chọn 2 điểm xa nhau, ta chọn 2 điểm <em>cực kỳ gần nhau</em>. Ví dụ, ta chọn điểm <code>x1 = 1</code> và <code>x2 = 1.0001</code>. Khoảng cách <code>Δx</code> lúc này rất nhỏ (<code>0.0001</code>) nhưng không phải là 0. Độ dốc tính được giữa hai điểm này sẽ là một <strong>xấp xỉ rất tốt</strong> cho độ dốc thực sự của đường tiếp tuyến tại <code>x=1</code>. Đây được gọi là <strong>đạo hàm số (numerical derivative)</strong>.</p>
-</li>
-<li>
-<p><strong>Đối chiếu khái niệm:</strong></p>
-<p>Phương pháp này là một cách hiện thực hóa định nghĩa giới hạn của đạo hàm trong giải tích.</p>
-<blockquote>
-<p>Định nghĩa chính thức của đạo hàm:
-<code>f'(x) = lim (h→0) [f(x+h) - f(x)] / h</code>
-Trong đó, <code>h</code> chính là giá trị <code>p2_delta = 0.0001</code> mà sách sử dụng. Vì máy tính không thể tính toán với <code>h</code> tiến tới 0 vô hạn, chúng ta chọn một giá trị <code>h</code> đủ nhỏ. Sách cũng lưu ý về sự cân bằng: <code>h</code> phải đủ nhỏ để xấp xỉ chính xác, nhưng không quá nhỏ đến mức gây ra lỗi làm tròn số của máy tính (floating-point precision error).</p>
-</blockquote>
-</li>
-</ul>
-<h5 id="3-hai-phuong-phap-tinh-ao-ham-so-vs-giai-tich"><strong>3. Hai Phương Pháp Tính Đạo Hàm: Số vs. Giải Tích</strong><a class="headerlink" href="#3-hai-phuong-phap-tinh-ao-ham-so-vs-giai-tich" title="Permanent link">&para;</a></h5>
-<p><strong>3.1. Hạn chế của Đạo hàm số trong Mạng Neural</strong></p>
-<ul>
-<li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Mặc dù đạo hàm số dễ hiểu và dễ lập trình, nó lại <strong>cực kỳ chậm</strong> đối với mạng neural. Hãy tưởng tượng một mạng neural có 1 triệu tham số (weights và biases). Để cập nhật các tham số này chỉ một lần, chúng ta cần:</p>
+<p>Lần này chúng ta sẽ đi sâu vào bản chất toán học, chứng minh từng bước một cách chi tiết và giải thích lý do đằng sau mỗi phép biến đổi.</p>
+<p>Chúng ta sẽ đi qua 3 phần:</p>
 <ol>
-<li>Tính loss ban đầu (1 lần forward pass).</li>
+<li><strong>Chứng minh Đạo hàm của hàm Softmax.</strong></li>
+<li><strong>Chứng minh Đạo hàm của hàm Cross-Entropy Loss.</strong></li>
+<li><strong>Kết hợp cả hai bằng Quy tắc Chuỗi để có được kết quả cuối cùng.</strong></li>
+</ol>
+<hr />
+<h4 id="phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax"><strong>Phần 1: Chứng minh chi tiết Đạo hàm của Softmax</strong><a class="headerlink" href="#phan-1-chung-minh-chi-tiet-ao-ham-cua-softmax" title="Permanent link">&para;</a></h4>
+<p><strong>Mục tiêu:</strong> Tính <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_k}\)</span>, tức là sự thay đổi của một xác suất đầu ra <span class="arithmatex">\(\hat{y}_j\)</span> khi một điểm số đầu vào <span class="arithmatex">\(z_k\)</span> thay đổi một chút.</p>
+<p><strong>Công thức hàm Softmax:</strong>
+Xác suất đầu ra cho class <span class="arithmatex">\(j\)</span> được tính từ tất cả các điểm số <span class="arithmatex">\(z\)</span>:</p>
+<div class="arithmatex">\[
+\hat{y}_j = \frac{e^{z_j}}{\sum_{i=1}^{N} e^{z_i}}
+\]</div>
+<p>Để tính đạo hàm này, chúng ta phải sử dụng <strong>Quy tắc đạo hàm của một thương (Quotient Rule)</strong>:</p>
+<p>Nếu <span class="arithmatex">\(f(x) = \frac{u(x)}{v(x)}\)</span>, thì</p>
+<p><span class="arithmatex">\(f'(x) = \frac{u'(x)v(x) - u(x)v'(x)}{[v(x)]^2}\)</span>.</p>
+<p>Ở đây, <span class="arithmatex">\(u = e^{z_j}\)</span> và <span class="arithmatex">\(v = \sum_{i=1}^{N} e^{z_i}\)</span>. Phép đạo hàm sẽ khác nhau tùy thuộc vào <span class="arithmatex">\(j\)</span> có bằng <span class="arithmatex">\(k\)</span> hay không.</p>
+<h5 id="truong-hop-1-j-k-ao-ham-cua-mot-output-theo-chinh-input-tuong-ung"><strong>Trường hợp 1: <code>j = k</code> (Đạo hàm của một output theo chính input tương ứng)</strong><a class="headerlink" href="#truong-hop-1-j-k-ao-ham-cua-mot-output-theo-chinh-input-tuong-ung" title="Permanent link">&para;</a></h5>
+<p>Chúng ta đang tính <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_j}\)</span>.</p>
+<ol>
 <li>
-<p>Với <strong>mỗi</strong> tham số trong 1 triệu tham số đó:</p>
-<ul>
-<li>Nhích tham số đó lên một chút (<code>+h</code>).</li>
-<li>Tính lại loss (1 lần forward pass nữa).</li>
-<li>Tính đạo hàm xấp xỉ.</li>
-<li>Trả tham số về giá trị cũ.
-    Điều này có nghĩa là chúng ta cần khoảng <code>1 + 1,000,000</code> lượt forward pass chỉ để tính toán cho một bước cập nhật duy nhất! Đây là một sự "brute-force" không khả thi.</li>
-</ul>
+<p><strong>Tính đạo hàm của tử số (<span class="arithmatex">\(u'\)</span>):</strong>
+    <span class="arithmatex">\(\frac{\partial u}{\partial z_j} = \frac{\partial}{\partial z_j} (e^{z_j}) = e^{z_j}\)</span>.</p>
+</li>
+<li>
+<p><strong>Tính đạo hàm của mẫu số (<span class="arithmatex">\(v'\)</span>):</strong></p>
+<p><span class="arithmatex">\(\frac{\partial v}{\partial z_j} = \frac{\partial}{\partial z_j} \left( \sum_{i=1}^{N} e^{z_i} \right) = \frac{\partial}{\partial z_j} (e^{z_1} + e^{z_2} + ... + e^{z_j} + ... + e^{z_N})\)</span>.</p>
+<p>Trong tổng này, chỉ có số hạng <span class="arithmatex">\(e^{z_j}\)</span> là phụ thuộc vào <span class="arithmatex">\(z_j\)</span>. Đạo hàm của các số hạng khác bằng 0.</p>
+<p>Vậy, <span class="arithmatex">\(\frac{\partial v}{\partial z_j} = e^{z_j}\)</span>.</p>
+</li>
+<li>
+<p><strong>Áp dụng vào Quy tắc thương:</strong></p>
 </li>
 </ol>
-</li>
-<li>
-<p><strong>Liên hệ trừu tượng:</strong></p>
-<p>Quay lại với người leo núi bịt mắt trên một "ngọn núi" triệu chiều. Để tìm hướng dốc nhất, họ phải thử nhích một bước nhỏ theo từng chiều trong số một triệu chiều không gian, đo sự thay đổi độ cao, rồi mới quyết định bước đi tổng hợp. Việc này tốn thời gian một cách khủng khiếp.</p>
-</li>
-</ul>
-<p><strong>3.2. Đạo hàm giải tích (Analytical Derivative) - Lời giải chính xác</strong></p>
-<ul>
-<li>
-<p><strong>Giải thích dễ hiểu:</strong></p>
-<p>Thay vì tính xấp xỉ bằng số, phương pháp giải tích cho chúng ta một <strong>công thức chính xác</strong> để tính đạo hàm. Ví dụ, thay vì phải tính xấp xỉ đạo hàm của <code>f(x) = 2x²</code> tại <code>x=1</code> và <code>x=2</code>, chúng ta tìm ra công thức đạo hàm chung là <code>f'(x) = 4x</code>. Bây giờ, muốn tính đạo hàm tại điểm nào, ta chỉ cần thay số vào công thức này:</p>
-<ul>
-<li>Tại <code>x=1</code>, đạo hàm là <code>4 * 1 = 4</code>.</li>
-<li>Tại <code>x=2</code>, đạo hàm là <code>4 * 2 = 8</code>.
-Việc này nhanh hơn hàng triệu lần so với phương pháp số.</li>
-</ul>
-</li>
-<li>
-<p><strong>Các quy tắc đạo hàm cơ bản (Building Blocks):</strong></p>
-<p>Chương sách giới thiệu các quy tắc cơ bản để "phá vỡ" các hàm phức tạp thành những phần đơn giản hơn và tính đạo hàm của chúng:</p>
+<div class="arithmatex">\[
+    \begin{align*}
+    \frac{\partial \hat{y}_j}{\partial z_j} &amp;= \frac{(e^{z_j}) \cdot (\sum_{i} e^{z_i}) - (e^{z_j}) \cdot (e^{z_j})}{(\sum_{i} e^{z_i})^2} \\
+    &amp;= \frac{e^{z_j}}{\sum_{i} e^{z_i}} \cdot \frac{\sum_{i} e^{z_i}}{\sum_{i} e^{z_i}} - \frac{e^{z_j}}{\sum_{i} e^{z_i}} \cdot \frac{e^{z_j}}{\sum_{i} e^{z_i}} \quad \text{(Tách thành hai phân số)} \\
+    &amp;= \hat{y}_j \cdot 1 - \hat{y}_j \cdot \hat{y}_j \quad \text{(Nhận ra các thành phần chính là } \hat{y}_j \text{)} \\
+    &amp;= \hat{y}_j (1 - \hat{y}_j)
+    \end{align*}
+\]</div>
+<p><strong>Kết quả 1:</strong> <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_j} = \hat{y}_j (1 - \hat{y}_j)\)</span>.</p>
+<h5 id="truong-hop-2-j-k-ao-ham-cua-mot-output-theo-mot-input-khac"><strong>Trường hợp 2: <code>j ≠ k</code> (Đạo hàm của một output theo một input khác)</strong><a class="headerlink" href="#truong-hop-2-j-k-ao-ham-cua-mot-output-theo-mot-input-khac" title="Permanent link">&para;</a></h5>
+<p>Chúng ta đang tính <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_k}\)</span>.</p>
 <ol>
-<li><strong>Quy tắc Hằng số:</strong> <code>d/dx (c) = 0</code> (Độ dốc của một đường nằm ngang là 0).</li>
-<li><strong>Quy tắc Lũy thừa:</strong> <code>d/dx (x^n) = n * x^(n-1)</code> (Đây là quy tắc mạnh nhất).</li>
-<li><strong>Quy tắc Hằng số nhân:</strong> <code>d/dx (c*f(x)) = c * d/dx (f(x))</code>.</li>
-<li><strong>Quy tắc Tổng/Hiệu:</strong> <code>d/dx (f(x) + g(x)) = d/dx (f(x)) + d/dx (g(x))</code>.</li>
+<li>
+<p><strong>Tính đạo hàm của tử số (<span class="arithmatex">\(u'\)</span>):</strong></p>
+<p><span class="arithmatex">\(\frac{\partial u}{\partial z_k} = \frac{\partial}{\partial z_k} (e^{z_j})\)</span>. Vì <span class="arithmatex">\(j \neq k\)</span>, <span class="arithmatex">\(e^{z_j}\)</span> là một hằng số đối với <span class="arithmatex">\(z_k\)</span>. Vậy đạo hàm bằng 0.</p>
+</li>
+<li>
+<p><strong>Tính đạo hàm của mẫu số (<span class="arithmatex">\(v'\)</span>):</strong></p>
+<p><span class="arithmatex">\(\frac{\partial v}{\partial z_k} = \frac{\partial}{\partial z_k} \left( \sum_{i=1}^{N} e^{z_i} \right)\)</span>. </p>
+<p>Tương tự như trên, chỉ có số hạng <span class="arithmatex">\(e^{z_k}\)</span> là phụ thuộc vào <span class="arithmatex">\(z_k\)</span>.</p>
+<p>Vậy, <span class="arithmatex">\(\frac{\partial v}{\partial z_k} = e^{z_k}\)</span>.</p>
+</li>
+<li>
+<p><strong>Áp dụng vào Quy tắc thương:</strong></p>
+</li>
 </ol>
-</li>
-<li>
-<p><strong>Sơ đồ minh họa phép tính giải tích:</strong></p>
-<p>Ví dụ, tính đạo hàm của <code>f(x) = 3x² + 5x</code>.</p>
-</li>
-</ul>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos=" 1 "></span></a>f(x) = 3x² + 5x
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos=" 2 "></span></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos=" 3 "></span></a>// Áp dụng Quy tắc Tổng (Sum Rule) để tách thành 2 phần
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos=" 4 "></span></a>f&#39;(x) = d/dx(3x²) + d/dx(5x)
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos=" 5 "></span></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos=" 6 "></span></a>// Xét phần thứ nhất: d/dx(3x²)
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><a href="#__codelineno-1-7"><span class="linenos" data-linenos=" 7 "></span></a>// Áp dụng Quy tắc Hằng số nhân (Constant Multiple Rule)
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><a href="#__codelineno-1-8"><span class="linenos" data-linenos=" 8 "></span></a>// -&gt; 3 * d/dx(x²)
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><a href="#__codelineno-1-9"><span class="linenos" data-linenos=" 9 "></span></a>// Áp dụng Quy tắc Lũy thừa (Power Rule) với n=2
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><a href="#__codelineno-1-10"><span class="linenos" data-linenos="10 "></span></a>// -&gt; 3 * (2 * x^(2-1))
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><a href="#__codelineno-1-11"><span class="linenos" data-linenos="11 "></span></a>// -&gt; 3 * (2x¹) = 6x
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a>// Xét phần thứ hai: d/dx(5x) hay d/dx(5x¹)
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><a href="#__codelineno-1-14"><span class="linenos" data-linenos="14 "></span></a>// Áp dụng Quy tắc Hằng số nhân
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><a href="#__codelineno-1-15"><span class="linenos" data-linenos="15 "></span></a>// -&gt; 5 * d/dx(x¹)
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><a href="#__codelineno-1-16"><span class="linenos" data-linenos="16 "></span></a>// Áp dụng Quy tắc Lũy thừa với n=1
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><a href="#__codelineno-1-17"><span class="linenos" data-linenos="17 "></span></a>// -&gt; 5 * (1 * x^(1-1))
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a><a href="#__codelineno-1-18"><span class="linenos" data-linenos="18 "></span></a>// -&gt; 5 * (1 * x⁰)
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a><a href="#__codelineno-1-19"><span class="linenos" data-linenos="19 "></span></a>// -&gt; 5 * 1 = 5
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><a href="#__codelineno-1-20"><span class="linenos" data-linenos="20 "></span></a>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a><a href="#__codelineno-1-21"><span class="linenos" data-linenos="21 "></span></a>// Kết hợp lại
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><a href="#__codelineno-1-22"><span class="linenos" data-linenos="22 "></span></a>f&#39;(x) = 6x + 5
-</span></code></pre></div>
-<p>Đây là một quy trình có cấu trúc, cho phép máy tính tìm ra công thức đạo hàm một cách hiệu quả, thay vì phải tính toán xấp xỉ lặp đi lặp lại.</p>
-<h5 id="4-tom-tat-ket-noi"><strong>4. Tóm Tắt &amp; Kết Nối</strong><a class="headerlink" href="#4-tom-tat-ket-noi" title="Permanent link">&para;</a></h5>
-<ul>
-<li>
-<p><strong>Tóm tắt nội dung chính:</strong></p>
+<div class="arithmatex">\[
+    \begin{align*}
+    \frac{\partial \hat{y}_j}{\partial z_k} &amp;= \frac{(0) \cdot (\sum_{i} e^{z_i}) - (e^{z_j}) \cdot (e^{z_k})}{(\sum_{i} e^{z_i})^2} \\
+    &amp;= - \frac{e^{z_j} \cdot e^{z_k}}{(\sum_{i} e^{z_i})^2} \\
+    &amp;= - \left( \frac{e^{z_j}}{\sum_{i} e^{z_i}} \right) \cdot \left( \frac{e^{z_k}}{\sum_{i} e^{z_i}} \right) \quad \text{(Tách mẫu số)} \\
+    &amp;= - \hat{y}_j \cdot \hat{y}_k
+    \end{align*}
+\]</div>
+<p><strong>Kết quả 2:</strong> <span class="arithmatex">\(\frac{\partial \hat{y}_j}{\partial z_k} = - \hat{y}_j \hat{y}_k\)</span>.</p>
+<hr />
+<h4 id="phan-2-chung-minh-chi-tiet-ao-ham-cua-cross-entropy-loss"><strong>Phần 2: Chứng minh chi tiết Đạo hàm của Cross-Entropy Loss</strong><a class="headerlink" href="#phan-2-chung-minh-chi-tiet-ao-ham-cua-cross-entropy-loss" title="Permanent link">&para;</a></h4>
+<p><strong>Mục tiêu:</strong> Tính <span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k}\)</span>, tức là sự thay đổi của Loss khi một xác suất dự đoán <span class="arithmatex">\(\hat{y}_k\)</span> thay đổi.</p>
+<p><strong>Công thức Cross-Entropy Loss:</strong></p>
+<div class="arithmatex">\[
+L = - \sum_{j=1}^{N} y_j \log(\hat{y}_j)
+\]</div>
+<p>Ở đây, <span class="arithmatex">\(y_j\)</span> là nhãn thực (ground-truth), có giá trị là 1 cho class đúng và 0 cho các class khác (one-hot encoding).</p>
 <ol>
-<li>Tối ưu hóa mạng neural cần một phương pháp "thông minh" hơn là tìm kiếm ngẫu nhiên.</li>
-<li>Đạo hàm cho chúng ta biết "tác động" hay "độ dốc" của một tham số lên hàm mất mát, từ đó chỉ ra hướng cần điều chỉnh tham số.</li>
-<li>Có hai cách tính đạo hàm: <strong>Số</strong> (xấp xỉ, chậm nhưng dễ) và <strong>Giải tích</strong> (chính xác, nhanh, là lựa chọn cho mạng neural).</li>
-<li>Đạo hàm giải tích hoạt động bằng cách sử dụng các quy tắc cơ bản (lũy thừa, tổng, hằng số...) để tìm ra một công thức đạo hàm chính xác.</li>
-</ol>
+<li>
+<p><strong>Áp dụng phép đạo hàm:</strong></p>
+<p><span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = \frac{\partial}{\partial \hat{y}_k} \left( - \sum_{j=1}^{N} y_j \log(\hat{y}_j) \right)\)</span>.</p>
 </li>
 <li>
-<p><strong>Cầu nối đến chương tiếp theo:</strong></p>
-<p>Chương này đã dạy chúng ta cách tính đạo hàm cho các hàm có <strong>một biến đầu vào</strong> (<code>x</code>). Tuy nhiên, hàm mất mát của mạng neural phụ thuộc vào <strong>hàng triệu biến</strong> (tất cả các weights và biases). Khi một hàm có nhiều biến đầu vào, việc tính "độ dốc" theo từng biến riêng lẻ được gọi là <strong>đạo hàm riêng (partial derivative)</strong>. Đây chính là chủ đề của chương tiếp theo và là bước đệm cuối cùng trước khi chúng ta tìm hiểu về thuật toán lan truyền ngược (backpropagation), nơi tất cả các khái niệm này sẽ được kết hợp lại.</p>
+<p><strong>Đưa đạo hàm vào trong tổng:</strong></p>
+<p><span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = - \sum_{j=1}^{N} y_j \cdot \frac{\partial}{\partial \hat{y}_k} \left( \log(\hat{y}_j) \right)\)</span>.</p>
 </li>
-</ul>
+<li>
+<p><strong>Phân tích đạo hàm bên trong:</strong></p>
+<p>Phép đạo hàm <span class="arithmatex">\(\frac{\partial}{\partial \hat{y}_k} \left( \log(\hat{y}_j) \right)\)</span> chỉ khác 0 khi <span class="arithmatex">\(j=k\)</span>.
+*   Nếu <span class="arithmatex">\(j=k\)</span>, <span class="arithmatex">\(\frac{\partial}{\partial \hat{y}_k} \log(\hat{y}_k) = \frac{1}{\hat{y}_k}\)</span>.
+*   Nếu <span class="arithmatex">\(j \neq k\)</span>, <span class="arithmatex">\(\frac{\partial}{\partial \hat{y}_k} \log(\hat{y}_j) = 0\)</span>.</p>
+</li>
+<li>
+<p><strong>Rút gọn tổng:</strong></p>
+<p>Do đó, toàn bộ tổng <span class="arithmatex">\(\sum_{j=1}^{N}\)</span> chỉ còn lại duy nhất một số hạng tại <span class="arithmatex">\(j=k\)</span>.
+<span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = - y_k \cdot \frac{1}{\hat{y}_k} = - \frac{y_k}{\hat{y}_k}\)</span>.</p>
+</li>
+</ol>
+<p><strong>Kết quả 3:</strong> <span class="arithmatex">\(\frac{\partial L}{\partial \hat{y}_k} = - \frac{y_k}{\hat{y}_k}\)</span>.</p>
+<hr />
+<h4 id="phan-3-ket-hop-bang-quy-tac-chuoi-iem-hoi-tu"><strong>Phần 3: Kết Hợp Bằng Quy Tắc Chuỗi - Điểm Hội Tụ</strong><a class="headerlink" href="#phan-3-ket-hop-bang-quy-tac-chuoi-iem-hoi-tu" title="Permanent link">&para;</a></h4>
+<p>Bây giờ chúng ta đã có tất cả các mảnh ghép. Ta sẽ thay chúng vào công thức Quy tắc Chuỗi ban đầu:</p>
+<div class="arithmatex">\[
+\frac{\partial L}{\partial z_k} = \sum_j \frac{\partial L}{\partial \hat{y}_j} \cdot \frac{\partial \hat{y}_j}{\partial z_k}
+\]</div>
+<p>Để giải quyết tổng này, chúng ta lại tách nó thành hai phần: phần tử tại <code>j=k</code> và các phần tử còn lại <code>j ≠ k</code>. Đây là bước đi mấu chốt của phép chứng minh.</p>
+<div class="arithmatex">\[
+\frac{\partial L}{\partial z_k} = \left( \frac{\partial L}{\partial \hat{y}_k} \cdot \frac{\partial \hat{y}_k}{\partial z_k} \right) + \sum_{j \neq k} \left( \frac{\partial L}{\partial \hat{y}_j} \cdot \frac{\partial \hat{y}_j}{\partial z_k} \right)
+\]</div>
+<ol>
+<li>
+<p><strong>Thay giá trị vào phần tử <code>j=k</code>:</strong></p>
+<p>Sử dụng Kết quả 3 và Kết quả 1:</p>
+<p><span class="arithmatex">\(\left( - \frac{y_k}{\hat{y}_k} \right) \cdot \left( \hat{y}_k (1 - \hat{y}_k) \right) = -y_k(1-\hat{y}_k) = -y_k + y_k \hat{y}_k\)</span>.</p>
+</li>
+<li>
+<p><strong>Thay giá trị vào tổng các phần tử <code>j ≠ k</code>:</strong></p>
+<p>Sử dụng Kết quả 3 và Kết quả 2:</p>
+<p><span class="arithmatex">\(\sum_{j \neq k} \left( - \frac{y_j}{\hat{y}_j} \right) \cdot \left( - \hat{y}_j \hat{y}_k \right) = \sum_{j \neq k} (y_j \hat{y}_k)\)</span>.</p>
+</li>
+<li>
+<p><strong>Ghép tất cả lại:</strong></p>
+</li>
+</ol>
+<div class="arithmatex">\[
+    \begin{align*}
+    \frac{\partial L}{\partial z_k} &amp;= (-y_k + y_k \hat{y}_k) + \sum_{j \neq k} y_j \hat{y}_k \\
+    &amp;= -y_k + \left( y_k \hat{y}_k + \sum_{j \neq k} y_j \hat{y}_k \right) \quad \text{(Nhóm các số hạng có } \hat{y}_k \text{)} \\
+    &amp;= -y_k + \hat{y}_k \left( y_k + \sum_{j \neq k} y_j \right) \quad \text{(Rút } \hat{y}_k \text{ làm nhân tử chung)}
+    \end{align*}
+\]</div>
+<ol>
+<li>
+<p><strong>Phân tích cuối cùng:</strong></p>
+<p>Hãy nhìn vào biểu thức trong ngoặc: <span class="arithmatex">\((y_k + \sum_{j \neq k} y_j)\)</span>. 
+Đây chính là tổng của tất cả các phần tử trong vector ground-truth <span class="arithmatex">\(y\)</span>, tức là <span class="arithmatex">\(\sum_j y_j\)</span>.
+Vì <span class="arithmatex">\(y\)</span> là vector one-hot, nó chỉ chứa một số 1 và còn lại là 0. Do đó, tổng của tất cả các phần tử của nó luôn luôn bằng 1.</p>
+<div class="arithmatex">\[
+\sum_j y_j = 1
+\]</div>
+</li>
+<li>
+<p><strong>Kết quả cuối cùng:</strong>
+    Thay 1 vào biểu thức trên, ta có:</p>
+</li>
+</ol>
+<div class="arithmatex">\[
+    \begin{align*}
+    \frac{\partial L}{\partial z_k} &amp;= -y_k + \hat{y}_k \cdot (1) \\
+    &amp;= \hat{y}_k - y_k
+    \end{align*}
+\]</div>
+<p>Như vậy, chúng ta đã chứng minh một cách đầy đủ và chi tiết rằng gradient kết hợp là <code>Dự đoán - Sự thật</code>.</p>
 
 
 
@@ -2244,7 +2302,7 @@ Việc này nhanh hơn hàng triệu lần so với phương pháp số.</li>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Ch4pt3r.06_Introducing_Optimization/06-introducing-optimization/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introducing Optimization">
+          <a href="../09-diagram/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Diagram">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2254,27 +2312,11 @@ Việc này nhanh hơn hàng triệu lần so với phương pháp số.</li>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Introducing Optimization
+                Diagram
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../Ch4pt3r.08_Gradients_Partial_Derivative_Chain%20Rule/08-Gradients-Partial-Derivatives-Chain-Rule/" class="md-footer__link md-footer__link--next" aria-label="Next: Gradients, Partial Derivatives and the Chain Rule">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Gradients, Partial Derivatives and the Chain Rule
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
