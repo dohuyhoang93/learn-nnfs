@@ -86,8 +86,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CTerminus:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Terminus"}</style>
       
     
     
@@ -2024,10 +2024,12 @@
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos="7 "></span></a>                                                                             |
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos="8 "></span></a>                                                                    y (True Labels)
 </span></code></pre></div>
-<p><strong>Explanation:</strong>
-* <code>x</code> goes through the <strong>Dense Layer</strong> to produce raw scores <strong>Logits (z)</strong>.
-* <code>z</code> passes through the <strong>Softmax</strong> function to become probabilities <strong>Probs. (ŷ)</strong>.
-* Both <code>ŷ</code> and the ground-truth label <code>y</code> are input into the <strong>Cross-Entropy Loss</strong> function to compute the final error <strong>Loss (L)</strong>.</p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li><code>x</code> goes through the <strong>Dense Layer</strong> to produce raw scores <strong>Logits (z)</strong>.</li>
+<li><code>z</code> passes through the <strong>Softmax</strong> function to become probabilities <strong>Probs. (ŷ)</strong>.</li>
+<li>Both <code>ŷ</code> and the ground-truth label <code>y</code> are input into the <strong>Cross-Entropy Loss</strong> function to compute the final error <strong>Loss (L)</strong>.</li>
+</ul>
 <hr />
 <h4 id="2-detailed-dependency-diagram-opening-the-black-boxes"><strong>2. Detailed Dependency Diagram – "Opening the Black Boxes"</strong><a class="headerlink" href="#2-detailed-dependency-diagram-opening-the-black-boxes" title="Permanent link">&para;</a></h4>
 <p>This is the most important part for understanding the Chain Rule. We’ll examine each dependency individually.</p>
@@ -2047,9 +2049,11 @@
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><a href="#__codelineno-1-12"><span class="linenos" data-linenos="12 "></span></a>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><a href="#__codelineno-1-13"><span class="linenos" data-linenos="13 "></span></a>           LOGITS                            (Dense interdependency)              PREDICTIONS
 </span></code></pre></div>
-<p><strong>Explanation:</strong>
-* Think of the "SOFTMAX INTERACTION" box as where all the values <span class="arithmatex">\(e^{z_i}\)</span> are summed to form the common denominator.
-* Since all <code>ŷ</code> values share this denominator, they are interdependent. Changing <code>z₁</code> will affect the denominator, and thus will alter <code>ŷ₁</code>, <code>ŷ₂</code>, and <code>ŷ₃</code>.</p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>Think of the "SOFTMAX INTERACTION" box as where all the values <span class="arithmatex">\(e^{z_i}\)</span> are summed to form the common denominator.</li>
+<li>Since all <code>ŷ</code> values share this denominator, they are interdependent. Changing <code>z₁</code> will affect the denominator, and thus will alter <code>ŷ₁</code>, <code>ŷ₂</code>, and <code>ŷ₃</code>.</li>
+</ul>
 <hr />
 <h5 id="part-b-dependencies-from-predictions-y-to-loss-l"><strong>Part B: Dependencies from Predictions (ŷ) to Loss (L)</strong><a class="headerlink" href="#part-b-dependencies-from-predictions-y-to-loss-l" title="Permanent link">&para;</a></h5>
 <p>This is a <strong>Many-to-One</strong> relationship. All the probabilities <code>ŷ</code> are used in a single total formula to compute one final Loss value.</p>
@@ -2067,9 +2071,11 @@
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><a href="#__codelineno-2-13"><span class="linenos" data-linenos="13 "></span></a>    PREDICTIONS                  (Convergence)
 </span></code></pre></div>
-<p><strong>Explanation:</strong>
-* Each <code>ŷ</code> contributes to the formula <span class="arithmatex">\(L = - \sum y_j \log(\hat{y}_j)\)</span>.<br />
-  So, all of them influence the final result <code>L</code>.</p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>Each <code>ŷ</code> contributes to the formula <span class="arithmatex">\(L = - \sum y_j \log(\hat{y}_j)\)</span>.<br />
+  So, all of them influence the final result <code>L</code>.</li>
+</ul>
 <hr />
 <h4 id="3-combined-diagram-the-path-of-the-chain-rule"><strong>3. Combined Diagram – The Path of the Chain Rule</strong><a class="headerlink" href="#3-combined-diagram-the-path-of-the-chain-rule" title="Permanent link">&para;</a></h4>
 <p>Now, visualize the path through which a small change in <span class="arithmatex">\(z_1\)</span> propagates to <code>L</code>. It must pass through <strong>ALL</strong> the <code>ŷ_j</code>.</p>
@@ -2081,15 +2087,25 @@
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><a href="#__codelineno-3-6"><span class="linenos" data-linenos="6 "></span></a>                                   \                          /
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><a href="#__codelineno-3-7"><span class="linenos" data-linenos="7 "></span></a>                                    &#39;----------------&gt; ŷ₃ ---&#39;
 </span></code></pre></div>
-<p><strong>Intuitive Explanation of the Chain Rule:</strong>
-* <strong>Question:</strong> If I give a tiny "nudge" to <span class="arithmatex">\(z_1\)</span>, how much will <code>L</code> be affected?
-* <strong>Path Analysis:</strong>
-    1. The nudge to <span class="arithmatex">\(z_1\)</span> spreads and affects <span class="arithmatex">\(\hat{y}_1, \hat{y}_2, \hat{y}_3\)</span>.
-    2. Then, those changes in <span class="arithmatex">\(\hat{y}_j\)</span> collectively influence <code>L</code>.
-* <strong>Chain Rule Insight:</strong><br />
-  The total impact on <code>L</code> is the <strong>sum</strong> of the contributions from all three paths.</p>
-<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span class="linenos" data-linenos="1 "></span>* `Total Impact = (Effect via ŷ₁) + (Effect via ŷ₂) + (Effect via ŷ₃)`
-</code></pre></div>
+<p><strong>Intuitive Explanation of the Chain Rule:</strong></p>
+<ul>
+<li>
+<p><strong>Question:</strong> If I give a tiny "nudge" to <span class="arithmatex">\(z_1\)</span>, how much will <code>L</code> be affected?</p>
+</li>
+<li>
+<p><strong>Path Analysis:</strong></p>
+<ol>
+<li>The nudge to <span class="arithmatex">\(z_1\)</span> spreads and affects <span class="arithmatex">\(\hat{y}_1, \hat{y}_2, \hat{y}_3\)</span>.</li>
+<li>Then, those changes in <span class="arithmatex">\(\hat{y}_j\)</span> collectively influence <code>L</code>.</li>
+</ol>
+</li>
+<li>
+<p><strong>Chain Rule Insight:</strong> The total impact on <code>L</code> is the <strong>sum</strong> of the contributions from all three paths.</p>
+<ul>
+<li><code>Total Impact = (Effect via ŷ₁) + (Effect via ŷ₂) + (Effect via ŷ₃)</code></li>
+</ul>
+</li>
+</ul>
 <p>This is why the derivative formula <span class="arithmatex">\(\frac{\partial L}{\partial z_k}\)</span> takes the form of a summation:</p>
 <div class="arithmatex">\[
 \frac{\partial L}{\partial z_k} = \sum_j \left( \frac{\partial L}{\partial \hat{y}_j} \cdot \frac{\partial \hat{y}_j}{\partial z_k} \right)
